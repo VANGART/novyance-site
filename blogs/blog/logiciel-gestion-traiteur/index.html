@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
+<link rel="apple-touch-icon" href="/assets/nv-apple-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F6FA;--bg2:#E9EEF5;--white:#FFF;--ink:#482719;--muted:rgba(72,39,25,.7);--soft:rgba(72,39,25,.6);--hair:rgba(72,39,25,.12);--hair-2:rgba(72,39,25,.07);--orange:#FF681F;--rose:#FF9EBC;--rose-s:#FFE6EE;--jaune-s:#FFF2D0;--bleu-s:#DFE7FF;--t:'Space Grotesk','DM Sans',system-ui,sans-serif;--b:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--e:cubic-bezier(.22,.61,.36,1);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;color-scheme:only light;}
+body{background:var(--bg);color:var(--ink);font-family:var(--b);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;}
+b,strong{font-weight:600;}
+h1,h2,h3{font-family:var(--t);font-weight:700;letter-spacing:-.02em;line-height:1.12;}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+.wide{max-width:1180px;}
+.dot{color:var(--orange);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 22px;border-radius:100px;background:var(--orange);color:var(--ink);border:0;cursor:pointer;text-decoration:none;transition:background .3s,box-shadow .35s;}
+.btn:hover{background:#FF7A3A;box-shadow:0 12px 28px -14px rgba(255,104,31,.7);}
+header{position:sticky;top:0;z-index:50;background:rgba(243,246,250,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair-2);}
+header .wrap{max-width:1180px;display:flex;justify-content:space-between;align-items:center;height:62px;}
+.brand{font-family:var(--t);font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;}
+header .rt{display:flex;gap:18px;align-items:center;font-size:13.5px;font-weight:500;}
+header .rt a{color:var(--muted);text-decoration:none;}
+header .rt a:hover{color:var(--ink);}
+header .rt a.btn{color:var(--ink);padding:9px 16px;font-size:13px;}
+.bc{font-size:12.5px;color:var(--soft);padding:22px 0 0;}
+.bc a{color:var(--soft);text-decoration:none;}
+.bc a:hover{color:var(--orange);}
+.hd{padding:16px 0 26px;}
+.hd h1{font-size:clamp(28px,4.2vw,44px);margin-bottom:14px;}
+.lead{font-size:18px;color:var(--muted);}
+.meta{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--soft);margin-top:14px;}
+.meta span+span::before{content:'·';margin-right:14px;}
+.cover{margin:6px 0 10px;border-radius:20px;overflow:hidden;background:var(--bg2);}
+.cover img{display:block;width:100%;height:auto;}
+.rte{padding:22px 0 10px;font-size:17px;}
+.rte h2{font-size:clamp(22px,2.5vw,27px);margin:38px 0 12px;}
+.rte h3{font-size:18px;margin:26px 0 8px;}
+.rte p{margin-bottom:16px;color:rgba(72,39,25,.82);}
+.rte p strong,.rte li strong{color:var(--ink);}
+.rte ul,.rte ol{margin:0 0 18px;padding-left:0;list-style:none;}
+.rte li{position:relative;padding-left:18px;margin-bottom:9px;color:rgba(72,39,25,.82);}
+.rte li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+.rte a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--orange);}
+.rte img{max-width:100%;height:auto;border-radius:16px;margin:10px 0;}
+.rte table{width:100%;border-collapse:collapse;margin:8px 0 22px;font-size:15px;display:block;overflow-x:auto;}
+.rte th,.rte td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);}
+.rte th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.rte tr:first-child td{font-weight:600;color:var(--ink);}
+.rte blockquote{background:var(--rose-s);border-radius:16px;padding:20px 22px;margin:22px 0;font-size:16px;}
+.rte blockquote p:last-child{margin-bottom:0;}
+.aut{display:flex;gap:14px;align-items:center;background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:18px 20px;margin:30px 0 10px;}
+.aut .mono{width:46px;height:46px;border-radius:14px;background:var(--rose);display:grid;place-items:center;font-family:var(--t);font-weight:700;font-size:22px;flex:none;}
+.aut .mono i{color:var(--orange);font-style:normal;}
+.aut p{font-size:14px;color:var(--muted);}
+.aut b{color:var(--ink);}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.post{background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .35s var(--e),box-shadow .35s var(--e);}
+.post:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(72,39,25,.35);}
+.post small{font-size:12px;color:var(--soft);letter-spacing:.04em;}
+.post b{font-family:var(--t);font-size:18px;line-height:1.25;}
+.post span{font-size:14px;color:var(--muted);flex:1;}
+.post em{font-style:normal;font-size:13px;font-weight:600;color:#C94A0E;}
+.pag{display:flex;justify-content:center;gap:10px;margin:30px 0;font-size:14px;}
+.pag a,.pag span{padding:8px 14px;border-radius:100px;background:var(--white);text-decoration:none;}
+.more{padding:40px 0 10px;}
+.more h2{font-size:clamp(20px,2.4vw,26px);margin-bottom:16px;}
+.ct{background:var(--bg2);margin-top:44px;padding:48px 0 52px;}
+.ct h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:10px;}
+.ct p{color:var(--muted);margin-bottom:20px;}
+footer{background:var(--bg2);padding:30px 0;border-top:1px solid var(--hair);}
+footer .wrap{max-width:1180px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
+footer a{color:var(--muted);text-decoration:none;}
+footer a:hover{color:var(--orange);}
+footer .lk{display:flex;gap:18px;flex-wrap:wrap;}
+@media (max-width:860px){.posts{grid-template-columns:1fr 1fr;}}
+@media (max-width:620px){.wrap{padding:0 20px;}.posts{grid-template-columns:1fr;}header .rt a:not(.btn){display:none;}.rte{font-size:16px;}footer .lk a{padding:6px 0;}}
+</style>
+
+<title>Logiciel gestion traiteur : bien choisir pour une TPE · Novyance</title>
+<meta name="description" content="Logiciel de gestion traiteur : fiche événement, calcul des quantités, acomptes. Comment choisir quand on est 2 à 10 personnes, sans usine à gaz.">
+<meta property="og:title" content="Logiciel gestion traiteur : bien choisir pour une TPE">
+<meta property="og:description" content="Logiciel de gestion traiteur : fiche événement, calcul des quantités, acomptes. Comment choisir quand on est 2 à 10 personnes, sans usine à gaz.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novyance.fr/blogs/blog/logiciel-gestion-traiteur">
+<meta property="og:image" content="https:/assets/nv-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://novyance.fr/blogs/blog/logiciel-gestion-traiteur">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Logiciel de gestion traiteur : choisir selon vos modifications de dernière minute","description":"Logiciel de gestion traiteur : fiche événement, calcul des quantités, acomptes. Comment choisir quand on est 2 à 10 personnes, sans usine à gaz.","datePublished":"2026-10-08T09:00:00+02:00","dateModified":"2026-10-08T09:00:00+02:00","image":,"mainEntityOfPage":"https://novyance.fr/blogs/blog/logiciel-gestion-traiteur","author":{"@type":"Person","name":"Aurélien Ruotte","url":"https://novyance.fr/"},"publisher":{"@type":"Organization","name":"Novyance","url":"https://novyance.fr/","logo":{"@type":"ImageObject","url":"https://novyance.fr/assets/nv-apple-touch.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://novyance.fr/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://novyance.fr/blogs/blog"},{"@type":"ListItem","position":3,"name":"Logiciel de gestion traiteur : choisir selon vos modifications de dernière minute","item":"https://novyance.fr/blogs/blog/logiciel-gestion-traiteur"}]}
+</script>
+
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="/pages/outils-metier">Outils</a>
+      <a href="/#sites">Sites</a>
+      <a href="/pages/automatisation-ia-entreprise">Automatisation et IA</a>
+      <a href="/pages/apporteurs-affaires">Apporteurs d'affaires</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/#contact" class="btn">Parlons-en</a>
+      
+<button class="nvb" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nvm"><i></i><i></i><i></i></button>
+<nav class="nvm" id="nvm" aria-label="Menu">
+  <a href="/">Accueil</a>
+  <a href="/pages/outils-metier">Outils métier<small>Un outil construit autour de votre métier</small></a>
+  <a href="/pages/automatisation-ia-entreprise">Automatisation et IA<small>Ce qui se répète, je l'automatise</small></a>
+  <a href="/#exemples">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
+  <a href="/#prix">Prix<small>À partir de 590 €, puis 89 € par mois</small></a>
+  <a href="/pages/creation-site-internet-lyon">Sites internet<small>Dès 490 €, en ligne en 10 jours</small></a>
+  <a href="/blogs/blog">Blog</a>
+  <div class="nvm-ct">
+    <a href="tel:+33786523681" class="nvm-tel">07 86 52 36 81</a>
+    <a href="/#contact" class="nvm-go">Parlons-en</a>
+  </div>
+</nav>
+<style>
+  .nvb{display:none;width:44px;height:44px;flex:0 0 44px;border-radius:14px;border:1px solid rgba(72,39,25,.14);background:#fff;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;margin-left:8px;}
+  .nvb i{display:block;width:18px;height:2px;border-radius:2px;background:#482719;transition:transform .25s,opacity .25s;}
+  .nvb[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nvb[aria-expanded="true"] i:nth-child(2){opacity:0;}
+  .nvb[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nvm{display:none;}
+  @media (max-width:860px){
+    .nvb{display:inline-flex;}
+    .nvm.open{display:block;position:fixed;top:68px;left:12px;right:12px;z-index:80;background:#fff;border:1px solid rgba(72,39,25,.08);border-radius:20px;box-shadow:0 30px 60px -30px rgba(72,39,25,.45);padding:8px;max-height:calc(100vh - 84px);max-height:calc(100dvh - 84px);overflow:auto;animation:nvm-in .2s ease both;}
+    .nvm a{display:block !important;padding:13px 16px !important;border-radius:12px;text-decoration:none;color:#482719 !important;font-weight:600;font-size:16px !important;line-height:1.3;}
+    .nvm a:active,.nvm a:hover{background:#F3F6FA;}
+    .nvm a small{display:block;font-weight:400;font-size:13px;color:rgba(72,39,25,.6);margin-top:2px;}
+    .nvm-ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-top:1px solid rgba(72,39,25,.08);margin-top:6px;}
+    .nvm-ct a{text-align:center;border-radius:100px;padding:14px 10px !important;font-size:15px !important;}
+    .nvm-ct .nvm-tel{border:1px solid rgba(72,39,25,.14);}
+    .nvm-ct .nvm-go{background:#FF681F;}
+    @keyframes nvm-in{from{opacity:0;transform:translateY(-6px);}}
+  }
+</style>
+<script>
+  (function(){
+    var b = document.currentScript.parentNode.querySelector('.nvb'), m = document.getElementById('nvm');
+    if (!b || !m) return;
+    function poser(o){ m.classList.toggle('open', o); b.setAttribute('aria-expanded', o ? 'true' : 'false'); b.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); }
+    b.addEventListener('click', function(e){ e.stopPropagation(); poser(!m.classList.contains('open')); });
+    m.addEventListener('click', function(e){ if (e.target.closest('a')) poser(false); });
+    document.addEventListener('click', function(e){ if (m.classList.contains('open') && !m.contains(e.target)) poser(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') poser(false); });
+  })();
+</script>
+
+    </div>
+  </div>
+</header>
+
+<article class="wrap">
+  <div class="bc"><a href="/">Accueil</a> · <a href="/blogs/blog">Blog</a> · Logiciel de gestion traiteur : choisir selon vos modifications de dernière minute</div>
+  <div class="hd">
+    <h1>Logiciel de gestion traiteur : choisir selon vos modifications de dernière minute</h1>
+    <p class="lead">Pour un traiteur de 2 à 10 personnes, le bon logiciel n&#x27;est pas celui qui a le plus de modules. C&#x27;est celui qui encaisse un changement de couverts à J-3 sans recopie : quantités, achats, équipe et acompte suivent seuls.</p>
+    <div class="meta"><span>Aurélien Ruotte</span><span>08/10/2026</span><span>5 min de lecture</span></div>
+  </div>
+  
+  <div class="rte"><p>Chercher un <strong>logiciel de gestion pour traiteur</strong>, c'est tomber sur des comparatifs de dix outils, des ERP pensés pour les cuisines centrales et des listes de fonctions à rallonge. Pour un traiteur de deux à dix personnes, la vraie question est ailleurs : que se passe-t-il quand le client passe de 80 à 95 couverts trois jours avant l'événement ?</p><p>Si la réponse est « je refais tout à la main », c'est là que l'outil doit vous aider. Voici comment choisir à partir de ce qui coince vraiment.</p><blockquote><p><strong>En bref.</strong> Un bon logiciel traiteur tient tout l'événement sur une seule fiche : devis, nombre de couverts, allergies, matériel, extras, acompte. Quand un chiffre change, les quantités, les achats et le planning suivent. Si vous devez recopier la modification dans trois fichiers, vous perdrez une info un jour ou l'autre.</p></blockquote><h2>Le vrai problème : la modification de dernière minute</h2><p>Un traiteur ne vend pas un plat. Il vend un événement, et un événement bouge jusqu'à la veille. Le nombre d'invités change. Un convive est allergique aux fruits à coque. Le lieu n'a finalement pas de four. Le client veut un cocktail en plus.</p><p>Chacune de ces modifications touche plusieurs choses en même temps :</p><ul><li><strong>les quantités</strong> à produire et donc la liste d'achats ;</li><li><strong>le personnel</strong> : un serveur de plus, un extra à appeler ;</li><li><strong>le matériel</strong> : vaisselle, nappes, réchauds, ce qui part et ce qui doit revenir ;</li><li><strong>le prix</strong> : le devis, l'acompte, le solde ;</li><li><strong>la fiche de la cuisine</strong>, celle qu'on lit le jour J.</li></ul><p><strong>Quand ces cinq choses vivent dans cinq endroits différents, l'erreur ne vient pas d'un manque de rigueur.</strong> Elle vient de la recopie. C'est elle qu'il faut supprimer en premier.</p><h2>Ce que l'outil doit gérer, dans l'ordre</h2><p>Inutile de tout vouloir dès le premier jour. Voici l'ordre que je conseille, du plus utile au plus confortable.</p><ol><li><strong>La fiche événement.</strong> Une page par événement avec la date, le lieu, le contact, le nombre de couverts, le menu, les régimes et allergies, le matériel et les horaires. C'est elle que tout le monde consulte.</li><li><strong>Le calcul des quantités.</strong> Chaque recette a ses portions. Le nombre de couverts change, les quantités et la liste de courses se recalculent seules.</li><li><strong>L'argent.</strong> Devis signé, acompte reçu, solde à encaisser. Vous voyez d'un coup d'œil qui vous doit quoi, et pour quand.</li><li><strong>Le planning de l'équipe et des extras.</strong> Qui prépare, qui livre, qui sert, à quelle heure.</li><li><strong>Le matériel qui sort et qui revient.</strong> Ce qui part sur chaque événement, ce qui manque au retour.</li></ol><p>Les comparatifs mettent souvent en avant la traçabilité, le stock ou la paie. Ce sont de vrais sujets, mais pour une petite équipe, <strong>les trois premiers points règlent l'essentiel des oublis</strong>.</p><h2>Excel, logiciel du marché ou outil sur mesure</h2><table><thead><tr><th></th><th>Excel et carnet</th><th>Logiciel traiteur du marché</th><th>Outil sur mesure</th></tr></thead><tbody><tr><td>Mise en route</td><td>Immédiate</td><td>Paramétrage, import des recettes</td><td>Une à deux semaines</td></tr><tr><td>Changement de couverts</td><td>Recalcul à la main</td><td>Souvent prévu</td><td>Prévu, sur vos recettes et vos portions</td></tr><tr><td>Colle à votre façon de travailler</td><td>Oui, tant que vous êtes seul</td><td>Il faut entrer dans ses cases</td><td>Construit sur vos étapes</td></tr><tr><td>Équipe et extras</td><td>Par téléphone ou par message</td><td>Selon le module choisi</td><td>Vue simple sur téléphone</td></tr><tr><td>Limite</td><td>Casse dès qu'on est plusieurs</td><td>Beaucoup de modules, prix qui grimpe avec les options</td><td>Il faut bien cadrer le besoin au départ</td></tr></tbody></table><p><strong>Excel reste un bon choix tant qu'une seule personne tient tous les événements</strong>. Dès qu'un associé, un chef ou un commercial doit modifier la même fiche, ou que vous répondez au téléphone « attendez, je regarde dans le bon fichier », il a atteint sa limite.</p><p>Un logiciel du marché convient si votre activité ressemble à celle pour laquelle il a été pensé. Un outil sur mesure convient si vous avez une façon de faire à vous et que vous ne voulez pas la plier à un logiciel.</p><h2>Passer d'Excel à un outil sans tout casser</h2><p>Personne ne parle de la transition. C'est pourtant là que la plupart des projets échouent : on achète un logiciel, on n'a pas le temps de tout ressaisir, et on revient au fichier.</p><ul><li><strong>Commencez par les événements à venir</strong>, pas par l'historique. L'archive peut attendre.</li><li><strong>Reprenez vos recettes les plus vendues</strong> d'abord. Le reste s'ajoute au fil de l'eau.</li><li><strong>Gardez Excel en parallèle quelques semaines</strong>, le temps que l'équipe ait confiance.</li><li><strong>Une seule personne référente</strong> au départ, qui remonte ce qui gêne.</li></ul><h2>Cinq questions à poser avant de choisir</h2><ol><li>Si je change le nombre de couverts, <strong>qu'est-ce qui se met à jour seul</strong> ?</li><li>Où sont notées les <strong>allergies et les régimes</strong>, et est-ce que la cuisine les voit sur sa fiche ?</li><li>Est-ce que je vois en un écran les <strong>acomptes reçus et les soldes à encaisser</strong> ?</li><li>Est-ce que je paie <strong>par utilisateur</strong>, extras compris ?</li><li>Est-ce que je peux <strong>récupérer mes recettes et mes clients</strong> si j'arrête ?</li></ol><p>Sur les allergènes, l'information du client est une obligation pour les traiteurs aussi. Le <a href="https://www.ghr.fr/reglementation-fiscalite/les-obligations-dans-les-restaurants/les-allergenes-l-information-obligatoire" target="_blank" rel="noopener">GHR détaille ce qu'il faut afficher</a>. Un outil qui relie chaque recette à ses allergènes vous évite de refaire la liste à chaque menu.</p><h2>Comment je m'y prends</h2><p>Je construis des <a href="/pages/outils-metier">outils de gestion sur mesure</a> pour les petites entreprises, traiteurs compris. Pas un ERP : seulement les briques dont vous avez besoin.</p><ul><li><strong>Un échange de 30 minutes</strong>, offert, pour comprendre comment vous montez un événement aujourd'hui.</li><li><strong>La fiche événement et le calcul des quantités d'abord</strong>, utilisables rapidement.</li><li><strong>Puis le suivi de l'argent et le planning de l'équipe</strong>, quand la base tourne.</li></ul><p>Pour voir à quoi ressemble un suivi de production en ligne, essayez la <a href="/pages/demo-atelier">démo atelier</a>, avec des données fictives. Pour vos acomptes et votre trésorerie, regardez la <a href="/pages/demo-pilotage">démo pilotage</a>. Et si vous voulez relancer vos clients entreprise et suivre vos devis, le <a href="/pages/crm-sur-mesure">CRM sur mesure</a> s'ajoute à la même base.</p><p>Pour les aides à la numérisation des petites entreprises, le site public <a href="https://www.francenum.gouv.fr/" target="_blank" rel="noopener">France Num</a> rassemble des guides et des contacts.</p><h2>Questions fréquentes</h2><h3>Existe-t-il un logiciel traiteur gratuit ?</h3><p>Oui, certains outils proposent une version gratuite pour les indépendants. Ils suffisent pour la facturation et un agenda. La question est de savoir s'ils recalculent vos quantités et gèrent votre équipe quand vous grandissez.</p><h3>Faut-il un logiciel différent pour les devis et pour la production ?</h3><p>Non, c'est même ce qu'il faut éviter. Le devis signé doit devenir la fiche événement, sans ressaisie. Sinon, la modification du client finit dans un fichier et pas dans l'autre.</p><h3>Mes extras doivent-ils avoir un compte ?</h3><p>Pas forcément. Ils peuvent recevoir leur planning et la fiche de l'événement sur téléphone, sans rien installer.</p><h3>Combien coûte un outil sur mesure pour un traiteur ?</h3><p>Chez Novyance, la mise en place démarre à partir de 590 €, puis à partir de 89 € par mois pour l'hébergement, la maintenance et les réglages courants. Le prix est par entreprise, pas par utilisateur, et il est confirmé au devis.</p><h3>Est-ce que je garde mes données si j'arrête ?</h3><p>Oui. Vos recettes, vos clients et vos événements sont exportables à tout moment.</p><p><strong>Vous voulez voir ce que ça donnerait pour vos événements ?</strong> <a href="/#top">Décrivez votre besoin en trois questions</a>, je vous réponds sous 24 h.</p>
+</div>
+  <div class="aut"><div class="mono">n<i>.</i></div><p><b>Aurélien Ruotte</b>, fondateur de Novyance à Lyon. Il construit des sites et des outils sur mesure pour les TPE et PME, et répond lui-même à chaque demande.</p></div>
+</article>
+<section class="wrap wide more"><h2>À lire aussi<span class="dot">.</span></h2><div class="posts"><a class="post" href="/blogs/blog/remplacer-excel-par-une-application"><small>19/10/2026</small><b>Remplacer Excel par une application : les 7 signes que c&#x27;est le moment</b><span>Excel a fait tourner des milliers de petites entreprises. Mais il arrive un moment où le fichier qui rendait service devient celui que tout le monde</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/prix-logiciel-sur-mesure-tpe"><small>15/10/2026</small><b>Combien coûte un logiciel sur mesure pour une TPE en 2026 ?</b><span>Développement en agence, logiciel du marché ou outil sur mesure en abonnement : trois façons de payer un outil pour une TPE, avec des montants très</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/tableau-de-bord-tresorerie-tpe"><small>12/10/2026</small><b>Tableau de bord de trésorerie pour TPE : celui qui se tient à jour tout seul</b><span>Un tableau de bord de trésorerie ne sert que s&#x27;il est à jour. Je pars de la banque, pas de la comptabilité, pour répondre chaque lundi</span><em>Lire l'article →</em></a></div></section>
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · <a href="mailto:contact@novyance.fr">contact@novyance.fr</a></span>
+    <span class="lk">
+      <a href="/pages/outils-metier">Outils métier sur mesure</a>
+      <a href="/pages/creation-site-internet-lyon">Site à Lyon</a>
+      <a href="/pages/application-pilotage-sur-mesure">Application de pilotage</a>
+      <a href="/pages/crm-sur-mesure">CRM sur mesure</a>
+      <a href="/pages/prospection-automatisee">Prospection automatisée</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/">Accueil</a>
+      
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
