@@ -27,5 +27,6 @@ jobs:
           git add -A
           if git diff --cached --quiet; then echo "Rien de nouveau."; exit 0; fi
           git commit -m "Site reconstruit le $(date -u +%F)"
+          git pull --rebase origin main
           git push
           gh api -X POST repos/${{ github.repository }}/pages/builds || true
