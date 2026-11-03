@@ -1,0 +1,25 @@
+{
+  "statut": "programmé 2026-11-26 9 h sur novyance.fr (envoyé au dépôt le 03/11)",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Outil de prospection automatisée pour TPE : un seul outil, pas cinq",
+  "handle": "outil-prospection-automatisee-tpe",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": "2026-11-26T09:00:00+01:00",
+  "summary": "<p>Les comparatifs d'outils de prospection proposent une pile de quatre ou cinq logiciels, pensée pour des équipes commerciales. Dans une TPE, c'est le patron qui prospecte. Voici un outil unique qui cible, prépare chaque message en brouillon et range les réponses au même endroit.</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Outil de prospection automatisée TPE : un seul outil, pas 5"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Outil de prospection automatisée pour TPE : ciblage, messages en brouillon validés, domaine d'envoi séparé et réponses rangées au même endroit."
+    }
+  ]
+}
