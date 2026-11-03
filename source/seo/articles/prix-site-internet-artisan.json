@@ -1,0 +1,24 @@
+{
+  "statut": "récupéré du site en ligne le 02/11/2026",
+  "title": "Combien coûte un site internet pour un artisan en 2026 ?",
+  "handle": "prix-site-internet-artisan",
+  "author": "Aurélien Ruotte",
+  "isPublished": true,
+  "publishDate": "2026-09-25T15:51:12+02:00",
+  "summary": "<p>De 0 à 5 000 € selon qui le fait. Ce que vous payez vraiment, ce qui est inutile, et le seul critère qui compte : combien de demandes il vous rapporte.</p>",
+  "body_html_file": "prix-site-internet-artisan.html",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Prix d'un site internet pour artisan en 2026"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Prix d'un site internet pour artisan en 2026 : ordres de grandeur, ce qui doit être inclus, ce qui est inutile, et le seul calcul qui compte."
+    }
+  ]
+}

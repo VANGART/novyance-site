@@ -1,0 +1,16 @@
+{
+  "statut": "rédigé 29/10, à créer dans Shopify",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Logiciel planning équipe restaurant : le test du changement de dernière minute",
+  "handle": "logiciel-planning-equipe-restaurant",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "summary": "<p>Pour un restaurant de 5 à 20 personnes, un bon planning se juge le jour où il change : cuisinier absent, service complet. Voici ce qu'il doit gérer, comment comparer Excel, logiciel spécialisé et outil sur mesure.</p>",
+  "body_html_file": "seo/articles/logiciel-planning-equipe-restaurant.html",
+  "metafields": [
+    {"namespace": "global", "key": "title_tag", "type": "single_line_text_field", "value": "Logiciel planning équipe restaurant : comment choisir"},
+    {"namespace": "global", "key": "description_tag", "type": "single_line_text_field", "value": "Logiciel planning équipe restaurant : ce qu'il doit gérer (remplacements, repos, heures) et comment choisir entre Excel, logiciel et outil sur mesure."}
+  ],
+  "publishDate": null
+}

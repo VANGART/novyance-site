@@ -1,0 +1,48 @@
+{% layout none %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+{% render 'nv-blog-head' %}
+<title>Le blog Novyance · sites et outils pour TPE et PME{% if current_page > 1 %} · page {{ current_page }}{% endif %}</title>
+<meta name="description" content="Conseils concrets pour les artisans, commerces, indépendants et PME : site internet, référencement, outils sur mesure, prospection et automatisation.">
+<meta property="og:title" content="Blog Novyance">
+<meta property="og:description" content="Conseils concrets pour les TPE et PME : outils sur mesure, automatisation, prospection, sites internet.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https:{{ 'nv-og.png' | asset_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="{{ shop.url }}{{ blog.url }}">
+<link rel="canonical" href="{{ shop.url }}{{ blog.url }}{% if current_page > 1 %}?page={{ current_page }}{% endif %}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Blog Novyance","url":{{ shop.url | append: blog.url | json }},"publisher":{"@type":"Organization","name":"Novyance","url":"https://novyance.fr/"}}</script>
+{{ content_for_header }}
+</head>
+<body>
+{% render 'nv-blog-chrome', part: 'header' %}
+<div class="wrap wide">
+  <div class="bc"><a href="/">Accueil</a> · Blog</div>
+  <div class="hd" style="max-width:760px">
+    <h1>Le blog<span class="dot">.</span></h1>
+    <p class="lead">Ce qui marche pour faire rentrer des clients et gagner du temps. Sites, référencement, outils sur mesure, prospection. Du concret, pour les TPE et PME.</p>
+  </div>
+  {% paginate blog.articles by 12 %}
+  {% if blog.articles.size > 0 %}
+  <div class="posts">
+    {% for a in blog.articles %}
+    <a class="post" href="{{ a.url }}">
+      <small>{{ a.published_at | date: '%d/%m/%Y' }}</small>
+      <b>{{ a.title }}</b>
+      <span>{{ a.excerpt_or_content | strip_html | truncatewords: 26 }}</span>
+      <em>Lire l'article →</em>
+    </a>
+    {% endfor %}
+  </div>
+  {% if paginate.pages > 1 %}<div class="pag">{% if paginate.previous %}<a href="{{ paginate.previous.url }}">← Précédents</a>{% endif %}<span>{{ paginate.current_page }} / {{ paginate.pages }}</span>{% if paginate.next %}<a href="{{ paginate.next.url }}">Suivants →</a>{% endif %}</div>{% endif %}
+  {% else %}
+  <p class="lead">Les premiers articles arrivent.</p>
+  {% endif %}
+  {% endpaginate %}
+</div>
+{% render 'nv-blog-chrome', part: 'footer' %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "statut": "rédigé 19/10, à créer dans Shopify",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Logiciel de relance de factures impayées pour TPE : partir de la banque",
+  "handle": "logiciel-relance-factures-impayees-tpe",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": null,
+  "summary": "<p>Les logiciels de relance sont souvent pensés pour des PME avec un service comptable. Dans une TPE, c'est le patron qui relance. Voici un outil qui part de la banque pour savoir qui doit vraiment, prépare chaque relance en brouillon et vous laisse valider d'un clic.</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel relance factures impayées TPE : partir de la banque"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel de relance de factures impayées pour TPE : savoir qui doit vraiment grâce à la banque, relances prêtes en brouillon, validées d'un clic."
+    }
+  ]
+}

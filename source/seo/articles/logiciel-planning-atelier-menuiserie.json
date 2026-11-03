@@ -1,0 +1,24 @@
+{
+  "statut": "récupéré du site en ligne le 02/11/2026",
+  "title": "Logiciel de planning pour atelier de menuiserie : comment bien choisir",
+  "handle": "logiciel-planning-atelier-menuiserie",
+  "author": "Aurélien Ruotte",
+  "isPublished": true,
+  "publishDate": "2026-09-28T09:00:05+02:00",
+  "summary": "<p>Excel, logiciel du marché ou outil sur mesure : ce qu'un planning d'atelier de menuiserie doit vraiment gérer, les pièges classiques et cinq questions à poser avant de choisir.</p>",
+  "body_html_file": "logiciel-planning-atelier-menuiserie.html",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel de planning pour menuiserie : bien choisir"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel de planning pour atelier de menuiserie : ce qu'il doit gérer, Excel ou outil sur mesure, les pièges à éviter et 5 questions à poser."
+    }
+  ]
+}

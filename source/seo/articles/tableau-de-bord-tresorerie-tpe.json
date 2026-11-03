@@ -1,0 +1,25 @@
+{
+  "statut": "programmé 12/10 (gid://shopify/Article/623023751510)",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Tableau de bord de trésorerie pour TPE : celui qui se tient à jour tout seul",
+  "handle": "tableau-de-bord-tresorerie-tpe",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": "2026-10-12T09:00:00+02:00",
+  "summary": "<p>Un tableau de bord de trésorerie ne sert que s'il est à jour. Je pars de la banque, pas de la comptabilité, pour répondre chaque lundi à une seule question : est-ce que je passe les semaines qui viennent ?</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Tableau de bord trésorerie TPE : simple et à jour"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Tableau de bord de trésorerie pour TPE : partir de la banque, projeter semaine par semaine, relancer les retards. Ce qu'il faut suivre, sans usine à gaz."
+    }
+  ]
+}

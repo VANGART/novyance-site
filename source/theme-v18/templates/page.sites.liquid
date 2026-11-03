@@ -1,0 +1,405 @@
+{% layout none %}
+{%- comment -%}
+  Page « Sites internet » (02/11/2026) : l'offre site vitrine pour artisans et indépendants, reliée au menu de l'accueil.
+  Prix repris de la grille (490 € puis 29 €/mois, jusqu'à 5 pages, 10 jours ouvrés). Les demandes passent par le formulaire
+  de contact Shopify (arrivent sur contact@novyance.fr), champ « Demande » = « Site internet ».
+  L'exemple de site (Menuiserie Fabre) est fictif et annoncé comme tel.
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+<title>Site internet pour artisan et indépendant, dès 490 €, en ligne en 10 jours · Novyance</title>
+<meta name="description" content="Un site vitrine jusqu'à 5 pages pour artisans et indépendants : textes écrits avec vous, fiche Google reliée, demandes dans votre boîte. Dès 490 €, en ligne en 10 jours ouvrés.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="{{ canonical_url }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Votre site internet, dès 490 €, en ligne en 10 jours">
+<meta property="og:description" content="Pour les artisans et les indépendants : un site qui fait sonner le téléphone, écrit avec vous, livré en 10 jours ouvrés.">
+<meta property="og:image" content="{{ 'nv-og.png' | asset_url | prepend: 'https:' }}">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ 'nv-favicon-48.png' | asset_url }}">
+<link rel="apple-touch-icon" href="{{ 'nv-apple-touch.png' | asset_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Création de site vitrine pour artisans et indépendants",
+  "serviceType": "Création de site internet",
+  "areaServed": "FR",
+  "provider": { "@type": "Organization", "name": "Novyance", "url": "https://novyance.fr", "telephone": "+33786523681", "email": "contact@novyance.fr" },
+  "offers": [
+    { "@type": "Offer", "name": "Site vitrine, jusqu'à 5 pages", "price": "490", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Hébergement, suivi et petites modifications", "price": "29", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "29", "priceCurrency": "EUR", "unitText": "MONTH" } }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#F3F6FA; --bg2:#E9EEF5; --card:#FFFFFF; --ink:#482719; --ink2:#2E1910; --muted:#76625A; --line:#D8DFE9;
+  --accent:#FF681F; --accent-d:#C2470F; --rose:#FF9EBC;
+  --f-display:"Space Grotesk","Helvetica Neue",Arial,sans-serif; --f-body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --r:20px; --g:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+::selection{background:var(--rose);color:var(--ink2)}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:var(--g)}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;letter-spacing:-.025em;line-height:1.04;margin:0;text-wrap:balance;color:var(--ink2)}
+h2{font-size:clamp(32px,4.4vw,56px)}
+h3{font-size:21px;letter-spacing:-.01em;line-height:1.2}
+p{margin:0}
+a{color:inherit}
+.dot{color:var(--accent)}
+.lead{font-size:clamp(18px,1.5vw,20px);color:var(--muted);max-width:56ch}
+.kick{font:600 13px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d);margin-bottom:18px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;border:0;background:var(--accent);color:#fff;font:600 16px/1 var(--f-body);text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .2s}
+.btn:hover{background:var(--accent-d)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+
+/* en-tête */
+header{position:sticky;top:0;z-index:50;background:rgba(243,246,250,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(72,39,25,.06)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font:700 24px/1 var(--f-display);letter-spacing:-.04em;text-decoration:none;color:var(--ink2)}
+.rt{display:flex;align-items:center;gap:22px}
+.rt > a:not(.btn){text-decoration:none;font-weight:500;font-size:15px}
+.rt > a:not(.btn):hover{color:var(--accent-d)}
+.rt .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media (max-width:860px){ .rt > a:not(.btn){display:none} .rt .btn{display:none} }
+
+/* ouverture : le titre à gauche, le devis à droite */
+.top{padding:clamp(48px,8vw,104px) 0 clamp(56px,8vw,96px)}
+.top .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:start}
+.top h1{font-size:clamp(42px,6.4vw,84px);letter-spacing:-.04em}
+.top .lead{margin-top:24px}
+.top .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.pour{margin-top:34px;font-size:15px;color:var(--muted)}
+.pour b{color:var(--ink);font-weight:600}
+
+.devis{background:var(--card);border-radius:6px;padding:30px 28px 26px;box-shadow:0 1px 0 var(--line),0 30px 60px -38px rgba(72,39,25,.45);transform:rotate(1.2deg);position:relative;margin-top:8px}
+.devis:before{content:"";position:absolute;inset:0;border-top:5px solid var(--accent);border-radius:6px;pointer-events:none}
+.devis-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;color:var(--muted);border-bottom:1px dashed var(--line);padding-bottom:14px;margin-bottom:6px}
+.devis-h b{font:700 18px/1 var(--f-display);color:var(--ink2);letter-spacing:-.02em}
+.ligne{display:grid;grid-template-columns:1fr auto;gap:16px;padding:12px 0;border-bottom:1px solid var(--bg2);font-size:15px;line-height:1.4}
+.ligne span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
+.ligne.inc span:last-child{font-size:13px}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding-top:16px}
+.total b{font:700 34px/1 var(--f-display);letter-spacing:-.03em;color:var(--ink2)}
+.total small{display:block;font-size:13px;color:var(--muted);margin-top:6px;text-align:right}
+.devis-p{font-size:12.5px;color:var(--muted);margin-top:16px;line-height:1.5}
+
+/* l'exemple annoté */
+.ex{padding:clamp(64px,9vw,120px) 0;background:var(--ink2);color:#F3E9E3}
+.ex h2{color:#fff;max-width:16ch}
+.ex .lead{color:rgba(243,233,227,.72);margin-top:18px}
+.ex-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(28px,5vw,64px);margin-top:48px;align-items:start}
+.nav-b{background:#1E100A;border-radius:14px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
+.nav-b .barre{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#2B1A12}
+.nav-b .barre i{width:10px;height:10px;border-radius:50%;background:#4A342A}
+.nav-b .url{margin-left:10px;flex:1;background:#3A271E;color:#C9B8AE;font-size:12px;border-radius:7px;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.site{background:#F7F2EC;color:#2A211C;position:relative}
+.site-h{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-bottom:1px solid #E6DCD1;font-size:13px}
+.site-h b{font:700 15px/1 Georgia,serif;letter-spacing:.01em}
+.site-tel{background:#2F5D3A;color:#fff;border-radius:99px;padding:7px 13px;font-weight:600;white-space:nowrap}
+.site-hero{display:grid;grid-template-columns:1.1fr .9fr;min-height:250px}
+.site-hero .txt{padding:28px 22px}
+.site-hero h4{font:700 clamp(20px,2.4vw,28px)/1.1 Georgia,serif;margin:0 0 10px}
+.site-hero p{font-size:13px;color:#6B5D53}
+.site-hero .zone{margin-top:14px;font-size:12px;color:#2F5D3A;font-weight:600}
+.site-hero .cta{display:inline-block;margin-top:16px;background:#2A211C;color:#fff;font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:6px}
+.bois{background:repeating-linear-gradient(100deg,#B9895D 0 9px,#A87A50 9px 13px,#C49A6E 13px 24px,#9E7148 24px 27px);position:relative}
+.bois:after{content:"Photo d'un vrai chantier";position:absolute;left:10px;bottom:10px;font-size:11px;background:rgba(255,255,255,.85);color:#2A211C;padding:4px 8px;border-radius:4px}
+.site-bas{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #E6DCD1}
+.site-bas div{padding:14px 16px;font-size:12px;border-right:1px solid #E6DCD1}
+.site-bas div:last-child{border-right:0}
+.site-bas b{display:block;font-size:13px;margin-bottom:3px}
+.pin{display:inline-block;vertical-align:middle;width:22px;height:22px;margin:0 6px;border-radius:50%;background:var(--accent);color:#fff;font:700 12px/22px var(--f-display);text-align:center;box-shadow:0 0 0 3px rgba(255,104,31,.28);flex:0 0 22px}
+.fictif{margin-top:12px;font-size:13px;color:rgba(243,233,227,.55)}
+.notes{list-style:none;margin:0;padding:0;counter-reset:n}
+.notes li{counter-increment:n;padding:0 0 22px 44px;position:relative;font-size:16px;color:rgba(243,233,227,.8)}
+.notes li:before{content:counter(n);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font:700 14px/28px var(--f-display);text-align:center}
+.notes b{display:block;color:#fff;font-weight:600;margin-bottom:2px}
+
+/* les dix jours */
+.jours{padding:clamp(64px,9vw,120px) 0}
+.jours .lead{margin-top:18px}
+.frise{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:48px}
+.frise .j{height:10px;border-radius:99px;background:var(--bg2)}
+.frise .j.on{background:var(--accent)}
+.etapes{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:18px}
+.etape{font-size:15px;line-height:1.45}
+.etape .d{font:700 14px/1 var(--f-display);color:var(--accent-d);margin-bottom:8px;letter-spacing:.02em}
+.etape b{display:block;color:var(--ink2);margin-bottom:4px}
+.etape p{color:var(--muted)}
+.e1{grid-column:1/4}.e3{grid-column:3/7}.e9{grid-column:7/10}.e10{grid-column:9/11}
+.etapes .e1,.etapes .e3,.etapes .e9,.etapes .e10{grid-row:auto}
+.avant{margin-top:40px;padding:18px 22px;border-left:4px solid var(--accent);background:var(--card);border-radius:0 12px 12px 0;max-width:720px;font-size:16px}
+
+/* compris / pas compris */
+.perim{padding:0 0 clamp(64px,9vw,120px)}
+.perim-g{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border-top:2px solid var(--ink2)}
+.perim-g > div{padding:28px 32px 8px 0}
+.perim-g > div + div{padding-left:32px;border-left:1px solid var(--line)}
+.perim-g h3{margin-bottom:14px}
+.perim-g ul{margin:0;padding:0;list-style:none}
+.perim-g li{padding:11px 0;border-bottom:1px solid var(--line);font-size:16px}
+.perim-g li small{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.non li{color:var(--muted)}
+.mois{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:20px 40px;align-items:start;background:var(--card);border-radius:var(--r);padding:28px 32px}
+.mois .p{font:700 44px/1 var(--f-display);letter-spacing:-.03em;color:var(--ink2);white-space:nowrap}
+.mois .p small{font:500 15px/1 var(--f-body);color:var(--muted);letter-spacing:0}
+.mois p{color:var(--muted)}
+.mois p b{color:var(--ink)}
+
+/* questions */
+.faq{padding:0 0 clamp(64px,9vw,120px)}
+.faq-l{margin-top:32px;max-width:820px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font:600 18px/1.35 var(--f-body);color:var(--ink2);position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:4px;top:16px;font:500 26px/1 var(--f-display);color:var(--accent)}
+details[open] summary:after{content:"–"}
+details p{padding:0 0 22px;color:var(--muted);max-width:68ch}
+
+/* contact */
+.end{padding:clamp(64px,9vw,112px) 0;background:var(--bg2)}
+.end-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:start}
+.end .lead{margin-top:18px}
+.end .tel{display:inline-block;margin-top:26px;font:700 28px/1 var(--f-display);letter-spacing:-.02em;text-decoration:none;color:var(--ink2)}
+.end .tel:hover{color:var(--accent-d)}
+.end .qui{margin-top:10px;font-size:15px;color:var(--muted)}
+form{display:grid;gap:12px;background:var(--card);border-radius:var(--r);padding:28px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input,select,textarea{font:400 16px/1.3 var(--f-body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;min-height:54px;padding:14px 18px;width:100%;min-width:0}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+form .btn{width:100%;margin-top:4px}
+.ok-msg{padding:14px 18px;border-radius:14px;background:#E6F3EC;color:#1F5E3C;font-weight:500}
+.ok-msg.err{background:#FDECE4;color:var(--accent-d)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.mini{font-size:13px;color:var(--muted)}
+
+footer{padding:36px 0 48px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent-d)}
+
+@media (max-width:960px){
+  .top .wrap,.ex-grid,.end-g{grid-template-columns:1fr}
+  .devis{transform:none;max-width:520px}
+  .frise{display:none}
+  .etapes{grid-template-columns:1fr;gap:22px;border-left:2px solid var(--bg2);padding-left:20px}
+  .e1,.e3,.e9,.e10{grid-column:auto}
+}
+@media (max-width:640px){
+  .site-hero{grid-template-columns:1fr}
+  .bois{min-height:120px}
+  .site-bas{grid-template-columns:1fr}
+  .site-bas div{border-right:0;border-bottom:1px solid #E6DCD1}
+  .perim-g{grid-template-columns:1fr}
+  .perim-g > div,.perim-g > div + div{padding:24px 0 8px;border-left:0}
+  .mois{grid-template-columns:1fr;padding:24px}
+  .row2{grid-template-columns:1fr}
+  form{padding:20px}
+  .top .acts .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .devis{transform:none} }
+</style>
+{{ content_for_header }}
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="/">Prospection</a>
+      <a href="#exemple">L'exemple</a>
+      <a href="#prix">Ce qui est compris</a>
+      <a href="#devis" class="btn">Demander un devis</a>
+      {% render 'nv-mnav' %}
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="top">
+    <div class="wrap">
+      <div>
+        <p class="kick">Sites internet</p>
+        <h1>Un site qui fait sonner le téléphone<span class="dot">.</span></h1>
+        <p class="lead">Vos clients vous cherchent sur leur téléphone, souvent le soir. S'ils ne trouvent rien de clair, ils appellent celui d'à côté. On construit un site simple, écrit avec vous, qui dit ce que vous faites, où, et comment vous joindre. En ligne en dix jours ouvrés.</p>
+        <div class="acts">
+          <a href="#devis" class="btn">Demander un devis sous 24 h</a>
+          <a href="tel:+33786523681" class="btn ghost">07 86 52 36 81</a>
+        </div>
+        <p class="pour">Pour <b>les artisans</b>, <b>les indépendants</b> et les petites équipes : menuisiers, plombiers, électriciens, coiffeurs, coachs, photographes, cabinets.</p>
+      </div>
+
+      <div class="devis" aria-label="Le prix, détaillé comme un devis">
+        <div class="devis-h"><b>Devis type</b><span>Site vitrine</span></div>
+        <div class="ligne"><span>Site jusqu'à 5 pages, adapté au téléphone</span><span>490 €</span></div>
+        <div class="ligne inc"><span>Textes écrits avec vous, en 30 minutes d'échange</span><span>compris</span></div>
+        <div class="ligne inc"><span>Formulaire de demande, bouton d'appel, fiche Google reliée</span><span>compris</span></div>
+        <div class="ligne inc"><span>Nom de domaine, mise en ligne, 1 h de prise en main</span><span>compris</span></div>
+        <div class="total"><span>Mise en place</span><div><b>dès 490 €</b><small>puis 29 € par mois</small></div></div>
+        <p class="devis-p">Prix nets, TVA non applicable, article 293 B du CGI. Moitié au démarrage, solde à la mise en ligne.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex" id="exemple">
+    <div class="wrap">
+      <h2>Ce qu'il y a dans le site, et pourquoi<span class="dot">.</span></h2>
+      <p class="lead">Pas d'effet, pas d'animation qui fait attendre. Quatre choses que le client cherche avant de vous appeler.</p>
+      <div class="ex-grid">
+        <div>
+          <div class="nav-b" aria-hidden="true">
+            <div class="barre"><i></i><i></i><i></i><span class="url">menuiserie-fabre.fr</span></div>
+            <div class="site">
+              <div class="site-h"><b>Menuiserie Fabre</b><span><span class="pin">2</span><span class="site-tel">Appeler</span></span></div>
+              <div class="site-hero">
+                <div class="txt">
+                  <h4><span class="pin" style="margin-left:0">1</span>Escaliers, placards et cuisines en bois massif.</h4>
+                  <p>Fabriqués à l'atelier, posés chez vous. Devis gratuit, réponse sous 48 h.</p>
+                  <p class="zone"><span class="pin" style="margin-left:0">3</span>Villeurbanne, Lyon, Caluire, Bron</p>
+                  <span class="cta">Décrire mon projet</span>
+                </div>
+                <div class="bois"></div>
+              </div>
+              <div class="site-bas">
+                <div><b>Réalisations</b>Avant, après, le détail.</div>
+                <div><b>Avis Google</b>Repris de votre fiche.</div>
+                <div><b>Contact <span class="pin">4</span></b>Demande triée par commune.</div>
+              </div>
+            </div>
+          </div>
+          <p class="fictif">Exemple fictif : la Menuiserie Fabre n'existe pas.</p>
+        </div>
+        <ol class="notes">
+          <li><b>Ce que vous faites, en une phrase</b>On comprend en dix secondes votre métier, sans faire défiler la page.</li>
+          <li><b>Le bouton d'appel, toujours visible</b>Sur téléphone, c'est le premier réflexe. Le numéro suit le visiteur.</li>
+          <li><b>Les communes que vous couvrez</b>Écrites noir sur blanc. Le client sait qu'il est chez vous, et Google aussi.</li>
+          <li><b>Les demandes rangées</b>Nom, besoin, commune. Elles arrivent dans votre boîte mail, et le client reçoit une confirmation tout de suite.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="jours">
+    <div class="wrap">
+      <h2>Dix jours ouvrés, pas trois mois<span class="dot">.</span></h2>
+      <p class="lead">Le compteur démarre quand on a validé ensemble le contenu. Vous savez à chaque étape ce qu'on attend de vous.</p>
+      <div class="frise" aria-hidden="true">
+        <span class="j on"></span><span class="j"></span><span class="j on"></span><span class="j"></span><span class="j"></span><span class="j"></span><span class="j"></span><span class="j"></span><span class="j on"></span><span class="j on"></span>
+      </div>
+      <div class="etapes">
+        <div class="etape e1"><p class="d">JOUR 1</p><b>30 minutes au téléphone</b><p>Votre métier, vos clients, votre zone. Vous envoyez vos photos et votre logo si vous en avez un.</p></div>
+        <div class="etape e3"><p class="d">JOUR 3</p><b>La maquette</b><p>Vous voyez le site avec vos textes. Vous corrigez ce qui ne vous ressemble pas.</p></div>
+        <div class="etape e9"><p class="d">JOUR 9</p><b>Le site complet</b><p>Dernière relecture, sur votre téléphone.</p></div>
+        <div class="etape e10"><p class="d">JOUR 10</p><b>En ligne</b><p>Et une heure ensemble pour modifier vos textes seul.</p></div>
+      </div>
+      <p class="avant">Pas de photos ? On part de celles de votre fiche Google ou de banques d'images libres, en attendant les vôtres.</p>
+    </div>
+  </section>
+
+  <section class="perim" id="prix">
+    <div class="wrap">
+      <h2>Ce qui est compris, ce qui ne l'est pas<span class="dot">.</span></h2>
+      <div class="perim-g">
+        <div>
+          <h3>Dans les 490 €</h3>
+          <ul>
+            <li>Jusqu'à 5 pages<small>Accueil, votre métier, réalisations, à propos, contact.</small></li>
+            <li>Les textes, écrits par nous<small>À partir de l'échange de 30 minutes. Vous relisez, vous corrigez.</small></li>
+            <li>Deux tours de corrections<small>Un sur la maquette, un avant la mise en ligne.</small></li>
+            <li>Le référencement de base<small>Titres, descriptions, fiche Google reliée au site.</small></li>
+            <li>Nom de domaine et mise en ligne<small>Le site et le domaine sont à vous.</small></li>
+          </ul>
+        </div>
+        <div class="non">
+          <h3>Sur devis, à part</h3>
+          <ul>
+            <li>Une sixième page et au-delà</li>
+            <li>Une boutique en ligne<small>Dès 690 €, puis 39 € par mois.</small></li>
+            <li>Un shooting photo</li>
+            <li>Une refonte complète après la mise en ligne</li>
+            <li>Les articles et la fiche Google tenus chaque mois<small>Dès 99 € par mois.</small></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mois">
+        <p class="p">29 €<small> / mois</small></p>
+        <p><b>Hébergement, sauvegardes, sécurité et petites modifications</b> (un horaire qui change, une photo, un tarif). Vous écrivez, c'est fait. Sans engagement, avec un mois de préavis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <h2>Les questions qu'on nous pose<span class="dot">.</span></h2>
+      <div class="faq-l">
+        <details><summary>J'ai déjà une fiche Google. Un site, ça sert à quoi ?</summary><p>La fiche vous fait apparaître sur la carte. Le site rassure ensuite celui qui hésite : vos réalisations, vos communes, vos délais. Les deux sont reliés, et la fiche renvoie vers le site.</p></details>
+        <details><summary>Je n'ai pas le temps d'écrire les textes.</summary><p>Vous n'écrivez rien. On les rédige à partir de 30 minutes au téléphone, et vous relisez.</p></details>
+        <details><summary>Est-ce que je pourrai modifier le site moi-même ?</summary><p>Oui, les textes et les photos. Une heure de prise en main est comprise. Sinon, avec le forfait à 29 €, vous nous écrivez et c'est fait.</p></details>
+        <details><summary>Que se passe-t-il si j'arrête l'abonnement ?</summary><p>Le site et le nom de domaine vous appartiennent. On vous remet vos textes, vos photos et l'accès au domaine pour que vous puissiez partir ailleurs.</p></details>
+        <details><summary>Vous travaillez seulement à Lyon ?</summary><p>Non. Tout se fait par téléphone et par mail, partout en France.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="end" id="devis">
+    <div class="wrap end-grid end-g">
+      <div>
+        <h2>Votre devis, demain<span class="dot">.</span></h2>
+        <p class="lead">Dites-nous en deux lignes ce que vous faites. Vous recevez un devis ferme sous 24 h : le prix ne bouge plus ensuite.</p>
+        <a class="tel" href="tel:+33786523681">07 86 52 36 81</a>
+        <p class="qui">Aurélien Ruotte, Novyance, Lyon 7e.</p>
+      </div>
+      {% form 'contact', id: 'f-site' %}
+        <input type="hidden" name="contact[Demande]" value="Site internet">
+        {%- if form.posted_successfully? -%}
+          <div class="ok-msg" role="status">Demande reçue. Votre devis arrive sous 24 h, par mail.</div>
+        {%- endif -%}
+        {%- if form.errors -%}
+          <div class="ok-msg err" role="alert">Une erreur s'est produite. Vérifiez votre adresse email, ou écrivez à contact@novyance.fr.</div>
+        {%- endif -%}
+        <div class="row2">
+          <label for="s-nom" hidden>Prénom et nom</label><input id="s-nom" name="contact[Nom]" placeholder="Prénom et nom" autocomplete="name" required>
+          <label for="s-met" hidden>Votre métier</label><input id="s-met" name="contact[Metier]" placeholder="Votre métier" required>
+        </div>
+        <div class="row2">
+          <label for="s-mail" hidden>Email</label><input id="s-mail" type="email" name="contact[email]" placeholder="Email" autocomplete="email" required>
+          <label for="s-tel" hidden>Téléphone</label><input id="s-tel" type="tel" name="contact[Telephone]" placeholder="Téléphone" autocomplete="tel">
+        </div>
+        <label for="s-site" hidden>Site actuel</label><input id="s-site" name="contact[Site actuel]" placeholder="Votre site actuel, s'il existe" inputmode="url">
+        <label for="s-msg" hidden>Votre besoin</label><textarea id="s-msg" name="contact[body]" placeholder="En deux lignes : ce que vous faites, où, et ce que le site doit vous apporter."></textarea>
+        <button class="btn" type="submit">Recevoir mon devis sous 24 h</button>
+        <p class="mini">Vos coordonnées servent seulement à vous répondre.</p>
+        <div class="hp" aria-hidden="true"><label for="f-site-hp">Ne pas remplir</label><input type="text" id="f-site-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+      {% endform %}
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>novyance<span class="dot">.</span> · SIRET 940 553 043 00032 · <a href="mailto:contact@novyance.fr">contact@novyance.fr</a></span>
+    <span><a href="/">Prospection à la commission</a> · <a href="/pages/site-internet-artisan">Site pour artisan</a> · <a href="/pages/creation-site-internet-lyon">Site à Lyon</a> · <a href="/pages/mentions-legales">Mentions légales</a></span>
+  </div>
+</footer>
+
+<script>
+  /* après l'envoi, Shopify recharge la page : on redescend sur le formulaire */
+  if (location.search.indexOf('contact_posted') > -1 || location.hash === '#contact_form') { var d = document.getElementById('devis'); if (d) d.scrollIntoView(); }
+</script>
+</body>
+</html>

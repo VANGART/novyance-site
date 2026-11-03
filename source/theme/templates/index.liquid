@@ -1,0 +1,896 @@
+{% layout none %}
+{%- comment -%} Accueil (refonte du 25/09). L'ancien accueil reste visible avec /?view=ancien. {%- endcomment -%}
+{%- assign nvblog = blogs['blog'] -%}
+{%- assign demo_fallback = '/pages/automatisation-ia-entreprise?view=' -%}
+{%- assign pg = pages['demo-atelier'] -%}{%- if pg.published_at != blank and pg.url != blank -%}{%- assign u_atelier = pg.url -%}{%- else -%}{%- assign u_atelier = demo_fallback | append: 'demo-atelier' -%}{%- endif -%}
+{%- assign pg = pages['demo-pilotage'] -%}{%- if pg.published_at != blank and pg.url != blank -%}{%- assign u_pilotage = pg.url -%}{%- else -%}{%- assign u_pilotage = demo_fallback | append: 'demo-pilotage' -%}{%- endif -%}
+{%- assign pg = pages['demo-commercial'] -%}{%- if pg.published_at != blank and pg.url != blank -%}{%- assign u_commercial = pg.url -%}{%- else -%}{%- assign u_commercial = demo_fallback | append: 'demo-commercial' -%}{%- endif -%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+<title>Novyance · outils sur mesure, automatisation et sites à Lyon</title>
+<meta name="description" content="Novyance, à Lyon : prospection et relances automatiques, pilotage, outils métier sur mesure pour TPE et PME. En place en une semaine, dès 590 €. Sites dès 490 €.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Novyance · Des outils et des automatisations qui font gagner des heures.">
+<meta property="og:description" content="Outils sur mesure, automatisation et IA utile, sites internet. En place en une semaine. Lyon et toute la France.">
+<meta property="og:site_name" content="Novyance">
+<meta property="og:image" content="https:{{ 'nv-og.png' | asset_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Novyance : des outils et des automatisations qui font gagner des heures">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https:{{ 'nv-og.png' | asset_url }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://novyance.fr/">
+<link rel="canonical" href="https://novyance.fr/">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ 'nv-favicon-48.png' | asset_url }}">
+<link rel="apple-touch-icon" href="{{ 'nv-apple-touch.png' | asset_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://novyance.fr/#novyance",
+  "name": "Novyance",
+  "description": "Outils métier sur mesure en abonnement (planning, pilotage, suivi commercial, prospection), automatisation et IA, formation des équipes, et sites internet pour artisans, ateliers, commerces, cabinets et PME. Basé à Lyon, intervient dans toute la France.",
+  "url": "https://novyance.fr/",
+  "email": "contact@novyance.fr",
+  "telephone": "+33786523681",
+  "founder": {"@type": "Person", "name": "Aurélien Ruotte"},
+  "logo": {{ 'nv-apple-touch.png' | asset_url | prepend: 'https:' | json }},
+  "image": {{ 'nv-og.png' | asset_url | prepend: 'https:' | json }},
+  "address": {"@type": "PostalAddress", "streetAddress": "304 avenue Jean Jaurès", "addressLocality": "Lyon", "postalCode": "69007", "addressCountry": "FR"},
+  "areaServed": [{"@type": "City", "name": "Lyon"}, {"@type": "Country", "name": "France"}],
+  "priceRange": "€€",
+  "makesOffer": [
+    {"@type": "Offer", "name": "Outil métier sur mesure", "description": "Mise en place à partir de 590 €, puis 89 € par mois, engagement 3 mois puis résiliable chaque mois", "price": "590", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": "Formation IA des équipes", "description": "Atelier pratique sur les vrais dossiers, jusqu'à 8 personnes : demi-journée à partir de 690 €, journée à partir de 1 190 €", "price": "690", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": "Formation des équipes à l'outil", "description": "Première session incluse dans la mise en place, sessions supplémentaires à partir de 190 €", "price": "190", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": "Optimisation opérationnelle", "description": "Diagnostic d'organisation et plan d'action chiffré, à partir de 690 €", "price": "690", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": "Accompagnement au changement", "description": "À partir de 290 € par mois", "price": "290", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": "Site vitrine sur mesure", "description": "Mise en place à partir de 490 €, puis 29 € par mois", "price": "490", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": "Boutique en ligne", "description": "Mise en place à partir de 690 €, puis 39 € par mois", "price": "690", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": "Visibilité et référencement", "description": "À partir de 99 € par mois, sans engagement", "price": "99", "priceCurrency": "EUR"}
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#F3F6FA; --bg2:#E9EEF5; --white:#FFFFFF;
+    --ink:#482719; --ink2:rgba(72,39,25,.72); --muted:rgba(72,39,25,.6); --soft:rgba(72,39,25,.42);
+    --hair:rgba(72,39,25,.12); --hair2:rgba(72,39,25,.07);
+    --orange:#FF681F; --rose:#FF9EBC; --rose-s:#FFE6EE; --orange-s:#FFF1EA;
+    --t:'Space Grotesk','DM Sans',system-ui,sans-serif; --b:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+    --e:cubic-bezier(.22,.61,.36,1);
+    --shadow:0 40px 80px -50px rgba(72,39,25,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;color-scheme:only light;}
+  @media (prefers-color-scheme: dark){ html,body{background:#F3F6FA !important;color:#482719 !important;} }
+  body{background:var(--bg);color:var(--ink);font-family:var(--b);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  b,strong{font-weight:600;}
+  h1,h2,h3{font-family:var(--t);font-weight:700;letter-spacing:-.025em;line-height:1.05;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .dot{color:var(--orange);}
+  .kick{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);}
+  .kick::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--orange);}
+  .btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--b);padding:16px 24px;border-radius:100px;background:var(--orange);color:var(--ink);border:0;cursor:pointer;text-decoration:none;transition:transform .3s var(--e),box-shadow .3s var(--e),background .3s;}
+  .btn:hover{background:#FF7A3A;transform:translateY(-2px);box-shadow:0 16px 30px -16px rgba(255,104,31,.8);}
+  .btn.ghost{background:var(--white);border:1px solid var(--hair);}
+  .btn.ghost:hover{background:var(--white);box-shadow:0 16px 30px -18px rgba(72,39,25,.35);}
+  .lk{font-weight:600;text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:2px;}
+  .sec{padding:110px 0;}
+  .sec-h{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:46px;}
+  .sec-h h2{font-size:clamp(32px,4.4vw,54px);margin-top:14px;}
+  .sec-h p{color:var(--ink2);font-size:17.5px;max-width:460px;}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .45s var(--e),transform .45s var(--e);}
+  .rv.in{opacity:1;transform:none;}
+  .hero .rv{opacity:1;transform:none;transition:none;}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* en-tête */
+  header{position:sticky;top:0;z-index:60;background:rgba(243,246,250,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s;}
+  header.sc{border-bottom-color:var(--hair2);}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;height:72px;gap:20px;}
+  .brand{font-family:var(--t);font-weight:700;font-size:23px;letter-spacing:-.04em;text-decoration:none;}
+  nav{display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500;}
+  nav a{text-decoration:none;color:var(--ink2);transition:color .2s;}
+  nav a:hover{color:var(--ink);}
+  nav .btn{padding:12px 20px;font-size:14px;color:var(--ink);}
+  .burger{display:none;width:46px;height:46px;border-radius:14px;border:1px solid var(--hair);background:var(--white);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;}
+  .burger i{display:block;width:18px;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s,opacity .25s;}
+  .burger[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger[aria-expanded="true"] i:nth-child(2){opacity:0;}
+  .burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  #mnav{display:none;}
+  .hero .alt{margin-top:18px;font-size:15px;color:var(--ink2);}
+  .site-c .go{margin-top:6px;font-size:14.5px;align-self:flex-start;}
+  .site-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;}
+  .site-steps div{background:var(--white);border:1px solid var(--hair2);border-radius:18px;padding:18px 20px;font-size:14.5px;color:var(--ink2);}
+  .site-steps b{display:block;font:700 16px/1.3 var(--t);color:var(--ink);margin-bottom:4px;}
+  .site-strip{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;margin-top:26px;padding:20px 26px;border-radius:22px;background:var(--ink);color:#fff;text-decoration:none;transition:transform .3s var(--e),box-shadow .3s var(--e);}
+  .site-strip:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+  .site-strip .ss-k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--rose);}
+  .site-strip .ss-t{font-size:15.5px;color:rgba(255,255,255,.82);}
+  .site-strip .ss-t b{color:#fff;font-family:var(--t);font-size:17px;display:block;margin-bottom:2px;}
+  .site-strip .ss-go{background:var(--orange);color:var(--ink);font-weight:600;font-size:14.5px;padding:12px 18px;border-radius:100px;white-space:nowrap;}
+  .site-cta{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:24px;}
+
+  /* ouverture */
+  .hero{position:relative;padding:70px 0 90px;overflow:hidden;}
+  .hero::before{content:'';position:absolute;right:-180px;top:-120px;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(255,158,188,.55),rgba(255,158,188,0) 62%);pointer-events:none;}
+  .hero::after{content:'';position:absolute;right:220px;bottom:-260px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,104,31,.16),rgba(255,104,31,0) 65%);pointer-events:none;}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:60px;align-items:center;}
+  .hero h1{font-size:clamp(44px,6.6vw,86px);margin:22px 0 26px;}
+  .hero h1 .hl{background:linear-gradient(transparent 68%,rgba(255,104,31,.32) 68%,rgba(255,104,31,.32) 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+  .hero .lead{font-size:19px;color:var(--ink2);max-width:540px;}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+  .me{display:flex;align-items:center;gap:14px;margin-top:40px;padding-top:26px;border-top:1px solid var(--hair);max-width:540px;}
+  .me .av{width:46px;height:46px;flex:0 0 46px;border-radius:14px;background:var(--rose);display:flex;align-items:center;justify-content:center;font:700 22px/1 var(--t);}
+  .me .av i{color:var(--orange);font-style:normal;}
+  .me p{font-size:14.5px;color:var(--ink2);line-height:1.45;}
+  .me b{color:var(--ink);}
+
+  /* assistant */
+  #bot{background:var(--white);border:1px solid var(--hair2);border-radius:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;height:580px;overflow:hidden;}
+  .bot-h{display:flex;gap:12px;align-items:center;padding:18px 20px;border-bottom:1px solid var(--hair2);}
+  .bot-av{width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:var(--rose);display:flex;align-items:center;justify-content:center;font:700 19px/1 var(--t);}
+  .bot-av i{color:var(--orange);font-style:normal;}
+  .bot-h b{display:block;font:700 16px/1.2 var(--t);}
+  .bot-h small{font-size:12.5px;color:var(--muted);}
+  .bot-h .on{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);}
+  .bot-h .on i{width:7px;height:7px;border-radius:50%;background:#3CB371;}
+  .bot-m{flex:1;overflow-y:auto;padding:18px 20px 8px;display:flex;flex-direction:column;gap:9px;}
+  .bm{max-width:88%;padding:11px 15px;border-radius:18px;font-size:15px;line-height:1.45;animation:bmi .35s ease both;}
+  .bm.a{background:var(--bg);border-bottom-left-radius:6px;align-self:flex-start;}
+  .bm.u{background:var(--ink);color:#fff;border-bottom-right-radius:6px;align-self:flex-end;}
+  .bm.ty{display:flex;gap:4px;padding:14px 15px;}
+  .bm.ty i{width:6px;height:6px;border-radius:50%;background:var(--soft);animation:bty 1s infinite;}
+  .bm.ty i:nth-child(2){animation-delay:.15s;}.bm.ty i:nth-child(3){animation-delay:.3s;}
+  @keyframes bmi{from{opacity:0;transform:translateY(6px);}}
+  @keyframes bty{50%{opacity:.3;}}
+  .bot-o{display:flex;flex-wrap:wrap;gap:7px;padding:8px 20px 14px;flex:0 0 auto;max-height:46%;overflow-y:auto;border-top:1px solid transparent;}
+  .bot-o:empty{display:none;}
+  .bot-m{min-height:0;}
+  .bm{flex-shrink:0;}
+  .bot-skip{border:0 !important;background:none !important;color:var(--muted) !important;text-decoration:underline;font-size:13px !important;padding:10px 6px !important;}
+  .bot-demo{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:1px;}
+  .bm .bot-demo + span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;}
+  .bot-recap{display:grid;gap:8px;}
+  .bot-recap b{font:700 15px/1.3 var(--t);}
+  .bot-recap ul{list-style:none;display:grid;gap:5px;margin:0;padding:0;}
+  .bot-recap li{display:block;position:relative;padding-left:22px;font-size:14.5px;}
+  .bot-recap li::before{content:'✓';color:var(--orange);font-weight:700;position:absolute;left:0;top:0;}
+  .bot-recap em{font-style:normal;font-size:13px;font-weight:600;color:var(--ink);background:var(--orange-s);border-radius:10px;padding:6px 10px;justify-self:start;}
+  .bm.a:has(.bot-recap){background:var(--white);border:1px solid var(--hair);max-width:94%;}
+  .bot-o button{font:500 14px/1 var(--b);padding:10px 14px;border-radius:100px;border:1px solid var(--hair);background:var(--white);color:var(--ink);cursor:pointer;transition:border-color .2s,background .2s;}
+  .bot-o button:hover{border-color:var(--orange);background:var(--orange-s);}
+  .bot-i{display:flex;gap:8px;padding:14px 16px;border-top:1px solid var(--hair2);}
+  .bot-i input{flex:1;min-width:0;border:0;background:var(--bg);border-radius:100px;padding:12px 18px;font:inherit;font-size:15px;color:var(--ink);}
+  .bot-i input:focus{outline:2px solid var(--rose);}
+  .bot-i button,.bot-f button{border:0;border-radius:100px;background:var(--orange);color:var(--ink);font:600 14px/1 var(--b);padding:0 20px;cursor:pointer;}
+  .bot-f{display:grid;gap:8px;margin-top:4px;animation:bmi .35s ease both;}
+  .bot-f input{border:1px solid var(--hair);border-radius:12px;padding:11px 14px;font:inherit;font-size:15px;color:var(--ink);background:var(--white);}
+  .bot-f input:focus{outline:none;border-color:var(--orange);}
+  .bot-f button{padding:14px 20px;}
+  .bot-f small{font-size:12px;color:var(--muted);}
+  .bot-r{background:none;border:0;font:inherit;font-size:12.5px;color:var(--muted);cursor:pointer;text-decoration:underline;padding:0;align-self:flex-start;}
+
+  /* bandeau chiffres */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
+  .facts div{padding:26px 24px 24px 0;}
+  .facts div+div{padding-left:24px;border-left:1px solid var(--hair);}
+  .facts b{display:block;font:700 30px/1 var(--t);letter-spacing:-.02em;margin-bottom:8px;}
+  .facts span{font-size:14px;color:var(--muted);}
+
+  /* avant / après */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .ba > div{border-radius:26px;padding:36px 36px 30px;}
+  .ba .before{background:var(--bg2);}
+  .ba .after{background:var(--ink);color:#fff;box-shadow:var(--shadow);}
+  .ba h3{font-size:24px;margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+  .ba ul{list-style:none;display:grid;gap:14px;}
+  .ba li{display:block;position:relative;padding-left:36px;font-size:16.5px;min-height:24px;}
+  .ba li::before{content:'';position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;}
+  .ba .before li{color:var(--ink2);}
+  .ba .before li::before{background:rgba(72,39,25,.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M7.5 7.5l7 7M14.5 7.5l-7 7' stroke='%23482719' stroke-opacity='.55' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center/100% no-repeat;}
+  .ba .after li::before{background:var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M6.5 11.5l3 3 6-7' fill='none' stroke='%23482719' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat;}
+  .ba .after .tag{margin-left:auto;font:600 12px/1 var(--b);letter-spacing:.08em;text-transform:uppercase;color:var(--rose);}
+
+  /* barre d'action téléphone */
+  .mbar{display:none;}
+  /* démos */
+  .demo-m,.demo-m-note{display:none;}
+  .demo-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+  .demo-tabs button{font:600 14.5px/1 var(--b);padding:12px 18px;border-radius:100px;border:1px solid var(--hair);background:var(--white);color:var(--ink2);cursor:pointer;transition:all .25s var(--e);}
+  .demo-tabs button span{font-weight:400;color:var(--muted);margin-left:6px;}
+  .demo-tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .demo-tabs button.on span{color:rgba(255,255,255,.6);}
+  .frame{background:var(--white);border:1px solid var(--hair2);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;}
+  .frame-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--hair2);background:#FBFCFE;}
+  .frame-bar i{width:10px;height:10px;border-radius:50%;background:var(--bg2);}
+  .frame-bar .url{margin:0 auto;font-size:12.5px;color:var(--muted);background:var(--bg);padding:6px 14px;border-radius:100px;}
+  .frame-bar a{font-size:13px;font-weight:600;text-decoration:none;color:var(--orange);white-space:nowrap;}
+  .frame iframe{display:block;width:100%;height:680px;border:0;background:var(--bg);}
+  .demo-note{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:18px;font-size:14.5px;color:var(--muted);}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px;}
+  .chips span{font-size:14px;padding:9px 15px;border-radius:100px;background:var(--white);border:1px solid var(--hair2);}
+  .chips span.x{background:var(--orange-s);border-color:transparent;font-weight:600;}
+
+  /* méthode et prix */
+  .mp{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;}
+  .steps{display:grid;gap:0;background:var(--white);border:1px solid var(--hair2);border-radius:26px;padding:12px 32px;}
+  .step{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:22px 0;}
+  .step+.step{border-top:1px solid var(--hair2);}
+  .step .n{width:44px;height:44px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font:700 16px/1 var(--t);}
+  .step b{font:700 19px/1.2 var(--t);display:block;margin:2px 0 6px;}
+  .step p{font-size:15px;color:var(--ink2);}
+  .price{background:var(--ink);color:#fff;border-radius:26px;padding:38px 36px;display:flex;flex-direction:column;box-shadow:var(--shadow);}
+  .price .from{font-size:14px;color:rgba(255,255,255,.6);}
+  .price .big{font:700 clamp(54px,6vw,76px)/1 var(--t);letter-spacing:-.04em;margin:6px 0 4px;}
+  .price .per{font-size:17px;color:rgba(255,255,255,.8);}
+  .price ul{list-style:none;margin:28px 0;display:grid;gap:11px;}
+  .price li{display:block;position:relative;padding-left:24px;font-size:15.5px;color:rgba(255,255,255,.88);}
+  .price li::before{content:'';position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange);}
+  .price .pilot{margin-top:auto;background:rgba(255,158,188,.14);border:1px solid rgba(255,158,188,.35);border-radius:16px;padding:14px 16px;font-size:14.5px;}
+  .price .pilot b{color:var(--rose);}
+  .price .btn{margin-top:18px;align-self:flex-start;}
+  .fine{font-size:13px;color:var(--soft);margin-top:16px;}
+
+  /* accompagnement */
+  .acc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .acc.acc4{grid-template-columns:repeat(2,1fr);}
+  .ia-more{margin-top:22px;font-size:15px;color:var(--ink2);}
+  .acc-c{background:var(--white);border:1px solid var(--hair2);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:10px;}
+  .acc-c .n{width:40px;height:40px;border-radius:12px;background:var(--rose-s);display:flex;align-items:center;justify-content:center;font:700 16px/1 var(--t);color:var(--ink);}
+  .acc-c h3{font-size:21px;}
+  .acc-c.fort{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .acc-c.fort p{color:rgba(255,255,255,.8);}
+  .acc-c.fort .n{background:var(--orange);}
+  .acc-c p{font-size:15px;color:var(--ink2);flex:1;}
+  .acc-c ul{list-style:none;display:grid;gap:6px;font-size:14.5px;color:var(--ink2);}
+  .acc-c li{display:block;position:relative;padding-left:18px;}
+  .acc-c li::before{content:'';position:absolute;left:1px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+  .acc-c .p{font:700 18px/1.2 var(--t);margin-top:6px;}
+  .acc-c .p small{font:500 14px/1 var(--b);color:var(--muted);}
+  /* sites */
+  .sites{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .site-c{background:var(--white);border:1px solid var(--hair2);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:10px;transition:transform .35s var(--e),box-shadow .35s var(--e);}
+  .site-c:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .site-c .k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted);}
+  .site-c h3{font-size:22px;}
+  .site-c p{font-size:15px;color:var(--ink2);flex:1;}
+  .site-c .p{font:700 20px/1.2 var(--t);margin-top:8px;}
+  .site-c .p small{font:500 14px/1 var(--b);color:var(--muted);}
+  .vs{display:flex;gap:28px;flex-wrap:wrap;align-items:center;margin-top:22px;padding:20px 26px;border-radius:18px;background:var(--bg2);font-size:15px;}
+  .vs b{font-family:var(--t);}
+  .vs .us{margin-left:auto;color:var(--ink);}
+  .vs .us b{color:var(--orange);}
+
+  /* réalisations */
+  .refs{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .ref{display:block;text-decoration:none;background:var(--white);border:1px solid var(--hair2);border-radius:24px;overflow:hidden;transition:transform .4s var(--e),box-shadow .4s var(--e);}
+  .ref:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+  .ref .shot{aspect-ratio:2/1;overflow:hidden;background:var(--bg2);}
+  .ref img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block;transition:transform .8s var(--e);}
+  .ref:hover img{transform:scale(1.03);}
+  .ref .meta{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 22px;}
+  .ref .meta b{font:700 18px/1.2 var(--t);}
+  .ref .meta span{display:block;font-size:14px;color:var(--muted);}
+  .ref .meta em{font-style:normal;font-weight:600;font-size:14px;color:var(--orange);white-space:nowrap;}
+
+  /* questions */
+  .faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;}
+  .faq h2{font-size:clamp(32px,4.4vw,54px);margin-top:14px;}
+  .faq details{border-bottom:1px solid var(--hair);padding:22px 0;}
+  .faq details:first-child{border-top:1px solid var(--hair);}
+  .faq summary{cursor:pointer;font:700 19px/1.3 var(--t);list-style:none;display:flex;justify-content:space-between;gap:16px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:'+';color:var(--orange);font-size:26px;line-height:.9;transition:transform .3s var(--e);}
+  .faq details[open] summary::after{transform:rotate(45deg);}
+  .faq details p{margin-top:12px;color:var(--ink2);font-size:16px;max-width:620px;}
+
+  /* contact */
+  .contact{background:var(--ink);color:#fff;border-radius:32px;padding:64px;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;}
+  .contact .kick{color:rgba(255,255,255,.6);}
+  .contact h2{font-size:clamp(34px,4.4vw,56px);margin:14px 0 18px;}
+  .contact p{color:rgba(255,255,255,.75);font-size:17px;}
+  .contact .direct{display:grid;gap:10px;margin-top:30px;}
+  .contact .direct a{font:700 21px/1.2 var(--t);text-decoration:none;}
+  .contact .direct a:hover{color:var(--rose);}
+  form#cf{display:grid;grid-template-columns:1fr 1fr;gap:18px 18px;background:var(--white);color:var(--ink);border-radius:22px;padding:30px;}
+  .fl{display:flex;flex-direction:column;}
+  .fl.full{grid-column:span 2;}
+  .fl label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:8px;}
+  .fl input,.fl textarea,.fl select{background:transparent;border:0;border-bottom:1.5px solid var(--hair);padding:8px 0;color:var(--ink);font:500 16px/1.4 var(--b);width:100%;border-radius:0;}
+  .fl select{appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23482719' stroke-width='1.6'/%3E%3C/svg%3E") right 2px center/12px no-repeat;padding-right:22px;}
+  .fl textarea{min-height:84px;resize:vertical;}
+  .fl input:focus,.fl textarea:focus,.fl select:focus{outline:none;border-color:var(--orange);}
+  .fl input::placeholder,.fl textarea::placeholder{color:var(--soft);font-weight:400;}
+  .f-sub{grid-column:span 2;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+  .f-note{font-size:12.5px;color:var(--muted);max-width:280px;}
+  .f-ok{grid-column:span 2;font-size:14.5px;background:#FFF2D0;padding:14px 16px;border-radius:12px;}
+  .hp{position:absolute;left:-5000px;}
+
+  /* pied */
+  footer{padding:80px 0 40px;}
+  footer .top{display:grid;grid-template-columns:1.2fr 2fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--hair);}
+  footer .big{font:700 clamp(46px,7vw,92px)/.9 var(--t);letter-spacing:-.05em;}
+  footer .tag{margin-top:14px;color:var(--muted);}
+  footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;font-size:14.5px;}
+  footer .cols b{display:block;font-family:var(--t);margin-bottom:12px;}
+  footer .cols a,footer .cols span{display:block;text-decoration:none;color:var(--ink2);margin-bottom:8px;}
+  footer .cols a:hover{color:var(--orange);}
+  footer .bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:13px;color:var(--muted);}
+  footer .bot button{background:none;border:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;}
+  dialog{border:0;border-radius:22px;padding:34px;max-width:560px;width:calc(100% - 32px);color:var(--ink);box-shadow:var(--shadow);}
+  dialog::backdrop{background:rgba(72,39,25,.35);backdrop-filter:blur(4px);}
+  dialog h3{font-size:24px;margin-bottom:14px;}
+  dialog h4{font:700 15px/1.3 var(--t);margin:16px 0 4px;}
+  dialog p{font-size:14.5px;color:var(--ink2);}
+  dialog .x{position:absolute;top:14px;right:16px;background:none;border:0;font-size:20px;cursor:pointer;color:var(--ink);}
+
+  @media (max-width:1000px){
+    nav a:not(.btn){display:none;}
+    nav{gap:10px;}
+    .burger{display:inline-flex;}
+    #mnav.open{display:block;position:fixed;top:72px;left:12px;right:12px;z-index:60;background:var(--white);border:1px solid var(--hair2);border-radius:20px;box-shadow:var(--shadow);padding:10px;max-height:calc(100vh - 90px);overflow:auto;}
+    #mnav a{display:block;padding:14px 16px;border-radius:12px;text-decoration:none;color:var(--ink);font-weight:600;font-size:16px;}
+    #mnav a:hover{background:var(--bg);}
+    #mnav a small{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:2px;}
+    .site-steps{grid-template-columns:1fr;}
+    .site-strip{grid-template-columns:1fr;gap:10px;padding:20px;}
+    .site-strip .ss-go{justify-self:start;}
+    .hero .wrap,.sec-h,.ba,.mp,.faq,.contact{grid-template-columns:1fr;}
+    .hero{padding:44px 0 70px;}
+    .hero .wrap{gap:40px;}
+    .sec{padding:80px 0;}
+    .sec-h{gap:14px;margin-bottom:32px;}
+    .facts{grid-template-columns:1fr 1fr;}
+    .facts div:nth-child(3){border-left:0;padding-left:0;}
+    .facts div:nth-child(n+3){border-top:1px solid var(--hair);}
+    .sites,.acc{grid-template-columns:1fr;}
+    .refs{grid-template-columns:1fr;}
+    .contact{padding:40px 28px;gap:36px;}
+    .frame iframe{height:600px;}
+    footer .top{grid-template-columns:1fr;}
+  }
+  @media (max-width:620px){
+    .wrap{padding:0 18px;}
+    body{font-size:16px;}
+    .hero h1{font-size:38px;overflow-wrap:break-word;}
+    .hero .lead{font-size:17.5px;}
+    #bot{height:auto;border-radius:22px;}
+    .bot-m{min-height:150px;max-height:360px;}
+    .acc.acc4{grid-template-columns:1fr;}
+    .ba > div{padding:28px 22px;}
+    .steps{padding:6px 20px;}
+    .price{padding:30px 24px;}
+    .frame-bar .url{display:none;}
+    .frame iframe{height:560px;}
+    .vs .us{margin-left:0;}
+    form#cf{grid-template-columns:1fr;padding:22px;}
+    .fl.full,.f-sub,.f-ok{grid-column:span 1;}
+    .contact{border-radius:24px;padding:32px 20px;}
+    footer .cols{grid-template-columns:1fr 1fr;}
+  }
+  /* téléphone (06/10/2026) : sections resserrées, cartes en carrousel qu'on fait glisser, cibles au doigt */
+  @media (max-width:760px){
+    .wrap{padding:0 20px;}
+    .sec{padding:56px 0;}
+    .hero{padding:26px 0 46px;}
+    .hero .wrap{gap:30px;}
+    .hero h1{margin:16px 0 18px;}
+    .hero .cta{margin-top:24px;gap:10px;}
+    .hero .cta .btn{flex:1 1 100%;justify-content:center;padding:17px 22px;}
+    .me{margin-top:26px;padding-top:20px;}
+    .sec-h{margin-bottom:22px;gap:10px;}
+    .sec-h h2,.faq h2{font-size:33px;margin-top:10px;}
+    .sec-h p{font-size:16px;}
+    #bot{border-radius:20px;}
+    .bot-h{padding:14px 16px;}
+    .bot-m{min-height:130px;max-height:300px;padding:14px 16px 6px;}
+    .bot-o{max-height:none;padding:6px 16px 12px;gap:6px;}
+    .bot-o button{padding:11px 13px;font-size:14px;}
+    .bot-i{padding:10px 12px;}
+    .bot-i input{font-size:16px;}
+    .facts b{font-size:25px;}
+    .facts div{padding:18px 12px 16px 0;}
+    .facts div+div{padding-left:14px;}
+    .facts span{font-size:13.5px;}
+    .ba{gap:12px;}
+    .ba > div{padding:24px 20px;border-radius:22px;}
+    .ba h3{font-size:21px;margin-bottom:16px;}
+    .ba li{font-size:15.5px;}
+    .acc,.acc.acc4,.sites,.refs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;gap:12px;margin:0 -20px;padding:4px 20px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;}
+    .acc::-webkit-scrollbar,.sites::-webkit-scrollbar,.refs::-webkit-scrollbar{display:none;}
+    .acc > *,.sites > *,.refs > *{flex:0 0 84%;scroll-snap-align:start;}
+    .acc .rv,.sites .rv,.refs .rv{opacity:1;transform:none;}
+    .acc-c,.site-c{padding:22px;border-radius:20px;}
+    .site-c:hover,.ref:hover{transform:none;}
+    .car-dots{display:flex;justify-content:center;gap:7px;margin-top:12px;}
+    .car-dots i{width:7px;height:7px;border-radius:50%;background:rgba(72,39,25,.18);transition:width .25s,background .25s;}
+    .car-dots i.on{width:20px;border-radius:4px;background:var(--orange);}
+    .ia-more{margin-top:16px;}
+    .lk{display:inline-block;padding:9px 0 3px;}
+    .mbar{display:grid;grid-template-columns:1fr 1.5fr;gap:8px;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:55;padding:8px;border-radius:100px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--hair2);box-shadow:0 18px 40px -18px rgba(72,39,25,.45);transform:translateY(140%);transition:transform .35s var(--e);}
+    .mbar.on{transform:none;}
+    .mbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:100px;font-weight:600;font-size:15px;text-decoration:none;color:var(--ink);}
+    .mb-tel{border:1px solid var(--hair);background:var(--white);}
+    .mb-go{background:var(--orange);}
+    .demo-d{display:none;}
+    .demo-m{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;gap:12px;margin:0 -20px;padding:4px 20px 6px;scrollbar-width:none;}
+    .demo-m::-webkit-scrollbar{display:none;}
+    .dm{flex:0 0 86%;scroll-snap-align:start;display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--white);border:1px solid var(--hair2);border-radius:22px;overflow:hidden;box-shadow:0 18px 40px -28px rgba(72,39,25,.45);}
+    .dm-ecran{background:#2F5D4C;color:#fff;margin:10px 10px 0;border-radius:16px;padding:18px 18px 16px;}
+    .dm-app{display:block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:12px;}
+    .dm-ecran b{display:block;font:700 46px/1 var(--t);letter-spacing:-.03em;}
+    .dm-ecran > span:not(.dm-app){display:block;font-size:14.5px;color:rgba(255,255,255,.85);margin:6px 0 12px;}
+    .dm-ecran ul{list-style:none;display:grid;gap:7px;font-size:14px;}
+    .dm-ecran li{position:relative;padding-left:22px;color:rgba(255,255,255,.92);}
+    .dm-ecran li::before{content:'✓';position:absolute;left:0;top:0;font-weight:700;color:#BFE3CF;}
+    .dm-pied{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px 18px;}
+    .dm-pied b{display:block;font:700 19px/1.2 var(--t);}
+    .dm-pied small{font-size:13.5px;color:var(--muted);}
+    .dm-go{background:var(--orange);font-weight:600;font-size:15px;padding:13px 20px;border-radius:100px;white-space:nowrap;}
+    .demo-m-note{display:block;font-size:14px;color:var(--muted);margin-top:14px;}
+    .demo-tabs{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px 14px;padding:0 20px 4px;scrollbar-width:none;}
+    .demo-tabs::-webkit-scrollbar{display:none;}
+    .demo-tabs button{flex:0 0 auto;padding:13px 16px;}
+    .frame{border-radius:18px;}
+    .frame-bar{padding:10px 14px;}
+    .frame-bar a{padding:8px 0;font-size:14px;}
+    .frame iframe{height:70vh;min-height:500px;max-height:640px;}
+    .demo-note{margin-top:12px;font-size:14px;}
+    .chips{margin-top:22px;}
+    .steps{padding:4px 18px;border-radius:22px;}
+    .step{grid-template-columns:38px 1fr;gap:12px;padding:16px 0;}
+    .step .n{width:34px;height:34px;font-size:14px;}
+    .step b{font-size:17.5px;}
+    .price{padding:28px 22px;border-radius:22px;}
+    .price .big{font-size:56px;}
+    .price ul{margin:20px 0;}
+    .price .btn{align-self:stretch;justify-content:center;}
+    .site-steps{gap:10px;}
+    .site-steps div{padding:14px 16px;}
+    .vs{gap:10px;padding:16px 18px;font-size:14.5px;}
+    .ref .meta{padding:14px 16px;}
+    .faq{gap:20px;}
+    .faq details{padding:0;}
+    .faq summary{font-size:17px;padding:16px 0;align-items:center;}
+    .faq details p{margin:0 0 16px;font-size:15.5px;}
+    .contact{padding:30px 20px;gap:28px;}
+    .contact h2{font-size:32px;}
+    .contact .direct a{display:inline-block;padding:6px 0;}
+    form#cf{gap:16px;}
+    .fl input,.fl textarea,.fl select{font-size:16px;padding:10px 0;}
+    .f-sub .btn{flex:1 1 100%;justify-content:center;}
+    footer{padding:44px 0 96px;}
+    footer .top{gap:26px;padding-bottom:26px;}
+    footer .big{font-size:54px;}
+    footer .cols{gap:6px 18px;}
+    footer .cols a,footer .cols span{padding:7px 0;margin:0;}
+    footer .bot{padding-top:16px;}
+    footer .bot a,footer .bot button{display:inline-block;padding:10px 0;}
+  }
+</style>
+{{ content_for_header }}
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap">
+    <a href="#top" class="brand">novyance<span class="dot">.</span></a>
+    <nav>
+      <a href="#automatisation">Automatisation</a>
+      <a href="#exemples">Exemples</a>
+      <a href="#prix">Prix</a>
+      <a href="#accompagnement">Formation</a>
+      <a href="#sites">Sites</a>
+      <a href="#contact" class="btn">Parlons-en</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
+    </nav>
+  </div>
+  <div id="mnav">
+    <a href="#automatisation">Automatisation et IA<small>Ce qui se répète, je l'automatise</small></a>
+    <a href="#exemples">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
+    <a href="#prix">Prix des outils<small>À partir de 590 €, puis 89 € par mois</small></a>
+    <a href="#accompagnement">Formation<small>Incluse avec chaque outil, et ateliers IA</small></a>
+    <a href="#sites">Création de site<small>Site vitrine dès 490 €, en ligne en 10 jours</small></a>
+    <a href="#questions">Questions</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kick">Outils sur mesure · Automatisation · Lyon et toute la France</span>
+      <h1>Des outils et des automatisations qui font <span class="hl">gagner des heures</span><span class="dot">.</span></h1>
+      <p class="lead">Planning, chiffres, devis, relances, prospection. Je construis l'outil qui colle à votre façon de travailler et j'automatise ce qui se répète, avec l'IA là où elle fait vraiment gagner du temps. En place en une semaine.</p>
+      <div class="cta">
+        <a href="#exemples" class="btn">Essayer un exemple</a>
+        <a href="tel:+33786523681" class="btn ghost">07 86 52 36 81</a>
+      </div>
+      <p class="alt">Il vous faut d'abord un site ? <a href="#sites" class="lk">Site vitrine dès 490 €, en ligne en 10 jours</a></p>
+      <div class="me">
+        <span class="av">n<i>.</i></span>
+        <p><b>Aurélien Ruotte, fondateur.</b> Je réponds moi-même sous 24 h, et je construis moi-même. Un seul interlocuteur, du premier message au suivi.</p>
+      </div>
+    </div>
+    <div class="rv" id="bot" aria-label="Décrire votre besoin">
+      <div class="bot-h"><span class="bot-av">n<i>.</i></span><div><b>Votre outil en 3 questions</b><small id="botstep">Réponse d'Aurélien sous 24 h</small></div><span class="on"><i></i>En ligne</span></div>
+      <div class="bot-m" id="botm" aria-live="polite"></div>
+      <div class="bot-o" id="boto"></div>
+      <form class="bot-i" id="boti" autocomplete="off"><input type="text" id="botin" placeholder="Ou écrivez librement…" aria-label="Votre réponse"><button type="submit">Envoyer</button></form>
+    </div>
+  </div>
+</section>
+
+<div class="wrap rv">
+  <div class="facts">
+    <div><b>1 semaine</b><span>pour la première brique, utilisable tout de suite</span></div>
+    <div><b>24 h</b><span>pour une réponse, de moi directement</span></div>
+    <div><b>1 écran</b><span>au lieu de quatre tableurs et d'un cahier</span></div>
+    <div><b>0 ressaisie</b><span>branché sur votre banque, vos mails, vos devis</span></div>
+  </div>
+</div>
+
+<div class="wrap rv">
+  <a class="site-strip" href="#sites">
+    <span class="ss-k">Création de site</span>
+    <span class="ss-t"><b>Il vous faut d'abord un site qui fait sonner le téléphone ?</b> Site vitrine à partir de 490 €, en ligne en 10 jours, textes écrits avec vous. Il vous appartient.</span>
+    <span class="ss-go">Voir les sites →</span>
+  </a>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><span class="kick">Ce qui change</span><h2>Moins de fichiers. Plus de temps<span class="dot">.</span></h2></div>
+      <p>Pas un logiciel de plus à apprendre. Un outil qui reprend vos habitudes et enlève ce qui vous fait perdre du temps.</p>
+    </div>
+    <div class="ba">
+      <div class="before rv">
+        <h3>Aujourd'hui</h3>
+        <ul>
+          <li>Un Excel par sujet, que personne n'ose toucher</li>
+          <li>Le planning sur un tableau blanc ou dans une tête</li>
+          <li>Les infos qui se perdent dans WhatsApp</li>
+          <li>Les devis relancés quand on y pense</li>
+          <li>Les chiffres du mois connus trop tard pour agir</li>
+        </ul>
+      </div>
+      <div class="after rv">
+        <h3>Avec votre outil<span class="tag">Sur mesure</span></h3>
+        <ul>
+          <li>Un seul écran, à jour, lisible sur le téléphone</li>
+          <li>Chacun voit ce qui le concerne, d'un coup d'œil</li>
+          <li>Les informations saisies une fois, arrivées partout</li>
+          <li>Les relances qui partent au bon moment</li>
+          <li>Vos chiffres prêts le 1er du mois</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="automatisation" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><span class="kick">Automatisation et IA</span><h2>Ce qui se répète, je l'automatise<span class="dot">.</span></h2></div>
+      <p>L'IA, ce n'est pas un robot qui parle. C'est le client trouvé pendant que vous travaillez, le devis que vous ne faites plus à 21 h et la relance qui part sans que vous y pensiez. Tout peut tourner seul, ou attendre votre feu vert : c'est vous qui choisissez.</p>
+    </div>
+    <div class="acc">
+      <div class="acc-c rv fort"><span class="n">1</span><h3>Prospection et relances automatiques</h3><p>Chaque semaine, l'outil trouve les entreprises qui ont besoin de vous, leur écrit un message personnel, relance au bon moment et range les réponses. Tout part seul : vous n'ouvrez que les conversations qui s'intéressent.</p></div>
+      <div class="acc-c rv fort"><span class="n">2</span><h3>Pilotage en direct</h3><p>Ventes, dépenses, trésorerie et objectifs sur un seul écran, à jour tout seul depuis la banque et vos devis. Vous savez où vous en êtes sans ouvrir un tableur.</p></div>
+      <div class="acc-c rv"><span class="n">3</span><h3>Atelier et production</h3><p>Planning de la semaine prêt en quelques minutes, chaque commande suivie étape par étape, clients prévenus à chaque avancée, achats commandés avant la rupture.</p></div>
+      <div class="acc-c rv"><span class="n">4</span><h3>Boîte mail triée</h3><p>Chaque matin, les demandes sont classées, les réponses simples préparées, les urgences en haut.</p></div>
+      <div class="acc-c rv"><span class="n">5</span><h3>Comptes rendus</h3><p>Un vocal de quelques secondes après un chantier ou un rendez-vous devient un compte rendu propre, envoyé et classé.</p></div>
+      <div class="acc-c rv"><span class="n">6</span><h3>Devis et factures</h3><p>Vous dictez le devis en sortant du rendez-vous, il est chiffré depuis vos prix et part à vos couleurs. Devis en attente et factures impayées sont relancés tout seuls, dans votre ton.</p></div>
+    </div>
+    <p class="ia-more rv">Je vous dis aussi où l'IA ne sert à rien chez vous. <a href="/pages/automatisation-ia-entreprise" class="lk">Tout savoir sur l'automatisation et l'IA</a></p>
+  </div>
+</section>
+
+<section class="sec" id="exemples" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><span class="kick">Exemples</span><h2>À essayer vraiment<span class="dot">.</span></h2></div>
+      <p>Trois outils complets avec des données fictives. Cliquez partout : c'est exactement ce que vos équipes auraient sous la main.</p>
+    </div>
+    <div class="demo-m">
+      <a class="dm" href="{{ u_atelier }}">
+        <div class="dm-ecran"><span class="dm-app">Menuiserie Arnaud · Atelier</span><b>96 %</b><span>des commandes livrées à l'heure ce mois-ci</span><ul><li>Planning de la semaine prêt en 2 minutes</li><li>Clients prévenus par SMS à chaque étape</li><li>Achats et stock suivis sans tableur</li></ul></div>
+        <div class="dm-pied"><div><b>Atelier</b><small>planning, machines, achats</small></div><span class="dm-go">Essayer</span></div>
+      </a>
+      <a class="dm" href="{{ u_pilotage }}">
+        <div class="dm-ecran"><span class="dm-app">Menuiserie Arnaud · Pilotage</span><b>91 %</b><span>de l'objectif de l'année atteint, au jour près</span><ul><li>Trésorerie prévue au 31 décembre</li><li>Prévisionnel qui se met à jour seul</li><li>Charges et marges lisibles en un écran</li></ul></div>
+        <div class="dm-pied"><div><b>Chiffres</b><small>trésorerie, prévisionnel</small></div><span class="dm-go">Essayer</span></div>
+      </a>
+      <a class="dm" href="{{ u_commercial }}">
+        <div class="dm-ecran"><span class="dm-app">Menuiserie Arnaud · Commercial</span><b>34 %</b><span>de réponses sur les messages envoyés</span><ul><li>Nouveaux prospects trouvés chaque nuit</li><li>Messages prêts, vous relisez et validez</li><li>Relances qui partent au bon moment</li></ul></div>
+        <div class="dm-pied"><div><b>Commercial</b><small>relances, prospection</small></div><span class="dm-go">Essayer</span></div>
+      </a>
+    </div>
+    <p class="demo-m-note">Données fictives. Chaque démo s'ouvre en plein écran, comme l'outil sur votre téléphone.</p>
+    <div class="rv demo-d">
+      <div class="demo-tabs" role="tablist">
+        <button class="on" role="tab" aria-selected="true" data-src="{{ u_atelier }}" data-full="/pages/demo-atelier" data-url="atelier">Atelier <span>planning, machines, achats</span></button>
+        <button role="tab" aria-selected="false" data-src="{{ u_pilotage }}" data-full="/pages/demo-pilotage" data-url="chiffres">Chiffres <span>trésorerie, prévisionnel</span></button>
+        <button role="tab" aria-selected="false" data-src="{{ u_commercial }}" data-full="/pages/demo-commercial" data-url="commercial">Commercial <span>relances, prospection</span></button>
+      </div>
+      <div class="frame">
+        <div class="frame-bar"><i></i><i></i><i></i><span class="url" id="durl">votre-entreprise.novyance.fr/atelier</span><a id="dfull" href="{{ u_atelier }}" target="_blank" rel="noopener">Plein écran ↗</a></div>
+        <iframe id="dframe" title="Démo interactive Novyance" loading="lazy" data-src="{{ u_atelier }}"></iframe>
+      </div>
+      <div class="demo-note"><span>Données fictives. Vos écrans reprennent votre vocabulaire, vos étapes et vos couleurs.</span><a href="/pages/outils-metier" class="lk">Tout savoir sur les outils</a></div>
+    </div>
+    <div class="chips rv">
+      <span>Planning d'équipe</span><span>Suivi de production</span><span>Achats et stock</span><span>Trésorerie</span><span>Devis dictés</span><span>Factures et relances</span><span>Prospection</span><span>Prise de rendez-vous</span><span>Comptes rendus</span><span class="x">Et ce qui vous est propre</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="prix" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><span class="kick">Méthode et prix</span><h2>Rapide, simple, connu d'avance<span class="dot">.</span></h2></div>
+      <p>Pas de projet de six mois. Une brique qui sert tout de suite, puis la suivante quand celle-là tourne vraiment.</p>
+    </div>
+    <div class="mp">
+      <div class="steps rv">
+        <div class="step"><span class="n">1</span><div><b>Diagnostic de 30 minutes</b><p>Offert. On liste ce qui vous coûte le plus de temps, et ce que ça représente en euros.</p></div></div>
+        <div class="step"><span class="n">2</span><div><b>Première brique en une semaine</b><p>Celle qui vous soulage le plus, formée sur vos vrais dossiers.</p></div></div>
+        <div class="step"><span class="n">3</span><div><b>On empile quand vous voulez</b><p>La brique suivante arrive quand la précédente tourne. Jamais l'inverse.</p></div></div>
+      </div>
+      <div class="price rv">
+        <span class="from">Votre outil sur mesure, à partir de</span>
+        <span class="big">590 €</span>
+        <span class="per">de mise en place, puis 89 € par mois</span>
+        <ul>
+          <li><b>Formation de votre équipe incluse</b> : je ne livre pas un outil pour disparaître</li>
+          <li>Hébergement, maintenance et assistance compris</li>
+          <li>Prix par entreprise, pas par utilisateur</li>
+          <li>Engagement 3 mois, puis résiliable chaque mois</li>
+          <li>Vos données exportables à tout moment</li>
+        </ul>
+        <div class="pilot"><b>Offre pilote :</b> mise en place à -50 % pour les 3 premiers clients, en échange d'un témoignage.</div>
+        <a href="#top" class="btn">Décrire mon besoin</a>
+      </div>
+    </div>
+    <p class="fine rv">Prix nets, TVA non applicable (art. 293 B du CGI). Le prix final dépend de la taille de l'équipe et des briques, annoncé au devis sous 24 h.</p>
+  </div>
+</section>
+
+<section class="sec" id="accompagnement">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><span class="kick">Formation et accompagnement</span><h2>Un outil ne sert que s'il est adopté<span class="dot">.</span></h2></div>
+      <p>La technique, c'est la moitié du travail. L'autre moitié, c'est votre équipe : lui apprendre à se servir de l'outil et de l'IA au quotidien, la rassurer, et changer les habitudes sans casser ce qui marche.</p>
+    </div>
+    <div class="acc acc4">
+      <div class="acc-c rv"><span class="n">1</span><h3>Former votre équipe à l'IA</h3><p>Des ateliers pratiques sur vos vrais dossiers : rédiger un devis, trier ses mails, préparer une relance, résumer une réunion. Chacun repart avec ses modèles, prêts à servir le lendemain.</p><ul><li>Demi-journée ou journée, jusqu'à 8 personnes</li><li>Un point d'une heure un mois après</li></ul><span class="p">690 € <small>la demi-journée, à partir de</small></span></div>
+      <div class="acc-c rv"><span class="n">2</span><h3>Formation à l'outil, incluse</h3><p>Avec chaque outil, je forme votre équipe sur vos vrais dossiers, en visio ou chez vous. Je ne livre pas un outil pour vous laisser seul avec : chacun repart en sachant faire ce qui le concerne, et je reste joignable ensuite.</p><ul><li>Première formation comprise dans la mise en place</li><li>Guides courts, en images, pour les nouveaux</li></ul><span class="p">Incluse <small>puis 190 € la session supplémentaire, à partir de</small></span></div>
+      <div class="acc-c rv"><span class="n">3</span><h3>Optimisation opérationnelle</h3><p>Je regarde comment votre entreprise tourne vraiment : qui fait quoi, avec quels outils, où le temps et l'argent se perdent. Vous repartez avec un plan d'action chiffré, que vous menez avec ou sans moi.</p><ul><li>Observation et entretiens avec l'équipe</li><li>Plan d'action par priorités, gains estimés</li></ul><span class="p">690 € <small>à partir de</small></span></div>
+      <div class="acc-c rv"><span class="n">4</span><h3>Accompagner le changement</h3><p>Présenter l'outil à l'équipe, lever les freins, désigner un référent et suivre l'adoption les premières semaines.</p><ul><li>Point régulier avec vous et le référent</li><li>Ajustements au fil de l'usage réel</li></ul><span class="p">290 € <small>par mois, à partir de</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sites" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><span class="kick">Création de site</span><h2>Et le site qui fait rentrer les clients<span class="dot">.</span></h2></div>
+      <p>Pas besoin d'un outil pour commencer. Si ce qu'il vous faut, c'est un site qui fait sonner le téléphone, je le fais aussi : en ligne en 10 jours, puis il monte sur Google mois après mois.</p>
+    </div>
+    <div class="sites">
+      <div class="site-c rv"><span class="k">Site vitrine</span><h3>Un site qui ramène des clients.</h3><p>5 pages sur mesure, textes écrits avec vous, relié à votre fiche Google. Hébergement et suivi compris.</p><span class="p">490 € <small>à partir de, puis 29 €/mois</small></span><a href="/pages/creation-site-internet-lyon" class="lk go">Ce que comprend le site</a></div>
+      <div class="site-c rv"><span class="k">Boutique en ligne</span><h3>Une boutique qui vend pendant que vous servez.</h3><p>Paiement, livraison ou retrait en magasin, stock et factures automatiques.</p><span class="p">690 € <small>à partir de, puis 39 €/mois</small></span><a href="/pages/boutique-en-ligne-commercant" class="lk go">Voir la boutique en détail</a></div>
+      <div class="site-c rv"><span class="k">Visibilité</span><h3>Un site qui monte sur Google.</h3><p>Articles ciblés sur ce que vos clients cherchent, fiche Google entretenue, positions suivies.</p><span class="p">99 € <small>par mois, à partir de, sans engagement</small></span><a href="/pages/site-internet-artisan" class="lk go">L'exemple des artisans</a></div>
+    </div>
+    <div class="vs rv"><span>Site vitrine en agence : <b>1 500 à 4 000 €</b></span><span>Délai courant : <b>6 à 10 semaines</b></span><span class="us">Ici : <b>dès 490 € · 10 jours</b></span></div>
+    <div class="site-steps rv">
+      <div><b>1. Un échange de 30 minutes</b>Votre métier, vos clients, votre zone. Pas de page blanche à remplir.</div>
+      <div><b>2. J'écris et je construis</b>Les textes sont rédigés avec vous, vous relisez et vous corrigez.</div>
+      <div><b>3. En ligne en 10 jours</b>Vous êtes propriétaire du site et du nom de domaine. Une heure de formation pour le modifier vous-même.</div>
+    </div>
+    <div class="site-cta rv"><a href="#contact" class="btn" data-besoin="Un site vitrine (dès 490 €)">Demander mon site</a><a href="#contact" class="lk" data-besoin="Une boutique en ligne (dès 690 €)">Plutôt une boutique en ligne</a></div>
+  </div>
+</section>
+
+<section class="sec" id="realisations" style="padding-top:0;background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><span class="kick">Réalisations</span><h2>Deux studios que je fais tourner au quotidien<span class="dot">.</span></h2></div>
+      <p>Site, boutique, pilotage et prospection : tout est de moi, et tourne tous les jours.</p>
+    </div>
+    <div class="refs">
+      <a class="ref rv" href="https://vangart.fr" target="_blank" rel="noopener"><div class="shot"><picture><source srcset="{{ 'novyance-ref-vangart-2.webp' | asset_url }}" type="image/webp"><img src="{{ 'novyance-ref-vangart-2.jpg' | asset_url }}" alt="Catalogue en ligne du studio VANGART" loading="lazy" decoding="async" width="1568" height="783"></picture></div><div class="meta"><div><b>VANGART</b><span>Studio d'édition d'art, vendu dans le monde entier</span></div><em>Voir ↗</em></div></a>
+      <a class="ref rv" href="https://www.studio-gota.com" target="_blank" rel="noopener"><div class="shot"><picture><source srcset="{{ 'novyance-ref-gota-2.webp' | asset_url }}" type="image/webp"><img src="{{ 'novyance-ref-gota-2.jpg' | asset_url }}" alt="Page d'accueil de Studio Göta" loading="lazy" decoding="async" width="1568" height="720"></picture></div><div class="meta"><div><b>Studio Göta</b><span>Objets et éditions d'artistes, conçu depuis Lyon</span></div><em>Voir ↗</em></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="questions">
+  <div class="wrap faq">
+    <div class="rv"><span class="kick">Questions</span><h2>Ce qu'on me demande souvent<span class="dot">.</span></h2></div>
+    <div class="rv">
+      <details><summary>Pourquoi pas Odoo ou un logiciel du marché ?</summary><p>Ils sont faits pour tout le monde : des dizaines d'écrans, un abonnement par utilisateur, des semaines de paramétrage. Ici l'outil ne contient que ce qui vous sert, et la première brique est en place en une semaine.</p></details>
+      <details><summary>À qui appartiennent mes données ?</summary><p>À vous. Vous pouvez les exporter en entier à tout moment, et vous repartez avec si vous arrêtez.</p></details>
+      <details><summary>Et si mon équipe ne s'y met pas ?</summary><p>Côté équipe, quelques gros boutons sur le téléphone. La formation se fait sur vos vrais dossiers, et une brique que personne n'utilise, on la retire.</p></details>
+      <details><summary>La formation est-elle comprise ?</summary><p>Oui. Chaque mise en place comprend la formation de votre équipe sur vos vrais dossiers. Je ne livre pas un outil pour disparaître : je reste joignable, et la maintenance est comprise dans l'abonnement.</p></details>
+      <details><summary>Je veux seulement un site, c'est possible ?</summary><p>Bien sûr. Beaucoup commencent par là. Site vitrine à partir de 490 €, en ligne en 10 jours, textes écrits avec vous. Vous êtes propriétaire du site et du nom de domaine.</p></details>
+      <details><summary>Je peux arrêter quand je veux ?</summary><p>Après les 3 premiers mois, oui, d'un mois sur l'autre avec un mois de préavis. Vous gardez vos données.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="contact rv">
+      <div>
+        <span class="kick">Contact</span>
+        <h2>Parlons de votre projet<span class="dot">.</span></h2>
+        <p>Deux lignes suffisent. Vous avez une réponse sous 24 heures, et un premier échange de 30 minutes offert, sans engagement.</p>
+        <div class="direct">
+          <a href="tel:+33786523681">07 86 52 36 81</a>
+          <a href="mailto:contact@novyance.fr">contact@novyance.fr</a>
+        </div>
+      </div>
+      {% form 'contact', id: 'cf' %}
+        <div class="fl"><label for="nom">Nom</label><input type="text" id="nom" name="contact[Nom]" placeholder="Votre nom" required></div>
+        <div class="fl"><label for="mail">Email</label><input type="email" id="mail" name="contact[email]" placeholder="vous@exemple.fr" required></div>
+        <div class="fl"><label for="tel">Téléphone <small style="font-weight:400;color:var(--muted)">(facultatif)</small></label><input type="tel" id="tel" name="contact[Telephone]" placeholder="06 00 00 00 00"></div>
+        <div class="fl"><label for="soc">Entreprise</label><input type="text" id="soc" name="contact[Societe]" placeholder="Votre activité"></div>
+        <div class="fl full"><label for="bes">Votre besoin</label>
+          <select id="bes" name="contact[Besoin]">
+            <option>Un outil pour mon atelier ou mes chantiers</option>
+            <option>Un tableau de bord de mes chiffres</option>
+            <option>Prospection et suivi commercial</option>
+            <option>Automatiser une tâche avec l'IA</option>
+            <option>Former mon équipe à l'IA</option>
+            <option>Formation ou accompagnement à l'outil</option>
+            <option>Un site vitrine (dès 490 €)</option>
+            <option>Une boutique en ligne (dès 690 €)</option>
+            <option>Visibilité et référencement (dès 99 €/mois)</option>
+            <option>Je ne sais pas encore (diagnostic offert)</option>
+          </select>
+        </div>
+        <div class="fl full"><label for="msg">Votre situation</label><textarea id="msg" name="contact[body]" placeholder="Ce que vous voulez obtenir, ou ce qui vous fait perdre du temps aujourd'hui"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="hp">Ne pas remplir</label><input type="text" id="hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+        <div class="f-sub"><span class="f-note">Vos informations servent uniquement à répondre à votre demande.</span><button type="submit" class="btn">Envoyer</button></div>
+        {% if form.posted_successfully %}<div class="f-ok">Demande envoyée. Réponse sous 24 heures ouvrées.</div><script>addEventListener('DOMContentLoaded',()=>document.getElementById('contact').scrollIntoView());</script>{% endif %}
+        {% if form.errors %}<div class="f-ok" style="background:rgba(192,69,47,.1)">Une erreur s'est produite. Vérifiez votre adresse email, ou écrivez-moi à contact@novyance.fr.</div><script>addEventListener('DOMContentLoaded',()=>document.getElementById('contact').scrollIntoView());</script>{% endif %}
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div><div class="big">novyance<span class="dot">.</span></div><p class="tag">Outils sur mesure, automatisation et sites pour TPE et PME. Lyon.</p></div>
+      <div class="cols">
+        <div><b>Outils</b><a href="/pages/outils-metier">Outils métier sur mesure</a><a href="/pages/application-pilotage-sur-mesure">Application de pilotage</a><a href="/pages/crm-sur-mesure">CRM sur mesure</a><a href="/pages/prospection-automatisee">Prospection automatisée</a><a href="/pages/automatisation-ia-entreprise">Automatisation et IA</a><a href="#accompagnement">Formation</a></div>
+        <div><b>Sites</b><a href="/pages/creation-site-internet-lyon">Création de site à Lyon</a><a href="/pages/site-internet-artisan">Site pour artisan</a><a href="/pages/boutique-en-ligne-commercant">Boutique en ligne</a>{% if nvblog.articles_count > 0 %}<a href="{{ nvblog.url }}">Blog</a>{% endif %}</div>
+        <div><b>Contact</b><a href="/pages/apporteurs-affaires">Devenir apporteur d'affaires</a><a href="tel:+33786523681">07 86 52 36 81</a><a href="mailto:contact@novyance.fr">contact@novyance.fr</a><span>Lyon · toute la France</span></div>
+      </div>
+    </div>
+    <div class="bot">
+      <span>Aurélien Ruotte · Novyance · © {{ 'now' | date: '%Y' }}</span>
+      <span>{%- assign ml = pages['mentions-legales'] -%}{% if ml.published_at != blank and ml.url != blank %}<a href="{{ ml.url }}" style="color:inherit">Mentions légales</a>{% else %}<button type="button" data-dlg="ml">Mentions légales</button>{% endif %} · <button type="button" data-dlg="pc">Confidentialité</button></span>
+    </div>
+  </div>
+</footer>
+
+<dialog id="ml">
+  <button class="x" data-close aria-label="Fermer">✕</button>
+  <h3>Mentions légales</h3>
+  <h4>Éditeur</h4><p>Aurélien Ruotte, entrepreneur individuel exerçant sous le nom commercial Novyance. SIRET 940 553 043 00032. Siège : 304 avenue Jean Jaurès, 69007 Lyon. Contact : contact@novyance.fr · 07 86 52 36 81.</p>
+  <h4>Directeur de la publication</h4><p>Aurélien Ruotte.</p>
+  <h4>TVA</h4><p>TVA non applicable, article 293 B du Code général des impôts.</p>
+  <h4>Hébergement</h4><p>Shopify International Ltd, Victoria Buildings, 1-2 Haddington Road, Dublin 4, D04 XN32, Irlande.</p>
+</dialog>
+<dialog id="pc">
+  <button class="x" data-close aria-label="Fermer">✕</button>
+  <h3>Politique de confidentialité</h3>
+  <h4>Responsable</h4><p>Aurélien Ruotte (Novyance) · contact@novyance.fr.</p>
+  <h4>Données collectées</h4><p>Via le formulaire et l'assistant : nom, email, téléphone, entreprise, besoin et message.</p>
+  <h4>Finalités</h4><p>Répondre aux demandes et exécuter les prestations commandées.</p>
+  <h4>Conservation</h4><p>Trois ans après le dernier contact. Dix ans pour les pièces comptables.</p>
+  <h4>Vos droits</h4><p>Accès, rectification, effacement et opposition à contact@novyance.fr. Réclamation possible auprès de la CNIL.</p>
+  <h4>Cookies</h4><p>Aucun cookie de suivi publicitaire.</p>
+</dialog>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  /* apparitions */
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:0, rootMargin:'0px 0px 120px 0px'});
+    $$('.rv').forEach(el => io.observe(el));
+  } else $$('.rv').forEach(el => el.classList.add('in'));
+  /* menu mobile */
+  const bg = $('#burger'), mn = $('#mnav');
+  if(bg && mn){
+    bg.addEventListener('click', () => { const o = mn.classList.toggle('open'); bg.setAttribute('aria-expanded', o); });
+    mn.addEventListener('click', e => { if(e.target.closest('a')){ mn.classList.remove('open'); bg.setAttribute('aria-expanded', 'false'); } });
+  }
+  /* boutons qui préremplissent le besoin du formulaire */
+  document.addEventListener('click', e => { const a = e.target.closest('[data-besoin]'); const sel = $('#bes'); if(a && sel) sel.value = a.dataset.besoin; });
+  /* en-tête */
+  const hd = $('#hd'); addEventListener('scroll', () => hd.classList.toggle('sc', scrollY > 10), {passive:true});
+  /* démos : chargées seulement quand on arrive dessus */
+  const fr = $('#dframe'), url = $('#durl'), full = $('#dfull');
+  /* Shopify interdit d'afficher ses pages dans un cadre : on charge la démo puis on l'injecte */
+  const show = src => fetch(src, {credentials:'same-origin'}).then(r => r.text())
+    .then(h => { fr.srcdoc = h.replace('</head>', '<style>.nv-back{display:none!important}</style></head>'); })
+    .catch(() => { fr.removeAttribute('srcdoc'); fr.src = src; });
+  let loaded = false;
+  const load = () => { if(!loaded){ loaded = true; show(fr.dataset.src); } };
+  /* sur téléphone, les démos s'ouvrent en plein écran depuis des cartes : le cadre n'est pas chargé */
+  if(matchMedia('(max-width:760px)').matches){ /* rien */ }
+  else if('IntersectionObserver' in window){
+    new IntersectionObserver((es, o) => es.forEach(e => { if(e.isIntersecting){ load(); o.disconnect(); } }), {rootMargin:'300px'}).observe(fr);
+  } else load();
+  $$('.demo-tabs button').forEach(b => b.addEventListener('click', () => {
+    $$('.demo-tabs button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+    loaded = true; show(b.dataset.src); full.href = b.dataset.src; url.textContent = 'votre-entreprise.novyance.fr/' + b.dataset.url;
+  }));
+  /* mentions */
+  $$('[data-dlg]').forEach(b => b.addEventListener('click', () => { const d = document.getElementById(b.dataset.dlg); if(d.showModal) d.showModal(); }));
+  $$('dialog [data-close]').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
+  $$('dialog').forEach(d => d.addEventListener('click', e => { if(e.target === d) d.close(); }));
+  /* anti-robot du formulaire */
+  const cf = $('#cf'); if(cf) cf.addEventListener('submit', e => { const hp = $('#hp'); if(hp && hp.value) e.preventDefault(); });
+})();
+</script>
+<script src="{{ 'nv-bot.js' | asset_url }}" defer></script>
+
+<script>
+  // carrousels sur téléphone : des points sous chaque rangée de cartes, celui de la carte visible en orange
+  (function(){
+    var mq = matchMedia('(max-width:760px)');
+    document.querySelectorAll('.acc, .sites, .refs, .demo-m').forEach(function(c){
+      var n = c.children.length; if (n < 2) return;
+      var d = document.createElement('div'); d.className = 'car-dots'; d.setAttribute('aria-hidden', 'true');
+      for (var i = 0; i < n; i++) d.appendChild(document.createElement('i'));
+      c.after(d);
+      function maj(){
+        d.style.display = mq.matches ? '' : 'none';
+        var w = c.children[0].getBoundingClientRect().width + 12, k = Math.round(c.scrollLeft / w);
+        if (c.scrollLeft + c.clientWidth >= c.scrollWidth - 4) k = n - 1;
+        [].forEach.call(d.children, function(x, j){ x.classList.toggle('on', j === k); });
+      }
+      c.addEventListener('scroll', function(){ requestAnimationFrame(maj); }, {passive: true});
+      mq.addEventListener ? mq.addEventListener('change', maj) : mq.addListener(maj);
+      maj();
+    });
+  })();
+</script>
+<div class="mbar" id="mbar" aria-hidden="true" inert><a href="tel:+33786523681" class="mb-tel">Appeler</a><a href="#contact" class="mb-go">Décrire mon besoin</a></div>
+<script>
+  // barre d'action sur téléphone : visible après le haut de page, cachée sur le formulaire de contact
+  (function(){
+    var b = document.getElementById('mbar'), hero = document.querySelector('.hero'), ct = document.getElementById('contact');
+    if (!b || !hero || !('IntersectionObserver' in window)) return;
+    var apresHero = false, surContact = false;
+    function maj(){ var on = apresHero && !surContact; b.classList.toggle('on', on); b.setAttribute('aria-hidden', on ? 'false' : 'true'); b.inert = !on; }
+    new IntersectionObserver(function(e){ apresHero = !e[0].isIntersecting; maj(); }).observe(hero);
+    if (ct) new IntersectionObserver(function(e){ surContact = e[0].isIntersecting; maj(); }, {threshold: .15}).observe(ct);
+  })();
+</script>
+</body>
+</html>

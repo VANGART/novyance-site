@@ -1,0 +1,131 @@
+{% layout none %}
+{%- comment -%}
+  Page reçue par une personne recommandée par un apporteur (07/10/2026) : novyance.fr/pages/recommande?r=CODE.
+  Affiche de la part de qui elle vient, compte la visite, et sa demande devient une recommandation
+  rattachée à l'apporteur (fonction publique « parrainage »). Le code est gardé dans le navigateur
+  pour une visite ultérieure. Page personnelle : hors de Google.
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+<title>On vous a recommandé Novyance · outils et automatisation pour TPE</title>
+<meta name="description" content="Prospection et relances automatiques, pilotage, outils sur mesure et sites pour les petites entreprises. En place en une semaine.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="On vous a recommandé Novyance">
+<meta property="og:description" content="Des outils simples qui font gagner des heures aux petites entreprises. En place en une semaine.">
+<meta property="og:image" content="{{ 'nv-og.png' | asset_url | prepend: 'https:' }}">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ 'nv-favicon-48.png' | asset_url }}">
+<link rel="apple-touch-icon" href="{{ 'nv-apple-touch.png' | asset_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+{% render 'nv-parrainage-styles' %}
+{{ content_for_header }}
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="tel:+33786523681">07 86 52 36 81</a>
+      <a href="#demande" class="btn">Parlons-en</a>
+      {% render 'nv-mnav' %}
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="badge" id="badge" hidden>Vous venez de la part de <b id="b-qui"></b></p>
+      <h1 id="titre">Des outils simples qui font gagner des heures aux petites entreprises<span class="dot">.</span></h1>
+      <p class="lead">Je m'appelle Aurélien Ruotte, je suis à Lyon. J'installe dans les TPE et PME des outils construits pour leur façon de travailler : trouver des clients et les relancer tout seul, suivre ses chiffres sans tableur, organiser l'atelier ou le chantier. C'est en place en une semaine, formation comprise.</p>
+      <div class="actions"><a class="btn" href="#demande">Décrire mon besoin</a><a class="btn ghost" href="tel:+33786523681">07 86 52 36 81</a></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2>Ce que je peux mettre en place chez vous</h2>
+      <ul class="briques">
+        <li><b>Prospection et relances automatiques</b> : chaque semaine, de nouvelles entreprises trouvées, un message personnel pour chacune, des relances qui partent toutes seules.</li>
+        <li><b>Pilotage en direct</b> : ventes, dépenses, trésorerie et objectifs sur un seul écran, à jour tout seul.</li>
+        <li><b>Atelier, chantier, production</b> : le planning de la semaine en quelques minutes, chaque commande suivie, les clients prévenus.</li>
+        <li><b>Devis, factures, comptes rendus</b> : dictés, envoyés, relancés, classés, sans y passer vos soirées.</li>
+        <li><b>Un site qui fait sonner le téléphone</b>, si vous n'en avez pas encore un bon.</li>
+      </ul>
+      <p class="sub">Envie de voir avant d'en parler ? Les démos tournent avec des données fictives : <a href="/pages/demo-atelier">atelier</a>, <a href="/pages/demo-pilotage">pilotage</a>, <a href="/pages/demo-commercial">commercial</a>.</p>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="wrap">
+      <h2>Comment ça se passe</h2>
+      <ol class="etapes">
+        <li><b>Un appel de 30 minutes, offert.</b><span>Vous me dites ce qui vous prend du temps, je vous dis franchement ce que je ferais à votre place.</span></li>
+        <li><b>Un devis ferme sous 24 heures.</b><span>Outil sur mesure à partir de 590 € puis 89 € par mois pour toute l'entreprise, site dès 490 €.</span></li>
+        <li><b>La première brique en place en une semaine.</b><span>À partir de vos fichiers actuels, avec une formation de votre équipe sur vos vrais dossiers.</span></li>
+      </ol>
+      <p class="sub">Vos données vous appartiennent et restent exportables. Après trois mois, l'abonnement est résiliable chaque mois.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="demande">
+    <div class="wrap">
+      <h2>Décrivez votre besoin en deux lignes</h2>
+      <p class="sub">Je vous rappelle dans la journée ouvrée.</p>
+      <form class="form" id="f-dem" novalidate>
+        <div><label for="d-contact">Prénom et nom</label><input id="d-contact" autocomplete="name" required></div>
+        <div><label for="d-soc">Entreprise</label><input id="d-soc" autocomplete="organization"></div>
+        <div><label for="d-email">E-mail</label><input id="d-email" type="email" autocomplete="email"></div>
+        <div><label for="d-tel">Téléphone</label><input id="d-tel" type="tel" autocomplete="tel"></div>
+        <div class="full"><label for="d-besoin">Ce qui vous prend du temps aujourd'hui</label><textarea id="d-besoin" rows="3" placeholder="Ex. on relance les devis quand on y pense, le planning tient sur un tableau blanc…"></textarea></div>
+        <input class="hp" id="d-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button class="btn" type="submit">Être rappelé</button><p class="msg" id="d-msg" role="status"></p></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · contact@novyance.fr · 07 86 52 36 81</span>
+    <span class="lk"><a href="/">Accueil</a><a href="/pages/outils-metier">Outils métier</a><a href="/pages/apporteurs-affaires">Devenir apporteur</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var API = "https://sqxlavinbiryvmblmtse.supabase.co/functions/v1/parrainage";
+  function appel(corps){ return fetch(API, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(corps) }).then(function(r){ return r.json().then(function(j){ if (!r.ok) throw new Error(j.erreur || "erreur"); return j; }); }); }
+  var code = (new URLSearchParams(location.search).get("r") || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+  try { if (code) localStorage.setItem("nv-ref", code); else code = localStorage.getItem("nv-ref") || ""; } catch (e) {}
+  if (code) {
+    appel({ action: "info", code: code }).then(function(a){
+      var qui = a.prenom ? a.prenom + (a.societe && a.societe !== a.prenom ? " (" + a.societe + ")" : "") : a.societe;
+      document.getElementById("b-qui").textContent = qui;
+      document.getElementById("badge").hidden = false;
+      document.getElementById("titre").innerHTML = (a.prenom || a.societe).replace(/[<>&]/g, "") + " pense que je peux vous faire gagner du temps<span class=\"dot\">.</span>";
+      appel({ action: "vue", code: code, page: "recommande" }).catch(function(){});
+    }).catch(function(){ code = ""; });
+  }
+  var f = document.getElementById("f-dem"), m = document.getElementById("d-msg");
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var v = function(id){ return document.getElementById(id).value.trim(); };
+    if (!v("d-contact") && !v("d-soc")) { m.textContent = "Indiquez votre nom ou votre entreprise."; return; }
+    if (!v("d-email") && !v("d-tel")) { m.textContent = "Indiquez un e-mail ou un téléphone pour que je puisse vous rappeler."; return; }
+    var b = f.querySelector("button"); b.disabled = true; m.textContent = "Envoi…";
+    appel({ action: "demande", code: code, contact: v("d-contact"), societe: v("d-soc"), email: v("d-email"), telephone: v("d-tel"), besoin: v("d-besoin"), hp: v("d-hp") })
+      .then(function(){ f.innerHTML = '<p class="ok"><b>Merci, c\'est bien reçu.</b> Je vous rappelle dans la journée ouvrée. En attendant, vous pouvez essayer les <a href="/pages/demo-atelier">démos</a>.</p>'; })
+      .catch(function(err){ m.textContent = err.message; b.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,803 @@
+{% layout none %}
+{%- comment -%} Accueil « prospection à la commission » (refonte du 14/10/2026). Source : refonte-prospection/maquette.src.html, fabriqué par construire-index.py. Ne pas modifier à la main. {%- endcomment -%}
+{%- assign nvblog = blogs['blog'] -%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+<title>Prospection commerciale externalisée, payée à la commission · Novyance Lyon</title>
+<meta name="description" content="Prospection commerciale externalisée pour les entreprises qui vendent aux pros. Aucun forfait : Novyance se rémunère par un pourcentage des ventes apportées. Exemple gratuit sous 24 h.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="On prospecte à votre place, et on se paie uniquement sur les ventes.">
+<meta property="og:description" content="Prospection commerciale externalisée, payée à la commission. Donnez votre site, recevez sous 24 h le mail qu'un de vos futurs clients recevrait.">
+<meta property="og:site_name" content="Novyance">
+<meta property="og:image" content="https:{{ 'nv-og.png' | asset_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://novyance.fr/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https:{{ 'nv-og.png' | asset_url }}">
+<link rel="canonical" href="https://novyance.fr/">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ 'nv-favicon-48.png' | asset_url }}">
+<link rel="apple-touch-icon" href="{{ 'nv-apple-touch.png' | asset_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"ProfessionalService","name":"Novyance","url":"https://novyance.fr/","email":"contact@novyance.fr","telephone":"+33786523681","@id":"https://novyance.fr/#novyance","address":{"@type":"PostalAddress","streetAddress":"304 avenue Jean Jaurès","addressLocality":"Lyon","postalCode":"69007","addressCountry":"FR"},"logo":{{ 'nv-apple-touch.png' | asset_url | prepend: 'https:' | json }},"image":{{ 'nv-og.png' | asset_url | prepend: 'https:' | json }},"makesOffer":[{"@type":"Offer","name":"Prospection commerciale externalisée","description":"Aucun frais de mise en place ni abonnement. Rémunération par un pourcentage des ventes encaissées auprès des clients apportés. Engagement d'un mois."},{"@type":"Offer","name":"Sites et outils sur mesure","description":"Sites internet et outils métier sur mesure, en complément de la prospection."}],"founder":{"@type":"Person","name":"Aurélien Ruotte"},"description":"Prospection commerciale externalisée, rémunérée par un pourcentage des ventes apportées.","areaServed":"FR","priceRange":"Commission sur les ventes"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Et si vous écrivez quelque chose qui ne me ressemble pas ?","acceptedAnswer":{"@type":"Answer","text":"Rien ne part avant que vous ayez lu et validé les premiers mails. Vous pouvez corriger un modèle ou couper les envois à tout moment depuis votre tableau de bord."}},
+{"@type":"Question","name":"Comment vous savez qu'une vente vient de vous ?","acceptedAnswer":{"@type":"Answer","text":"Chaque entreprise contactée est listée dans votre tableau de bord avec la date du premier mail. Une vente signée avec l'une d'elles dans les 12 mois qui suivent compte pour la commission."}},
+{"@type":"Question","name":"Pourquoi une adresse sur mon domaine ?","acceptedAnswer":{"@type":"Answer","text":"Un acheteur répond plus volontiers à une entreprise qu'il peut vérifier. Et les réponses doivent arriver chez vous. L'adresse vous appartient, même si on arrête de travailler ensemble."}},
+{"@type":"Question","name":"A-t-on le droit de prospecter par mail ?","acceptedAnswer":{"@type":"Answer","text":"Oui, entre professionnels, quand le message concerne l'activité du destinataire. Chaque mail permet de ne plus être contacté, et on tient votre liste d'opposition à jour."}},
+{"@type":"Question","name":"Que se passe-t-il après le premier mois ?","acceptedAnswer":{"@type":"Answer","text":"Si les résultats vous conviennent, on continue. Sinon, un mail suffit pour arrêter, sans frais. La commission reste due sur les ventes signées avec les entreprises déjà contactées."}},
+{"@type":"Question","name":"Qui facture le client ?","acceptedAnswer":{"@type":"Answer","text":"Vous. On intervient comme agent commercial : on trouve le client et on prépare la vente, vous signez et vous facturez comme d'habitude. On vous facture ensuite notre commission sur ce qui a été encaissé."}}
+]}]}
+</script>
+<style>
+/* Novyance, identité « givre » : fond givré, encre brune, orange pour l'action, rose en touche.
+   Trois scènes au défilement : le film en ouverture, le mail qui s'écrit, la bande des signaux.
+   Un détail vivant : l'heure limite de l'exemple, recalculée à la minute. */
+:root{
+  --bg:#F3F6FA; --bg2:#E9EEF5; --card:#FFFFFF; --ink:#482719; --ink2:#2E1910; --muted:#76625A; --line:#D8DFE9;
+  --accent:#FF681F; --accent-d:#C2470F; --rose:#FF9EBC; --good:#2F8F5B;
+  --f-display:"Space Grotesk","Helvetica Neue",Arial,sans-serif; --f-body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --r:20px; --r-s:12px; --g:clamp(16px,4vw,48px);
+  --sortie:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-color:#C9B8AE var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;caret-color:var(--accent);overflow-x:clip}
+::selection{background:var(--rose);color:var(--ink2)}
+a{color:inherit;text-underline-offset:.2em}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:var(--g)}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;letter-spacing:-.025em;line-height:1.04;margin:0;text-wrap:balance}
+h2{font-size:clamp(34px,4.8vw,64px)}
+h3{font-size:21px;line-height:1.2;letter-spacing:-.01em}
+p{margin:0}
+.lead{font-size:clamp(18px,1.5vw,20px);color:var(--muted);max-width:60ch}
+.dot{color:var(--accent)}
+section{padding-block:clamp(72px,10vw,128px)}
+.sec-head{display:grid;gap:20px;max-width:820px;margin-bottom:clamp(36px,5vw,56px)}
+.ex{font-size:12px;font-weight:600;color:var(--muted);background:var(--bg2);padding:4px 10px;border-radius:99px;white-space:nowrap}
+.todo{background:#FFE08A;color:#2B1A12;font-size:13px;font-weight:600;padding:1px 6px;border-radius:4px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.num{font-variant-numeric:tabular-nums}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;border:0;background:var(--accent);color:#fff;font:600 16px/1 var(--f-body);text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .2s,transform .2s var(--sortie)}
+.btn:hover{background:var(--accent-d)}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.6;cursor:progress}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+input,select,textarea{font:400 16px/1.2 var(--f-body);color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:999px;min-height:54px;padding:0 22px;width:100%;min-width:0;transition:border-color .2s}
+input:hover{border-color:#B9C4D3}
+input:focus{outline:none;border-color:var(--ink)}
+input::placeholder{color:#8E7D75}
+
+/* en-tête : discret, se pose sur le film puis sur la page */
+header.top{position:sticky;top:0;z-index:40;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);color:var(--ink)}
+header.top .wrap{display:flex;align-items:center;gap:28px;min-height:70px;max-width:none}
+.logo{font:700 25px/1 var(--f-display);letter-spacing:-.035em;text-decoration:none}
+nav.links{display:flex;gap:26px;margin-left:auto;font-size:15px}
+nav.links a{text-decoration:none;opacity:.78;transition:opacity .2s}
+nav.links a:hover{opacity:1}
+header.top .btn{min-height:42px;padding:0 18px;font-size:14px}
+@media (max-width:860px){nav.links{display:none}header.top .btn{margin-left:auto}}
+
+/* 1. le film : dans un cadre, jamais plus haut que l'écran moins de quoi laisser voir le titre qui suit */
+.film{background:var(--bg);padding:clamp(14px,2.2vw,28px) var(--g) 0}
+.film .cadre{position:relative;margin:0 auto;width:min(100%,1320px,calc((100svh - 70px - 250px) * 16 / 9));aspect-ratio:16/9;border-radius:clamp(14px,2vw,26px);overflow:hidden;background:#0B0908;box-shadow:0 40px 80px -50px rgba(46,25,16,.55)}
+.film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.film .bas{position:absolute;left:clamp(12px,2vw,24px);right:clamp(12px,2vw,24px);bottom:clamp(12px,2vw,22px);display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+.son{display:inline-flex;align-items:center;gap:10px;background:rgba(46,25,16,.82);backdrop-filter:blur(8px);color:#fff;border:0;border-radius:999px;padding:10px 16px;font:500 14px/1 var(--f-body);cursor:pointer;min-height:42px}
+.son svg{width:18px;height:18px}
+.descendre{margin:8px auto 0;width:max-content;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:500;font-size:15px;padding:8px 12px}
+.descendre:hover{color:var(--ink)}
+.descendre svg{width:16px;height:16px;animation:flotte 1.8s var(--sortie) infinite}
+@keyframes flotte{50%{transform:translateY(4px)}}
+@media (max-aspect-ratio:4/5){
+  .film .cadre{aspect-ratio:9/16;width:min(100%,calc((100svh - 70px - 230px) * 9 / 16))}
+}
+
+/* 2. la promesse */
+.hero{padding-block:clamp(24px,3.5vw,48px) clamp(56px,8vw,96px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,88px);align-items:end}
+.hero h1{font-size:clamp(36px,4.3vw,62px);line-height:1.03;letter-spacing:-.032em}
+.hero h1 em{font-style:normal;color:var(--accent-d)}
+.hero .lead{margin-top:26px}
+.hero-form{margin-top:34px;display:grid;grid-template-columns:1fr 1fr auto;gap:10px;max-width:700px}
+.hero-note{margin-top:14px;font-size:15px;color:var(--muted);max-width:60ch}
+.horloge{display:grid;gap:10px;padding:26px 28px;border-radius:var(--r);background:var(--ink);color:var(--bg)}
+.horloge .t{font-size:14px;color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.horloge .h{font:700 clamp(40px,4.6vw,64px)/1 var(--f-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.horloge .h small{font-size:.42em;font-weight:500;letter-spacing:0;margin-left:6px;color:var(--rose)}
+.horloge .s{font-size:15px;color:color-mix(in srgb,var(--bg) 82%,transparent)}
+.horloge a{color:var(--bg);font-weight:600}
+.demo-out{margin-top:16px;max-width:700px;border-radius:var(--r-s);background:var(--card);border:1px solid var(--line);padding:16px 18px;font-size:15px;display:grid;gap:8px}
+@media (max-width:960px){.hero-grid{grid-template-columns:1fr;align-items:start}.hero-form{grid-template-columns:1fr}}
+
+.band{border-block:1px solid var(--line);padding-block:22px}
+.band .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px}
+.band p{font-size:15px;color:var(--muted)}
+.logos{display:flex;flex-wrap:wrap;align-items:center;gap:18px 44px;margin:0;padding:0;list-style:none;color:var(--ink)}
+.logos li{display:flex;align-items:center;gap:10px;opacity:.72;filter:grayscale(1);transition:opacity .2s,filter .2s}
+.logos li:hover{opacity:1;filter:none}
+.logos img{display:block;height:22px;width:auto}
+.logos .gota svg{width:40px;height:auto}
+.logos .gota span{font:700 14px/1 var(--f-display);letter-spacing:-.01em}
+.logos .sf img{height:40px;filter:brightness(.55) contrast(1.4)}
+.logos .sf span{font:500 15px/1 var(--f-display);letter-spacing:.06em;text-transform:uppercase}
+.logos .anon{font-size:14px;color:var(--muted);filter:none}
+@media (min-width:961px){.band{padding-block:30px}.logos{gap:18px 56px}.logos img{height:29px}.logos .gota svg{width:52px}.logos .gota span{font-size:17px}.logos .sf img{height:52px}.logos .sf span{font-size:18px}}
+
+/* 3. tarif : lignes de contrat */
+.terms{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,72px);align-items:start}
+.terms dl{margin:0;border-top:2px solid var(--ink)}
+.terms dl > div{display:grid;grid-template-columns:190px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.terms dt{font-weight:600}
+.terms dd{margin:0;color:var(--muted)}
+.terms dd strong{color:var(--ink);font:700 26px/1.1 var(--f-display);letter-spacing:-.02em;display:block;margin-bottom:4px}
+.compare{margin-top:26px;font-size:16px;color:var(--muted);max-width:52ch}
+.compare b{color:var(--ink)}
+@media (max-width:860px){.terms{grid-template-columns:1fr}.terms dl > div{grid-template-columns:1fr;gap:4px}}
+
+/* 3 bis. le site en option */
+.option{background:var(--bg2)}
+.opt-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.opt-cartes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.opt-carte{background:var(--card);border-radius:var(--r);padding:24px 26px;display:grid;gap:12px;align-content:start;box-shadow:inset 0 0 0 1px var(--line)}
+.opt-carte.forte{background:var(--ink);color:var(--bg);box-shadow:none}
+.opt-tag{justify-self:start;font-size:12px;font-weight:600;padding:5px 10px;border-radius:99px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent-d)}
+.opt-carte.forte .opt-tag{background:color-mix(in srgb,var(--accent) 30%,transparent);color:#FFD9C6}
+.opt-carte ul{margin:0;padding-left:18px;display:grid;gap:6px;color:var(--muted);font-size:15.5px}
+.opt-carte p{font-size:15.5px;color:color-mix(in srgb,var(--bg) 78%,transparent)}
+.opt-prix b{display:block;font:700 30px/1.1 var(--f-display);letter-spacing:-.02em;color:var(--bg);margin-bottom:4px}
+.opt-carte .btn{justify-self:start;margin-top:4px}
+@media (max-width:960px){.opt-grid,.opt-cartes{grid-template-columns:1fr}}
+
+/* 4. le mail qui s'écrit au défilement */
+.ecrit{background:var(--bg2);padding:0;overflow-x:clip}
+@media (max-width:1299px){.tablier{right:-12px!important;bottom:-120px!important}}
+.ecrit .piste{height:300svh;position:relative}
+.ecrit .scene{position:sticky;top:0;height:100svh;display:flex;align-items:center}
+.ecrit .grille{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center;width:100%}
+.raisons{display:grid;gap:26px;margin-top:34px}
+.raisons div{transition:opacity .4s,transform .5s var(--sortie);opacity:.28}
+.raisons div.on{opacity:1}
+.raisons h3{margin-bottom:6px}
+.raisons p{color:var(--muted);font-size:16px;max-width:46ch}
+.doc{position:relative;background:#fff;border-radius:var(--r);padding:26px 28px;box-shadow:0 2px 0 rgba(72,39,25,.04),0 30px 60px -34px rgba(72,39,25,.45)}
+.doc .meta{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14px;color:var(--muted);padding-bottom:14px;border-bottom:1px solid #EEE7E1;margin-bottom:16px}
+.doc .meta b{color:var(--ink);font-weight:600}
+.doc .body{font-size:17px;line-height:1.6;white-space:pre-wrap;min-height:13.5em}
+.doc .caret{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:-.15em;margin-left:1px;animation:clign 1s steps(2,start) infinite}
+@keyframes clign{to{visibility:hidden}}
+.doc .pj{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .5s var(--sortie)}
+.doc .pj.on{opacity:1;transform:none}
+.doc .pj span.f{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid #EEE7E1;border-radius:9px}
+.doc .pj svg{width:14px;height:14px}
+.tablier{position:absolute;right:-70px;bottom:-130px;width:min(230px,40%);border-radius:16px;box-shadow:0 30px 50px -24px rgba(72,39,25,.55);opacity:0;transform:translateY(40px) rotate(9deg);transition:opacity .45s,transform .7s var(--sortie)}
+.tablier.on{opacity:1;transform:translateY(0) rotate(4deg)}
+.tablier{background:#fff;padding:10px 10px 12px}
+.tablier img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.tablier span{display:block;font-size:14px;font-weight:600;margin-top:8px;color:var(--ink)}
+.doc .pj span.f img{width:34px;height:34px;border-radius:6px;object-fit:cover}
+@media (max-width:960px){
+  .ecrit .piste{height:auto}.ecrit .scene{position:static;height:auto;padding-block:72px}
+  .ecrit .grille{grid-template-columns:1fr}.raisons div{opacity:1}
+  .tablier{position:relative;right:auto;bottom:auto;margin:-10px 0 0 auto;width:200px}
+}
+
+/* 5. la bande des signaux */
+.signaux{padding:0;background:var(--ink);color:var(--bg)}
+.signaux .piste{position:relative}
+.signaux .scene{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(28px,5vh,48px)}
+.signaux .tete{padding-inline:var(--g);display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.signaux h2{color:var(--bg);max-width:15ch}
+.signaux .tete p{max-width:40ch;color:color-mix(in srgb,var(--bg) 72%,transparent)}
+.rail{display:flex;gap:clamp(14px,2vw,24px);padding-inline:var(--g);will-change:transform}
+.carte{flex:none;width:min(440px,78vw);min-height:clamp(260px,40svh,360px);border-radius:var(--r);padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;background:color-mix(in srgb,var(--bg) 7%,var(--ink));border:1px solid color-mix(in srgb,var(--bg) 14%,transparent)}
+.carte .qui{display:flex;justify-content:space-between;gap:12px;font-size:15px;color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.carte .sig{font:700 clamp(28px,2.8vw,38px)/1.08 var(--f-display);letter-spacing:-.025em;color:var(--bg)}
+.carte .prop{font-size:16px;color:var(--rose)}
+.carte:nth-child(3n+2){background:var(--accent);border-color:var(--accent)}
+.carte:nth-child(3n+2) .qui,.carte:nth-child(3n+2) .prop{color:#fff}
+.carte:nth-child(3n+2) .sig{color:var(--ink2)}
+.signaux .prog{margin-inline:var(--g);height:2px;background:color-mix(in srgb,var(--bg) 16%,transparent);border-radius:2px;overflow:hidden}
+.signaux .prog i{display:block;height:100%;width:0;background:var(--accent)}
+.signaux .ex{background:color-mix(in srgb,var(--bg) 12%,transparent);color:color-mix(in srgb,var(--bg) 80%,transparent)}
+@media (max-width:860px),(prefers-reduced-motion:reduce){
+  .signaux .piste{height:auto!important}.signaux .scene{position:static;height:auto;padding-block:72px}
+  .rail{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;transform:none!important}.carte{scroll-snap-align:start}
+  .signaux .prog{display:none}
+}
+
+/* 6. démarrage : une frise à l'échelle des jours */
+.frise{position:relative;margin-top:8px}
+.frise .axe{position:relative;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--rose) 0 50%,var(--accent) 50% 100%)}
+.frise .reperes{display:grid;grid-template-columns:1fr 1fr;margin-top:-6px}
+.frise .jalon{position:relative;padding-top:30px}
+.frise .jalon::before{content:"";position:absolute;top:-4px;left:0;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--ink)}
+.frise .jalon.fin::before{left:auto;right:0}
+.frise .jalon .quand{font:700 15px/1 var(--f-display);color:var(--accent);letter-spacing:.01em}
+.frise .etapes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(20px,3vw,40px);margin-top:34px}
+.frise .etape{display:grid;gap:8px;align-content:start}
+.frise .etape .quand{font-size:14px;font-weight:600;color:var(--accent)}
+.frise .etape p{color:var(--muted);font-size:16px}
+.frise .graduation{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:10px;font-variant-numeric:tabular-nums}
+.fine{margin-top:22px;font-size:15px;color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+.split > div{border-radius:var(--r);padding:28px 30px;display:grid;gap:14px;align-content:start}
+.split .us{background:var(--ink);color:var(--bg)}
+.split .you{background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.split ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:16px}
+.split li{display:grid;grid-template-columns:18px 1fr;gap:10px}
+.split li svg{width:16px;height:16px;margin-top:4px;color:var(--accent)}
+@media (max-width:860px){.frise .etapes,.split{grid-template-columns:1fr}.frise .reperes{display:none}.frise .axe{display:none}}
+
+/* 7. tableau de bord */
+.alt{background:var(--bg2)}
+.dash{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -40px rgba(72,39,25,.35),inset 0 0 0 1px var(--line)}
+.dash-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 24px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--line)}
+.kpis div{padding:22px 24px;border-right:1px solid var(--line);display:grid;gap:6px}
+.kpis div:last-child{border-right:0}
+.kpis b{font:700 34px/1 var(--f-display);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpis span{font-size:13px;color:var(--muted)}
+.funnel{padding:22px 24px;display:grid;gap:10px}
+.fl{display:grid;grid-template-columns:140px 1fr 48px;gap:14px;align-items:center;font-size:14px}
+.fl .bar{height:10px;border-radius:99px;background:var(--bg2);overflow:hidden}
+.fl .bar i{display:block;height:100%;background:var(--accent);border-radius:99px;min-width:6px}
+.fl em{font-style:normal;font-variant-numeric:tabular-nums;text-align:right;color:var(--muted)}
+.feed{border-top:1px solid var(--line);padding:4px 24px 16px}
+.feed div{display:grid;grid-template-columns:110px 1fr auto;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;align-items:baseline}
+.feed div:last-child{border-bottom:0}
+.feed time{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pill{font:600 12px/1 var(--f-body);padding:6px 10px;border-radius:99px;background:var(--bg2);white-space:nowrap}
+.pill.hot{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent-d)}
+.pill.win{background:color-mix(in srgb,var(--good) 16%,transparent);color:var(--good)}
+@media (max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.kpis div{border-bottom:1px solid var(--line)}.fl{grid-template-columns:100px 1fr 40px}.feed div{grid-template-columns:1fr;gap:4px}}
+
+/* 8. pour quelles entreprises : un index */
+.index{border-top:2px solid var(--ink)}
+.index li{list-style:none;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line);transition:padding .35s var(--sortie),color .25s}
+.index li b{font:700 clamp(24px,3vw,40px)/1.05 var(--f-display);letter-spacing:-.025em}
+.index li span{color:var(--muted);font-size:16px}
+.index ul{margin:0;padding:0}
+.index ul:hover li{color:color-mix(in srgb,var(--ink) 35%,transparent)}
+.index ul:hover li:hover{color:var(--ink);padding-left:14px}
+.index ul:hover li:hover b{color:var(--accent)}
+.franc{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;align-items:baseline;color:var(--muted);max-width:760px}
+.franc b{color:var(--ink)}
+@media (max-width:760px){.index li{grid-template-columns:1fr;gap:4px}.franc{grid-template-columns:1fr}}
+
+/* 9. fondateur */
+.founder{display:grid;grid-template-columns:300px 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.founder img{width:100%;max-width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--r)}
+.founder blockquote{margin:0;font:500 clamp(22px,2.4vw,32px)/1.3 var(--f-display);letter-spacing:-.015em;text-wrap:pretty}
+.founder .sig{margin-top:22px;display:grid;gap:2px}
+.founder .sig span{color:var(--muted);font-size:15px}
+@media (max-width:760px){.founder{grid-template-columns:1fr}.founder img{max-width:220px}}
+
+/* 10. questions */
+.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq summary{cursor:pointer;font:600 18px/1.35 var(--f-body);list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:12px;height:12px;margin-top:6px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg);transition:transform .3s var(--sortie)}
+.faq details[open] summary::after{transform:rotate(225deg)}
+.faq details p{margin-top:12px;color:var(--muted);font-size:16px;max-width:60ch}
+@media (max-width:860px){.faq{grid-template-columns:1fr}}
+
+.extra{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border-radius:var(--r);padding:26px 30px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.extra p{max-width:64ch;color:var(--muted)}
+.extra b{color:var(--ink)}
+
+/* 11. fin */
+.end{background:var(--ink);color:var(--bg)}
+.end-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:start}
+.end h2{font-size:clamp(36px,5vw,68px)}
+.end p.sub{margin-top:16px;color:color-mix(in srgb,var(--bg) 75%,transparent);max-width:44ch}
+.end p.sub b{color:var(--bg)}
+.end form{display:grid;gap:10px;margin-top:26px}
+.end .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.end input,.end select{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 30%,transparent)}
+.end input:focus{border-color:var(--bg)}
+.end input::placeholder{color:color-mix(in srgb,var(--bg) 58%,transparent)}
+.end select option{color:#2B1A12}
+.end .card{border-radius:var(--r);padding:30px;display:grid;gap:8px;align-content:start;background:color-mix(in srgb,var(--bg) 6%,var(--ink));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--bg) 16%,transparent)}
+.end .card h3{font-size:26px}
+.end .card p{color:color-mix(in srgb,var(--bg) 75%,transparent)}
+.ok-msg{font-size:14px;padding:12px 14px;border-radius:var(--r-s);background:color-mix(in srgb,var(--good) 25%,transparent)}
+@media (max-width:860px){.end-grid,.end .row2{grid-template-columns:1fr}}
+footer{background:var(--ink);color:color-mix(in srgb,var(--bg) 68%,transparent);font-size:14px;padding-block:0 32px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;border-top:1px solid color-mix(in srgb,var(--bg) 20%,transparent);padding-top:24px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .ecrit .piste{height:auto}.ecrit .scene{position:static;height:auto;padding-block:72px}
+  .raisons div{opacity:1}.doc .pj,.tablier{opacity:1;transform:none}
+}
+
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ok-msg.err{background:rgba(192,69,47,.14)}
+.hero-form .ok-msg{grid-column:1/-1}
+footer .cols{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer .cols a,footer .bot button{color:inherit;text-decoration:none;background:none;border:0;font:inherit;cursor:pointer;padding:0}
+footer .cols a:hover,footer .bot button:hover{color:var(--bg)}
+dialog{max-width:560px;width:calc(100% - 32px);border:0;border-radius:var(--r);padding:28px;color:var(--ink);background:var(--card)}
+dialog::backdrop{background:rgba(72,39,25,.35)}
+dialog h3{margin-bottom:12px}dialog h4{margin:14px 0 4px;font-size:15px}dialog p{font-size:15px;color:var(--muted)}
+dialog .x{position:absolute;top:14px;right:16px;border:0;background:none;font-size:18px;cursor:pointer;color:var(--ink)}
+.mbar{display:none}
+@media (max-width:760px){
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1.6fr;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s}
+  .mbar.on{transform:none}
+  .mbar a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:600;text-decoration:none}
+  .mbar .t{box-shadow:inset 0 0 0 1.5px var(--ink)}
+  .mbar .g{background:var(--accent);color:#fff}
+  footer{padding-bottom:96px}
+}
+</style>
+{{ content_for_header }}
+</head>
+<body>
+<header class="top" id="entete">
+  <div class="wrap">
+    <a class="logo" href="#haut" aria-label="Novyance, accueil">novyance<span class="dot">.</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#tarif">Tarif</a>
+      <a href="#exemple">Le mail envoyé</a>
+      <a href="#demarrage">Démarrage</a>
+      <a href="#questions">Questions</a>
+      <a href="/pages/site-internet">Sites internet</a>
+    </nav>
+    <a class="btn" href="#appel">Réserver un appel</a>
+  </div>
+</header>
+
+<main id="haut">
+  <section class="film" aria-label="Film de présentation, 28 secondes">
+    <div class="cadre">
+      <video id="film" autoplay muted loop playsinline preload="metadata" poster="{{ 'nv-affiche-16x9.jpg' | asset_url }}" data-v="{{ 'nv-novyance-9x16.mp4' | asset_url }}" data-vp="{{ 'nv-affiche-9x16.jpg' | asset_url }}" data-h="{{ 'nv-novyance-16x9.mp4' | asset_url }}">
+        <source src="{{ 'nv-novyance-16x9.mp4' | asset_url }}" type="video/mp4">
+      </video>
+      <div class="bas">
+        <button class="son" id="son" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path id="son-onde" d="m16 9 5 6m0-6-5 6"/></svg><span id="son-t">Activer le son</span></button>
+      </div>
+    </div>
+    <a class="descendre" href="#promesse">Voir l'offre <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6"/></svg></a>
+  </section>
+
+  <section class="hero" id="promesse">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>On prospecte à votre place, et on se paie <em>uniquement sur les ventes</em> qu'on vous apporte.</h1>
+        <p class="lead">Novyance trouve des clients pour les entreprises qui vendent aux pros : textile personnalisé, vidéo, fabrication, impression. Pas de forfait ni de facture au rendez-vous. Un pourcentage de ce qui est signé.</p>
+
+        {% form 'contact', id: 'f-demo', class: 'hero-form' %}<input type="hidden" name="contact[Demande]" value="Exemple sous 24 h (haut de page)"><label for="d-site" hidden>Adresse de votre site</label><input id="d-site" name="contact[Site]" placeholder="votre-site.fr" autocomplete="url" inputmode="url" required><label for="d-mail" hidden>Votre email</label><input id="d-mail" type="email" name="contact[email]" placeholder="vous@votre-site.fr" autocomplete="email" required><button class="btn" type="submit">Recevoir mon exemple</button><div class="hp" aria-hidden="true"><label for="f-demo-hp">Ne pas remplir</label><input type="text" id="f-demo-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>{% if form.errors %}<div class="ok-msg err">Une erreur s'est produite. Vérifiez votre adresse email, ou écrivez à contact@novyance.fr.</div>{% endif %}{% endform %}
+        <p class="hero-note">Donnez-nous votre site. Sous 24 h, vous recevez un vrai prospect choisi pour vous, le mail qu'on lui enverrait, l'échantillon qu'on lui joindrait et une première liste d'entreprises à contacter. Gratuit, sans engagement.</p>
+        <div id="ok1" class="demo-out" hidden><p><b>C'est noté.</b> Votre exemple arrive par mail sous 24 h : un vrai prospect, le mail qu'il recevrait, son échantillon et vos premières cibles.</p></div>
+      </div>
+      <aside class="horloge" aria-live="polite">
+        <span class="t">Si vous demandez maintenant, votre exemple arrive avant</span>
+        <span class="h num"><span data-limite-h>demain</span><small data-limite-j></small></span>
+        <span class="s">Un vrai prospect, son mail, son échantillon. Week-end compris. Vous préférez en parler ? <a href="#appel">Réserver 20 minutes</a></span>
+      </aside>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="wrap">
+      <p>Ils prospectent déjà avec ce système</p>
+      <ul class="logos" aria-label="Références">
+        <li><img src="{{ 'nv-logo-vangart.png' | asset_url }}" alt="VANGART" height="22"></li>
+        <li class="gota" aria-label="Studio Göta" role="img"><svg viewBox="0 0 2295.97 2121.16" aria-hidden="true" fill="currentColor"><path d="M 1210.23925252,194.393519838 c 125.21,1.23 126.16,-196.37 0,-194.35 c -126.72,-3.43 -125.8,197.04 0,194.35 Z"/><path d="M 751.929252523,194.393519838 c 125.43,1.28 126.38,-196.42 0,-194.35 c -126.68,-3.36 -125.76,196.97 0,194.35 Z"/><path d="M 2135.94925252,747.593519838 c -463.2,-398.65 -686.49,734.81 -636.16,-46.72 c 121.82,7.96 220.67,14.48 229.97,-85.99 c 4.18,-45.15 -34.17,-83.78 -79.48,-82.15 c -120.48,4.31 -176.55,-31.26 -158.77,-173.88 c 2.55,-20.42 -15.6,-39.19 -35.85,-35.51 c -42.97,7.82 -92.42,47.73 -135.81,85.62 c -39.48,34.48 -95.45,42.17 -142.42,18.89 c -185.86,-92.12 -610.28,-52.73 -791.62,-58.61 c -442.72,-14.35 -368.56,381.48 -319.44,694.04 c 24.74,157.41 4.92,316.67 -40.43,469.42 c -101.14,340.69 96.52,710.14 539.9,549.89 c 103.37,-37.36 195.52,-104.97 251.19,-199.75 c 168.06,-286.13 -273.84,-350.84 -487.04,-496.51 c -69.59,-47.54 -84.84,-145.49 -31.02,-210.34 c 235.14,-283.32 691.24,122.1 945.8,-164.08 c 34.21,-38.46 75.57,-181.99 81.15,-62.71 c 14.08,301.14 519.39,594.36 797.05,418.54 c 21.22,-13.44 49.46,-10.93 66.86,7.18 c 140.19,146.02 100.76,-389.83 101.76,-573.47 c 0.16,-29.86 -23.76,-53.87 -53.62,-53.87 c -46.37,0 -102.03,0 -102.03,0 Z M 293.589252523,1627.88351984 c 163.06,-72.97 526.55,101.84 288.7,265.39 c -217.64,175.56 -681.65,-83.53 -288.7,-265.39 Z M 574.069252523,826.023519838 c -100.1,246.85 -482.78,83.23 -376.39,-159.04 c 100.59,-243.63 482.9,-82.57 376.39,159.04 Z M 1164.15925252,825.503519838 c -126.58,293.95 -532.68,-1.74 -318.55,-223.42 c 146.44,-162.59 406.09,32.88 318.55,223.42 Z M 2100.19925252,1132.11351984 c -97.67,246.93 -464.26,78 -361.03,-157.72 c 97.6,-246.9 450.84,-96.12 361.03,157.72 Z"/>
+</svg></li>
+        <li class="sf"><img src="{{ 'nv-logo-silverframe.png' | asset_url }}" alt="" height="40"><span>SilverFrame</span></li>
+        <li class="anon">et d'autres</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="tarif">
+    <div class="wrap terms">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>Tarif : un pourcentage de vos ventes, rien d'autre</h2>
+        <p class="lead">Si on ne vous ramène pas de clients, on ne gagne rien. C'est la meilleure garantie qu'on puisse vous donner, et ça nous oblige à choisir les bons prospects.</p>
+        <p class="compare">La plupart des agences de prospection facturent la journée de travail ou le rendez-vous obtenu, que vous signiez ou non. <b>Chez nous, seule la vente compte.</b></p>
+      </div>
+      <dl>
+        <div><dt>Mise en place</dt><dd><strong>0 €</strong>Adresse, chauffe, liste et premiers échantillons compris.</dd></div>
+        <div><dt>Abonnement</dt><dd><strong>Aucun</strong>Pas de mensualité, pas de minimum.</dd></div>
+        <div><dt>Commission</dt><dd><strong>Un % des ventes encaissées</strong>Fixé avec vous selon vos marges et votre panier moyen, sur les clients qu'on a trouvés.</dd></div>
+        <div><dt>Durée prise en compte</dt><dd>Une vente compte si elle est signée dans les 12 mois après notre premier mail.</dd></div>
+        <div><dt>Engagement</dt><dd>Un mois, le temps de tout installer. Ensuite, un mail suffit pour arrêter.</dd></div>
+        <div><dt>Exclusivité</dt><dd>Un seul client par métier et par zone. On ne prospecte jamais pour votre concurrent.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="option" id="site">
+    <div class="wrap opt-grid">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>Avant de vous répondre, ils regardent votre site</h2>
+        <p class="lead">Un prospect intéressé ouvre votre site dans la minute. S'il est daté, lent ou illisible sur téléphone, il passe son tour, et le meilleur mail du monde ne sert à rien.</p>
+      </div>
+      <div class="opt-cartes">
+        <div class="opt-carte">
+          <span class="opt-tag">Offert au démarrage</span>
+          <h3>On passe votre site en revue</h3>
+          <ul><li>affichage sur téléphone et vitesse</li><li>votre offre comprise en cinq secondes</li><li>un moyen simple de vous contacter</li><li>ce que Google montre de vous</li></ul>
+        </div>
+        <div class="opt-carte forte">
+          <span class="opt-tag">En option</span>
+          <h3>Si besoin, on le refait</h3>
+          <p class="opt-prix"><b>Dès 490 €</b>puis 29 € par mois, hébergement et suivi compris</p>
+          <p>Un site vitrine pensé pour convertir les prospects qu'on vous envoie. Boutique en ligne dès 690 €.</p>
+          <a class="btn" href="#appel">En parler pendant l'appel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ecrit" id="exemple">
+    <div class="piste" id="piste-mail">
+      <div class="scene">
+        <div class="wrap grille">
+          <div>
+            <h2>Le mail que reçoit votre prospect</h2>
+            <p class="lead" style="margin-top:20px">Quatre lignes écrites pour lui, avec un échantillon à son nom. Il voit le résultat avant même d'avoir demandé un devis.</p>
+            <div class="raisons" id="raisons">
+              <div><h3>Il part d'un fait récent</h3><p>Une ouverture, un recrutement, un salon, les 20 ans de l'entreprise. Sans raison d'écrire cette semaine, on n'écrit pas.</p></div>
+              <div><h3>Il se lit sur un téléphone</h3><p>Moins de 80 mots, pas de plaquette. Votre travail parle dans la pièce jointe.</p></div>
+              <div><h3>Il finit par une question facile</h3><p>« Je vous envoie un prix ? » obtient plus de réponses que « Auriez-vous 30 minutes ? ».</p></div>
+            </div>
+          </div>
+          <div class="doc" aria-label="Exemple de mail envoyé à un prospect (fictif)">
+            <div class="meta"><span>De</span><b>julien@atelier-maille.fr</b><span>À</span><b>Camille Roche, Volta Bistrot</b><span>Objet</span><b>vos tenues de salle</b></div>
+            <div class="body" id="mail-corps" data-texte="Bonjour Camille,
+
+J'ai vu que Volta ouvrait dans trois semaines, quai Saint-Vincent.
+
+On a brodé votre logo sur un sweat et un tablier de service pour voir ce que ça donne : c'est en pièce jointe.
+
+Je vous envoie un prix pour 20 tenues ?
+
+Julien, Atelier Maille">Bonjour Camille,
+
+J'ai vu que Volta ouvrait dans trois semaines, quai Saint-Vincent.
+
+On a brodé votre logo sur un sweat et un tablier de service pour voir ce que ça donne : c'est en pièce jointe.
+
+Je vous envoie un prix pour 20 tenues ?
+
+Julien, Atelier Maille</div>
+            <div class="pj" id="mail-pj"><span class="f"><img src="{{ 'nv-resto-sweat.jpg' | asset_url }}" alt="" width="34" height="34">volta-sweat.jpg</span><span class="f"><img src="{{ 'nv-resto-duo.jpg' | asset_url }}" alt="" width="34" height="34">volta-tenues.jpg</span><span class="ex" style="margin-left:auto">Exemple fictif</span></div>
+            <div class="tablier" id="tablier"><img src="{{ 'nv-resto-sweat.jpg' | asset_url }}" alt="Sweat noir brodé au logo du bistrot Volta" width="460" height="460"><span>Brodé à son logo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="signaux" aria-labelledby="t-signaux">
+    <div class="piste" id="piste-signaux">
+      <div class="scene">
+        <div class="tete">
+          <h2 id="t-signaux">On écrit à ceux qui ont une raison d'acheter cette semaine</h2>
+          <p>Chaque entreprise contactée a un signal récent et vérifiable. Sinon, elle attend son tour. <span class="ex">Exemples fictifs</span></p>
+        </div>
+        <div class="rail" id="rail">
+          <article class="carte"><div class="qui"><span>Volta Bistrot</span><span>Restaurant</span></div><div class="sig">Ouvre dans trois semaines, quai Saint-Vincent</div><div class="prop">Tenues de salle brodées</div></article>
+          <article class="carte"><div class="qui"><span>Studio Kaolin</span><span>Céramique</span></div><div class="sig">Recrute trois vendeurs pour Noël</div><div class="prop">Tenues de boutique et sacs</div></article>
+          <article class="carte"><div class="qui"><span>Aviron de Saône</span><span>Club sportif</span></div><div class="sig">Nouvelle saison, nouveaux licenciés</div><div class="prop">Textile du club</div></article>
+          <article class="carte"><div class="qui"><span>Cabinet Arpent</span><span>Géomètres</span></div><div class="sig">Fête ses 20 ans en 2027</div><div class="prop">Cadeaux pour l'équipe et les clients</div></article>
+          <article class="carte"><div class="qui"><span>Atelier Ferrand</span><span>Fabricant de meubles</span></div><div class="sig">Expose à un salon professionnel en janvier</div><div class="prop">Film de présentation du stand</div></article>
+          <article class="carte"><div class="qui"><span>BDE d'une école de commerce</span><span>Association</span></div><div class="sig">Gala annoncé pour février</div><div class="prop">Sweats de promo</div></article>
+        </div>
+        <div class="prog"><i id="prog"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demarrage">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Comment on démarre</h2>
+        <p class="lead">Deux semaines de préparation, puis les premiers envois. Vous gardez la main sur ce qui part en votre nom.</p>
+      </div>
+      <div class="frise">
+        <div class="axe" aria-hidden="true"></div>
+        <div class="graduation" aria-hidden="true"><span>Jour 1</span><span>Jour 15</span><span>Jour 30</span></div>
+        <div class="etapes">
+          <div class="etape"><span class="quand">Jour 1</span><h3>Vous créez une adresse sur votre domaine</h3><p>Par exemple commercial@votre-entreprise.fr. Les mails partent à votre nom, les réponses arrivent chez vous, et l'adresse reste la vôtre si on arrête.</p></div>
+          <div class="etape"><span class="quand">Jours 1 à 15</span><h3>On la chauffe</h3><p>Une adresse neuve qui envoie 40 mails dès le premier jour finit en spam. On monte le volume doucement, et on prépare la liste et les échantillons pendant ce temps.</p></div>
+          <div class="etape"><span class="quand">À partir du jour 16</span><h3>On prospecte</h3><p>Envois, relances, réponses, rendez-vous posés dans votre agenda. Vous allez aux rendez-vous et vous signez.</p></div>
+        </div>
+      </div>
+      <p class="fine">Votre adresse sert déjà depuis plusieurs mois ? On saute la chauffe et on commence dès la première semaine.</p>
+
+      <div class="split">
+        <div class="us">
+          <h3>On s'occupe de</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>choisir les entreprises une par une</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>préparer un échantillon pour chacune</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>écrire, relancer et répondre</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>poser les rendez-vous dans votre agenda</li>
+          </ul>
+        </div>
+        <div class="you">
+          <h3>Vous vous occupez de</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>créer l'adresse mail (dix minutes)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>relire et valider les premiers mails</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>aller aux rendez-vous et conclure</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="suivi">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Vous suivez tout en direct</h2>
+        <p class="lead">Chaque entreprise contactée, chaque réponse et chaque vente apparaît dans votre tableau de bord. Pour la commission, ça évite toute discussion : on sait d'où vient chaque client.</p>
+      </div>
+      <div class="dash">
+        <div class="dash-top"><b>Atelier Maille, sixième semaine</b><span class="ex">Exemple, chiffres fictifs</span></div>
+        <div class="kpis">
+          <div><b>180</b><span>entreprises contactées</span></div>
+          <div><b>19</b><span>réponses</span></div>
+          <div><b>7</b><span>rendez-vous</span></div>
+          <div><b>2</b><span>ventes signées</span></div>
+          <div><b>8 400 €</b><span>de chiffre d'affaires apporté</span></div>
+        </div>
+        <div class="funnel">
+          <div class="fl"><span>Contactées</span><span class="bar"><i style="width:100%"></i></span><em>180</em></div>
+          <div class="fl"><span>Ont répondu</span><span class="bar"><i style="width:10.5%"></i></span><em>19</em></div>
+          <div class="fl"><span>Rendez-vous</span><span class="bar"><i style="width:3.9%"></i></span><em>7</em></div>
+          <div class="fl"><span>Signées</span><span class="bar"><i style="width:1.1%"></i></span><em>2</em></div>
+        </div>
+        <div class="feed">
+          <div><time>mardi 9 h 12</time><span>Volta Bistrot : « Oui, envoyez-moi le prix pour 20 tenues. »</span><span class="pill hot">À rappeler</span></div>
+          <div><time>lundi 16 h 40</time><span>Studio Kaolin : rendez-vous jeudi à 10 h, ajouté à votre agenda</span><span class="pill">Rendez-vous</span></div>
+          <div><time>lundi 11 h 05</time><span>Aviron de Saône : devis de 3 200 € signé</span><span class="pill win">Vente</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pour-qui">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Pour quelles entreprises</h2>
+        <p class="lead">Surtout celles qui produisent quelque chose qu'on peut montrer. On prend aussi quelques entreprises de services, quand l'offre est claire et le client facile à identifier.</p>
+      </div>
+      <div class="index">
+        <ul>
+          <li><b>Textile et objets personnalisés</b><span>Le logo du prospect, posé sur vos produits</span></li>
+          <li><b>Vidéo et photo</b><span>Un extrait de film ou une image pour sa marque</span></li>
+          <li><b>Ateliers et fabrication</b><span>Une pièce, une maquette, une simulation de prix</span></li>
+          <li><b>Impression et signalétique</b><span>Son enseigne, ses supports, à ses couleurs</span></li>
+          <li><b>Agencement et mobilier</b><span>Son espace, imaginé avec vos réalisations</span></li>
+          <li><b>Traiteur et événementiel</b><span>Une proposition chiffrée pour son prochain événement</span></li>
+        </ul>
+      </div>
+      <p class="franc"><b>On vous le dira franchement si</b><span>vous vendez surtout à des particuliers, ou si vous n'avez pas la place de prendre de nouvelles commandes dans les trois mois.</span></p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap founder">
+      <img src="{{ 'nv-aurelien.jpg' | asset_url }}" alt="Aurélien Ruotte, fondateur de Novyance" width="300" height="300" loading="lazy">
+      <div>
+        <blockquote>« Cette méthode, on l'a d'abord rodée sur nos propres activités, puis pour un studio vidéo, une agence d'artistes et un atelier textile. On applique chez vous ce qui a marché chez nous. Et comme on n'est payés que sur les ventes, on n'écrit qu'aux entreprises qui ont une vraie raison d'acheter. »</blockquote>
+        <div class="sig"><b>Aurélien Ruotte</b><span>Fondateur de Novyance, à Lyon</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Questions fréquentes sur la prospection externalisée</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Et si vous écrivez quelque chose qui ne me ressemble pas ?</summary><p>Rien ne part avant que vous ayez lu et validé les premiers mails. Vous pouvez corriger un modèle ou couper les envois à tout moment depuis votre tableau de bord.</p></details>
+        <details><summary>Comment vous savez qu'une vente vient de vous ?</summary><p>Chaque entreprise contactée est listée dans votre tableau de bord avec la date du premier mail. Une vente signée avec l'une d'elles dans les 12 mois qui suivent compte pour la commission.</p></details>
+        <details><summary>Pourquoi une adresse sur mon domaine ?</summary><p>Un acheteur répond plus volontiers à une entreprise qu'il peut vérifier. Et les réponses doivent arriver chez vous. L'adresse vous appartient, même si on arrête de travailler ensemble.</p></details>
+        <details><summary>A-t-on le droit de prospecter par mail ?</summary><p>Oui, entre professionnels, quand le message concerne l'activité du destinataire. Chaque mail permet de ne plus être contacté, et on tient votre liste d'opposition à jour.</p></details>
+        <details><summary>Que se passe-t-il après le premier mois ?</summary><p>Si les résultats vous conviennent, on continue. Sinon, un mail suffit pour arrêter, sans frais. La commission reste due sur les ventes signées avec les entreprises déjà contactées.</p></details>
+        <details><summary>Qui facture le client ?</summary><p>Vous. On intervient comme agent commercial : on trouve le client et on prépare la vente, vous signez et vous facturez comme d'habitude. On vous facture ensuite notre commission sur ce qui a été encaissé.</p></details>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="end" id="appel">
+    <div class="wrap end-grid">
+      <div>
+        <h2>On ne gagne que si vous gagnez<span class="dot">.</span></h2>
+        <p class="sub">Commencez par voir le travail. Demandé maintenant, votre exemple arrive avant <b data-limite-texte>demain</b>.</p>
+        {% form 'contact', id: 'f-demo2' %}<input type="hidden" name="contact[Demande]" value="Exemple sous 24 h (bas de page)"><label for="d2-site" hidden>Adresse de votre site</label><input id="d2-site" name="contact[Site]" placeholder="votre-site.fr" inputmode="url" required><label for="d2-mail" hidden>Votre email</label><input id="d2-mail" type="email" name="contact[email]" placeholder="vous@votre-site.fr" autocomplete="email" required><button class="btn" type="submit">Recevoir mon exemple sous 24 h</button><div id="ok2" class="ok-msg" hidden>C'est noté. Votre exemple arrive par mail sous 24 h.</div><div class="hp" aria-hidden="true"><label for="f-demo2-hp">Ne pas remplir</label><input type="text" id="f-demo2-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>{% if form.errors %}<div class="ok-msg err">Une erreur s'est produite. Vérifiez votre adresse email, ou écrivez à contact@novyance.fr.</div>{% endif %}{% endform %}
+      </div>
+      <div class="card">
+        <h3>Ou parlons-en 20 minutes</h3>
+        <p>On regarde vos clients actuels, vos marges et la zone à couvrir. À la fin de l'appel, vous savez si on peut vous aider.</p>
+        {% form 'contact', id: 'f-call' %}<input type="hidden" name="contact[Demande]" value="Appel de 20 minutes"><div class="row2"><label for="c-nom" hidden>Prénom et nom</label><input id="c-nom" name="contact[Nom]" placeholder="Prénom et nom" autocomplete="name" required><label for="c-ent" hidden>Entreprise</label><input id="c-ent" name="contact[Entreprise]" placeholder="Entreprise" autocomplete="organization"></div><div class="row2"><label for="c-mail" hidden>Email</label><input id="c-mail" type="email" name="contact[email]" placeholder="Email" autocomplete="email" required><label for="c-tel" hidden>Téléphone</label><input id="c-tel" type="tel" name="contact[Telephone]" placeholder="Téléphone" autocomplete="tel" required></div><label for="c-cre" hidden>Créneau</label><select id="c-cre" name="contact[Creneau]"><option value="">Créneau préféré</option><option>Matin, 9 h à 12 h</option><option>Midi, 12 h à 14 h</option><option>Après-midi, 14 h à 18 h</option><option>Après 18 h</option></select><button class="btn" type="submit">Demander mon appel</button><div id="ok3" class="ok-msg" hidden>Demande reçue. Aurélien vous rappelle sur le créneau choisi.</div><div class="hp" aria-hidden="true"><label for="f-call-hp">Ne pas remplir</label><input type="text" id="f-call-hp" name="_gotcha" tabindex="-1" autocomplete="off"></div>{% if form.errors %}<div class="ok-msg err">Une erreur s'est produite. Vérifiez votre adresse email, ou écrivez à contact@novyance.fr.</div>{% endif %}{% endform %}
+      </div>
+    </div>
+  </section>
+</main>
+
+<script id="nv-scenes">
+(function(){
+  var reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* film : version verticale sur téléphone, bouton son */
+  var v = $('film');
+  if(v){
+    /* vertical sur écran en portrait, horizontal sinon ; suit la rotation et le redimensionnement */
+    var portrait = matchMedia('(max-aspect-ratio: 4/5)'), affiche = v.poster;
+    function choisir(){
+      var vertical = portrait.matches, src = vertical ? v.dataset.v : v.dataset.h;
+      if(!src || v.currentSrc.indexOf(src.split('?')[0].split('/').pop()) > -1) return;
+      v.poster = vertical ? v.dataset.vp : affiche; v.src = src; v.load();
+      var q = v.play && v.play(); if(q && q.catch) q.catch(function(){});
+    }
+    choisir();
+    if(portrait.addEventListener) portrait.addEventListener('change', choisir); else if(portrait.addListener) portrait.addListener(choisir);
+    var p = v.play && v.play(); if(p && p.catch) p.catch(function(){});
+    $('son').addEventListener('click', function(){
+      v.muted = !v.muted; if(!v.muted){ v.currentTime = 0; v.play(); }
+      this.setAttribute('aria-pressed', String(!v.muted));
+      $('son-t').textContent = v.muted ? 'Activer le son' : 'Couper le son';
+      $('son-onde').setAttribute('d', v.muted ? 'm16 9 5 6m0-6-5 6' : 'M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13');
+    });
+  }
+
+  /* l'heure limite de l'exemple : maintenant + 24 h, recalculée chaque minute.
+     Si elle tombe entre 21 h et 6 h, on annonce 9 h le matin (même règle côté serveur). */
+  var JOURS = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  function majLimite(){
+    var d = new Date(Date.now() + 864e5), hh = d.getHours();
+    if(hh >= 21) d.setDate(d.getDate() + 1);
+    if(hh >= 21 || hh < 6) d.setHours(9, 0, 0, 0);
+    var auj = new Date(); auj.setHours(0,0,0,0);
+    var j = new Date(d); j.setHours(0,0,0,0);
+    var mot = Math.round((j - auj) / 864e5) > 1 ? 'après-demain' : 'demain';
+    var h = d.getHours() + ' h ' + String(d.getMinutes()).padStart(2,'0');
+    document.querySelectorAll('[data-limite-h]').forEach(function(e){ e.textContent = h; });
+    document.querySelectorAll('[data-limite-j]').forEach(function(e){ e.textContent = mot + ', ' + JOURS[d.getDay()]; });
+    document.querySelectorAll('[data-limite-texte]').forEach(function(e){ e.textContent = mot + ' ' + h; });
+  }
+  majLimite(); setInterval(majLimite, 30000);
+
+  /* le mail qui s'écrit au défilement, l'échantillon qui tombe */
+  var piste = $('piste-mail'), corps = $('mail-corps'), pj = $('mail-pj'), tab = $('tablier'), raisons = document.querySelectorAll('#raisons > div');
+  var texte = corps ? corps.dataset.texte : '', grand = matchMedia('(min-width: 961px)');
+  function majMail(){
+    if(!piste || reduit || !grand.matches){ if(corps) corps.textContent = texte; pj && pj.classList.add('on'); tab && tab.classList.add('on'); raisons.forEach(function(r){ r.classList.add('on'); }); return; }
+    var r = piste.getBoundingClientRect(), total = r.height - innerHeight, k = Math.min(1, Math.max(0, -r.top / total));
+    var n = Math.round(Math.min(1, k / .72) * texte.length);
+    corps.textContent = texte.slice(0, n);
+    if(n < texte.length){ var c = document.createElement('span'); c.className = 'caret'; corps.appendChild(c); }
+    pj.classList.toggle('on', k > .74); tab.classList.toggle('on', k > .8);
+    raisons.forEach(function(e, i){ e.classList.toggle('on', k >= i * .3); });
+  }
+
+  /* la bande des signaux : le défilement vertical la fait glisser de côté */
+  var ps = $('piste-signaux'), rail = $('rail'), prog = $('prog'), large = matchMedia('(min-width: 861px)');
+  function dimSignaux(){
+    if(!ps) return;
+    if(reduit || !large.matches){ ps.style.height = ''; rail.style.transform = ''; return; }
+    var dist = Math.max(0, rail.scrollWidth - innerWidth);
+    ps.style.height = (innerHeight + dist) + 'px';
+    ps.dataset.dist = dist;
+  }
+  function majSignaux(){
+    if(!ps || reduit || !large.matches) return;
+    var r = ps.getBoundingClientRect(), dist = +ps.dataset.dist || 0, k = Math.min(1, Math.max(0, -r.top / Math.max(1, dist)));
+    rail.style.transform = 'translateX(' + (-k * dist) + 'px)';
+    prog.style.width = (k * 100) + '%';
+  }
+
+  var attente = false;
+  function cadre(){ if(attente) return; attente = true; requestAnimationFrame(function(){ attente = false; majMail(); majSignaux(); }); }
+  addEventListener('scroll', cadre, {passive:true});
+  addEventListener('resize', function(){ dimSignaux(); cadre(); });
+  dimSignaux(); majMail(); majSignaux();
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ dimSignaux(); majSignaux(); });
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <span><b>novyance<span class="dot">.</span></b> Prospection commerciale externalisée, Lyon</span>
+    <span class="cols"><a href="/pages/outils-metier">Outils sur mesure</a><a href="/pages/creation-site-internet-lyon">Sites internet</a><a href="/pages/apporteurs-affaires">Devenir apporteur d'affaires</a>{% if nvblog.articles_count > 0 %}<a href="{{ nvblog.url }}">Blog</a>{% endif %}</span>
+    <span>contact@novyance.fr · 07 86 52 36 81</span>
+    <span class="bot">SIRET 940 553 043 00032 · TVA non applicable, art. 293 B du CGI · {%- assign ml = pages['mentions-legales'] -%}{% if ml.published_at != blank and ml.url != blank %} <a href="{{ ml.url }}">Mentions légales</a>{% else %} <button type="button" data-dlg="ml">Mentions légales</button>{% endif %} · <button type="button" data-dlg="pc">Confidentialité</button></span>
+  </div>
+</footer>
+
+<dialog id="ml">
+  <button class="x" data-close aria-label="Fermer">✕</button>
+  <h3>Mentions légales</h3>
+  <h4>Éditeur</h4><p>Aurélien Ruotte, entrepreneur individuel exerçant sous le nom commercial Novyance. SIRET 940 553 043 00032. Siège : 304 avenue Jean Jaurès, 69007 Lyon. Contact : contact@novyance.fr · 07 86 52 36 81.</p>
+  <h4>Directeur de la publication</h4><p>Aurélien Ruotte.</p>
+  <h4>TVA</h4><p>TVA non applicable, article 293 B du Code général des impôts.</p>
+  <h4>Hébergement</h4><p>Shopify International Ltd, Victoria Buildings, 1-2 Haddington Road, Dublin 4, D04 XN32, Irlande.</p>
+</dialog>
+<dialog id="pc">
+  <button class="x" data-close aria-label="Fermer">✕</button>
+  <h3>Politique de confidentialité</h3>
+  <h4>Responsable</h4><p>Aurélien Ruotte (Novyance) · contact@novyance.fr.</p>
+  <h4>Données collectées</h4><p>Via les formulaires : nom, email, téléphone, entreprise, adresse du site et créneau souhaité.</p>
+  <h4>Finalités</h4><p>Préparer l'exemple demandé, répondre aux demandes et exécuter les prestations commandées.</p>
+  <h4>Conservation</h4><p>Trois ans après le dernier contact. Dix ans pour les pièces comptables.</p>
+  <h4>Vos droits</h4><p>Accès, rectification, effacement et opposition à contact@novyance.fr. Réclamation possible auprès de la CNIL.</p>
+  <h4>Cookies</h4><p>Aucun cookie de suivi publicitaire.</p>
+</dialog>
+
+<div class="mbar" id="mbar" aria-hidden="true" inert><a href="tel:+33786523681" class="t">Appeler</a><a href="#haut" class="g">Recevoir mon exemple</a></div>
+
+<script>
+(function(){
+  var $ = function(s){ return document.querySelector(s); };
+  /* quel formulaire a été envoyé : Shopify recharge la page avec ?contact_posted=true */
+  ['f-demo','f-demo2','f-call'].forEach(function(id){
+    var f = document.getElementById(id); if(!f) return;
+    f.addEventListener('submit', function(e){
+      var hp = document.getElementById(id + '-hp'); if(hp && hp.value){ e.preventDefault(); return; }
+      try{ sessionStorage.setItem('nv-form', id); }catch(err){}
+      if(id === 'f-call' || f.dataset.envoye) return;
+      /* demande d'exemple : enregistrée dans le Pilotage (fonction exemple) ; le formulaire Shopify reste le secours */
+      e.preventDefault();
+      var site = f.querySelector('[name="contact[Site]"]').value, mail = f.querySelector('[name="contact[email]"]').value;
+      var ok = document.getElementById(id === 'f-demo' ? 'ok1' : 'ok2'), btn = f.querySelector('button');
+      btn.disabled = true;
+      fetch('https://sqxlavinbiryvmblmtse.supabase.co/functions/v1/exemple', { method:'POST', headers:{'content-type':'application/json'},
+        body: JSON.stringify({ action:'demande', site:site, email:mail, source: id === 'f-demo' ? 'accueil-haut' : 'accueil-bas', hp: hp ? hp.value : '' }) })
+        .then(function(r){ return r.json().then(function(d){ return { ok:r.ok, d:d }; }); })
+        .then(function(r){
+          btn.disabled = false; ok.hidden = false;
+          if(r.ok){ ok.innerHTML = '<p><b>C'est noté pour ' + site.replace(/[<>&"]/g,'') + '.</b> Votre exemple arrive par mail sous 24 h : un vrai prospect, le mail qu'il recevrait, son échantillon et vos premières cibles.</p>'; f.reset(); }
+          else { ok.textContent = r.d.erreur || 'Une erreur s'est produite.'; }
+        })
+        .catch(function(){ f.dataset.envoye = '1'; f.submit(); });
+    });
+  });
+  if(/contact_posted=true/.test(location.search)){
+    var id = 'f-demo'; try{ id = sessionStorage.getItem('nv-form') || 'f-demo'; sessionStorage.removeItem('nv-form'); }catch(err){}
+    var ok = { 'f-demo':'ok1', 'f-demo2':'ok2', 'f-call':'ok3' }[id], el = document.getElementById(ok);
+    if(el){ el.hidden = false; addEventListener('DOMContentLoaded', function(){ el.scrollIntoView({block:'center'}); }); }
+  }
+  /* mentions et confidentialité */
+  [].forEach.call(document.querySelectorAll('[data-dlg]'), function(b){ b.addEventListener('click', function(){ var d = document.getElementById(b.dataset.dlg); if(d && d.showModal) d.showModal(); }); });
+  [].forEach.call(document.querySelectorAll('dialog [data-close]'), function(b){ b.addEventListener('click', function(){ b.closest('dialog').close(); }); });
+  [].forEach.call(document.querySelectorAll('dialog'), function(d){ d.addEventListener('click', function(e){ if(e.target === d) d.close(); }); });
+  /* barre d'action sur téléphone : visible après le haut de page, cachée en bas sur les formulaires */
+  var b = $('#mbar'), hero = $('.hero'), end = $('#appel');
+  if(b && hero && 'IntersectionObserver' in window){
+    var apres = false, fin = false;
+    var maj = function(){ var on = apres && !fin; b.classList.toggle('on', on); b.setAttribute('aria-hidden', on ? 'false' : 'true'); b.inert = !on; };
+    new IntersectionObserver(function(e){ apres = !e[0].isIntersecting; maj(); }).observe(hero);
+    if(end) new IntersectionObserver(function(e){ fin = e[0].isIntersecting; maj(); }, {threshold:.1}).observe(end);
+  }
+})();
+</script>
+</body>
+</html>

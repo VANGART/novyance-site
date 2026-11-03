@@ -1,0 +1,26 @@
+{
+ "statut": "créé dans Shopify le 06/10, programmé lundi 19/10 9 h (gid://shopify/Article/623055962454)",
+ "blogId": "gid://shopify/Blog/129686995286",
+ "title": "Remplacer Excel par une application : les 7 signes que c'est le moment",
+ "handle": "remplacer-excel-par-une-application",
+ "author": "Aurélien Ruotte",
+ "templateSuffix": "nv",
+ "isPublished": false,
+ "summary": "<p>Excel a fait tourner des milliers de petites entreprises. Mais il arrive un moment où le fichier qui rendait service devient celui que tout le monde craint d'ouvrir. Les 7 signes qui ne trompent pas, et comment changer sans tout casser.</p>",
+ "body_html_file": "seo/articles/remplacer-excel-par-une-application.html",
+ "metafields": [
+  {
+   "namespace": "global",
+   "key": "title_tag",
+   "type": "single_line_text_field",
+   "value": "Remplacer Excel par une application : quand et comment"
+  },
+  {
+   "namespace": "global",
+   "key": "description_tag",
+   "type": "single_line_text_field",
+   "value": "Versions qui circulent, ressaisie, équipe sur le terrain : les 7 signes qu'Excel a atteint sa limite, et comment passer à une application sans tout casser."
+  }
+ ],
+ "publishDate": "2026-10-19T09:00:00+02:00"
+}

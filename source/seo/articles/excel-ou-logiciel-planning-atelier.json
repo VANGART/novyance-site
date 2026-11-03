@@ -1,0 +1,25 @@
+{
+  "statut": "rédigé 12/10, à créer dans Shopify",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Excel ou logiciel pour le planning d'atelier : le test pour trancher",
+  "handle": "excel-ou-logiciel-planning-atelier",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": null,
+  "summary": "<p>Tous les comparatifs disent d'abandonner Excel. Pour beaucoup d'ateliers, un bon fichier suffit encore. Voici un test en six questions pour savoir si c'est votre cas, comment bien tenir votre planning Excel, et les signes qu'il est temps de passer à un outil.</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Excel ou logiciel planning atelier : le test pour trancher"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Excel ou logiciel pour le planning de votre atelier ? Six questions pour trancher, bien tenir Excel tant qu'il suffit, et savoir quand passer à un outil."
+    }
+  ]
+}

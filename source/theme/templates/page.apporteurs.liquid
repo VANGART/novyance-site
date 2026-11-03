@@ -1,0 +1,186 @@
+{% layout none %}
+{%- comment -%}
+  Programme apporteurs d'affaires (07/10/2026). Deux usages de la même page :
+  - sans code : le programme, et un formulaire pour devenir apporteur ;
+  - avec ?a=CODE : l'espace de l'apporteur, avec son lien personnel et un message prêt à transférer.
+  Les appels vont à la fonction publique Supabase « parrainage ».
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+<title>Devenir apporteur d'affaires · 15 % de la première année · Novyance</title>
+<meta name="description" content="Vous voyez passer des TPE qui perdent du temps ? Recommandez-les : je m'occupe de tout et vous reverse 15 % de ce qu'elles paient la première année.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="{{ canonical_url }}">
+<meta property="og:title" content="Devenir apporteur d'affaires Novyance">
+<meta property="og:description" content="Recommandez des TPE à Novyance, je vous reverse 15 % de ce qu'elles paient la première année.">
+<meta property="og:image" content="{{ 'nv-og.png' | asset_url | prepend: 'https:' }}">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ 'nv-favicon-48.png' | asset_url }}">
+<link rel="apple-touch-icon" href="{{ 'nv-apple-touch.png' | asset_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+{% render 'nv-parrainage-styles' %}
+{{ content_for_header }}
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="/">Accueil</a>
+      <a href="/pages/outils-metier">Outils</a>
+      <a href="#rejoindre" class="btn">Devenir apporteur</a>
+      {% render 'nv-mnav' %}
+    </div>
+  </div>
+</header>
+
+<main>
+  {%- comment -%} Espace de l'apporteur : rempli par le script quand le code est valide {%- endcomment -%}
+  <section class="espace" id="espace" hidden>
+    <div class="wrap">
+      <span class="kick">Votre espace apporteur</span>
+      <h1 id="esp-titre">Votre lien personnel</h1>
+      <p class="lead">Partagez ce lien avec les entreprises que vous voulez recommander. Quand elles me laissent leurs coordonnées depuis cette page, je sais qu'elles viennent de vous, et votre commission est suivie automatiquement.</p>
+      <div class="lien"><code id="esp-lien"></code><button class="btn" type="button" id="esp-copier">Copier le lien</button></div>
+      <h2>Le message à transférer</h2>
+      <p class="sub">Copiez-le tel quel ou adaptez-le, puis envoyez-le par mail, SMS ou WhatsApp.</p>
+      <textarea id="esp-msg" rows="7" aria-label="Message à transférer"></textarea>
+      <div class="actions"><button class="btn" type="button" id="esp-copier-msg">Copier le message</button><a class="btn ghost" id="esp-wa" href="#" target="_blank" rel="noopener">Ouvrir dans WhatsApp</a></div>
+      <p class="sub">Vous pouvez aussi me transmettre directement un contact : <b>07 86 52 36 81</b> ou <b>contact@novyance.fr</b>, en citant votre code <b id="esp-code"></b>.</p>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="kick">Programme apporteurs d'affaires</span>
+      <h1>Vos clients ont besoin d'outils. Recommandez-les, je vous reverse 15 %<span class="dot">.</span></h1>
+      <p class="lead">Comptables, conseils, imprimeurs, négoces, secrétariats, architectes : vous voyez passer chaque semaine des petites entreprises qui perdent du temps en tableurs, en relances et en ressaisie. Vous me les recommandez, je m'occupe de tout, et vous touchez <b>15 % de ce qu'elles paient la première année</b>.</p>
+      <div class="actions"><a class="btn" href="#rejoindre">Devenir apporteur</a><a class="btn ghost" href="/pages/outils-metier">Ce que je propose à vos clients</a></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2>Comment ça marche</h2>
+      <ol class="etapes">
+        <li><b>Vous recevez votre lien personnel.</b><span>Une page à votre nom, qui explique à vos clients qui je suis et ce que je fais.</span></li>
+        <li><b>Vous le transmettez.</b><span>Par mail, SMS, WhatsApp ou de vive voix. Un message tout prêt vous attend dans votre espace.</span></li>
+        <li><b>Je rappelle dans la journée.</b><span>Je vous tiens au courant de chaque contact, même quand ça ne signe pas.</span></li>
+        <li><b>Vous êtes payé dès que le client a payé.</b><span>15 % de ce qu'il règle sur ses douze premiers mois, sur facture.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="wrap">
+      <h2>Ce que ça représente</h2>
+      <div class="cartes">
+        <div><b>≈ 125 €</b><span>pour un site vitrine recommandé</span></div>
+        <div><b>≈ 250 €</b><span>pour un outil sur mesure, équipe de 2 à 5 personnes</span></div>
+        <div><b>≈ 380 €</b><span>pour un outil, équipe de 6 à 15 personnes</span></div>
+      </div>
+      <p class="sub">Montants calculés sur les prix d'entrée de la première année. Plus le client prend de briques, plus la commission monte.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2>Ce que je propose à vos clients</h2>
+      <ul class="briques">
+        <li><b>Prospection et relances automatiques</b> : de nouveaux clients trouvés et relancés chaque semaine.</li>
+        <li><b>Pilotage en direct</b> : ventes, trésorerie et objectifs sur un seul écran, sans ressaisie.</li>
+        <li><b>Outils métier sur mesure</b> : planning, devis, suivi de production, en place en une semaine.</li>
+        <li><b>Sites internet</b> : un site vitrine qui fait sonner le téléphone, dès 490 €.</li>
+      </ul>
+      <h2>Mes engagements envers vous</h2>
+      <ul class="briques">
+        <li>Aucune exclusivité, aucun objectif à tenir.</li>
+        <li>Je ne prends que les clients que je peux vraiment aider : c'est votre nom qui est en jeu.</li>
+        <li>Je vous informe de chaque contact transmis, et je paie vite.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec alt" id="rejoindre">
+    <div class="wrap">
+      <h2>Devenir apporteur</h2>
+      <p class="sub">Laissez vos coordonnées : je vous appelle pour faire connaissance, puis je vous envoie votre lien personnel et l'accord d'une page.</p>
+      <form class="form" id="f-insc" novalidate>
+        <div><label for="i-contact">Prénom et nom</label><input id="i-contact" autocomplete="name" required></div>
+        <div><label for="i-soc">Entreprise</label><input id="i-soc" autocomplete="organization"></div>
+        <div><label for="i-email">E-mail</label><input id="i-email" type="email" autocomplete="email"></div>
+        <div><label for="i-tel">Téléphone</label><input id="i-tel" type="tel" autocomplete="tel"></div>
+        <div class="full"><label for="i-metier">Votre activité, vos clients</label><input id="i-metier" placeholder="Ex. expert-comptable, surtout des artisans du bâtiment"></div>
+        <input class="hp" id="i-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button class="btn" type="submit">Je veux devenir apporteur</button><p class="msg" id="i-msg" role="status"></p></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2>Questions fréquentes</h2>
+      <details><summary>Faut-il signer quelque chose ?</summary><p>Un accord d'une page : le taux, le moment du paiement, et rien d'autre. Pas d'exclusivité, pas de durée minimale.</p></details>
+      <details><summary>Comment la commission est-elle calculée ?</summary><p>15 % de ce que le client recommandé paie sur ses douze premiers mois : mise en place et abonnement compris. Elle vous est versée dès que le client a payé, sur facture.</p></details>
+      <details><summary>Comment savez-vous que le client vient de moi ?</summary><p>Votre lien porte votre code. Quand le client laisse ses coordonnées depuis cette page, la recommandation vous est rattachée automatiquement. S'il m'appelle directement, il lui suffit de citer votre nom.</p></details>
+      <details><summary>Et si le client ne signe pas ?</summary><p>Rien ne vous est demandé. Je vous dis simplement où en est le contact, pour que vous puissiez en parler avec lui.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · contact@novyance.fr · 07 86 52 36 81</span>
+    <span class="lk"><a href="/">Accueil</a><a href="/pages/outils-metier">Outils métier</a><a href="/pages/prospection-automatisee">Prospection automatique</a><a href="/blogs/blog">Blog</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var API = "https://sqxlavinbiryvmblmtse.supabase.co/functions/v1/parrainage";
+  function appel(corps){ return fetch(API, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(corps) }).then(function(r){ return r.json().then(function(j){ if (!r.ok) throw new Error(j.erreur || "erreur"); return j; }); }); }
+  function copier(texte, bouton){
+    var fini = function(){ var t = bouton.textContent; bouton.textContent = "Copié ✓"; setTimeout(function(){ bouton.textContent = t; }, 1600); };
+    if (navigator.clipboard) navigator.clipboard.writeText(texte).then(fini, function(){ window.prompt("À copier :", texte); }); else window.prompt("À copier :", texte);
+  }
+  var code = (new URLSearchParams(location.search).get("a") || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+  if (code) {
+    appel({ action: "info", code: code }).then(function(a){
+      var lien = "https://novyance.fr/pages/recommande?r=" + code;
+      var qui = a.prenom || a.societe;
+      document.getElementById("espace").hidden = false;
+      document.getElementById("esp-titre").textContent = "Bonjour " + qui + ", voici votre lien personnel";
+      document.getElementById("esp-lien").textContent = lien;
+      document.getElementById("esp-code").textContent = code;
+      var msg = "Bonjour,\n\nJe vous mets en relation avec Aurélien Ruotte (Novyance, Lyon). Il met en place des outils simples pour les petites entreprises : trouver des clients et relancer automatiquement, suivre ses chiffres, sortir des tableurs. C'est en place en une semaine.\n\nSi ça peut vous faire gagner du temps, tout est expliqué ici : " + lien + "\n\nBonne journée,";
+      document.getElementById("esp-msg").value = msg;
+      document.getElementById("esp-wa").href = "https://wa.me/?text=" + encodeURIComponent(msg);
+      document.getElementById("esp-copier").addEventListener("click", function(){ copier(lien, this); });
+      document.getElementById("esp-copier-msg").addEventListener("click", function(){ copier(document.getElementById("esp-msg").value, this); });
+      document.querySelector(".hero").hidden = true;
+      document.getElementById("rejoindre").hidden = true;
+      appel({ action: "vue", code: code, page: "apporteur" }).catch(function(){});
+    }).catch(function(){});
+  }
+  var f = document.getElementById("f-insc"), m = document.getElementById("i-msg");
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var v = function(id){ return document.getElementById(id).value.trim(); };
+    if (!v("i-contact")) { m.textContent = "Indiquez votre nom."; return; }
+    if (!v("i-email") && !v("i-tel")) { m.textContent = "Indiquez un e-mail ou un téléphone."; return; }
+    var b = f.querySelector("button"); b.disabled = true; m.textContent = "Envoi…";
+    appel({ action: "inscription", contact: v("i-contact"), societe: v("i-soc"), email: v("i-email"), telephone: v("i-tel"), metier: v("i-metier"), hp: v("i-hp") })
+      .then(function(){ f.innerHTML = '<p class="ok"><b>Merci, c\'est noté.</b> Je vous appelle dans les 24 heures pour faire connaissance, puis je vous envoie votre lien personnel.</p>'; })
+      .catch(function(err){ m.textContent = err.message; b.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

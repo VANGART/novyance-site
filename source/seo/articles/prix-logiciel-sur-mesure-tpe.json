@@ -1,0 +1,26 @@
+{
+ "statut": "créé dans Shopify le 06/10, programmé jeudi 15/10 9 h (gid://shopify/Article/623055929686)",
+ "blogId": "gid://shopify/Blog/129686995286",
+ "title": "Combien coûte un logiciel sur mesure pour une TPE en 2026 ?",
+ "handle": "prix-logiciel-sur-mesure-tpe",
+ "author": "Aurélien Ruotte",
+ "templateSuffix": "nv",
+ "isPublished": false,
+ "summary": "<p>Développement en agence, logiciel du marché ou outil sur mesure en abonnement : trois façons de payer un outil pour une TPE, avec des montants très différents. Le comparatif sur trois ans et ce qui fait vraiment varier le prix.</p>",
+ "body_html_file": "seo/articles/prix-logiciel-sur-mesure-tpe.html",
+ "metafields": [
+  {
+   "namespace": "global",
+   "key": "title_tag",
+   "type": "single_line_text_field",
+   "value": "Prix d'un logiciel sur mesure pour TPE en 2026"
+  },
+  {
+   "namespace": "global",
+   "key": "description_tag",
+   "type": "single_line_text_field",
+   "value": "Agence, logiciel du marché ou sur mesure en abonnement : ce que coûte vraiment un outil pour une TPE sur trois ans, et ce qui fait varier le prix."
+  }
+ ],
+ "publishDate": "2026-10-15T09:00:00+02:00"
+}

@@ -1,0 +1,31 @@
+# Reconstruit le site à partir de source/ et le publie. Les articles dont la date de parution est arrivée sortent seuls.
+# Lundi et jeudi à 9 h (heure de Paris, l'été comme l'hiver) ; aussi à la main (onglet Actions) et à chaque changement de source/.
+name: Publier le site
+on:
+  schedule:
+    - cron: "10 7,8 * * 1,4"
+  workflow_dispatch:
+  push:
+    paths: ["source/**"]
+permissions:
+  contents: write
+  pages: write
+concurrency: publier
+jobs:
+  construire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Construire le site
+        run: python3 source/outils/construire-site-novyance.py .
+      - name: Publier s'il y a du nouveau
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "novyance-bot"
+          git config user.email "contact@novyance.fr"
+          git add -A
+          if git diff --cached --quiet; then echo "Rien de nouveau."; exit 0; fi
+          git commit -m "Site reconstruit le $(date -u +%F)"
+          git push
+          gh api -X POST repos/${{ github.repository }}/pages/builds || true

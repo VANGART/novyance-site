@@ -1,0 +1,25 @@
+{
+  "statut": "rédigé 08/10, à créer dans Shopify",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "CRM pour artisan : ne plus perdre une demande ni un devis",
+  "handle": "crm-pour-artisan",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": null,
+  "summary": "<p>Les comparatifs de CRM pour artisan parlent surtout de devis et de factures. L'argent se perd ailleurs : la demande jamais rappelée, le devis jamais relancé. Voici le suivi en cinq étapes qui règle ça, depuis le téléphone.</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "CRM pour artisan : suivre demandes et devis simplement"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "CRM pour artisan : suivre chaque demande, relancer chaque devis au bon moment, depuis le téléphone. Cinq étapes, sans usine à gaz ni logiciel de plus."
+    }
+  ]
+}

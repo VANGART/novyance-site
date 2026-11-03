@@ -1,0 +1,25 @@
+{
+  "statut": "rédigé 22/10, à créer dans Shopify",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Logiciel de suivi de chantier pour artisan : savoir où vous en êtes pendant le chantier",
+  "handle": "logiciel-suivi-chantier-artisan",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": null,
+  "summary": "<p>Les comparatifs listent des logiciels et leurs fonctions. Un artisan veut surtout savoir s'il gagne de l'argent sur un chantier pendant qu'il est en cours. Les cinq choses à suivre, et comment faire remplir l'outil depuis le chantier.</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel suivi chantier artisan : la marge en temps réel"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel de suivi de chantier pour artisan : heures, achats, avenants et photos rattachés au chantier, comparés au devis pendant les travaux."
+    }
+  ]
+}

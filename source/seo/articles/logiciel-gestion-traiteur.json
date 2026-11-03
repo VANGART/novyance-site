@@ -1,0 +1,26 @@
+{
+  "statut": "créé dans Shopify le 05/10, programmé jeudi 08/10 9 h (gid://shopify/Article/623023325526)",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Logiciel de gestion traiteur : choisir selon vos modifications de dernière minute",
+  "handle": "logiciel-gestion-traiteur",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "summary": "<p>Pour un traiteur de 2 à 10 personnes, le bon logiciel n'est pas celui qui a le plus de modules. C'est celui qui encaisse un changement de couverts à J-3 sans recopie : quantités, achats, équipe et acompte suivent seuls.</p>",
+  "body_html_file": "seo/articles/logiciel-gestion-traiteur.html",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel gestion traiteur : bien choisir pour une TPE"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel de gestion traiteur : fiche événement, calcul des quantités, acomptes. Comment choisir quand on est 2 à 10 personnes, sans usine à gaz."
+    }
+  ],
+  "publishDate": "2026-10-08T09:00:00+02:00"
+}

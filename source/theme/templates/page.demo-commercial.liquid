@@ -1,0 +1,505 @@
+{% layout none %}{% raw %}<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Commercial · démo Novyance</title>{% endraw %}
+<meta name="description" content="Démo interactive, données fictives : relances, pipeline, contacts et prospection, avec le récap du matin.">
+<meta property="og:title" content="Commercial · démo Novyance">
+<meta property="og:description" content="Démo interactive, données fictives : relances, pipeline, contacts et prospection, avec le récap du matin.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https:{{ 'nv-og.png' | asset_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+{% raw %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --canvas:#F3F6FA; --surface:#FFFFFF; --sunk:#E9EEF5; --line:#DCE3EC; --line2:#EBEFF5;
+  --ink:#2B1A12; --ink2:#5E5049; --ink3:#948A85;
+  --late:#D2453B; --late-s:#FBE7E5; --ok:#23845A; --ok-s:#E1F2EA; --warn:#C98A12; --warn-s:#FCF1D9;
+  --nv-rose:#FF9EBC; --nv-orange:#FF681F;
+  --ac:#2F6B4F; --ac-s:#E3EFE8;
+  --t:'Space Grotesk','DM Sans',system-ui,sans-serif; --b:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --e:cubic-bezier(.22,.61,.36,1);
+}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0;}
+body{background:var(--canvas);color:var(--ink);font-family:var(--b);font-size:14.5px;line-height:1.45;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;}
+input,select{font:inherit;color:inherit;}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px;border-radius:6px;}
+h1,h2,h3{font-family:var(--t);font-weight:600;letter-spacing:-.015em;line-height:1.15;}
+
+/* bandeau démo */
+.demo{background:var(--ink);color:#fff;font-size:13px;}
+.demo .in{max-width:1320px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.demo .mk{font-family:var(--t);font-weight:700;letter-spacing:-.02em;}
+.demo .mk i{color:var(--nv-orange);font-style:normal;}
+.demo .txt{color:rgba(255,255,255,.62);}
+.demo .pf{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;}
+.demo .pf button{padding:5px 12px;border-radius:100px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.85);font-size:12.5px;}
+.demo .pf button[aria-pressed="true"]{background:var(--nv-rose);border-color:var(--nv-rose);color:var(--ink);font-weight:600;}
+.demo .rs{font-size:12.5px;color:rgba(255,255,255,.55);text-decoration:underline;text-underline-offset:3px;}
+
+/* barre client */
+.bar{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;}
+.bar .in{max-width:1320px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:14px;}
+.logo{width:38px;height:38px;border-radius:10px;background:var(--ac);color:#fff;display:grid;place-items:center;font-family:var(--t);font-weight:700;font-size:16px;flex:none;}
+.who b{display:block;font-family:var(--t);font-size:16px;font-weight:600;}
+.who span{font-size:12.5px;color:var(--ink3);}
+.role{margin-left:auto;display:flex;background:var(--sunk);border-radius:10px;padding:3px;}
+.role button{padding:7px 14px;border-radius:8px;font-size:13px;font-weight:500;color:var(--ink2);}
+.role button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(43,26,18,.12);}
+
+/* structure */
+.app{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:0;min-height:calc(100vh - 110px);}
+nav.side{padding:22px 12px;border-right:1px solid var(--line);}
+nav.side button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:9px 12px;border-radius:9px;font-size:14px;color:var(--ink2);text-align:left;margin-bottom:2px;}
+nav.side button:hover{background:var(--sunk);}
+nav.side button[aria-current="page"]{background:var(--ac-s);color:var(--ink);font-weight:600;}
+nav.side .n{font-size:12px;min-width:20px;height:20px;border-radius:100px;display:grid;place-items:center;background:var(--sunk);color:var(--ink2);padding:0 6px;}
+nav.side .n.late{background:var(--late);color:#fff;}
+main{padding:24px 28px 90px;min-width:0;}
+.hd{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
+.hd h1{font-size:24px;}
+.hd p{color:var(--ink3);font-size:13.5px;}
+
+/* chiffres du jour */
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px;}
+.kp.five{grid-template-columns:repeat(5,1fr);}
+.k{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-align:left;transition:border-color .2s;}
+.k:hover{border-color:var(--ink3);}
+.k b{display:block;font-family:var(--t);font-size:28px;font-weight:600;line-height:1;}
+.k span{display:block;font-size:13px;color:var(--ink2);margin-top:6px;}
+.k small{display:block;font-size:12px;color:var(--ink3);margin-top:2px;}
+.k.late b{color:var(--late);}
+.k.ok b{color:var(--ok);}
+
+.grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;align-items:start;}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:18px;}
+.panel>h2{font-size:15px;padding:13px 16px;border-bottom:1px solid var(--line2);display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+.panel>h2 span{font-family:var(--b);font-weight:400;font-size:12.5px;color:var(--ink3);}
+.empty{padding:18px 16px;color:var(--ink3);font-size:13.5px;}
+
+/* ressources du jour */
+.rr{display:grid;grid-template-columns:150px 1fr auto;gap:14px;align-items:center;padding:13px 16px;border-top:1px solid var(--line2);}
+.rr:first-of-type{border-top:0;}
+.rr .rn b{display:block;font-size:14px;}
+.rr .rn small{color:var(--ink3);font-size:12px;}
+.rr .job{min-width:0;}
+.rr .job b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rr .job small{color:var(--ink2);font-size:12.5px;}
+.prog{height:5px;background:var(--sunk);border-radius:5px;margin-top:7px;overflow:hidden;}
+.prog i{display:block;height:100%;background:var(--ac);border-radius:5px;transition:width .6s var(--e);}
+.idle{color:var(--ink3);font-size:13px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;font-size:13px;font-weight:600;background:var(--ac);color:#fff;white-space:nowrap;transition:filter .2s;}
+.btn:hover{filter:brightness(1.08);}
+.btn.ghost{background:var(--sunk);color:var(--ink);}
+.btn.warn{background:var(--late-s);color:var(--late);}
+.btn.big{padding:13px 18px;font-size:14.5px;border-radius:11px;}
+.acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+
+/* listes */
+.li{display:flex;align-items:center;gap:12px;padding:11px 16px;border-top:1px solid var(--line2);width:100%;text-align:left;}
+.li:first-of-type{border-top:0;}
+button.li:hover{background:var(--canvas);}
+.li .m{flex:1;min-width:0;}
+.li .m b{display:block;font-weight:600;font-size:13.5px;}
+.li .m small{color:var(--ink3);font-size:12.5px;}
+.dot{width:8px;height:8px;border-radius:50%;flex:none;background:var(--ink3);}
+.dot.late{background:var(--late);} .dot.warn{background:var(--warn);} .dot.ok{background:var(--ok);} .dot.ac{background:var(--ac);}
+.tag{font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:100px;background:var(--sunk);color:var(--ink2);white-space:nowrap;}
+.tag.late{background:var(--late-s);color:var(--late);} .tag.warn{background:var(--warn-s);color:#8A5E08;} .tag.ok{background:var(--ok-s);color:var(--ok);}
+.feed .li{font-size:13px;}
+.feed .h{color:var(--ink3);font-size:12px;width:38px;flex:none;}
+
+/* planning */
+.board-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;}
+.board{min-width:820px;position:relative;}
+.brow{display:grid;grid-template-columns:170px 1fr;border-top:1px solid var(--line2);}
+.brow:first-child{border-top:0;}
+.bhead .days{display:grid;grid-template-columns:repeat(5,1fr);}
+.bhead .days div{padding:11px 10px;font-size:12.5px;color:var(--ink2);border-left:1px solid var(--line2);}
+.bhead .days div b{font-family:var(--t);font-weight:600;color:var(--ink);font-size:13.5px;margin-right:4px;}
+.bhead .days div.today{background:var(--ac-s);}
+.blab{padding:12px 14px;border-right:1px solid var(--line2);}
+.blab b{display:block;font-size:13.5px;}
+.blab small{font-size:12px;color:var(--ink3);}
+.load{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:11.5px;color:var(--ink2);}
+.load i{flex:1;height:4px;border-radius:4px;background:var(--sunk);position:relative;overflow:hidden;}
+.load i::after{content:'';position:absolute;left:0;top:0;bottom:0;width:var(--w);background:var(--ac);border-radius:4px;}
+.load.hi i::after{background:var(--late);}
+.track{position:relative;display:grid;grid-template-columns:repeat(10,1fr);grid-auto-rows:40px;row-gap:6px;padding:8px 0;min-height:56px;
+  background-image:repeating-linear-gradient(90deg,transparent 0,transparent calc(20% - 1px),var(--line2) calc(20% - 1px),var(--line2) 20%);}
+.blk{margin:0 3px;border-radius:8px;padding:5px 9px;text-align:left;font-size:12.5px;line-height:1.25;overflow:hidden;border:1px solid transparent;display:flex;flex-direction:column;justify-content:center;min-width:0;transition:transform .15s var(--e),box-shadow .2s;}
+.blk:hover{transform:translateY(-1px);box-shadow:0 6px 16px -10px rgba(43,26,18,.5);}
+.blk b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.blk small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.8;font-size:11.5px;}
+.blk.planifie{background:var(--surface);border-color:var(--ac);color:var(--ink);border-style:dashed;}
+.blk.encours{background:var(--ac);color:#fff;}
+.blk.late{box-shadow:inset 3px 0 0 var(--late);}
+.blk.encours.late{box-shadow:inset 4px 0 0 #FFB4AC;}
+.blk.moved{animation:pop .5s var(--e);}
+@keyframes pop{0%{transform:scale(.94);}60%{transform:scale(1.03);}100%{transform:none;}}
+.now{position:absolute;top:0;bottom:0;width:2px;background:var(--late);z-index:3;pointer-events:none;}
+.now::before{content:attr(data-h);position:absolute;top:-1px;left:4px;font-size:10.5px;font-weight:600;color:var(--late);background:var(--surface);padding:0 3px;border-radius:3px;}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin:12px 2px 0;}
+.legend span{display:inline-flex;align-items:center;gap:6px;}
+.sw{width:18px;height:10px;border-radius:3px;display:inline-block;}
+.tray{margin-top:18px;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px;}
+.chip{padding:8px 12px;border-radius:10px;border:1px dashed var(--ink3);background:var(--surface);text-align:left;font-size:13px;}
+.chip b{display:block;font-weight:600;}
+.chip small{color:var(--ink3);font-size:12px;}
+
+/* suivi (colonnes) */
+.cols{display:grid;grid-template-columns:repeat(5,minmax(190px,1fr));gap:12px;overflow-x:auto;padding-bottom:6px;}
+.col{background:var(--sunk);border-radius:12px;padding:10px;min-height:120px;}
+.col h3{font-family:var(--b);font-size:13px;font-weight:600;color:var(--ink2);padding:2px 4px 10px;display:flex;justify-content:space-between;}
+.card{display:block;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 11px;margin-bottom:8px;transition:border-color .2s;}
+.card:hover{border-color:var(--ink3);}
+.card b{display:block;font-size:13.5px;font-weight:600;}
+.card small{display:block;color:var(--ink3);font-size:12px;margin:2px 0 7px;}
+.card .rowt{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.card .val{margin-left:auto;font-size:12px;color:var(--ink2);font-weight:600;}
+
+/* achats */
+.add{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line2);background:var(--canvas);}
+.add input,.add select{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:8px 11px;font-size:13.5px;min-width:0;}
+.add input{flex:2 1 220px;} .add select{flex:1 1 180px;}
+.a3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.a3>div{border-left:1px solid var(--line2);min-width:0;}
+.a3>div:first-child{border-left:0;}
+.a3 h3{font-family:var(--b);font-size:13px;font-weight:600;color:var(--ink2);padding:12px 16px 4px;}
+
+/* équipe */
+.team .li{display:grid;grid-template-columns:1fr 180px 170px;gap:14px;}
+.pres{display:flex;gap:4px;}
+.pres span{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:11px;font-weight:600;background:var(--ok-s);color:var(--ok);}
+.pres span.off{background:var(--sunk);color:var(--ink3);text-decoration:line-through;}
+
+/* tiroir */
+.scrim{position:fixed;inset:0;background:rgba(43,26,18,.32);opacity:0;pointer-events:none;transition:opacity .25s;z-index:50;}
+.scrim.on{opacity:1;pointer-events:auto;}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--surface);z-index:51;transform:translateX(102%);transition:transform .3s var(--e);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+.drawer.on{transform:none;}
+.dr-h{padding:20px 22px 14px;border-bottom:1px solid var(--line2);}
+.dr-h small{color:var(--ink3);font-size:12.5px;}
+.dr-h h2{font-size:20px;margin:4px 0 8px;}
+.dr-b{padding:16px 22px;overflow:auto;flex:1;}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:8px 12px;font-size:13.5px;margin-bottom:18px;}
+.kv dt{color:var(--ink3);}
+.pbx{background:var(--late-s);color:#8C2A22;border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:16px;}
+.dr-b h3{font-family:var(--b);font-size:12.5px;font-weight:600;color:var(--ink3);margin:14px 0 8px;}
+.stack{display:flex;flex-direction:column;gap:8px;}
+.resp{display:flex;gap:6px;flex-wrap:wrap;}
+.resp button{padding:8px 12px;border-radius:9px;background:var(--sunk);font-size:13px;}
+.resp button:hover{background:var(--ac-s);}
+.x{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:9px;font-size:18px;color:var(--ink2);}
+.x:hover{background:var(--sunk);}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:11px 16px;border-radius:11px;font-size:13.5px;opacity:0;pointer-events:none;transition:all .3s var(--e);z-index:60;max-width:calc(100% - 32px);}
+.toast.on{opacity:1;transform:translate(-50%,0);}
+
+/* équipe : vue simplifiée */
+.mine .rr{grid-template-columns:1fr;gap:10px;}
+.mine .acts{justify-content:flex-start;}
+.note{font-size:12.5px;color:var(--ink3);margin-top:-8px;margin-bottom:16px;}
+
+@media (max-width:980px){
+  .grid2{grid-template-columns:1fr;}
+  .kp,.kp.five{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr;}
+  nav.side{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--surface);border-right:0;border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:2px;}
+  nav.side button{flex-direction:column;justify-content:center;gap:2px;font-size:11.5px;padding:6px 4px;margin:0;text-align:center;}
+  nav.side .n{position:absolute;top:1px;right:6px;min-width:16px;height:16px;font-size:10px;padding:0 4px;}
+  nav.side button{position:relative;}
+  main{padding:18px 16px 100px;}
+  .rr{grid-template-columns:1fr;gap:8px;}
+  .acts{justify-content:flex-start;}
+  .a3{grid-template-columns:1fr;}
+  .a3>div{border-left:0;border-top:1px solid var(--line2);}
+  .team .li{grid-template-columns:1fr;}
+  .demo .txt{display:none;}
+  .demo .in{padding:8px 14px;gap:8px;}
+  .demo .pf{margin-left:0;flex-wrap:nowrap;overflow-x:auto;}
+  .demo .pf button{white-space:nowrap;padding:4px 10px;}
+  .kp.five .k:last-child{grid-column:span 2;}
+  .role button{padding:7px 10px;}
+  .who span{display:none;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
+
+.kwin{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--ac);color:#fff;border-radius:16px;margin-bottom:14px;overflow:hidden;}
+.kwin>div{padding:18px 20px;border-left:1px solid rgba(255,255,255,.18);}
+.kwin>div:first-child{border-left:0;}
+.kwin b{display:block;font-family:var(--t);font-size:32px;font-weight:600;line-height:1;letter-spacing:-.02em;}
+.kwin span{display:block;font-size:12.5px;opacity:.85;margin-top:7px;}
+@media (max-width:760px){.kwin{grid-template-columns:1fr 1fr;}.kwin>div:nth-child(3){border-left:0;}.kwin>div{border-top:1px solid rgba(255,255,255,.18);}}
+.recap{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:18px;display:grid;grid-template-columns:44px 1fr;gap:14px;}
+.recap .av{width:44px;height:44px;border-radius:12px;background:var(--ac-s);color:var(--ac);display:grid;place-items:center;font-family:var(--t);font-weight:700;}
+.recap p{font-size:14.5px;line-height:1.6;max-width:70ch;}
+.recap p+p{margin-top:6px;color:var(--ink2);font-size:13.5px;}
+.draft{border-top:1px solid var(--line2);padding:16px;}
+.draft:first-of-type{border-top:0;}
+.draft .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;}
+.draft .top b{font-size:14px;}
+.draft .why{font-size:12.5px;color:var(--ink3);margin-top:2px;}
+.draft .obj{font-size:13px;font-weight:600;margin:12px 0 4px;}
+.draft textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:inherit;font-size:13.5px;line-height:1.55;color:var(--ink);background:var(--canvas);resize:vertical;}
+.draft textarea:focus{outline:none;border-color:var(--ac);background:#fff;}
+.draft .acts{justify-content:flex-start;margin-top:10px;}
+.draft.done{opacity:.55;}
+.draft.done textarea{display:none;}
+.guard{font-size:12.5px;color:var(--ink3);padding:12px 16px;border-top:1px solid var(--line2);background:var(--canvas);}
+.pipe{display:grid;grid-template-columns:repeat(4,minmax(200px,1fr));gap:12px;overflow-x:auto;padding-bottom:6px;}
+.bar2{display:flex;align-items:center;gap:10px;padding:9px 16px;font-size:13px;border-top:1px solid var(--line2);}
+.bar2:first-of-type{border-top:0;}
+.bar2 span{width:150px;flex:none;color:var(--ink2);}
+.bar2 i{flex:1;height:10px;border-radius:10px;background:var(--sunk);position:relative;overflow:hidden;}
+.bar2 i::after{content:'';position:absolute;left:0;top:0;bottom:0;width:var(--w);background:var(--ac);border-radius:10px;}
+.bar2 b{width:70px;text-align:right;}
+.search{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 12px;font-size:14px;width:min(320px,100%);}
+.hist .li{font-size:13px;}
+.hist .h{color:var(--ink3);font-size:12px;width:70px;flex:none;}
+@media (max-width:760px){.kwin{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--ac);color:#fff;border-radius:16px;margin-bottom:14px;overflow:hidden;}
+.kwin>div{padding:18px 20px;border-left:1px solid rgba(255,255,255,.18);}
+.kwin>div:first-child{border-left:0;}
+.kwin b{display:block;font-family:var(--t);font-size:32px;font-weight:600;line-height:1;letter-spacing:-.02em;}
+.kwin span{display:block;font-size:12.5px;opacity:.85;margin-top:7px;}
+@media (max-width:760px){.kwin{grid-template-columns:1fr 1fr;}.kwin>div:nth-child(3){border-left:0;}.kwin>div{border-top:1px solid rgba(255,255,255,.18);}}
+.recap{grid-template-columns:1fr;}.bar2 span{width:110px;}}
+</style>
+</head>
+<body>
+
+<div class="demo"><div class="in">
+  <span class="mk">novyance<i>.</i></span>
+  <span class="txt">Démo interactive. Données fictives, rien n’est envoyé.</span>
+  <div class="pf" id="profiles" role="group" aria-label="Choisir un métier"></div>
+  <button class="rs" id="reset">Réinitialiser</button>
+</div></div>
+
+<div class="bar"><div class="in">
+  <div class="logo" id="logo"></div>
+  <div class="who"><b id="cname"></b><span id="cmetier"></span></div>
+  <div class="role" role="group" aria-label="Vue">
+    <button data-role="direction" aria-pressed="true">Direction</button>
+    <button data-role="equipe" aria-pressed="false">Commercial</button>
+  </div>
+</div></div>
+
+<div class="app">
+  <nav class="side" id="nav" aria-label="Sections"></nav>
+  <main id="main"></main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-modal="true"><button class="x" id="dx" aria-label="Fermer">✕</button><div id="dr"></div></aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+var JN=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'],MN=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+var NOW=new Date();
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function eur(v){return Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' €';}
+var STADES=[['prospection','Prospection'],['encours','Projet en cours'],['signe','Signé'],['perdu','Perdu']];
+var CANAUX=['Mail','Téléphone','LinkedIn','Recommandation','Salon','Site internet'];
+
+/* contact : [structure, personne, type, canal, stade, dernier échange (j), prochaine relance (j, null = aucune), potentiel, responsable, note] */
+var PROFILES={
+menuiserie:{nom:'Menuiserie Arnaud',metier:'Menuiserie et agencement',mono:'MA',accent:'#2F6B4F',accentS:'#E3EFE8',boss:'Julien',me:'Sofiane',cible:'architectes d\u2019intérieur et hôtels de Lyon',
+  types:['Architecte','Hôtel','Restaurant','Promoteur','Particulier'],
+  c:[['Atelier Blanche Architecture','Claire Morand','Architecte','Mail','prospection',9,-2,18000,'Julien','A répondu, veut voir des réalisations en chêne'],
+     ['Hôtel des Canuts','Marc Vial','Hôtel','Recommandation','encours',4,1,32000,'Julien','Rénovation de 12 chambres, devis envoyé'],
+     ['Brasserie du Port','Samia Belkacem','Restaurant','Téléphone','encours',7,-1,21000,'Sofiane','Bar et banquettes, attend le devis révisé'],
+     ['Studio Ocre','Paul Ferrand','Architecte','LinkedIn','prospection',15,-6,12000,'Sofiane','Premier message lu, pas de réponse'],
+     ['Résidence Les Tilleuls','Nathalie Roche','Promoteur','Salon','encours',12,-3,38000,'Julien','Placards de 24 logements, appel d\u2019offres'],
+     ['Famille Leroy','Thomas Leroy','Particulier','Site internet','encours',2,5,16500,'Sofiane','Cuisine complète, visite faite'],
+     ['Cabinet Lenoir','Sophie Lenoir','Architecte','Recommandation','signe',6,null,7600,'Julien','Bibliothèque en cours de fabrication'],
+     ['Le Zinc','Hugo Martin','Restaurant','Téléphone','signe',20,null,5200,'Sofiane','Comptoir de bar planifié'],
+     ['Hôtel Bellecour','Inès Garnier','Hôtel','Mail','prospection',48,null,25000,'Julien','Aucune réponse depuis juillet'],
+     ['Agence Nord Intérieurs','Karim Haddad','Architecte','Mail','perdu',30,null,9000,'Sofiane','Parti chez un concurrent moins cher']],
+  drafts:[[0,'Nos réalisations en chêne massif','Relance J+7 après sa réponse','Bonjour Claire,\n\nComme promis, voici trois agencements en chêne massif réalisés cette année, dont une bibliothèque pour le Cabinet Lenoir livrée le mois dernier.\n\nSi l\u2019un de vos projets en cours s\u2019y prête, je peux passer à l\u2019agence avec des échantillons la semaine prochaine. Mardi ou jeudi matin, qu\u2019est-ce qui vous arrange ?\n\nBien à vous,\nJulien Arnaud'],
+          [4,'Placards Les Tilleuls : nos délais','Appel d\u2019offres, relance en retard de 3 jours','Bonjour Madame Roche,\n\nJe reviens vers vous au sujet des placards des 24 logements. Nous pouvons tenir une pose en deux vagues de 12, avec un premier lot six semaines après validation.\n\nVoulez-vous que je vous envoie un planning détaillé avant votre comité ?\n\nCordialement,\nJulien Arnaud'],
+          [2,'Votre devis révisé pour le bar','Devis attendu depuis hier','Bonjour Samia,\n\nVoici le devis révisé avec les banquettes en chêne teinté et le plan de travail en inox. La différence avec la première version vient surtout des banquettes sur mesure.\n\nJe reste joignable au 06 00 00 00 00 pour en parler.\n\nSofiane'],
+          [3,'Une idée pour vos projets hôteliers','Relance LinkedIn sans réponse depuis 15 jours','Bonjour Paul,\n\nJe me permets de revenir vers vous. Nous fabriquons à Villeurbanne des meubles sur mesure pour l\u2019hôtellerie, avec des délais courts sur les petites séries.\n\nSi un projet arrive chez Studio Ocre, je serais ravi d\u2019en discuter.\n\nSofiane, Menuiserie Arnaud']],
+  nouveaux:9,k:{rdv:9,rep:34,sig:18400,h:'5 h 40'},wins:'Hier, Hôtel des Canuts a accepté un rendez-vous et Le Zinc a signé le comptoir de bar (5 200 €).',
+  replies:[[1,'Marc Vial','Parfait pour moi, passez jeudi à 10 h avec les échantillons.','jeudi 10 h'],[5,'Thomas Leroy','On valide la cuisine, vous pouvez m\u2019envoyer le bon de commande ?','signature']],
+  found:[['Maison Brune Architectes','Architecte','vient de publier 3 projets de rénovation à Lyon 6e'],['Hôtel Saint-Vincent','Hôtel','annonce une rénovation complète au printemps'],['Le Comptoir Gourmand','Restaurant','ouvre une deuxième adresse en novembre']]},
+traiteur:{nom:'Maison Carmin',metier:'Traiteur et restaurant',mono:'MC',accent:'#B8365E',accentS:'#F8E3EA',boss:'Nadia',me:'Inès',cible:'agences événementielles et CSE lyonnais',
+  types:['Agence événementielle','CSE','Entreprise','Galerie','Particulier'],
+  c:[['Agence Alto','Léa Fontaine','Agence événementielle','Salon','signe',3,null,2640,'Nadia','Cocktail de jeudi confirmé'],
+     ['Fondation Aube','Olivier Brun','Entreprise','Recommandation','encours',6,-1,9800,'Nadia','Gala 150 personnes, hésite sur le menu'],
+     ['CSE Mécalyon','Julie Perret','CSE','Mail','encours',10,-2,7200,'Inès','Repas de Noël, deux devis en concurrence'],
+     ['Agence Mistral','Romain Dubois','Agence événementielle','Téléphone','signe',25,null,1840,'Inès','Facture en retard de paiement'],
+     ['Galerie Rivoli','Anna Costa','Galerie','Site internet','prospection',8,-3,3000,'Inès','Vernissages mensuels, intéressée'],
+     ['Clinique du Parc','Dr Martin','Entreprise','Téléphone','signe',1,null,875,'Nadia','Séminaire servi hier'],
+     ['Agence Lumen Events','Chloé Bernard','Agence événementielle','LinkedIn','prospection',19,-9,15000,'Nadia','Grosse agence, jamais travaillé ensemble'],
+     ['Famille Dupont','Claire Dupont','Particulier','Recommandation','signe',9,null,6900,'Nadia','Mariage samedi'],
+     ['CSE Rhône Transports','Marc Giraud','CSE','Mail','prospection',41,null,5000,'Inès','Pas de réponse'],
+     ['Cabinet Morel','Paul Morel','Entreprise','Mail','encours',2,4,4400,'Inès','Plateaux repas mensuels, test en cours']],
+  drafts:[[1,'Votre gala : deux menus au choix','Hésite sur le menu, relance en retard','Bonjour Olivier,\n\nPour vous aider à trancher, je vous propose deux menus pour le gala : un cocktail dînatoire de 14 pièces, ou un dîner assis en trois temps. Les deux tiennent dans votre budget.\n\nNous pouvons organiser une dégustation pour deux personnes la semaine prochaine, offerte.\n\nNadia, Maison Carmin'],
+          [2,'Repas de Noël : ce que nous proposons en plus','Deux devis en concurrence','Bonjour Julie,\n\nJe sais que vous comparez plusieurs propositions pour le repas de Noël. Chez nous, le service, la vaisselle et le débarrassage sont inclus, sans supplément.\n\nSi c\u2019est utile, je peux ajuster le menu enfant pour les familles.\n\nInès, Maison Carmin'],
+          [6,'Vos événements de l\u2019hiver','Grosse agence, relance à faire','Bonjour Chloé,\n\nNous préparons les cocktails et dîners de plusieurs agences lyonnaises, dont Alto. Nous avons encore des dates en décembre, ce qui est rare à cette période.\n\nJe peux vous envoyer notre carte d\u2019hiver et nos références ?\n\nNadia, Maison Carmin'],
+          [4,'Vos prochains vernissages','Intéressée, relance J+7','Bonjour Anna,\n\nPour vos vernissages mensuels, nous proposons une formule de 60 pièces salées et sucrées, livrée et dressée une heure avant l\u2019ouverture.\n\nOn peut commencer par celui d\u2019octobre ?\n\nInès, Maison Carmin']],
+  nouveaux:12,k:{rdv:11,rep:41,sig:23600,h:'6 h 10'},wins:'Hier, la Fondation Aube a demandé une dégustation et le Cabinet Morel a validé les plateaux repas mensuels.',
+  replies:[[1,'Olivier Brun','Ok pour la dégustation, mardi midi c\u2019est possible ?','mardi 12 h'],[9,'Paul Morel','Le test est concluant, on part sur tous les mois.','signature']],
+  found:[['Agence Horizon Events','Agence événementielle','recrute deux chefs de projet événementiel'],['CSE Lyon Aéro','CSE','prépare son arbre de Noël, 400 salariés'],['Galerie Nuit Blanche','Galerie','programme 6 vernissages cet hiver']]},
+cabinet:{nom:'Delorme & Associés',metier:'Expertise comptable',mono:'DA',accent:'#2F5BD3',accentS:'#E1E8FB',boss:'Claire',me:'Mehdi',cible:'créateurs d\u2019entreprise et professions libérales',
+  types:['Création','TPE','Profession libérale','PME','Association'],
+  c:[['Café Lumen','Élise Moreau','Création','Recommandation','signe',3,null,1500,'Claire','Prévisionnel en cours'],
+     ['Groupe Mistral','Romain Dubois','PME','Recommandation','encours',5,-1,6500,'Claire','Audit d\u2019acquisition, attend la lettre de mission'],
+     ['Famille Garnier','Luc Garnier','PME','Téléphone','encours',8,-2,2800,'Claire','Création de holding'],
+     ['Cabinet dentaire Rive Droite','Dr Sarah Klein','Profession libérale','Site internet','prospection',4,-1,3600,'Mehdi','Demande de devis via le site'],
+     ['Studio Kamo','Kenji Mori','TPE','LinkedIn','prospection',16,-7,2400,'Mehdi','Change de comptable en janvier'],
+     ['Atelier Bois & Co','Jean Petit','Création','Salon','prospection',11,-4,1800,'Mehdi','Rencontré au salon des créateurs'],
+     ['SARL Fournil','Marie Fournier','TPE','Recommandation','signe',2,null,2400,'Mehdi','Bilan en cours'],
+     ['Association Les Pentes','Hugo Blanc','Association','Mail','prospection',37,null,1200,'Mehdi','Pas de retour'],
+     ['Kiné Saxe','Julien Roux','Profession libérale','Mail','encours',3,3,2100,'Mehdi','Rendez-vous de présentation fait'],
+     ['EURL Nomade','Sophie Laurent','TPE','Téléphone','perdu',22,null,1900,'Claire','Préfère un cabinet en ligne']],
+  drafts:[[1,'Votre lettre de mission','Attend la lettre de mission depuis hier','Bonjour Romain,\n\nVous trouverez ci-joint la lettre de mission pour l\u2019audit d\u2019acquisition, avec le calendrier que nous avons évoqué : premiers constats sous trois semaines après réception des pièces.\n\nJe reste disponible pour la relire ensemble si besoin.\n\nClaire Delorme'],
+          [3,'Votre devis pour la tenue comptable','Demande reçue via le site il y a 4 jours','Bonjour Docteur Klein,\n\nMerci pour votre demande. Pour un cabinet dentaire de votre taille, notre forfait comprend la tenue, les déclarations, le bilan et un point annuel avec vous.\n\nLe plus simple est d\u2019en parler vingt minutes. Seriez-vous disponible jeudi ou vendredi en fin de journée ?\n\nMehdi Benali'],
+          [4,'Votre changement de comptable en janvier','Relance LinkedIn, sans réponse','Bonjour Kenji,\n\nVous évoquiez un changement de cabinet pour janvier. La reprise d\u2019un dossier se fait sans rupture : nous récupérons les pièces auprès de votre comptable actuel.\n\nJe vous propose un premier échange avant la fin octobre ?\n\nMehdi Benali'],
+          [5,'Suite au salon des créateurs','Rencontré au salon, relance en retard','Bonjour Jean,\n\nRavi de vous avoir rencontré au salon. Comme promis, voici notre offre création : statuts, immatriculation et première année d\u2019accompagnement.\n\nOn cale un rendez-vous pour avancer sur votre prévisionnel ?\n\nMehdi Benali']],
+  nouveaux:7,k:{rdv:8,rep:38,sig:14200,h:'4 h 50'},wins:'Hier, le Groupe Mistral a validé l\u2019audit et le cabinet dentaire Rive Droite a pris rendez-vous.',
+  replies:[[3,'Dr Sarah Klein','Vendredi 18 h me convient très bien.','vendredi 18 h'],[1,'Romain Dubois','Lettre de mission signée, je vous l\u2019envoie.','signature']],
+  found:[['Boulangerie Au Levain','Création','immatriculée la semaine dernière à Lyon 3e'],['Cabinet d\u2019avocats Morel','Profession libérale','s\u2019installe dans de nouveaux bureaux'],['Studio Graphique Onze','TPE','passe le cap de 5 salariés']]}
+};
+
+var PK='menuiserie',P,S={},ROLE='direction',VIEW='matin',OPEN=null,Q='';
+function build(){var st={c:[],d:[],hist:[],sent:0};P.c.forEach(function(x,i){st.c.push({id:i,nom:x[0],pers:x[1],type:x[2],canal:x[3],stade:x[4],last:-x[5],next:x[6],pot:x[7],resp:x[8],note:x[9],hist:[{d:-x[5],t:x[9]}]});});
+  P.drafts.forEach(function(d,i){st.d.push({id:i,cid:d[0],obj:d[1],why:d[2],txt:d[3],etat:'pret'});});st.r=P.replies.map(function(r){return {cid:r[0],who:r[1],txt:r[2],quand:r[3],done:false};});st.f=P.found.map(function(f){return {nom:f[0],type:f[1],sig:f[2],done:false};});return st;}
+function st(){return S[PK];}
+function ct(id){return st().c[id];}
+function arelancer(c){return (c.stade==='prospection'||c.stade==='encours')&&c.next!=null&&c.next<=0;}
+function endormi(c){return (c.stade==='prospection'||c.stade==='encours')&&c.next==null&&c.last<=-30;}
+function visible(c){return ROLE==='direction'||c.resp===P.me;}
+function mesC(){return st().c.filter(visible);}
+
+var main=document.getElementById('main');
+function tagsOf(c){var t='';if(arelancer(c))t+='<span class="tag late">relance '+(c.next<0?'en retard de '+(-c.next)+' j':'aujourd\u2019hui')+'</span>';if(endormi(c))t+='<span class="tag warn">endormi</span>';return t;}
+function vMatin(){
+  var C=mesC(),relL=C.filter(arelancer),dr=st().d.filter(function(d){return visible(ct(d.cid));}),pr=dr.filter(function(d){return d.etat==='pret';});
+  var nom=ROLE==='direction'?P.boss:P.me;
+  var h='<div class="hd"><h1>Ce matin</h1><p>'+JN[NOW.getDay()]+' '+NOW.getDate()+' '+MN[NOW.getMonth()]+'</p></div>';
+  if(ROLE==='direction')h+='<div class="kwin"><div><b>'+P.k.rdv+'</b><span>rendez-vous obtenus ce mois</span></div><div><b>'+P.k.rep+' %</b><span>de réponses sur les messages envoyés</span></div><div><b>'+eur(P.k.sig+(st().sig||0))+'</b><span>signés ce mois</span></div><div><b>'+P.k.h+'</b><span>de prospection gagnées par semaine</span></div></div>';
+  h+='<div class="recap"><div class="av">IA</div><div><p>Bonjour '+esc(nom)+'. '+(ROLE==='direction'?esc(P.wins)+' ':'')+(pr.length?pr.length+' brouillon'+(pr.length>1?'s sont prêts':' est prêt')+', relisez-les avant qu\u2019ils partent.':'Tous les brouillons du jour sont traités.')+' '+(relL.length?relL.length+' relance'+(relL.length>1?'s':'')+' en attente, la plus ancienne : '+esc(relL.slice().sort(function(a,b){return a.next-b.next;})[0].nom)+'.':'Aucune relance en retard.')+'</p>'+
+    (ROLE==='direction'?'<p>Cette nuit, '+P.nouveaux+' nouveaux contacts correspondant à votre cible ('+esc(P.cible)+') ont été trouvés et ajoutés en prospection.</p>':'')+'</div></div>';
+  h+='<div class="grid2"><div><div class="panel"><h2>Brouillons préparés<span>'+pr.length+' à relire</span></h2>';
+  dr.forEach(function(d){var c=ct(d.cid);
+    h+='<div class="draft'+(d.etat!=='pret'?' done':'')+'"><div class="top"><div><b>'+esc(c.pers)+', '+esc(c.nom)+'</b><div class="why">'+esc(d.why)+'</div></div>'+(d.etat==='boite'?'<span class="tag ok">dans vos brouillons</span>':d.etat==='ecarte'?'<span class="tag">écarté</span>':'<button class="btn ghost" data-open="'+c.id+'" style="padding:5px 10px;font-size:12px">Fiche</button>')+'</div>';
+    if(d.etat==='pret')h+='<div class="obj">'+esc(d.obj)+'</div><textarea data-d="'+d.id+'" aria-label="Message à '+esc(c.pers)+'">'+esc(d.txt)+'</textarea><div class="acts"><button class="btn" data-a="valider" data-id="'+d.id+'">Mettre dans ma boîte mail</button><button class="btn ghost" data-a="ecarter" data-id="'+d.id+'">Écarter</button></div>';
+    h+='</div>';});
+  h+='<div class="guard">Rien ne part tout seul. Le message validé arrive dans vos brouillons, vous l\u2019envoyez vous-même.</div></div></div><div>';
+  var rr=st().r.filter(function(r){return visible(ct(r.cid));});
+  h+='<div class="panel"><h2>Réponses reçues<span>'+rr.filter(function(r){return !r.done;}).length+' nouvelles</span></h2>';
+  rr.forEach(function(r,i){var c=ct(r.cid);h+='<div class="li"><span class="dot ok"></span><div class="m"><b>'+esc(r.who)+', '+esc(c.nom)+'</b><small>« '+esc(r.txt)+' »</small></div>'+(r.done?'<span class="tag ok">'+(r.quand==='signature'?'signé':'dans l\u2019agenda')+'</span>':'<button class="btn" data-a="reponse" data-id="'+st().r.indexOf(r)+'">'+(r.quand==='signature'?'Marquer signé':'Caler '+esc(r.quand))+'</button>')+'</div>';});
+  h+='</div>';
+  if(ROLE==='direction'){h+='<div class="panel"><h2>Trouvés cette nuit<span>'+P.nouveaux+' au total</span></h2>';
+    st().f.forEach(function(f,i){h+='<div class="li"><span class="dot ac"></span><div class="m"><b>'+esc(f.nom)+'</b><small>'+esc(f.type)+', '+esc(f.sig)+'</small></div>'+(f.done?'<span class="tag ok">suivi</span>':'<button class="btn ghost" data-a="ajout" data-id="'+i+'">Suivre</button>')+'</div>';});
+    h+='</div>';}
+  h+='<div class="panel"><h2>À relancer<span>'+relL.length+'</span></h2>'+(relL.length?'':'<div class="empty">Rien en retard.</div>');
+  relL.forEach(function(c){h+='<button class="li" data-open="'+c.id+'"><span class="dot late"></span><div class="m"><b>'+esc(c.nom)+'</b><small>'+esc(c.pers)+', dernier échange '+rel(c.last)+'</small></div><span class="tag late">'+(c.next<0?(-c.next)+' j':'auj.')+'</span></button>';});
+  h+='</div>';
+  var hot=C.filter(function(c){return c.stade==='encours';}).sort(function(a,b){return b.pot-a.pot;});
+  h+='<div class="panel"><h2>Projets en cours<span>'+(ROLE==='direction'?eur(hot.reduce(function(s,c){return s+c.pot;},0)):hot.length)+'</span></h2>';
+  hot.forEach(function(c){h+='<button class="li" data-open="'+c.id+'"><span class="dot ac"></span><div class="m"><b>'+esc(c.nom)+'</b><small>'+esc(c.note)+'</small></div>'+(ROLE==='direction'?'<b style="font-size:13px">'+eur(c.pot)+'</b>':'')+'</button>';});
+  h+='</div></div></div>';
+  return h;
+}
+function rel(d){return d===0?"aujourd'hui":d===-1?'hier':'il y a '+(-d)+' j';}
+function vPipe(){
+  var C=mesC();
+  var h='<div class="hd"><h1>Pipeline</h1><p>Trois stades. « À relancer » et « endormi » se calculent tout seuls depuis les dates.</p></div><div class="pipe">';
+  [['prospection','Prospection'],['encours','Projet en cours'],['signe','Signé'],['perdu','Perdu']].forEach(function(s){
+    var L=C.filter(function(c){return c.stade===s[0];}).sort(function(a,b){return (a.next==null?99:a.next)-(b.next==null?99:b.next);});
+    h+='<div class="col"><h3><span>'+s[1]+'</span><span>'+L.length+'</span></h3>';
+    L.forEach(function(c){h+='<button class="card" data-open="'+c.id+'"><b>'+esc(c.nom)+'</b><small>'+esc(c.pers)+', '+esc(c.type.toLowerCase())+'</small><div class="rowt">'+(tagsOf(c)||(c.next!=null?'<span class="tag">relance '+(c.next>0?'dans '+c.next+' j':'')+'</span>':''))+(ROLE==='direction'?'<span class="val">'+eur(c.pot)+'</span>':'')+'</div></button>';});
+    if(!L.length)h+='<div class="empty" style="padding:6px 4px">Vide.</div>';
+    h+='</div>';});
+  return h+'</div>';
+}
+function vContacts(){
+  var C=mesC().filter(function(c){return !Q||(c.nom+' '+c.pers+' '+c.type).toLowerCase().indexOf(Q.toLowerCase())>=0;});
+  var h='<div class="hd"><h1>Contacts</h1><input class="search" id="q" placeholder="Chercher un nom, une structure" value="'+esc(Q)+'" aria-label="Rechercher"></div><div class="panel">';
+  C.forEach(function(c){var lb=STADES.filter(function(s){return s[0]===c.stade;})[0][1];h+='<button class="li" data-open="'+c.id+'"><span class="dot '+(arelancer(c)?'late':c.stade==='signe'?'ok':endormi(c)?'warn':'ac')+'"></span><div class="m"><b>'+esc(c.nom)+'</b><small>'+esc(c.pers)+', '+esc(c.type)+', via '+esc(c.canal.toLowerCase())+'</small></div>'+tagsOf(c)+'<span class="tag">'+lb+'</span></button>';});
+  if(!C.length)h+='<div class="empty">Aucun contact ne correspond.</div>';
+  return h+'</div>';
+}
+function vAnalyse(){
+  var C=st().c,n=C.length,sig=C.filter(function(c){return c.stade==='signe';}).length,enc=C.filter(function(c){return c.stade==='encours';}).length,per=C.filter(function(c){return c.stade==='perdu';}).length;
+  var h='<div class="hd"><h1>Ce qui marche</h1><p>Sur les 90 derniers jours.</p></div>';
+  h+='<div class="kp"><div class="k"><b>'+n+'</b><span>Contacts suivis</span><small>+'+P.nouveaux+' trouvés cette nuit</small></div><div class="k"><b>'+(enc+sig)+'</b><span>Ont répondu</span><small>'+Math.round((enc+sig)/n*100)+' % des contacts</small></div><div class="k ok"><b>'+sig+'</b><span>Signés</span><small>'+eur(C.filter(function(c){return c.stade==='signe';}).reduce(function(s,c){return s+c.pot;},0))+'</small></div><div class="k"><b>'+st().sent+'</b><span>Messages validés</span><small>depuis ce matin</small></div></div>';
+  h+='<div class="grid2"><div class="panel"><h2>Quel canal ouvre vraiment les portes<span>taux de réponse</span></h2>';
+  CANAUX.forEach(function(k){var L=C.filter(function(c){return c.canal===k;});if(!L.length)return;var r=L.filter(function(c){return c.stade==='encours'||c.stade==='signe';}).length/L.length;h+='<div class="bar2"><span>'+k+'</span><i style="--w:'+Math.round(r*100)+'%"></i><b>'+Math.round(r*100)+' %</b></div>';});
+  h+='</div><div class="panel"><h2>Qui avance<span>par type de cible</span></h2>';
+  P.types.forEach(function(k){var L=C.filter(function(c){return c.type===k;});if(!L.length)return;var r=L.filter(function(c){return c.stade==='encours'||c.stade==='signe';}).length/L.length;h+='<div class="bar2"><span>'+k+'</span><i style="--w:'+Math.round(r*100)+'%"></i><b>'+L.length+' contact'+(L.length>1?'s':'')+'</b></div>';});
+  h+='</div></div>';
+  h+='<div class="panel"><h2>Ce qui coince</h2><div class="li"><span class="dot warn"></span><div class="m"><b>'+C.filter(endormi).length+' contacts endormis</b><small>Plus d\u2019un mois sans échange ni relance prévue. L\u2019assistant peut préparer une relance pour chacun.</small></div></div><div class="li"><span class="dot late"></span><div class="m"><b>'+per+' perdu'+(per>1?'s':'')+'</b><small>'+C.filter(function(c){return c.stade==='perdu';}).map(function(c){return esc(c.nom)+' : '+esc(c.note.toLowerCase());}).join('. ')+'</small></div></div></div>';
+  return h;
+}
+function renderChrome(){
+  document.documentElement.style.setProperty('--ac',P.accent);document.documentElement.style.setProperty('--ac-s',P.accentS);
+  document.getElementById('logo').textContent=P.mono;document.getElementById('cname').textContent=P.nom;document.getElementById('cmetier').textContent=P.metier;
+  var C=mesC(),r=C.filter(arelancer).length,pr=st().d.filter(function(d){return d.etat==='pret'&&visible(ct(d.cid));}).length;
+  var it=[['matin','Ce matin',pr?'<span class="n late">'+pr+'</span>':''],['pipe','Pipeline',r?'<span class="n">'+r+'</span>':''],['contacts','Contacts','']];
+  if(ROLE==='direction')it.push(['analyse','Ce qui marche','']);else if(VIEW==='analyse')VIEW='matin';
+  document.getElementById('nav').innerHTML=it.map(function(i){return '<button data-view="'+i[0]+'"'+(VIEW===i[0]?' aria-current="page"':'')+'><span>'+i[1]+'</span>'+i[2]+'</button>';}).join('');
+  document.querySelectorAll('.role button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.role===ROLE?'true':'false');});
+  document.querySelectorAll('#profiles button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===PK?'true':'false');});
+}
+function render(){renderChrome();main.innerHTML=VIEW==='pipe'?vPipe():VIEW==='contacts'?vContacts():VIEW==='analyse'?vAnalyse():vMatin();if(OPEN!=null)openC(OPEN,true);}
+
+var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+function openC(id,refresh){var c=ct(id);OPEN=id;
+  var h='<div class="dr-h"><small>'+esc(c.type)+', via '+esc(c.canal.toLowerCase())+'</small><h2>'+esc(c.nom)+'</h2><div style="display:flex;gap:6px;flex-wrap:wrap">'+tagsOf(c)+'</div></div><div class="dr-b">';
+  h+='<dl class="kv"><dt>Contact</dt><dd>'+esc(c.pers)+'</dd><dt>Suivi par</dt><dd>'+esc(c.resp)+'</dd><dt>Dernier échange</dt><dd>'+rel(c.last)+'</dd><dt>Prochaine relance</dt><dd>'+(c.next==null?'aucune':c.next<=0?'en retard':'dans '+c.next+' j')+'</dd>'+(ROLE==='direction'?'<dt>Potentiel</dt><dd>'+eur(c.pot)+'</dd>':'')+'</dl>';
+  h+='<h3>Stade</h3><div class="resp">'+STADES.map(function(s){return '<button data-a="stade" data-id="'+c.id+'" data-s="'+s[0]+'"'+(c.stade===s[0]?' style="background:var(--ac);color:#fff"':'')+'>'+s[1]+'</button>';}).join('')+'</div>';
+  h+='<h3>Relance</h3><div class="resp"><button data-a="relance" data-id="'+c.id+'" data-s="0">Relancé aujourd\u2019hui</button><button data-a="relance" data-id="'+c.id+'" data-s="7">Relancer dans 7 j</button><button data-a="relance" data-id="'+c.id+'" data-s="30">Dans un mois</button></div>';
+  h+='<h3>Historique</h3><div class="hist">';c.hist.slice().sort(function(a,b){return b.d-a.d;}).forEach(function(e){h+='<div class="li" style="padding:8px 0"><span class="h">'+rel(e.d)+'</span><div class="m">'+esc(e.t)+'</div></div>';});
+  h+='</div></div>';document.getElementById('dr').innerHTML=h;
+  if(!refresh){drawer.classList.add('on');scrim.classList.add('on');drawer.setAttribute('aria-hidden','false');}}
+function close(){OPEN=null;drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');}
+scrim.addEventListener('click',close);document.getElementById('dx').addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+var tt;function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on');},2600);}
+
+var ACT={
+  reponse:function(i){var r=st().r[i],c=ct(r.cid);r.done=true;c.last=0;if(r.quand==='signature'){c.stade='signe';c.next=null;st().sig=(st().sig||0)+c.pot;c.hist.push({d:0,t:'Signé'});toast('Signé : '+c.nom+', '+eur(c.pot)+'. Le pilotage est mis à jour');}else{c.stade='encours';c.next=null;c.hist.push({d:0,t:'Rendez-vous '+r.quand});toast('Rendez-vous '+r.quand+' ajouté à votre agenda, invitation envoyée en brouillon');}},
+  ajout:function(i){var f=st().f[i];f.done=true;var id=st().c.length;st().c.push({id:id,nom:f.nom,pers:'à identifier',type:f.type,canal:'Mail',stade:'prospection',last:0,next:1,pot:0,resp:P.me,note:f.sig,hist:[{d:0,t:'Trouvé par l\u2019assistant : '+f.sig}]});toast('Ajouté. Le brouillon d\u2019approche sera prêt demain matin');},
+  valider:function(id){var d=st().d[id],ta=document.querySelector('textarea[data-d="'+id+'"]');if(ta)d.txt=ta.value;d.etat='boite';var c=ct(d.cid);c.last=0;c.next=7;c.hist.push({d:0,t:'Message validé : '+d.obj});st().sent++;toast('Dans vos brouillons. Relance prévue dans 7 jours.');},
+  ecarter:function(id){st().d[id].etat='ecarte';toast('Brouillon écarté');},
+  stade:function(id,s){var c=ct(id);c.stade=s;if(s==='signe'||s==='perdu')c.next=null;c.hist.push({d:0,t:'Passé en '+STADES.filter(function(x){return x[0]===s;})[0][1].toLowerCase()});toast('Stade mis à jour');},
+  relance:function(id,s){var c=ct(id);s=+s;if(s===0){c.last=0;c.next=7;c.hist.push({d:0,t:'Relancé'});toast('Noté. Prochaine relance dans 7 jours.');}else{c.next=s;toast('Relance prévue dans '+s+' jours');}}
+};
+document.addEventListener('click',function(e){
+  var a=e.target.closest('[data-a]');if(a){ACT[a.dataset.a](+a.dataset.id,a.dataset.s);render();return;}
+  var o=e.target.closest('[data-open]');if(o){openC(+o.dataset.open);return;}
+  var v=e.target.closest('[data-view]');if(v){VIEW=v.dataset.view;close();render();window.scrollTo({top:0});return;}
+  var r=e.target.closest('[data-role]');if(r){ROLE=r.dataset.role;close();render();toast(ROLE==='direction'?'Vue direction : toute l\u2019équipe, potentiels et analyses':'Vue commercial : uniquement les contacts de '+P.me);return;}
+  var p=e.target.closest('[data-p]');if(p){PK=p.dataset.p;P=PROFILES[PK];if(!S[PK])S[PK]=build();close();render();}
+});
+document.addEventListener('input',function(e){if(e.target.id==='q'){Q=e.target.value;var pos=e.target.selectionStart;render();var q=document.getElementById('q');q.focus();q.setSelectionRange(pos,pos);}});
+document.getElementById('reset').addEventListener('click',function(){S={};S[PK]=build();close();render();toast('Démo réinitialisée');});
+document.getElementById('profiles').innerHTML=[['menuiserie','Menuiserie'],['traiteur','Traiteur'],['cabinet','Cabinet comptable']].map(function(x){return '<button data-p="'+x[0]+'">'+x[1]+'</button>';}).join('');
+P=PROFILES[PK];S[PK]=build();render();
+})();
+</script>
+
+<!-- ajouté pour le site : retour vers Novyance -->
+<style>.nv-back{position:fixed;right:14px;bottom:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:100px;background:#482719;color:#fff;font:600 13px/1 'DM Sans',system-ui,sans-serif;text-decoration:none;box-shadow:0 12px 30px -12px rgba(72,39,25,.6);}.nv-back i{color:#FF681F;font-style:normal;}@media (max-width:760px){html,body{overflow-x:hidden;}table{display:block;max-width:100%;overflow-x:auto;}h2{flex-wrap:wrap;}.panel{min-width:0;}.nv-back{bottom:auto;top:10px;right:10px;padding:7px 11px;font-size:11.5px;background:#FF681F;color:#482719;box-shadow:none;}.nv-back i{color:#482719;}}</style>
+<a class="nv-back" href="/pages/outils-metier">Construire le vôtre<i>.</i></a>
+</body>
+</html>
+{% endraw %}

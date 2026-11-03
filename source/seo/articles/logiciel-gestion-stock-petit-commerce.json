@@ -1,0 +1,26 @@
+{
+  "statut": "rédigé 02/11, à créer dans Shopify",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Logiciel gestion stock petit commerce : ce qu'il faut vraiment suivre",
+  "handle": "logiciel-gestion-stock-petit-commerce",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "summary": "<p>Dans un petit commerce, le problème n'est pas le logiciel mais un stock affiché qui ne correspond plus au rayon. Voici les quatre choses à suivre et comment choisir entre tableur, caisse, logiciel et outil sur mesure.</p>",
+  "body_html_file": "seo/articles/logiciel-gestion-stock-petit-commerce.html",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel gestion stock petit commerce : comment choisir"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel gestion stock petit commerce : les 4 choses à suivre, et comment choisir entre tableur, caisse, logiciel du marché et outil sur mesure."
+    }
+  ],
+  "publishDate": null
+}

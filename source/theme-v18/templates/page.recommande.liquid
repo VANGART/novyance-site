@@ -1,0 +1,130 @@
+{% layout none %}
+{%- comment -%}
+  Page reçue par une personne recommandée par un apporteur (07/10/2026, offre « prospection à la commission » depuis le 14/10/2026) :
+  novyance.fr/pages/recommande?r=CODE. Affiche de la part de qui elle vient, compte la visite, et sa demande devient une
+  recommandation rattachée à l'apporteur (fonction publique « parrainage »). Le code est gardé dans le navigateur
+  pour une visite ultérieure. Page personnelle : hors de Google.
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+<title>On vous a recommandé Novyance · prospection payée sur vos ventes</title>
+<meta name="description" content="On prospecte pour les entreprises qui vendent aux pros, et on n'est payés que sur les ventes qu'on apporte.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="On vous a recommandé Novyance">
+<meta property="og:description" content="Des clients en plus, et vous ne payez que sur ce qu'ils achètent.">
+<meta property="og:image" content="{{ 'nv-og.png' | asset_url | prepend: 'https:' }}">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ 'nv-favicon-48.png' | asset_url }}">
+<link rel="apple-touch-icon" href="{{ 'nv-apple-touch.png' | asset_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+{% render 'nv-parrainage-styles' %}
+{{ content_for_header }}
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="tel:+33786523681">07 86 52 36 81</a>
+      <a href="#demande" class="btn">Parlons-en</a>
+      {% render 'nv-mnav' %}
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="badge" id="badge" hidden>Vous venez de la part de <b id="b-qui"></b></p>
+      <h1 id="titre">Des clients en plus, et vous ne payez que sur ce qu'ils achètent<span class="dot">.</span></h1>
+      <p class="lead">Je m'appelle Aurélien Ruotte, à Lyon. On prospecte pour les entreprises qui vendent aux pros : on repère celles qui ont une raison d'acheter maintenant, on leur écrit en votre nom avec un échantillon de votre travail, et on relance. Pas de forfait : un pourcentage des ventes qu'on vous apporte.</p>
+      <div class="actions"><a class="btn" href="#demande">Recevoir mon exemple</a><a class="btn ghost" href="tel:+33786523681">07 86 52 36 81</a></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2>Ce qu'on fait pour vous</h2>
+      <ul class="briques">
+        <li><b>On choisit les entreprises une par une</b> : celles qui ouvrent, recrutent, exposent ou fêtent un anniversaire, et qui ont donc une raison d'acheter cette semaine.</li>
+        <li><b>On leur écrit en votre nom</b>, depuis une adresse de votre domaine, avec un échantillon de votre travail à leur nom.</li>
+        <li><b>On relance, on répond, on pose les rendez-vous</b> dans votre agenda. Vous allez aux rendez-vous et vous signez.</li>
+        <li><b>Vous suivez tout</b> dans un tableau de bord : chaque entreprise contactée, chaque réponse, chaque vente.</li>
+      </ul>
+      <p class="sub">Tout est détaillé sur <a href="/">novyance.fr</a>.</p>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="wrap">
+      <h2>Comment ça se passe</h2>
+      <ol class="etapes">
+        <li><b>Un exemple sous 24 heures, offert.</b><span>Un vrai prospect choisi pour vous, le mail qu'on lui enverrait et l'échantillon qu'on lui joindrait.</span></li>
+        <li><b>Un appel de 20 minutes.</b><span>On regarde vos clients actuels, vos marges et la zone à couvrir, et on fixe ensemble le pourcentage.</span></li>
+        <li><b>Deux semaines de préparation, puis les premiers envois.</b><span>Une adresse sur votre domaine, chauffée pendant 15 jours si elle est neuve.</span></li>
+      </ol>
+      <p class="sub">0 € de mise en place, pas d'abonnement, un mois d'engagement. Un seul client par métier et par zone.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="demande">
+    <div class="wrap">
+      <h2>Recevez votre exemple</h2>
+      <p class="sub">Laissez vos coordonnées : on vous rappelle dans la journée ouvrée et on prépare votre exemple.</p>
+      <form class="form" id="f-dem" novalidate>
+        <div><label for="d-contact">Prénom et nom</label><input id="d-contact" autocomplete="name" required></div>
+        <div><label for="d-soc">Entreprise</label><input id="d-soc" autocomplete="organization"></div>
+        <div><label for="d-email">E-mail</label><input id="d-email" type="email" autocomplete="email"></div>
+        <div><label for="d-tel">Téléphone</label><input id="d-tel" type="tel" autocomplete="tel"></div>
+        <div class="full"><label for="d-besoin">Votre site, ce que vous vendez et à qui</label><textarea id="d-besoin" rows="3" placeholder="Ex. atelier-maille.fr, textile brodé pour les restaurants et les clubs de la région"></textarea></div>
+        <input class="hp" id="d-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button class="btn" type="submit">Recevoir mon exemple</button><p class="msg" id="d-msg" role="status"></p></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · contact@novyance.fr · 07 86 52 36 81</span>
+    <span class="lk"><a href="/">Accueil</a><a href="/#tarif">Tarif</a><a href="/pages/apporteurs-affaires">Devenir apporteur</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var API = "https://sqxlavinbiryvmblmtse.supabase.co/functions/v1/parrainage";
+  function appel(corps){ return fetch(API, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(corps) }).then(function(r){ return r.json().then(function(j){ if (!r.ok) throw new Error(j.erreur || "erreur"); return j; }); }); }
+  var code = (new URLSearchParams(location.search).get("r") || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+  try { if (code) localStorage.setItem("nv-ref", code); else code = localStorage.getItem("nv-ref") || ""; } catch (e) {}
+  if (code) {
+    appel({ action: "info", code: code }).then(function(a){
+      var qui = a.prenom ? a.prenom + (a.societe && a.societe !== a.prenom ? " (" + a.societe + ")" : "") : a.societe;
+      document.getElementById("b-qui").textContent = qui;
+      document.getElementById("badge").hidden = false;
+      document.getElementById("titre").innerHTML = (a.prenom || a.societe).replace(/[<>&]/g, "") + " pense qu'on peut vous trouver des clients<span class=\"dot\">.</span>";
+      appel({ action: "vue", code: code, page: "recommande" }).catch(function(){});
+    }).catch(function(){ code = ""; });
+  }
+  var f = document.getElementById("f-dem"), m = document.getElementById("d-msg");
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var v = function(id){ return document.getElementById(id).value.trim(); };
+    if (!v("d-contact") && !v("d-soc")) { m.textContent = "Indiquez votre nom ou votre entreprise."; return; }
+    if (!v("d-email") && !v("d-tel")) { m.textContent = "Indiquez un e-mail ou un téléphone pour qu'on puisse vous rappeler."; return; }
+    var b = f.querySelector("button"); b.disabled = true; m.textContent = "Envoi…";
+    appel({ action: "demande", code: code, contact: v("d-contact"), societe: v("d-soc"), email: v("d-email"), telephone: v("d-tel"), besoin: v("d-besoin"), hp: v("d-hp") })
+      .then(function(){ f.innerHTML = '<p class="ok"><b>Merci, c\'est bien reçu.</b> On vous rappelle dans la journée ouvrée pour préparer votre exemple.</p>'; })
+      .catch(function(err){ m.textContent = err.message; b.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

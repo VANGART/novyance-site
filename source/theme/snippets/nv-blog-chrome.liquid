@@ -1,0 +1,40 @@
+{% if part == 'header' %}
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="/pages/outils-metier">Outils</a>
+      <a href="/#sites">Sites</a>
+      <a href="/pages/automatisation-ia-entreprise">Automatisation et IA</a>
+      <a href="/pages/apporteurs-affaires">Apporteurs d'affaires</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/#contact" class="btn">Parlons-en</a>
+      {% render 'nv-mnav' %}
+    </div>
+  </div>
+</header>
+{% else %}
+<section class="ct" id="contact">
+  <div class="wrap">
+    <h2>Un site ou un outil sur mesure à lancer<span class="dot">.</span></h2>
+    <p>Décrivez votre situation en deux lignes. Réponse et devis ferme sous 24 h ouvrées.</p>
+    <a href="/#contact" class="btn">Parlons de votre projet</a>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · <a href="mailto:contact@novyance.fr">contact@novyance.fr</a></span>
+    <span class="lk">
+      <a href="/pages/outils-metier">Outils métier sur mesure</a>
+      <a href="/pages/creation-site-internet-lyon">Site à Lyon</a>
+      <a href="/pages/application-pilotage-sur-mesure">Application de pilotage</a>
+      <a href="/pages/crm-sur-mesure">CRM sur mesure</a>
+      <a href="/pages/prospection-automatisee">Prospection automatisée</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/">Accueil</a>
+      {%- assign ml = pages['mentions-legales'] -%}{% if ml.published_at != blank and ml.url != blank %}
+      <a href="{{ ml.url }}">Mentions légales</a>{% endif %}
+    </span>
+  </div>
+</footer>
+{% endif %}
