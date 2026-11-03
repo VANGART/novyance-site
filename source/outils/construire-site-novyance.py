@@ -260,6 +260,12 @@ def pages_sites(sortie):
         t = t.replace("</body>", '<script src="/assets/nv-contact.js" defer></script>\n</body>', 1)
         ecrire(sortie, url, t)
         urls.append(url)
+    # la page générale « Sites internet » liste aussi les pages métier et ville
+    general = sortie / "pages/site-internet/index.html"
+    if general.exists() and donnees:
+        g = general.read_text(encoding="utf-8")
+        g = g.replace('<section class="end"', liens({"url": "/pages/site-internet"}) + '\n  <section class="end"', 1).replace("</style>", CSS_SITES + "</style>", 1)
+        general.write_text(g, encoding="utf-8")
     return urls
 
 

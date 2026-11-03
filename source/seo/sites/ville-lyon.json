@@ -1,0 +1,99 @@
+{
+ "type": "ville",
+ "url": "/pages/creation-site-internet-lyon",
+ "lien": "Lyon",
+ "demande": "Site internet · Lyon",
+ "zone_ld": "Lyon",
+ "title": "Création de site internet à Lyon pour artisans et indépendants, dès 490 € · Novyance",
+ "description": "Création de site internet à Lyon : site vitrine jusqu'à 5 pages pour artisans et indépendants de la métropole, en ligne en 10 jours ouvrés, dès 490 €. Basé à Lyon 7e.",
+ "kick": "Création de site internet à Lyon",
+ "h1": "Votre site internet, fait à Lyon",
+ "lead": "Novyance est installée à Lyon 7e. On construit des sites simples pour les artisans et les indépendants de la métropole : textes écrits avec vous, fiche Google reliée, en ligne en dix jours ouvrés, à partir de 490 €. Tout se fait par téléphone et par mail, aux heures qui vous arrangent.",
+ "pour": "Pour <b>les artisans</b> et <b>les indépendants</b> de Lyon et de la métropole : Villeurbanne, Vénissieux, Caluire-et-Cuire, Bron, Saint-Priest, Écully, Tassin-la-Demi-Lune.",
+ "exemple_h2": "Un site pensé pour être trouvé à Lyon",
+ "exemple_lead": "À Lyon, on cherche par arrondissement ou par commune. Le site le sait.",
+ "exemple": {
+  "url": "electricite-berthier.fr",
+  "nom": "Électricité Berthier",
+  "bouton": "Appeler",
+  "h": "Dépannage et rénovation électrique.",
+  "p": "Particuliers et commerces. Devis gratuit.",
+  "zone": "Lyon 3e, Lyon 8e, Bron, Vénissieux",
+  "cta": "Expliquer mon besoin",
+  "bas": [
+   [
+    "Interventions",
+    "Par type de travaux."
+   ],
+   [
+    "Avis Google",
+    "Repris de votre fiche."
+   ],
+   [
+    "Demande",
+    "Arrondissement ou commune."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Votre métier et votre ville",
+   "Dans le titre de la page, là où Google les lit en premier."
+  ],
+  [
+   "Le numéro visible",
+   "Un clic pour appeler, sur téléphone."
+  ],
+  [
+   "Arrondissements et communes",
+   "Seulement ceux où vous intervenez vraiment."
+  ],
+  [
+   "La demande localisée",
+   "Le client indique son arrondissement : vous savez tout de suite si c'est sur votre route."
+  ]
+ ],
+ "bloc": {
+  "h2": "Être trouvé à Lyon, quartier par quartier",
+  "intro": [
+   "À Lyon, un client tape souvent son métier avec son arrondissement ou sa commune : « plombier Lyon 6 », « électricien Villeurbanne ». Une page qui liste clairement où vous intervenez a plus de chances de lui être proposée.",
+   "Votre fiche Google fait le reste sur la carte : on la relie au site, avec les mêmes horaires et la même zone."
+  ],
+  "points": [
+   [
+    "Vos arrondissements et vos communes",
+    "Écrits en clair, sans liste interminable : seulement là où vous allez."
+   ],
+   [
+    "Une fiche Google cohérente",
+    "Même nom, même adresse, même numéro partout. Google s'y fie."
+   ],
+   [
+    "Un interlocuteur à Lyon",
+    "Basé dans le 7e, joignable au 07 86 52 36 81."
+   ],
+   [
+    "Un prix fixe",
+    "Dès 490 €, le devis ne bouge plus une fois signé."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "Vous vous déplacez chez moi ?",
+   "Non. Tout se fait par téléphone et par mail : ça garde le prix bas, et vous n'avez pas à bloquer une demi-journée."
+  ],
+  [
+   "Vous ne travaillez qu'à Lyon ?",
+   "Non, partout en France. Mais connaître la ville aide à écrire les bons quartiers et les bonnes communes."
+  ],
+  [
+   "Mon activité couvre plusieurs communes de la métropole.",
+   "On les liste toutes, et on peut ajouter une page par secteur si c'est utile (comptée comme une page du site)."
+  ],
+  [
+   "Combien de temps avant d'être en ligne ?",
+   "Dix jours ouvrés après la validation du contenu, avec une maquette au troisième jour."
+  ]
+ ]
+}

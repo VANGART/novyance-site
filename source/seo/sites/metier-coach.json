@@ -1,0 +1,98 @@
+{
+ "url": "/pages/site-internet-coach",
+ "lien": "Coach",
+ "demande": "Site internet · coach",
+ "title": "Site internet pour coach et thérapeute dès 490 €, en ligne en 10 jours · Novyance",
+ "description": "Un site de coach qui inspire confiance : votre approche en clair, le déroulé d'une séance, vos tarifs, un premier échange à réserver. Dès 490 €, puis 29 €/mois.",
+ "kick": "Site internet pour coach",
+ "h1": "On vous choisit pour votre façon de faire",
+ "lead": "Avant de prendre rendez-vous, une personne veut comprendre qui vous êtes, comment se passe une séance et combien ça coûte. Le site le dit simplement, avec vos mots, et propose un premier échange. En ligne en dix jours ouvrés, à partir de 490 €.",
+ "pour": "Pour <b>les coachs</b>, <b>les sophrologues</b>, <b>les praticiens</b> et <b>les formateurs indépendants</b>, en cabinet ou en visio.",
+ "exemple_h2": "Ce qu'il y a sur un site de coach, et pourquoi",
+ "exemple_lead": "Peu de pages, mais des réponses honnêtes aux questions qu'on n'ose pas poser.",
+ "exemple": {
+  "url": "claire-dumas-coach.fr",
+  "nom": "Claire Dumas",
+  "bouton": "Réserver",
+  "h": "Coaching de reconversion, en visio ou à Annecy.",
+  "p": "Un premier échange de vingt minutes, sans engagement.",
+  "zone": "Annecy, et partout en visio",
+  "cta": "Réserver un échange",
+  "bas": [
+   [
+    "Mon approche",
+    "Ce que je fais, et pas."
+   ],
+   [
+    "Une séance",
+    "Durée, déroulé, suivi."
+   ],
+   [
+    "Tarifs",
+    "Séance et accompagnement."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "À qui vous parlez",
+   "Une phrase qui dit pour qui vous travaillez. Les bonnes personnes se reconnaissent."
+  ],
+  [
+   "Un rendez-vous facile",
+   "Le bouton ouvre votre agenda en ligne, si vous en avez un."
+  ],
+  [
+   "Où et comment",
+   "Cabinet, visio, ou les deux : dit dès le haut de la page."
+  ],
+  [
+   "Ce qui se passe ensuite",
+   "Le déroulé d'un accompagnement, pour qu'on sache à quoi on s'engage."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un coach",
+  "intro": [
+   "Choisir un coach, c'est choisir une personne. Le visiteur cherche des signes que vous êtes sérieux et que vous comprenez sa situation.",
+   "Le site met en avant votre parcours et votre méthode, sans promesses qu'on ne peut pas tenir."
+  ],
+  "points": [
+   [
+    "Votre approche en clair",
+    "Ce que vous faites, pour qui, et ce que vous ne faites pas."
+   ],
+   [
+    "Le déroulé d'une séance",
+    "Durée, fréquence, ce qui se passe entre deux séances."
+   ],
+   [
+    "Vos tarifs",
+    "Affichés ou en à partir de : c'est une question qu'on hésite à poser."
+   ],
+   [
+    "Vos formations et vos avis",
+    "Certifications si vous en avez, témoignages réels avec l'accord des personnes."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "Je ne sais pas parler de moi.",
+   "C'est normal. On vous pose les questions, on écrit, vous corrigez ce qui ne vous ressemble pas."
+  ],
+  [
+   "Je travaille surtout en visio.",
+   "Le site s'adresse alors à toute la France, et le dit clairement."
+  ],
+  [
+   "Je peux relier mon agenda ?",
+   "Oui, le bouton de réservation peut ouvrir votre outil d'agenda actuel."
+  ],
+  [
+   "Et les témoignages ?",
+   "Seulement des vrais, avec l'accord des personnes. On peut n'afficher que le prénom."
+  ]
+ ],
+ "type": "metier"
+}

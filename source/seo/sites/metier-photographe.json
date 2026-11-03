@@ -1,0 +1,98 @@
+{
+ "url": "/pages/site-internet-photographe",
+ "lien": "Photographe",
+ "demande": "Site internet · photographe",
+ "title": "Site internet pour photographe dès 490 €, en ligne en 10 jours · Novyance",
+ "description": "Un site de photographe qui charge vite : portfolio par type de séance, formules à partir de, demande avec la date et le lieu. Dès 490 €, puis 29 €/mois.",
+ "kick": "Site internet pour photographe",
+ "h1": "Vos images en grand, et la date demandée tout de suite",
+ "lead": "Vos futurs clients jugent votre travail en quelques secondes, sur un téléphone. Il faut des images qui s'affichent vite, rangées par type de séance, et un moyen simple de vérifier si vous êtes libre. On construit ce site en dix jours ouvrés, à partir de 490 €.",
+ "pour": "Pour <b>les photographes</b> de mariage, de famille, de portrait, d'entreprise et de produit.",
+ "exemple_h2": "Ce qu'il y a sur un site de photographe, et pourquoi",
+ "exemple_lead": "Les images d'abord. Puis tout ce qui permet de réserver.",
+ "exemple": {
+  "url": "studio-clement.fr",
+  "nom": "Studio Clément",
+  "bouton": "Me contacter",
+  "h": "Mariages et portraits, en lumière naturelle.",
+  "p": "Formules à partir de, détaillées. Réponse sous 48 h.",
+  "zone": "Montpellier, Sète, Nîmes et alentours",
+  "cta": "Vérifier ma date",
+  "bas": [
+   [
+    "Portfolio",
+    "Par type de séance."
+   ],
+   [
+    "Formules",
+    "Ce qui est compris."
+   ],
+   [
+    "Ma date",
+    "Date, lieu, type."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Votre style en une phrase",
+   "Le visiteur sait tout de suite si votre regard correspond à ce qu'il cherche."
+  ],
+  [
+   "Un contact visible",
+   "Mail ou téléphone, selon votre façon de travailler."
+  ],
+  [
+   "Votre zone",
+   "Là où vous vous déplacez sans frais, et au-delà."
+  ],
+  [
+   "La date d'abord",
+   "Pour un mariage, la première question est la disponibilité. Le formulaire commence par là."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un photographe",
+  "intro": [
+   "Un couple qui prépare son mariage regarde des dizaines de portfolios. Il retient ceux qui s'affichent vite, qui montrent des séries complètes et qui donnent une idée du prix.",
+   "Le site met en avant votre travail sans le noyer, et répond aux questions avant qu'on vous les pose."
+  ],
+  "points": [
+   [
+    "Un portfolio rapide",
+    "Images optimisées pour s'afficher vite sur téléphone, sans perdre en qualité."
+   ],
+   [
+    "Des séries par type",
+    "Mariage, famille, entreprise : chaque visiteur voit ce qui le concerne."
+   ],
+   [
+    "Vos formules",
+    "À partir de, avec ce qui est compris : durée, nombre d'images, délai de livraison."
+   ],
+   [
+    "Le lien vers vos galeries",
+    "Vos clients retrouvent leurs photos depuis votre site, via votre outil de galerie actuel."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "Mon portfolio est très lourd. Le site sera lent ?",
+   "Non : les images sont préparées pour le web, avec plusieurs tailles selon l'écran."
+  ],
+  [
+   "Je veux garder Instagram.",
+   "Bien sûr. Le site complète Instagram : Google ne trouve pas vos publications, il trouve votre site."
+  ],
+  [
+   "Je peux afficher mes prix ?",
+   "Oui, en à partir de. Ça évite des échanges avec des clients dont le budget ne correspond pas."
+  ],
+  [
+   "Qui choisit les photos ?",
+   "Vous. On vous propose une sélection et un ordre, vous validez."
+  ]
+ ],
+ "type": "metier"
+}

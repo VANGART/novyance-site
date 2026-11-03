@@ -1,0 +1,98 @@
+{
+ "url": "/pages/site-internet-plombier",
+ "lien": "Plombier",
+ "demande": "Site internet · plombier",
+ "title": "Site internet pour plombier dès 490 €, en ligne en 10 jours · Novyance",
+ "description": "Un site de plombier qui fait appeler : numéro toujours visible, zone d'intervention, dépannage et travaux séparés, demandes rangées. Dès 490 €, puis 29 €/mois.",
+ "kick": "Site internet pour plombier",
+ "h1": "Le plombier qu'on appelle en premier",
+ "lead": "Une fuite, un chauffe-eau en panne : votre client cherche sur son téléphone, souvent dans l'urgence. Il appelle celui qui affiche clairement son numéro, sa zone et ce qu'il fait. On construit ce site pour vous en dix jours ouvrés, à partir de 490 €.",
+ "pour": "Pour <b>les plombiers</b> et <b>les chauffagistes</b>, à leur compte ou en petite équipe : dépannage, installation, rénovation de salle de bain.",
+ "exemple_h2": "Ce qu'il y a sur un site de plombier, et pourquoi",
+ "exemple_lead": "Celui qui a de l'eau par terre ne lit pas. Il cherche trois informations, puis il appelle.",
+ "exemple": {
+  "url": "plomberie-roux.fr",
+  "nom": "Plomberie Roux",
+  "bouton": "Appeler",
+  "h": "Dépannage, chauffe-eau et salles de bain.",
+  "p": "Dépannage du lundi au samedi. Devis gratuit pour les travaux.",
+  "zone": "Toulouse, Blagnac, Colomiers, Balma",
+  "cta": "Décrire ma panne",
+  "bas": [
+   [
+    "Dépannage",
+    "Fuite, débouchage, panne."
+   ],
+   [
+    "Travaux",
+    "Chauffe-eau, salle de bain."
+   ],
+   [
+    "Demande",
+    "Panne, commune, créneau."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "L'urgence d'abord",
+   "Dépannage et travaux sont séparés : celui qui a une fuite voit tout de suite qu'il est au bon endroit."
+  ],
+  [
+   "Le numéro qui suit le visiteur",
+   "Sur téléphone, le bouton Appeler reste en haut de l'écran pendant qu'on fait défiler."
+  ],
+  [
+   "Votre zone, commune par commune",
+   "Le client sait si vous venez chez lui. Google aussi."
+  ],
+  [
+   "La demande déjà qualifiée",
+   "Le formulaire demande le type de panne, la commune et un créneau : vous rappelez en sachant de quoi il s'agit."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un plombier",
+  "intro": [
+   "Deux clients très différents arrivent sur votre site. Celui qui a une urgence veut savoir si vous venez, quand, et comment vous joindre. Celui qui refait sa salle de bain compare : il regarde vos réalisations et votre façon de travailler.",
+   "Le site parle aux deux, sans les mélanger."
+  ],
+  "points": [
+   [
+    "Vos horaires et vos conditions d'urgence",
+    "Soir, week-end, déplacement : écrits clairement, ils évitent les appels qui n'aboutissent pas."
+   ],
+   [
+    "Vos réalisations en photos",
+    "Salles de bain, chaufferies, avant et après. C'est ce qui rassure pour un chantier important."
+   ],
+   [
+    "Vos labels et votre assurance",
+    "Si vous avez un label (RGE, Qualibat…) ou une assurance décennale, on l'affiche : le client la cherche avant de signer."
+   ],
+   [
+    "Votre fiche Google reliée",
+    "Les avis et la carte renvoient vers le site, et le site vers vos avis."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "J'ai déjà beaucoup d'appels. Un site, ça sert à quoi ?",
+   "À trier. Le site répond aux questions qui reviennent (zone, horaires, types de travaux) et amène les demandes de travaux par écrit, avec les détails."
+  ],
+  [
+   "Je peux afficher mes tarifs de dépannage ?",
+   "Oui, si vous le souhaitez : un prix de déplacement ou une fourchette. Beaucoup de clients appellent juste pour ça."
+  ],
+  [
+   "Je n'ai pas de photos de chantier.",
+   "On commence avec ce que vous avez, même prises au téléphone. Les suivantes s'ajoutent au fil des chantiers avec le forfait mensuel."
+  ],
+  [
+   "Combien de temps ça me prend ?",
+   "Trente minutes au téléphone au départ, puis deux relectures. Les textes, c'est nous qui les écrivons."
+  ]
+ ],
+ "type": "metier"
+}

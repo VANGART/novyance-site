@@ -1,0 +1,98 @@
+{
+ "url": "/pages/site-internet-electricien",
+ "lien": "Électricien",
+ "demande": "Site internet · électricien",
+ "title": "Site internet pour électricien dès 490 €, en ligne en 10 jours · Novyance",
+ "description": "Un site d'électricien clair : dépannage, mise aux normes, rénovation et bornes de recharge présentés séparément, qualifications visibles, demandes rangées. Dès 490 €.",
+ "kick": "Site internet pour électricien",
+ "h1": "Un site d'électricien qui rassure avant l'appel",
+ "lead": "Une panne, un tableau à refaire, une borne de recharge à poser : vos clients ne savent pas toujours comment appeler ce qu'ils cherchent. Le site le dit pour eux, montre vos qualifications et leur donne votre numéro. En ligne en dix jours ouvrés, à partir de 490 €.",
+ "pour": "Pour <b>les électriciens</b> à leur compte ou en petite équipe : dépannage, rénovation, mise aux normes, domotique, bornes de recharge.",
+ "exemple_h2": "Ce qu'il y a sur un site d'électricien, et pourquoi",
+ "exemple_lead": "Le client ne connaît pas les termes techniques. Il reconnaît sa situation.",
+ "exemple": {
+  "url": "elec-martin.fr",
+  "nom": "Élec Martin",
+  "bouton": "Appeler",
+  "h": "Dépannage, rénovation et mise aux normes.",
+  "p": "Particuliers et commerces. Devis gratuit, réponse sous 48 h.",
+  "zone": "Nantes, Rezé, Saint-Herblain, Orvault",
+  "cta": "Expliquer mon besoin",
+  "bas": [
+   [
+    "Dépannage",
+    "Panne, disjoncteur, prise."
+   ],
+   [
+    "Rénovation",
+    "Tableau, mise aux normes."
+   ],
+   [
+    "Demande",
+    "Type de logement, commune."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Des mots simples",
+   "« Plus de courant dans une pièce » plutôt que « défaut d'isolement » : le client se reconnaît et appelle."
+  ],
+  [
+   "Le numéro toujours à portée",
+   "Bouton Appeler en haut de l'écran, sur téléphone comme sur ordinateur."
+  ],
+  [
+   "Vos communes",
+   "Écrites noir sur blanc pour les clients et pour Google."
+  ],
+  [
+   "Une demande précise",
+   "Logement ou local, ancien ou récent, commune : vous préparez votre visite."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un électricien",
+  "intro": [
+   "Pour l'électricité, la confiance passe avant le prix. Le client laisse entrer quelqu'un chez lui pour un travail qu'il ne peut pas vérifier lui-même.",
+   "Le site montre donc qui vous êtes, ce que vous faites vraiment, et ce qui prouve que vous le faites bien."
+  ],
+  "points": [
+   [
+    "Vos prestations, une par une",
+    "Dépannage, rénovation, mise aux normes, domotique, bornes de recharge : chacune avec quelques lignes, pour que Google vous propose sur chacune."
+   ],
+   [
+    "Vos qualifications",
+    "Qualifelec, RGE, qualification pour les bornes de recharge : si vous les avez, elles sont visibles avec leur numéro."
+   ],
+   [
+    "Vos réalisations",
+    "Un tableau refait, un local commercial, une maison rénovée : des photos réelles, avec la commune."
+   ],
+   [
+    "Votre fiche Google reliée",
+    "Vos avis, vos horaires et votre zone, au même endroit que le site."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "Je travaille surtout pour des professionnels. C'est utile quand même ?",
+   "Oui. Un gérant de commerce ou un syndic regarde aussi votre site avant d'appeler. On adapte les textes à ces clients."
+  ],
+  [
+   "Je peux mettre en avant les bornes de recharge ?",
+   "Oui, avec une partie dédiée si vous les installez, et vos qualifications si vous les avez."
+  ],
+  [
+   "Il faut que je fournisse les textes ?",
+   "Non. On les écrit à partir de trente minutes d'échange, et vous relisez."
+  ],
+  [
+   "Et si je change de numéro ou d'horaires ?",
+   "Vous nous écrivez, c'est fait : c'est compris dans le forfait à 29 € par mois."
+  ]
+ ],
+ "type": "metier"
+}

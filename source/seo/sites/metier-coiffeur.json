@@ -1,0 +1,98 @@
+{
+ "url": "/pages/site-internet-coiffeur",
+ "lien": "Coiffeur",
+ "demande": "Site internet · coiffeur",
+ "title": "Site internet pour salon de coiffure dès 490 €, en ligne en 10 jours · Novyance",
+ "description": "Un site de salon de coiffure simple : prestations et tarifs, horaires, accès, photos, et un bouton vers votre outil de réservation. Dès 490 €, puis 29 €/mois.",
+ "kick": "Site internet pour coiffeur",
+ "h1": "Un salon qu'on trouve, et qu'on réserve",
+ "lead": "Vos clientes et vos clients regardent le salon sur leur téléphone avant de réserver : les prix, les photos, l'adresse, les horaires. Le site leur donne tout en un coup d'œil, avec un bouton vers votre réservation. En ligne en dix jours ouvrés, à partir de 490 €.",
+ "pour": "Pour <b>les salons de coiffure</b>, <b>les barbiers</b> et <b>les coiffeurs à domicile</b>.",
+ "exemple_h2": "Ce qu'il y a sur un site de salon, et pourquoi",
+ "exemple_lead": "Quatre questions, quatre réponses visibles sans chercher.",
+ "exemple": {
+  "url": "salon-nina.fr",
+  "nom": "Salon Nina",
+  "bouton": "Réserver",
+  "h": "Coupe, couleur et soins, avec ou sans rendez-vous.",
+  "p": "Du mardi au samedi. Prestations et prix affichés.",
+  "zone": "Lille, Wazemmes, à deux minutes du métro Gambetta",
+  "cta": "Voir les prestations",
+  "bas": [
+   [
+    "Prestations",
+    "Avec leurs prix."
+   ],
+   [
+    "Le salon",
+    "Photos, équipe."
+   ],
+   [
+    "Réserver",
+    "Vers votre outil actuel."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Ce que vous proposez",
+   "Coupe, couleur, barbe, soins : on voit tout de suite si le salon fait ce qu'on cherche."
+  ],
+  [
+   "Le bouton Réserver",
+   "Il ouvre votre outil de réservation actuel. Rien à changer dans vos habitudes."
+  ],
+  [
+   "L'accès",
+   "Adresse, transports, stationnement : la question qu'on pose toujours avant de venir."
+  ],
+  [
+   "Le chemin le plus court",
+   "Deux clics entre la recherche Google et le créneau réservé."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un salon",
+  "intro": [
+   "On ne choisit pas un coiffeur sur un texte. On le choisit sur des photos, des prix et des avis, puis on réserve, souvent le soir.",
+   "Le site rassemble tout ça au même endroit, sous votre nom, au lieu de laisser les plateformes de réservation être votre seule vitrine."
+  ],
+  "points": [
+   [
+    "Vos prestations et vos prix",
+    "Rangés simplement, avec les durées si vous le souhaitez."
+   ],
+   [
+    "Votre réservation en ligne",
+    "On relie le bouton à l'outil que vous utilisez déjà."
+   ],
+   [
+    "Vos photos et votre Instagram",
+    "Vos réalisations récentes, et un lien vers votre compte."
+   ],
+   [
+    "Votre fiche Google reliée",
+    "Horaires, avis, itinéraire : à jour au même endroit."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "J'ai déjà une page sur une application de réservation. Pourquoi un site ?",
+   "L'application vous loue une vitrine, à côté de vos concurrents. Le site est à vous, à votre nom, et renvoie vers la même réservation."
+  ],
+  [
+   "Les prix changent souvent chez moi.",
+   "Vous nous écrivez, on met à jour : c'est compris dans le forfait à 29 € par mois."
+  ],
+  [
+   "Je n'ai pas de logo.",
+   "On compose le nom du salon avec une belle typographie. Ça suffit très bien."
+  ],
+  [
+   "Je suis coiffeur à domicile.",
+   "Le site affiche alors votre zone de déplacement à la place de l'adresse du salon."
+  ]
+ ],
+ "type": "metier"
+}

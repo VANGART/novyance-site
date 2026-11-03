@@ -1,0 +1,98 @@
+{
+ "url": "/pages/site-internet-menuisier",
+ "lien": "Menuisier",
+ "demande": "Site internet · menuisier",
+ "title": "Site internet pour menuisier et ébéniste dès 490 €, en ligne en 10 jours · Novyance",
+ "description": "Un site de menuisier qui montre le travail : réalisations par type, matériaux, façon de travailler, demandes de projet avec dimensions. Dès 490 €, puis 29 €/mois.",
+ "kick": "Site internet pour menuisier",
+ "h1": "Un site qui montre ce que vos mains font",
+ "lead": "Un escalier, une cuisine, un dressing sur mesure : votre client achète un objet qu'il n'a pas encore vu. Ce qui le décide, ce sont vos réalisations, bien photographiées et bien rangées. On construit ce site en dix jours ouvrés, à partir de 490 €.",
+ "pour": "Pour <b>les menuisiers</b>, <b>les ébénistes</b> et <b>les agenceurs</b> : sur mesure, pose, rénovation, mobilier.",
+ "exemple_h2": "Ce qu'il y a sur un site de menuisier, et pourquoi",
+ "exemple_lead": "Ici, la photo fait le travail. Le texte guide.",
+ "exemple": {
+  "url": "atelier-lemaire.fr",
+  "nom": "Atelier Lemaire",
+  "bouton": "Appeler",
+  "h": "Escaliers, cuisines et dressings sur mesure.",
+  "p": "Dessinés avec vous, fabriqués à l'atelier, posés chez vous.",
+  "zone": "Rennes, Cesson-Sévigné, Saint-Grégoire, Bruz",
+  "cta": "Parler de mon projet",
+  "bas": [
+   [
+    "Réalisations",
+    "Rangées par type de projet."
+   ],
+   [
+    "L'atelier",
+    "Bois, machines, savoir-faire."
+   ],
+   [
+    "Projet",
+    "Dimensions, photos, budget."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Ce que vous faites, en une ligne",
+   "Le visiteur sait tout de suite qu'il est chez un fabricant, pas chez un revendeur."
+  ],
+  [
+   "Un numéro, pas seulement un formulaire",
+   "Certains préfèrent parler de leur projet de vive voix."
+  ],
+  [
+   "Votre zone de pose",
+   "La fabrication voyage, la pose non : on dit jusqu'où vous allez."
+  ],
+  [
+   "Une demande de projet utile",
+   "Dimensions, pièce, budget, délai souhaité : vous préparez le rendez-vous."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un menuisier",
+  "intro": [
+   "Celui qui cherche un menuisier compare d'abord des images. Il veut voir un escalier comme le sien, dans un intérieur qui ressemble au sien.",
+   "Ensuite seulement, il lit : comment vous travaillez, en combien de temps, avec quels bois."
+  ],
+  "points": [
+   [
+    "Vos réalisations par type",
+    "Escaliers, cuisines, placards, extérieur : chaque visiteur va droit à ce qui l'intéresse."
+   ],
+   [
+    "Votre façon de travailler",
+    "Visite, plan, fabrication, pose : les étapes et les délais habituels, dits simplement."
+   ],
+   [
+    "Vos matériaux",
+    "Les essences que vous travaillez, les finitions, ce que vous déconseillez et pourquoi."
+   ],
+   [
+    "Vos avis Google",
+    "Repris sur le site : un client satisfait d'un chantier long, c'est l'argument le plus fort."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "Mes photos ne sont pas très belles.",
+   "On choisit les meilleures et on les met en valeur. Pour la suite, quelques conseils simples suffisent : lumière du jour, de face, sans désordre."
+  ],
+  [
+   "Je ne veux pas afficher de prix.",
+   "Ce n'est pas obligatoire. Pour le sur mesure, on explique plutôt de quoi dépend le prix."
+  ],
+  [
+   "Je peux montrer l'atelier ?",
+   "Oui, et c'est conseillé : voir les machines et le bois rassure sur le fait que vous fabriquez vraiment."
+  ],
+  [
+   "Le site sera prêt pour la saison ?",
+   "Il est en ligne dix jours ouvrés après la validation du contenu."
+  ]
+ ],
+ "type": "metier"
+}
