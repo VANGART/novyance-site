@@ -1,0 +1,109 @@
+{
+ "url": "/pages/creation-site-internet-bordeaux",
+ "lien": "Bordeaux",
+ "demande": "Site internet · Bordeaux",
+ "zone_ld": "Bordeaux",
+ "title": "Création de site internet à Bordeaux pour artisans et indépendants, dès 490 € · Novyance",
+ "description": "Création de site internet pour artisans et indépendants à Bordeaux et dans la métropole : site vitrine jusqu'à 5 pages, prix et mensuel affichés, en ligne en 10 jours ouvrés, dès 490 €.",
+ "kick": "Création de site internet à Bordeaux",
+ "h1": "Un site prêt en dix jours, à Bordeaux et autour",
+ "lead": "Vos clients de Bordeaux et de la métropole cherchent un artisan près de chez eux, souvent sur leur téléphone. On construit un site clair, avec vos communes et votre numéro bien visibles. Prix et mensuel affichés, en ligne en dix jours ouvrés, à partir de 490 €, entièrement à distance.",
+ "pour": "Pour <b>les artisans</b> et <b>les indépendants</b> de Bordeaux et de la métropole : Mérignac, Pessac, Talence, Bègles, Villenave-d'Ornon, Le Bouscat, Lormont, Cenon.",
+ "exemple_h2": "Un site pensé pour Bordeaux",
+ "exemple_lead": "Les communes de la métropole, écrites comme vos clients les cherchent.",
+ "exemple": {
+  "url": "couverture-lafon.fr",
+  "nom": "Couverture Lafon",
+  "bouton": "Appeler",
+  "h": "Toitures, zinguerie et réparations.",
+  "p": "Diagnostic et devis gratuits. Photos avant et après.",
+  "zone": "Mérignac, Pessac, Talence, Bordeaux Caudéran",
+  "cta": "Décrire mon toit",
+  "bas": [
+   [
+    "Réalisations",
+    "Avant et après."
+   ],
+   [
+    "Urgences",
+    "Fuite, tuiles, tempête."
+   ],
+   [
+    "Demande",
+    "Commune, photo, délai."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Votre métier et votre commune",
+   "Dans le titre : « couvreur Mérignac », comme on le tape."
+  ],
+  [
+   "Le numéro visible",
+   "Après une tempête, personne ne cherche un formulaire."
+  ],
+  [
+   "Les communes de la métropole",
+   "Celles où vous intervenez, et les quartiers de Bordeaux si besoin."
+  ],
+  [
+   "Une demande utile",
+   "Commune, type de travaux, délai : vous savez quoi préparer."
+  ]
+ ],
+ "bloc": {
+  "h2": "L'artisanat en Gironde, en chiffres",
+  "intro": [
+   "Fin 2025, la Gironde comptait 55 555 entreprises artisanales, selon la Chambre de métiers et de l'artisanat de Nouvelle-Aquitaine. Bordeaux Métropole réunit 28 communes.",
+   "Avec autant d'entreprises, la différence se fait sur des détails simples : un numéro visible, une zone claire, des photos de vrais chantiers et une fiche Google à jour."
+  ],
+  "points": [
+   [
+    "Les 28 communes, sans en faire trop",
+    "On cite celles où vous allez vraiment, et les quartiers de Bordeaux (Chartrons, Bastide, Caudéran…) s'ils comptent pour vous."
+   ],
+   [
+    "Un prix et un mensuel affichés",
+    "490 € pour le site, 29 € par mois ensuite. Pas de devis à rallonge."
+   ],
+   [
+    "Dix jours ouvrés",
+    "Maquette au troisième jour, mise en ligne au dixième."
+   ],
+   [
+    "Votre fiche Google reliée",
+    "Avis, horaires et zone au même endroit que le site."
+   ]
+  ]
+ },
+ "sources": [
+  [
+   "CMA Nouvelle-Aquitaine, CMA Gironde",
+   "https://cma-nouvelleaquitaine.fr/a-cote-de-chez-vous/nous-trouver/cma-gironde"
+  ],
+  [
+   "Bordeaux Métropole, les 28 communes",
+   "https://www.bordeaux-metropole.fr/metropole/linstitution-territoire/28-communes-metropole"
+  ]
+ ],
+ "faq": [
+  [
+   "Vous vous déplacez ?",
+   "Non. Tout se fait par téléphone, par visio et par mail, depuis Lyon. C'est ce qui garde le prix bas, et vous n'avez pas à bloquer une demi-journée."
+  ],
+  [
+   "Vous connaissez Bordeaux ?",
+   "On travaille depuis Lyon. Votre zone, c'est vous qui la connaissez : on l'écrit avec vous, commune par commune."
+  ],
+  [
+   "Je travaille aussi hors métropole.",
+   "On l'écrit : bassin d'Arcachon, Libournais, Médoc, selon où vous allez vraiment."
+  ],
+  [
+   "Combien de temps avant d'être en ligne ?",
+   "Dix jours ouvrés après la validation du contenu."
+  ]
+ ],
+ "type": "ville"
+}

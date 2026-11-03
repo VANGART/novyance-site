@@ -1,0 +1,109 @@
+{
+ "url": "/pages/creation-site-internet-paris",
+ "lien": "Paris",
+ "demande": "Site internet · Paris",
+ "zone_ld": "Paris",
+ "title": "Création de site internet à Paris pour artisans et indépendants, dès 490 € · Novyance",
+ "description": "Création de site internet pour artisans et indépendants à Paris et en petite couronne : site vitrine jusqu'à 5 pages, prix affiché, en ligne en 10 jours ouvrés, dès 490 €.",
+ "kick": "Création de site internet à Paris",
+ "h1": "Un site pour être trouvé dans votre arrondissement",
+ "lead": "À Paris, vos clients cherchent un artisan dans leur arrondissement, sur leur téléphone. On construit un site simple qui dit ce que vous faites, où vous intervenez et comment vous joindre. Prix affiché, en ligne en dix jours ouvrés, à partir de 490 €, entièrement à distance.",
+ "pour": "Pour <b>les artisans</b> et <b>les indépendants</b> de Paris et de la petite couronne : Montreuil, Vincennes, Boulogne-Billancourt, Issy-les-Moulineaux, Levallois-Perret, Saint-Denis.",
+ "exemple_h2": "Un site pensé pour Paris",
+ "exemple_lead": "Ici, la zone se dit en arrondissements. Le site parle comme vos clients.",
+ "exemple": {
+  "url": "serrurerie-dumont.fr",
+  "nom": "Serrurerie Dumont",
+  "bouton": "Appeler",
+  "h": "Ouverture de porte, serrures et blindage.",
+  "p": "Devis avant intervention. Prix de déplacement affiché.",
+  "zone": "Paris 11e, 12e, 20e et Montreuil",
+  "cta": "Décrire mon besoin",
+  "bas": [
+   [
+    "Interventions",
+    "Urgence ou rendez-vous."
+   ],
+   [
+    "Tarifs",
+    "Affichés à l'avance."
+   ],
+   [
+    "Demande",
+    "Arrondissement, besoin."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Votre métier et votre secteur",
+   "Dans le titre de la page : « serrurier Paris 11 », comme on le tape."
+  ],
+  [
+   "Le numéro en un clic",
+   "Sur téléphone, c'est par là que tout commence."
+  ],
+  [
+   "Les arrondissements où vous allez",
+   "Seulement les vrais. Un client du 15e sait tout de suite si vous venez."
+  ],
+  [
+   "Des prix annoncés",
+   "À Paris, on se méfie des mauvaises surprises : un tarif clair rassure avant l'appel."
+  ]
+ ],
+ "bloc": {
+  "h2": "L'artisanat à Paris, en chiffres",
+  "intro": [
+   "Selon la Chambre de métiers et de l'artisanat, l'Île-de-France comptait 348 000 entreprises artisanales en 2025, et 35 620 ont été créées en 2024. Dans la région, les services, le bâtiment et la fabrication représentent plus de neuf entreprises artisanales sur dix.",
+   "Dans ce volume, celui qu'on trouve est celui qui dit clairement où il intervient. Un site par arrondissement serait de trop : une page claire, reliée à votre fiche Google, suffit le plus souvent."
+  ],
+  "points": [
+   [
+    "Paris Centre et les arrondissements",
+    "Depuis 2020, les 1er à 4e arrondissements forment Paris Centre. On écrit votre zone comme vos clients la cherchent."
+   ],
+   [
+    "La petite couronne",
+    "Montreuil, Vincennes, Boulogne : si vous y allez, on le dit. Si non, aussi."
+   ],
+   [
+    "Un prix affiché",
+    "490 € pour le site, 29 € par mois ensuite. Vous savez tout avant de signer."
+   ],
+   [
+    "Dix jours ouvrés",
+    "Maquette au troisième jour, mise en ligne au dixième."
+   ]
+  ]
+ },
+ "sources": [
+  [
+   "CMA Île-de-France, chiffres clés de l'artisanat francilien, édition 2025",
+   "https://www.cma-idf.fr/actualites-evenements/chiffres-cles-de-lartisanat-francilien-edition-2025"
+  ],
+  [
+   "CCI Paris Île-de-France, secteurs d'activité (données CRMA 2025)",
+   "https://www.cci-paris-idf.fr/sites/default/files/2026-10/Secteurs%20d%27activit%C3%A9.pdf"
+  ]
+ ],
+ "faq": [
+  [
+   "Vous vous déplacez ?",
+   "Non. Tout se fait par téléphone, par visio et par mail, depuis Lyon. C'est ce qui garde le prix bas, et vous n'avez pas à bloquer une demi-journée."
+  ],
+  [
+   "Vous connaissez Paris ?",
+   "On travaille depuis Lyon. Pour votre zone, c'est vous qui la connaissez : on l'écrit avec vous, arrondissement par arrondissement."
+  ],
+  [
+   "Un site par arrondissement, c'est mieux ?",
+   "Rarement. Des pages presque identiques peuvent desservir le site. Une page claire et une fiche Google à jour font mieux."
+  ],
+  [
+   "Combien de temps avant d'être en ligne ?",
+   "Dix jours ouvrés après la validation du contenu."
+  ]
+ ],
+ "type": "ville"
+}

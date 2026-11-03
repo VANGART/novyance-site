@@ -1,0 +1,109 @@
+{
+ "url": "/pages/creation-site-internet-marseille",
+ "lien": "Marseille",
+ "demande": "Site internet · Marseille",
+ "zone_ld": "Marseille",
+ "title": "Création de site internet à Marseille pour artisans et indépendants, dès 490 € · Novyance",
+ "description": "Création de site internet pour artisans, micro-entrepreneurs et indépendants à Marseille et dans la métropole : site vitrine jusqu'à 5 pages, en ligne en 10 jours ouvrés, dès 490 €.",
+ "kick": "Création de site internet à Marseille",
+ "h1": "Un site simple pour se lancer à Marseille",
+ "lead": "Beaucoup d'artisans des Bouches-du-Rhône démarrent en micro-entreprise. Il leur faut un vrai site, vite, sans y laisser un mois de chiffre d'affaires. On le construit en dix jours ouvrés, à partir de 490 €, entièrement à distance.",
+ "pour": "Pour <b>les artisans</b>, <b>les micro-entrepreneurs</b> et <b>les indépendants</b> de Marseille et de la métropole : Aix-en-Provence, Aubagne, La Ciotat, Vitrolles, Marignane, Allauch, Plan-de-Cuques.",
+ "exemple_h2": "Un site pensé pour Marseille",
+ "exemple_lead": "Quartiers et communes en clair, réservation en un clic.",
+ "exemple": {
+  "url": "lina-esthetique.fr",
+  "nom": "Lina Esthétique",
+  "bouton": "Réserver",
+  "h": "Soins esthétiques à domicile.",
+  "p": "Prestations et prix affichés. Réservation en ligne.",
+  "zone": "Marseille 8e, 9e, Castellane, Prado",
+  "cta": "Choisir un soin",
+  "bas": [
+   [
+    "Soins",
+    "Avec durée et prix."
+   ],
+   [
+    "Zone",
+    "Quartiers desservis."
+   ],
+   [
+    "Réserver",
+    "Date et adresse."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Ce que vous proposez",
+   "On voit tout de suite le métier et le type de service."
+  ],
+  [
+   "Réserver ou appeler",
+   "Selon votre métier, le bouton ouvre l'appel ou la réservation."
+  ],
+  [
+   "Les quartiers desservis",
+   "Prado, Castellane, ou une commune de la métropole : écrits en clair."
+  ],
+  [
+   "Le prix avant le rendez-vous",
+   "Pour un service à domicile, on veut savoir combien avant d'ouvrir sa porte."
+  ]
+ ],
+ "bloc": {
+  "h2": "L'artisanat dans les Bouches-du-Rhône, en chiffres",
+  "intro": [
+   "Au 1er janvier 2025, le département comptait 76 890 entreprises artisanales, 8 % de plus qu'un an avant, selon la Chambre de métiers et de l'artisanat de Provence-Alpes-Côte d'Azur. En 2024, 73 % des nouvelles immatriculations se sont faites en micro-entreprise.",
+   "Services et bâtiment représentent plus des trois quarts de l'artisanat du département. En 2024, ce sont le nettoyage des bâtiments et les soins de beauté hors salon qui ont gagné le plus d'entreprises : des métiers où le client choisit souvent en ligne."
+  ],
+  "points": [
+   [
+    "Pensé pour démarrer",
+    "Un site jusqu'à 5 pages, sans frais cachés : 490 € puis 29 € par mois."
+   ],
+   [
+    "La métropole en clair",
+    "Aix-Marseille-Provence compte 92 communes. On écrit seulement celles où vous allez."
+   ],
+   [
+    "Votre fiche Google reliée",
+    "Avis, horaires, zone : au même endroit que le site."
+   ],
+   [
+    "Prêt en dix jours ouvrés",
+    "Pour commencer à recevoir des demandes rapidement."
+   ]
+  ]
+ },
+ "sources": [
+  [
+   "CMA PACA, chiffres clés de l'artisanat, édition 2025",
+   "https://cmar-paca.fr/galerie/1/e585bacee72103cc54e18f71096278cc.pdf"
+  ],
+  [
+   "Métropole Aix-Marseille-Provence, le territoire",
+   "https://ampmetropole.fr/metropole/le-territoire/"
+  ]
+ ],
+ "faq": [
+  [
+   "Vous vous déplacez ?",
+   "Non. Tout se fait par téléphone, par visio et par mail, depuis Lyon. C'est ce qui garde le prix bas, et vous n'avez pas à bloquer une demi-journée."
+  ],
+  [
+   "Je suis en micro-entreprise. C'est adapté ?",
+   "Oui, c'est fait pour ça : un prix fixe, un petit mensuel, et un site qui vous appartient."
+  ],
+  [
+   "Je travaille à domicile chez mes clients.",
+   "Le site affiche alors vos quartiers et communes desservis à la place d'une adresse."
+  ],
+  [
+   "Combien de temps avant d'être en ligne ?",
+   "Dix jours ouvrés après la validation du contenu."
+  ]
+ ],
+ "type": "ville"
+}
