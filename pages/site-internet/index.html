@@ -207,6 +207,22 @@ footer a:hover{color:var(--accent-d)}
   .top .acts .btn{width:100%}
 }
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .devis{transform:none} }
+
+.metier{padding:clamp(64px,9vw,120px) 0 0}
+.metier-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);margin-top:36px;align-items:start}
+.metier-i p{color:var(--muted);margin-bottom:16px;max-width:52ch}
+.metier ul{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink2)}
+.metier li{padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.metier li b{display:block;color:var(--ink2);font-weight:600;margin-bottom:2px}
+.sources{margin-top:28px;font-size:13px;color:var(--muted)}
+.voisins{padding:0 0 clamp(64px,9vw,112px)}
+.voisins-g{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}
+.voisins h3{font-size:16px;margin-bottom:10px}
+.voisins ul{list-style:none;margin:0;padding:0}
+.voisins li{padding:6px 0}
+.voisins a{text-decoration:none;border-bottom:1px solid var(--line)}
+.voisins a:hover{color:var(--accent-d);border-color:var(--accent)}
+@media (max-width:860px){.metier-g,.voisins-g{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -397,6 +413,7 @@ footer a:hover{color:var(--accent-d)}
     </div>
   </section>
 
+  <section class="voisins"><div class="wrap"><h2>Les autres pages<span class="dot">.</span></h2><div class="voisins-g"><div><h3>Par métier</h3><ul><li><a href="/pages/site-internet-coach">Coach</a></li><li><a href="/pages/site-internet-coiffeur">Coiffeur</a></li><li><a href="/pages/site-internet-electricien">Électricien</a></li><li><a href="/pages/site-internet-menuisier">Menuisier</a></li><li><a href="/pages/site-internet-photographe">Photographe</a></li><li><a href="/pages/site-internet-plombier">Plombier</a></li></ul></div><div><h3>Par ville</h3><ul><li><a href="/pages/creation-site-internet-lyon">Lyon</a></li></ul></div><div><h3>L'offre complète</h3><ul><li><a href="/pages/site-internet">Sites internet dès 490 €</a></li><li><a href="/">Prospection à la commission</a></li></ul></div></div></div></section>
   <section class="end" id="devis">
     <div class="wrap end-grid end-g">
       <div>
