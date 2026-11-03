@@ -269,6 +269,43 @@ def pages_sites(sortie):
     return urls
 
 
+LEGALES = {
+    "/pages/cgv": ("seo/legal/cgv.html", "Conditions générales de vente · Novyance",
+                   "Conditions générales de vente de Novyance : prospection à la commission, sites internet, outils sur mesure. Prix, paiement, engagement, données."),
+    "/pages/confidentialite": ("seo/legal/confidentialite.html", "Politique de confidentialité · Novyance",
+                               "Quelles données Novyance collecte, pourquoi, combien de temps, qui y a accès, et comment exercer vos droits."),
+}
+
+
+def pages_legales(sortie):
+    """CGV et confidentialité : textes de seo/legal, habillés comme la page « Sites internet »."""
+    urls = []
+    for url, (src, titre, desc) in LEGALES.items():
+        t = liquid(lire("theme-v18/templates/page.sites.liquid"), url)
+        t = re.sub(r"<main>.*</main>", lambda m: '<main><section class="legal"><div class="wrap">%s</div></section></main>' % lire(src), t, count=1, flags=re.S)
+        t = re.sub(r"<title>.*?</title>", "<title>%s</title>" % html.escape(titre), t, count=1, flags=re.S)
+        for nom, val in (('name="description"', desc), ('property="og:title"', titre), ('property="og:description"', desc)):
+            t = re.sub(r'<meta %s content="[^"]*">' % re.escape(nom), '<meta %s content="%s">' % (nom, html.escape(val)), t, count=1)
+        t = re.sub(r'<script type="application/ld\+json">.*?</script>', "", t, count=1, flags=re.S)
+        t = t.replace("</style>", CSS_LEGAL + "</style>", 1)
+        ecrire(sortie, url, t)
+        urls.append(url)
+    return urls
+
+
+CSS_LEGAL = """
+.legal{padding:clamp(48px,7vw,96px) 0 clamp(64px,8vw,112px)}
+.legal .wrap{max-width:820px}
+.legal h1{font-size:clamp(36px,5vw,60px)}
+.legal .maj{color:var(--muted);margin-top:14px;font-size:15px}
+.legal h2{font-size:clamp(22px,2.4vw,28px);margin:44px 0 12px}
+.legal p,.legal li{color:var(--ink);max-width:70ch}
+.legal p+p{margin-top:12px}
+.legal ul{padding-left:20px;margin:10px 0 0}
+.legal li{margin-bottom:8px}
+"""
+
+
 CSS_SITES = """
 .metier{padding:clamp(64px,9vw,120px) 0 0}
 .metier-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);margin-top:36px;align-items:start}
@@ -329,6 +366,7 @@ def main():
             '<script>location.replace("%s" + location.search + location.hash)</script>'
             '<p><a href="%s">Continuer vers la page</a></p>' % (SITE, cible, cible, cible, cible), encoding="utf-8")
     urls += pages_sites(sortie)
+    urls += pages_legales(sortie)
     liste = articles(tout)
     ecrire(sortie, "/blogs/blog", page_blog(liste))
     urls.append("/blogs/blog")
