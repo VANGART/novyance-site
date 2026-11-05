@@ -1,0 +1,25 @@
+{
+  "statut": "rédigé 05/11, en cours",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Alternative à Odoo pour une TPE : trois chemins, un seul critère",
+  "handle": "alternative-odoo-tpe",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": "2026-11-30T09:00:00+01:00",
+  "summary": "<p>Odoo est un ERP pensé pour de grandes structures. Une TPE a rarement besoin de tout ça. Voici trois chemins possibles (logiciel léger, ERP libre, outil sur mesure) et quatre questions pour choisir sans se tromper.</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Alternative à Odoo pour TPE : 3 options et comment choisir"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Alternative à Odoo pour une TPE : logiciel léger, ERP libre ou outil sur mesure. Comparatif et quatre questions pour choisir le bon outil."
+    }
+  ]
+}
