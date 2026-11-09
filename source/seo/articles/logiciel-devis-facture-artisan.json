@@ -1,0 +1,25 @@
+{
+  "statut": "rédigé 09/11, daté 2026-12-03",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Logiciel devis facture artisan : le trajet du devis à l'encaissement",
+  "handle": "logiciel-devis-facture-artisan",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": "2026-12-03T09:00:00+01:00",
+  "summary": "<p>Les comparatifs de logiciels de devis et facture pour artisan listent des outils et des prix. Ils parlent peu de ce qui se passe entre le devis signé et l'argent sur le compte : acomptes, avenants, encaissements, facturation électronique. Voici les cinq questions à poser avant de choisir.</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel devis facture artisan : du devis à l'encaissement"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Logiciel devis facture artisan : 5 questions à poser avant de choisir, acomptes, encaissements et facturation électronique compris."
+    }
+  ]
+}
