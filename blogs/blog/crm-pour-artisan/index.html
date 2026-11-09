@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
+<link rel="apple-touch-icon" href="/assets/nv-apple-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F6FA;--bg2:#E9EEF5;--white:#FFF;--ink:#482719;--muted:rgba(72,39,25,.7);--soft:rgba(72,39,25,.6);--hair:rgba(72,39,25,.12);--hair-2:rgba(72,39,25,.07);--orange:#FF681F;--rose:#FF9EBC;--rose-s:#FFE6EE;--jaune-s:#FFF2D0;--bleu-s:#DFE7FF;--t:'Space Grotesk','DM Sans',system-ui,sans-serif;--b:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--e:cubic-bezier(.22,.61,.36,1);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;color-scheme:only light;}
+body{background:var(--bg);color:var(--ink);font-family:var(--b);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;}
+b,strong{font-weight:600;}
+h1,h2,h3{font-family:var(--t);font-weight:700;letter-spacing:-.02em;line-height:1.12;}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+.wide{max-width:1180px;}
+.dot{color:var(--orange);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 22px;border-radius:100px;background:var(--orange);color:var(--ink);border:0;cursor:pointer;text-decoration:none;transition:background .3s,box-shadow .35s;}
+.btn:hover{background:#FF7A3A;box-shadow:0 12px 28px -14px rgba(255,104,31,.7);}
+header{position:sticky;top:0;z-index:50;background:rgba(243,246,250,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair-2);}
+header .wrap{max-width:1180px;display:flex;justify-content:space-between;align-items:center;height:62px;}
+.brand{font-family:var(--t);font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;}
+header .rt{display:flex;gap:18px;align-items:center;font-size:13.5px;font-weight:500;}
+header .rt a{color:var(--muted);text-decoration:none;}
+header .rt a:hover{color:var(--ink);}
+header .rt a.btn{color:var(--ink);padding:9px 16px;font-size:13px;}
+.bc{font-size:12.5px;color:var(--soft);padding:22px 0 0;}
+.bc a{color:var(--soft);text-decoration:none;}
+.bc a:hover{color:var(--orange);}
+.hd{padding:16px 0 26px;}
+.hd h1{font-size:clamp(28px,4.2vw,44px);margin-bottom:14px;}
+.lead{font-size:18px;color:var(--muted);}
+.meta{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--soft);margin-top:14px;}
+.meta span+span::before{content:'·';margin-right:14px;}
+.cover{margin:6px 0 10px;border-radius:20px;overflow:hidden;background:var(--bg2);}
+.cover img{display:block;width:100%;height:auto;}
+.rte{padding:22px 0 10px;font-size:17px;}
+.rte h2{font-size:clamp(22px,2.5vw,27px);margin:38px 0 12px;}
+.rte h3{font-size:18px;margin:26px 0 8px;}
+.rte p{margin-bottom:16px;color:rgba(72,39,25,.82);}
+.rte p strong,.rte li strong{color:var(--ink);}
+.rte ul,.rte ol{margin:0 0 18px;padding-left:0;list-style:none;}
+.rte li{position:relative;padding-left:18px;margin-bottom:9px;color:rgba(72,39,25,.82);}
+.rte li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+.rte a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--orange);}
+.rte img{max-width:100%;height:auto;border-radius:16px;margin:10px 0;}
+.rte table{width:100%;border-collapse:collapse;margin:8px 0 22px;font-size:15px;display:block;overflow-x:auto;}
+.rte th,.rte td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);}
+.rte th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.rte tr:first-child td{font-weight:600;color:var(--ink);}
+.rte blockquote{background:var(--rose-s);border-radius:16px;padding:20px 22px;margin:22px 0;font-size:16px;}
+.rte blockquote p:last-child{margin-bottom:0;}
+.aut{display:flex;gap:14px;align-items:center;background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:18px 20px;margin:30px 0 10px;}
+.aut .mono{width:46px;height:46px;border-radius:14px;background:var(--rose);display:grid;place-items:center;font-family:var(--t);font-weight:700;font-size:22px;flex:none;}
+.aut .mono i{color:var(--orange);font-style:normal;}
+.aut p{font-size:14px;color:var(--muted);}
+.aut b{color:var(--ink);}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.post{background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .35s var(--e),box-shadow .35s var(--e);}
+.post:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(72,39,25,.35);}
+.post small{font-size:12px;color:var(--soft);letter-spacing:.04em;}
+.post b{font-family:var(--t);font-size:18px;line-height:1.25;}
+.post span{font-size:14px;color:var(--muted);flex:1;}
+.post em{font-style:normal;font-size:13px;font-weight:600;color:#C94A0E;}
+.pag{display:flex;justify-content:center;gap:10px;margin:30px 0;font-size:14px;}
+.pag a,.pag span{padding:8px 14px;border-radius:100px;background:var(--white);text-decoration:none;}
+.more{padding:40px 0 10px;}
+.more h2{font-size:clamp(20px,2.4vw,26px);margin-bottom:16px;}
+.ct{background:var(--bg2);margin-top:44px;padding:48px 0 52px;}
+.ct h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:10px;}
+.ct p{color:var(--muted);margin-bottom:20px;}
+footer{background:var(--bg2);padding:30px 0;border-top:1px solid var(--hair);}
+footer .wrap{max-width:1180px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
+footer a{color:var(--muted);text-decoration:none;}
+footer a:hover{color:var(--orange);}
+footer .lk{display:flex;gap:18px;flex-wrap:wrap;}
+@media (max-width:860px){.posts{grid-template-columns:1fr 1fr;}}
+@media (max-width:620px){.wrap{padding:0 20px;}.posts{grid-template-columns:1fr;}header .rt a:not(.btn){display:none;}.rte{font-size:16px;}footer .lk a{padding:6px 0;}}
+</style>
+
+<title>CRM pour artisan : suivre demandes et devis simplement · Novyance</title>
+<meta name="description" content="CRM pour artisan : suivre chaque demande, relancer chaque devis au bon moment, depuis le téléphone. Cinq étapes, sans usine à gaz ni logiciel de plus.">
+<meta property="og:title" content="CRM pour artisan : suivre demandes et devis simplement">
+<meta property="og:description" content="CRM pour artisan : suivre chaque demande, relancer chaque devis au bon moment, depuis le téléphone. Cinq étapes, sans usine à gaz ni logiciel de plus.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novyance.fr/blogs/blog/crm-pour-artisan">
+<meta property="og:image" content="https:/assets/nv-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://novyance.fr/blogs/blog/crm-pour-artisan">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"CRM pour artisan : ne plus perdre une demande ni un devis","description":"CRM pour artisan : suivre chaque demande, relancer chaque devis au bon moment, depuis le téléphone. Cinq étapes, sans usine à gaz ni logiciel de plus.","datePublished":"2026-11-09T09:00:00+01:00","dateModified":"2026-11-09T09:00:00+01:00","image":,"mainEntityOfPage":"https://novyance.fr/blogs/blog/crm-pour-artisan","author":{"@type":"Person","name":"Aurélien Ruotte","url":"https://novyance.fr/"},"publisher":{"@type":"Organization","name":"Novyance","url":"https://novyance.fr/","logo":{"@type":"ImageObject","url":"https://novyance.fr/assets/nv-apple-touch.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://novyance.fr/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://novyance.fr/blogs/blog"},{"@type":"ListItem","position":3,"name":"CRM pour artisan : ne plus perdre une demande ni un devis","item":"https://novyance.fr/blogs/blog/crm-pour-artisan"}]}
+</script>
+
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="/pages/outils-metier">Outils</a>
+      <a href="/#sites">Sites</a>
+      <a href="/pages/automatisation-ia-entreprise">Automatisation et IA</a>
+      <a href="/pages/apporteurs-affaires">Apporteurs d'affaires</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/#contact" class="btn">Parlons-en</a>
+      
+<button class="nvb" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nvm"><i></i><i></i><i></i></button>
+<nav class="nvm" id="nvm" aria-label="Menu">
+  <a href="/">Accueil</a>
+  <a href="/pages/outils-metier">Outils métier<small>Un outil construit autour de votre métier</small></a>
+  <a href="/pages/automatisation-ia-entreprise">Automatisation et IA<small>Ce qui se répète, je l'automatise</small></a>
+  <a href="/#exemples">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
+  <a href="/#prix">Prix<small>À partir de 590 €, puis 89 € par mois</small></a>
+  <a href="/pages/site-internet">Sites internet<small>Dès 490 €, en ligne en 10 jours</small></a>
+  <a href="/blogs/blog">Blog</a>
+  <div class="nvm-ct">
+    <a href="tel:+33786523681" class="nvm-tel">07 86 52 36 81</a>
+    <a href="/#contact" class="nvm-go">Parlons-en</a>
+  </div>
+</nav>
+<style>
+  .nvb{display:none;width:44px;height:44px;flex:0 0 44px;border-radius:14px;border:1px solid rgba(72,39,25,.14);background:#fff;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;margin-left:8px;}
+  .nvb i{display:block;width:18px;height:2px;border-radius:2px;background:#482719;transition:transform .25s,opacity .25s;}
+  .nvb[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nvb[aria-expanded="true"] i:nth-child(2){opacity:0;}
+  .nvb[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nvm{display:none;}
+  @media (max-width:860px){
+    .nvb{display:inline-flex;}
+    .nvm.open{display:block;position:fixed;top:68px;left:12px;right:12px;z-index:80;background:#fff;border:1px solid rgba(72,39,25,.08);border-radius:20px;box-shadow:0 30px 60px -30px rgba(72,39,25,.45);padding:8px;max-height:calc(100vh - 84px);max-height:calc(100dvh - 84px);overflow:auto;animation:nvm-in .2s ease both;}
+    .nvm a{display:block !important;padding:13px 16px !important;border-radius:12px;text-decoration:none;color:#482719 !important;font-weight:600;font-size:16px !important;line-height:1.3;}
+    .nvm a:active,.nvm a:hover{background:#F3F6FA;}
+    .nvm a small{display:block;font-weight:400;font-size:13px;color:rgba(72,39,25,.6);margin-top:2px;}
+    .nvm-ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-top:1px solid rgba(72,39,25,.08);margin-top:6px;}
+    .nvm-ct a{text-align:center;border-radius:100px;padding:14px 10px !important;font-size:15px !important;}
+    .nvm-ct .nvm-tel{border:1px solid rgba(72,39,25,.14);}
+    .nvm-ct .nvm-go{background:#FF681F;}
+    @keyframes nvm-in{from{opacity:0;transform:translateY(-6px);}}
+  }
+</style>
+<script>
+  (function(){
+    var b = document.currentScript.parentNode.querySelector('.nvb'), m = document.getElementById('nvm');
+    if (!b || !m) return;
+    function poser(o){ m.classList.toggle('open', o); b.setAttribute('aria-expanded', o ? 'true' : 'false'); b.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); }
+    b.addEventListener('click', function(e){ e.stopPropagation(); poser(!m.classList.contains('open')); });
+    m.addEventListener('click', function(e){ if (e.target.closest('a')) poser(false); });
+    document.addEventListener('click', function(e){ if (m.classList.contains('open') && !m.contains(e.target)) poser(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') poser(false); });
+  })();
+</script>
+
+    </div>
+  </div>
+</header>
+
+<article class="wrap">
+  <div class="bc"><a href="/">Accueil</a> · <a href="/blogs/blog">Blog</a> · CRM pour artisan : ne plus perdre une demande ni un devis</div>
+  <div class="hd">
+    <h1>CRM pour artisan : ne plus perdre une demande ni un devis</h1>
+    <p class="lead">Les comparatifs de CRM pour artisan parlent surtout de devis et de factures. L&#x27;argent se perd ailleurs : la demande jamais rappelée, le devis jamais relancé. Voici le suivi en cinq étapes qui règle ça, depuis le téléphone.</p>
+    <div class="meta"><span>Aurélien Ruotte</span><span>09/11/2026</span><span>5 min de lecture</span></div>
+  </div>
+  
+  <div class="rte"><p>Tapez « <strong>CRM pour artisan</strong> » dans Google : vous tombez surtout sur des comparatifs de logiciels de devis et de facturation. C'est utile, mais ce n'est pas là que l'artisan perd de l'argent. Il le perd avant le devis, et juste après : la demande notée sur un coin de carnet et jamais rappelée, le devis envoyé et jamais relancé.</p><p>Je vous montre ce qu'un CRM doit vraiment faire pour un artisan, et comment en avoir un qui sert, sans passer vos soirées à le remplir.</p><blockquote><p><strong>En bref.</strong> Pour un artisan, un CRM sert d'abord à ne plus perdre de demandes et à relancer chaque devis au bon moment. Cinq étapes suffisent : demande, à chiffrer, devis envoyé, signé, perdu. Si l'outil ne se remplit pas depuis le téléphone, en sortant du chantier, il ne sera pas tenu. Le logiciel de devis, lui, reste votre outil de facturation.</p></blockquote><h2>Ce qu'on appelle un CRM quand on est artisan</h2><p>Dans une grande entreprise, un CRM gère des commerciaux, des campagnes, des statistiques. Chez un plombier, un menuisier ou un électricien, la question est plus simple : <strong>qui m'a demandé quoi, où j'en suis avec lui, et quand je dois le rappeler.</strong></p><p>Beaucoup de logiciels du bâtiment ont un onglet « clients » et se présentent comme CRM. En pratique, ils stockent une adresse et l'historique des factures. C'est un carnet d'adresses, pas un suivi commercial. Le client n'y entre souvent qu'au moment où vous faites le devis. Tout ce qui se passe avant n'existe nulle part.</p><h2>Où un artisan perd vraiment des chantiers</h2><p>Quand je regarde comment travaille une petite entreprise artisanale, les fuites sont presque toujours aux mêmes endroits.</p><ul><li><strong>Les demandes arrivent partout.</strong> Un appel pendant que vous êtes sur l'échelle, un SMS, un message WhatsApp, un mail, le formulaire du site. Rien n'est au même endroit, donc certaines passent à la trappe.</li><li><strong>Le devis part, puis plus rien.</strong> Le client compare, hésite, oublie. Sans relance, un devis qui aurait été signé finit chez le concurrent qui a rappelé.</li><li><strong>Le chantier fini, le client disparaît.</strong> Pas de demande d'avis, pas de rappel pour l'entretien, pas de nouvelle quand il pourrait avoir un autre projet.</li></ul><p>Aucun de ces trois points ne se règle avec un meilleur modèle de devis. <strong>Ils se règlent avec une liste à jour et une date de relance sur chaque ligne.</strong></p><h2>Les cinq étapes qui suffisent</h2><p>Pas besoin de vingt champs. Un bon suivi pour artisan tient en cinq colonnes, et chaque demande avance de gauche à droite :</p><ol><li><strong>Demande</strong> : nom, téléphone, adresse du chantier, ce qu'il veut. Une photo si le client en a envoyé.</li><li><strong>À chiffrer</strong> : visite faite ou prévue, vous devez le devis.</li><li><strong>Devis envoyé</strong> : avec le montant et une date de relance.</li><li><strong>Signé</strong> : le chantier passe dans votre planning.</li><li><strong>Perdu</strong> : avec la raison en un mot (prix, délai, pas de réponse). Au bout de quelques mois, vous saurez pourquoi vous perdez.</li></ol><p>Le vrai moteur, c'est la date de relance. Chaque matin, l'outil vous montre la liste des personnes à rappeler aujourd'hui. Vous appelez, vous notez la réponse, vous passez à la suivante. <strong>Le suivi commercial devient une liste de tâches, pas un effort de mémoire.</strong></p><h2>Logiciel de devis, CRM générique ou outil sur mesure</h2><table><thead><tr><th></th><th>Logiciel de devis du bâtiment</th><th>CRM généraliste</th><th>Outil sur mesure</th></tr></thead><tbody><tr><td>Point fort</td><td>Devis, factures, bibliothèque de prix</td><td>Suivi commercial complet</td><td>Suit votre façon de travailler</td></tr><tr><td>Demandes avant devis</td><td>Peu ou pas suivies</td><td>Oui</td><td>Oui</td></tr><tr><td>Relances de devis</td><td>Variable selon l'outil</td><td>Oui, à paramétrer</td><td>Oui, avec vos délais et vos messages</td></tr><tr><td>Prise en main</td><td>Rapide pour la facturation</td><td>Longue, pensé pour des commerciaux</td><td>Courte, il n'y a que vos écrans</td></tr><tr><td>Sur le téléphone</td><td>Souvent limité</td><td>Oui, mais chargé</td><td>Pensé pour le chantier</td></tr><tr><td>Ce qui manque</td><td>Tout ce qui précède la signature</td><td>Le vocabulaire et les étapes du métier</td><td>Une mise en place à prévoir</td></tr></tbody></table><p>Mon avis : <strong>gardez votre logiciel de devis pour ce qu'il fait bien.</strong> Ce qui manque, c'est la partie avant et après. C'est exactement ce que je construis en <a href="/pages/crm-sur-mesure">CRM sur mesure</a> : vos étapes, vos messages de relance, rien de plus.</p><h2>La règle du téléphone</h2><p>Un CRM d'artisan se joue dans le camion. Si noter une demande demande d'ouvrir un ordinateur, elle sera notée le soir, ou jamais. Trois choses font la différence :</p><ul><li><strong>ajouter une demande en quelques gestes</strong>, depuis le téléphone, avant de redémarrer ;</li><li><strong>appeler le client d'un appui</strong> depuis sa fiche ;</li><li><strong>voir les relances du jour en ouvrant l'outil</strong>, sans chercher.</li></ul><p>Le reste, les statistiques et les exports, se regarde au bureau une fois par semaine. Vous pouvez voir à quoi ressemble ce type d'écran dans la <a href="/pages/demo-commercial">démo Commercial</a>, avec des données fictives.</p><h2>Votre fichier clients et le RGPD</h2><p>Un CRM, c'est un fichier de données personnelles. Rien de compliqué pour un artisan, mais quelques règles : ne garder que ce qui sert, ne pas conserver indéfiniment les prospects qui n'ont jamais donné suite, et pouvoir effacer une fiche si on vous le demande. La CNIL résume l'essentiel dans sa page <a href="https://www.cnil.fr/fr/rgpd-par-ou-commencer" target="_blank" rel="noopener">RGPD : par où commencer</a>.</p><p>Si vous voulez envoyer des messages à d'anciens clients, les règles ne sont pas les mêmes selon que la personne est un particulier ou une entreprise. Elles sont détaillées sur la page de la CNIL consacrée à <a href="https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" target="_blank" rel="noopener">la prospection par mail et SMS</a>.</p><h2>Et le site dans tout ça</h2><p>Votre site est souvent la première porte d'entrée des demandes. S'il est relié au CRM, chaque formulaire rempli crée une fiche dans la colonne « Demande ». Plus de mail perdu dans une boîte qui déborde. Je le fais sur les <a href="/pages/site-internet-artisan">sites pour artisans</a> que je livre, quand le client a aussi un outil de suivi.</p><h2>Questions fréquentes</h2><h3>Mon logiciel de devis fait déjà CRM, j'ai besoin d'autre chose ?</h3><p>Regardez s'il suit les demandes avant le devis et s'il vous rappelle quand relancer. Si oui, gardez-le. Si le client n'existe dans l'outil qu'au moment du devis, il vous manque la partie qui fait signer.</p><h3>Je travaille seul, c'est utile ?</h3><p>C'est même là que c'est le plus utile. Seul, vous n'avez personne pour se souvenir à votre place. Une liste de relances du jour remplace la mémoire et les post-it.</p><h3>Combien de temps faut-il pour le mettre en place ?</h3><p>Pour un outil sur mesure chez Novyance, comptez environ une semaine. On reprend vos clients existants, on règle vos étapes et vos messages de relance, puis on vous forme.</p><h3>Est-ce que je peux récupérer mes données si j'arrête ?</h3><p>Oui. Vos données sont exportables à tout moment. C'est votre fichier clients, pas le mien.</p><h3>Combien coûte un CRM sur mesure pour artisan ?</h3><p>La mise en place démarre à partir de 590 €, puis à partir de 89 € par mois pour l'hébergement, la maintenance et les réglages. Le prix est par entreprise, pas par utilisateur. Il est confirmé au devis selon vos besoins. Vous pouvez voir les autres briques possibles sur la page <a href="/pages/outils-metier">outils métier</a>.</p><p><strong>Vous voulez savoir combien de devis dorment dans vos mails et vos SMS ?</strong> <a href="/#top">Décrivez votre façon de travailler en trois questions</a>, je vous réponds sous 24 h.</p>
+</div>
+  <div class="aut"><div class="mono">n<i>.</i></div><p><b>Aurélien Ruotte</b>, fondateur de Novyance à Lyon. Il construit des sites et des outils sur mesure pour les TPE et PME, et répond lui-même à chaque demande.</p></div>
+</article>
+<section class="wrap wide more"><h2>À lire aussi<span class="dot">.</span></h2><div class="posts"><a class="post" href="/blogs/blog/logiciel-relance-factures-impayees-tpe"><small>05/11/2026</small><b>Logiciel de relance de factures impayées pour TPE : partir de la banque</b><span>Les logiciels de relance sont souvent pensés pour des PME avec un service comptable. Dans une TPE, c&#x27;est le patron qui relance. Voici un outil qui</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/remplacer-excel-par-une-application"><small>19/10/2026</small><b>Remplacer Excel par une application : les 7 signes que c&#x27;est le moment</b><span>Excel a fait tourner des milliers de petites entreprises. Mais il arrive un moment où le fichier qui rendait service devient celui que tout le monde</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/prix-logiciel-sur-mesure-tpe"><small>15/10/2026</small><b>Combien coûte un logiciel sur mesure pour une TPE en 2026 ?</b><span>Développement en agence, logiciel du marché ou outil sur mesure en abonnement : trois façons de payer un outil pour une TPE, avec des montants très</span><em>Lire l'article →</em></a></div></section>
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · <a href="mailto:contact@novyance.fr">contact@novyance.fr</a></span>
+    <span class="lk">
+      <a href="/pages/outils-metier">Outils métier sur mesure</a>
+      <a href="/pages/creation-site-internet-lyon">Site à Lyon</a>
+      <a href="/pages/application-pilotage-sur-mesure">Application de pilotage</a>
+      <a href="/pages/crm-sur-mesure">CRM sur mesure</a>
+      <a href="/pages/prospection-automatisee">Prospection automatisée</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/">Accueil</a>
+      
+      <a href="/pages/cgv">CGV</a>
+      <a href="/pages/confidentialite">Confidentialité</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
