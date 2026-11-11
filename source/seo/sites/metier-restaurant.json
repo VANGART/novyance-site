@@ -1,0 +1,110 @@
+{
+ "url": "/pages/site-internet-restaurant",
+ "lien": "Restaurant",
+ "demande": "Site internet · restaurant",
+ "title": "Site internet pour restaurant à partir de 400 € · Novyance",
+ "description": "Un site de restaurant clair sur téléphone : carte et prix lisibles, horaires, réservation, itinéraire. À partir de 400 €, puis dès 29 €/mois.",
+ "kick": "Site internet pour restaurant",
+ "h1": "La table qu'on réserve avant de chercher ailleurs",
+ "lead": "Midi moins le quart, ou un samedi vers 19 h : votre futur client a faim et son téléphone en main. Il veut voir la carte, les prix, savoir si c'est ouvert et comment réserver. On construit ce site pour vous en dix jours ouvrés, à partir de 400 €.",
+ "pour": "Pour <b>les restaurants</b>, <b>les bistrots</b>, <b>les brasseries</b> et <b>les pizzerias</b> indépendants, avec ou sans vente à emporter.",
+ "exemple_h2": "Ce qu'il y a sur un site de restaurant, et pourquoi",
+ "exemple_lead": "On choisit une table vite. Ce qui compte tient sur le premier écran.",
+ "exemple": {
+  "url": "table-maelle.fr",
+  "nom": "La Table de Maëlle",
+  "bouton": "Réserver",
+  "h": "Cuisine de marché, carte courte qui change chaque semaine.",
+  "p": "Du mardi au samedi, midi et soir. Menu du midi affiché chaque matin.",
+  "zone": "Nantes, quartier Bouffay",
+  "cta": "Voir la carte",
+  "bas": [
+   [
+    "La carte",
+    "Plats et prix, lisibles."
+   ],
+   [
+    "Horaires",
+    "Services, jours de fermeture."
+   ],
+   [
+    "Venir",
+    "Itinéraire, tram, parking."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "La cuisine en une phrase",
+   "Le type de cuisine et le style de la maison, dès l'arrivée : le client sait s'il a envie de venir."
+  ],
+  [
+   "Réserver sans chercher",
+   "Le bouton reste en haut de l'écran. Il lance l'appel ou ouvre votre outil de réservation actuel."
+  ],
+  [
+   "L'adresse, avec le quartier",
+   "Le client sait si vous êtes sur son chemin. Google aussi."
+  ],
+  [
+   "L'itinéraire en un geste",
+   "Un appui ouvre le trajet dans le téléphone, avec les transports et le stationnement à côté."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un restaurant",
+  "intro": [
+   "On lit rarement le site d'un restaurant en entier. On le parcourt en marchant, à plusieurs, en comparant deux ou trois adresses. Celle qui montre sa carte et ses prix part avec une longueur d'avance.",
+   "Une carte en PDF qu'il faut télécharger puis agrandir avec deux doigts se lit mal. Sur le site, elle s'affiche comme une page, lisible d'une main."
+  ],
+  "points": [
+   [
+    "Votre carte, en texte",
+    "Plats, prix, menu du midi. Lisible sur téléphone, là où un PDF ou une photo d'ardoise se lit mal."
+   ],
+   [
+    "Vos horaires, service par service",
+    "Midi, soir, jours de fermeture, congés annuels. Les mêmes que sur votre fiche Google."
+   ],
+   [
+    "La réservation",
+    "Par téléphone, ou par un bouton relié à l'outil que vous utilisez déjà."
+   ],
+   [
+    "Les groupes et les privatisations",
+    "Une demande écrite, avec la date et le nombre de couverts, arrive dans vos mails. Vous répondez après le service."
+   ],
+   [
+    "Vos photos",
+    "La salle, la terrasse, quelques assiettes. Prises au téléphone, elles suffisent pour commencer."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "J'ai déjà une fiche Google et un compte Instagram. Pourquoi un site ?",
+   "La fiche Google donne l'adresse et les avis. Instagram donne envie. Le site montre la carte complète avec les prix et mène à la réservation, sous votre nom. Les trois se renvoient les uns vers les autres."
+  ],
+  [
+   "Ma carte change souvent.",
+   "Avec la formule Suivi, à 49 € par mois, vous nous envoyez la nouvelle carte et elle est en ligne sous 48 h ouvrées. Si l'ardoise change chaque jour, on affiche la carte fixe et on renvoie vers votre Instagram pour le plat du jour."
+  ],
+  [
+   "J'utilise déjà un outil de réservation en ligne.",
+   "On le garde. Le bouton Réserver du site ouvre cet outil, vous ne changez rien à vos habitudes."
+  ],
+  [
+   "On peut commander ou payer sur le site ?",
+   "Le site vitrine présente la carte et reçoit les réservations et les demandes de groupe. Pour vendre en ligne (plats à emporter payés d'avance, bons cadeaux), il faut une boutique en ligne : on en parle au devis."
+  ],
+  [
+   "Combien ça coûte après la mise en ligne ?",
+   "À partir de 29 € par mois. La formule Essentiel, à 29 € par mois, couvre l'hébergement, le nom de domaine, la sécurité, les sauvegardes et les demandes reçues par mail. La formule Suivi, à 49 € par mois, ajoute les modifications illimitées sur l'existant sous 48 h ouvrées, la fiche Google tenue à jour et un rapport chaque mois. Engagement de six mois, puis un mois de préavis."
+  ],
+  [
+   "Combien de temps ça nous prend ?",
+   "Trente minutes au téléphone au départ, puis deux relectures. Vous envoyez la carte et quelques photos, on écrit les textes."
+  ]
+ ],
+ "type": "metier"
+}

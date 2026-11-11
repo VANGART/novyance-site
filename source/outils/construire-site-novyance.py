@@ -41,6 +41,7 @@ LIVE = {
 }
 # adresses courtes -> vraie page (GitHub Pages ne fait pas de redirection : page qui renvoie aussitôt, hors plan du site)
 REDIRECTIONS = {
+    "/pages/contact": "/#appel",
 }
 ASSETS = ["theme/assets", "theme-v18/assets"]  # le second écrase le premier
 ENTETE_FORM = ' method="post" action="%s" data-nv-contact' % CONTACT_URL
@@ -107,8 +108,13 @@ def ecrire(sortie, url, contenu):
     piege = '<div style="position:absolute;left:-9999px" aria-hidden="true"><label>Ne pas remplir<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>'
     contenu = re.sub(r"(<form\b[^>]*data-nv-contact[^>]*>)(.*?)(</form>)",
                      lambda m: m.group(0) if "_gotcha" in m.group(2) else m.group(1) + m.group(2) + piege + m.group(3), contenu, flags=re.S)
+    # image de partage : adresse complète (LinkedIn, WhatsApp et iMessage refusent une adresse relative)
+    contenu = contenu.replace('content="https:/assets/', 'content="%s/assets/' % SITE).replace('content="/assets/', 'content="%s/assets/' % SITE)
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(contenu, encoding="utf-8")
+    # GitHub Pages redirige /pages/x vers /pages/x/ s'il n'y a que x/index.html : x.html sert l'adresse officielle sans redirection
+    if url != "/":
+        (dest.parent.parent / (dest.parent.name + ".html")).write_text(contenu, encoding="utf-8")
 
 
 def date_fr(d):
@@ -158,7 +164,7 @@ def page_article(a, tous):
     t = re.sub(r"\{% render 'nv-blog-head' %\}", lambda m: snippet("nv-blog-head", url), t)
     t = re.sub(r"\{% render 'nv-blog-chrome', part: '(\w+)' %\}", lambda m: snippet("nv-blog-chrome", url, part=m.group(1)), t)
     # image de couverture : aucune dans les sources, on retombe sur l'image de partage
-    t = re.sub(r"\{% if article\.image %\}(.*?)\{% else %\}(.*?)\{% endif %\}", r"\2", t, flags=re.S, count=1)
+    t = re.sub(r"\{% if article\.image %\}(.*?)\{% else %\}(.*?)\{% endif %\}", r"\2", t, flags=re.S, count=2)
     t = re.sub(r"\{% if article\.image %\}.*?\{% endif %\}", "", t, flags=re.S)
     t = re.sub(r"\{%-? assign rel = 0 -%\}.*?(?=\{% render 'nv-blog-chrome', part: 'footer' %\}|<footer|$)", lambda m: autres(a, tous), t, count=1, flags=re.S)
     iso = a["date"].strftime("%Y-%m-%dT%H:%M:%S%z")
@@ -175,7 +181,20 @@ def page_article(a, tous):
     minutes = max(1, len(texte(a["corps"]).split()) // 220)
     t = re.sub(r"\{\{\s*article\.content \| strip_html.*?\}\}", str(minutes), t)
     t = re.sub(r"\{% if article\.excerpt != blank %\}(.*?)\{% endif %\}", lambda m: m.group(1).replace("{{ article.excerpt | strip_html }}", html.escape(texte(a["resume"]))), t, flags=re.S)
+    faq = faq_article(a["corps"])
+    if faq:
+        bloc = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in faq]}
+        t = t.replace("</head>", '<script type="application/ld+json">%s</script>\n</head>' % json.dumps(bloc, ensure_ascii=False), 1)
     return liquid(t, url)
+
+
+def faq_article(corps):
+    """Questions et réponses de la partie « Questions fréquentes » ou « FAQ » d'un article (h3 = question, paragraphes = réponse)."""
+    m = re.search(r"<h2[^>]*>\s*(?:Questions fréquentes|FAQ)\s*</h2>(.*?)(?=<h2|$)", corps, flags=re.S)
+    if not m:
+        return []
+    paires = re.findall(r"<h3[^>]*>(.*?)</h3>(.*?)(?=<h3|$)", m.group(1), flags=re.S)
+    return [(texte(q), texte(r)) for q, r in paires if texte(q) and texte(r)]
 
 
 def autres(a, tous):
@@ -213,8 +232,9 @@ def pages_sites(sortie):
                 return ""
             return '<div><h3>%s</h3><ul>%s</ul></div>' % (titre, "".join('<li><a href="%s">%s</a></li>' % (x["url"], e(x["lien"])) for x in autres))
         return ('<section class="voisins"><div class="wrap"><h2>Les autres pages<span class="dot">.</span></h2><div class="voisins-g">%s%s'
-                '<div><h3>L\'offre complète</h3><ul><li><a href="/pages/site-internet">Sites internet dès 490 €</a></li><li><a href="/">Prospection à la commission</a></li></ul></div>'
-                '</div></div></section>') % (groupe("Par métier", "metier"), groupe("Par ville", "ville"))
+                '<div><h3>L\'offre complète</h3><ul>%s<li><a href="/pages/refonte-site-internet">Refonte d\'un site existant</a></li><li><a href="/">Prospection à la commission</a></li></ul></div>'
+                '</div></div></section>') % (groupe("Par métier", "metier"), groupe("Par ville", "ville"),
+                                             '' if d["url"] == "/pages/site-internet" else '<li><a href="/pages/site-internet">Sites internet dès 400 €</a></li>')
     urls = []
     for d in donnees:
         url = d["url"]
@@ -222,7 +242,7 @@ def pages_sites(sortie):
         sec = lambda c: re.search(r'<section class="%s".*?</section>' % c, t, flags=re.S).group(0)
         devis = re.search(r'<div class="devis".*?</p>\s*</div>', t, flags=re.S).group(0)
         x = d["exemple"]
-        top = ('<section class="top"><div class="wrap"><div><p class="kick">%s</p><h1>%s<span class="dot">.</span></h1>'
+        top = ('<section class="top"><div class="wrap"><div><h1><span class="kick">%s</span> %s<span class="dot">.</span></h1>'
                '<p class="lead">%s</p><div class="acts"><a href="#devis" class="btn">Demander un devis sous 24 h</a>'
                '<a href="tel:+33786523681" class="btn ghost">07 86 52 36 81</a></div><p class="pour">%s</p></div>%s</div></section>'
                % (e(d["kick"]), e(d["h1"]), e(d["lead"]), d["pour"], devis))
@@ -241,15 +261,15 @@ def pages_sites(sortie):
                    ('<p class="sources">Sources : %s</p>' % " · ".join('<a href="%s" rel="noopener" target="_blank">%s</a>' % (e(u), e(l)) for l, u in d["sources"])) if d.get("sources") else ""))
         faq = ('<section class="faq"><div class="wrap"><h2>Les questions qu\'on nous pose<span class="dot">.</span></h2><div class="faq-l">%s</div></div></section>'
                % "".join("<details><summary>%s</summary><p>%s</p></details>" % (e(q), e(r)) for q, r in d["faq"]))
-        main = top + ex + bloc + sec("jours") + sec("perim") + faq + liens(d)
+        main = top + ex + bloc + sec("jours") + sec("perim") + sec("real") + faq + liens(d)
         t = re.sub(r'<section class="top">.*(?=<section class="end")', lambda m: main + "\n  ", t, count=1, flags=re.S)
         t = t.replace('value="Site internet"', 'value="%s"' % e(d["demande"]))
         t = re.sub(r"<title>.*?</title>", "<title>%s</title>" % e(d["title"]), t, count=1, flags=re.S)
         for nom, val in (('name="description"', d["description"]), ('property="og:title"', d["h1"]), ('property="og:description"', d["description"])):
             t = re.sub(r'<meta %s content="[^"]*">' % re.escape(nom), '<meta %s content="%s">' % (nom, e(val)), t, count=1)
-        ld = [{"@context": "https://schema.org", "@type": "Service", "name": d["title"].split(" · ")[0], "serviceType": "Création de site internet",
-               "areaServed": d.get("zone_ld", "FR"), "provider": {"@type": "Organization", "name": "Novyance", "url": SITE},
-               "offers": {"@type": "Offer", "price": "490", "priceCurrency": "EUR"}},
+        ld = [{"@context": "https://schema.org", "@type": "Service", "name": d["kick"], "url": SITE + url, "serviceType": "Création de site internet",
+               "areaServed": d.get("zone_ld", "FR"), "provider": {"@id": SITE + "/#novyance"},
+               "offers": {"@type": "Offer", "price": "400", "priceCurrency": "EUR"}},
               {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in d["faq"]]},
               {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
                   {"@type": "ListItem", "position": 1, "name": "Accueil", "item": SITE + "/"},
@@ -266,6 +286,7 @@ def pages_sites(sortie):
         g = general.read_text(encoding="utf-8")
         g = g.replace('<section class="end"', liens({"url": "/pages/site-internet"}) + '\n  <section class="end"', 1).replace("</style>", CSS_SITES + "</style>", 1)
         general.write_text(g, encoding="utf-8")
+        (sortie / "pages/site-internet.html").write_text(g, encoding="utf-8")
     return urls
 
 
@@ -287,6 +308,8 @@ def pages_legales(sortie):
         for nom, val in (('name="description"', desc), ('property="og:title"', titre), ('property="og:description"', desc)):
             t = re.sub(r'<meta %s content="[^"]*">' % re.escape(nom), '<meta %s content="%s">' % (nom, html.escape(val)), t, count=1)
         t = re.sub(r'<script type="application/ld\+json">.*?</script>', "", t, count=1, flags=re.S)
+        t = re.sub(r'<div class="mbar".*?</script>', "", t, count=1, flags=re.S)
+        t = re.sub(r'href="#(exemple|prix|devis)"', r'href="/pages/site-internet#\1"', t)
         t = t.replace("</style>", CSS_LEGAL + "</style>", 1)
         ecrire(sortie, url, t)
         urls.append(url)
@@ -313,6 +336,7 @@ CSS_SITES = """
 .metier ul{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink2)}
 .metier li{padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted)}
 .metier li b{display:block;color:var(--ink2);font-weight:600;margin-bottom:2px}
+.top h1 .kick{display:block}
 .sources{margin-top:28px;font-size:13px;color:var(--muted)}
 .voisins{padding:0 0 clamp(64px,9vw,112px)}
 .voisins-g{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}
@@ -322,6 +346,29 @@ CSS_SITES = """
 .voisins a{text-decoration:none;border-bottom:1px solid var(--line)}
 .voisins a:hover{color:var(--accent-d);border-color:var(--accent)}
 @media (max-width:860px){.metier-g,.voisins-g{grid-template-columns:1fr}}
+"""
+
+
+LLMS = """# Novyance
+
+> Novyance (Aurélien Ruotte, Lyon) aide les petites entreprises françaises de 2 à 30 personnes à trouver des clients et à mieux s'organiser : sites internet, outils métier sur mesure, prospection commerciale payée à la commission. Micro-entreprise, SIRET 940 553 043 00032. Contact : contact@novyance.fr, 07 86 52 36 81.
+
+## Offres et prix (toujours « à partir de », TVA non applicable, art. 293 B du CGI)
+
+- [Site internet vitrine](https://novyance.fr/pages/site-internet) : à partir de 400 €, jusqu'à 5 pages, en ligne en 10 jours ouvrés. Puis 29 € par mois (hébergement, nom de domaine, sécurité, demandes de devis par mail) ou 49 € par mois (en plus : modifications illimitées sous 48 h ouvrées, fiche Google tenue à jour, rapport mensuel). Engagement de 6 mois.
+- [Refonte d'un site existant](https://novyance.fr/pages/refonte-site-internet) : même prix, le nom de domaine et les adresses mail sont conservés.
+- [Outils métier sur mesure](https://novyance.fr/pages/outils-metier) : à partir de 590 € de mise en place, puis 89 € par mois. Prix par entreprise, pas par utilisateur. Engagement de 3 mois.
+- [Prospection commerciale externalisée](https://novyance.fr/) : 0 € de mise en place, aucun abonnement, un pourcentage des ventes apportées. Exemple gratuit sous 24 h.
+- [Boutique en ligne](https://novyance.fr/pages/boutique-en-ligne-commercant) : à partir de 690 €, puis 39 € par mois.
+
+## Pages utiles
+
+- [Création de site internet à Lyon](https://novyance.fr/pages/creation-site-internet-lyon)
+- [Site internet pour artisan du bâtiment](https://novyance.fr/pages/site-internet-artisan)
+- [Automatisation et IA en entreprise](https://novyance.fr/pages/automatisation-ia-entreprise)
+- [Devenir apporteur d'affaires](https://novyance.fr/pages/apporteurs-affaires)
+- [Blog](https://novyance.fr/blogs/blog)
+- [Conditions générales de vente](https://novyance.fr/pages/cgv)
 """
 
 
@@ -356,8 +403,10 @@ def main():
         if "noindex" not in page and url not in ("/pages/exemple", "/pages/recommande"):
             urls.append(url)
     for src, url in LIVE.items():
-        ecrire(sortie, url, nettoyer(lire(src), url))
-        urls.append(url)
+        page = nettoyer(lire(src), url)
+        ecrire(sortie, url, page)
+        if not re.search(r'<meta name="robots" content="[^"]*noindex', page):
+            urls.append(url)
     for court, cible in REDIRECTIONS.items():
         (sortie / court.strip("/")).mkdir(parents=True, exist_ok=True)
         (sortie / court.strip("/") / "index.html").write_text(
@@ -376,7 +425,15 @@ def main():
     (sortie / "sitemap.xml").write_text(plan_du_site(urls), encoding="utf-8")
     (sortie / "robots.txt").write_text("User-agent: *\nAllow: /\nDisallow: /pages/exemple\nDisallow: /pages/recommande\nSitemap: %s/sitemap.xml\n" % SITE, encoding="utf-8")
     (sortie / "404.html").write_text('<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" href="/assets/nv-favicon-48.png"><title>Page introuvable · Novyance</title>'
-                                     '<p style="font:18px system-ui;padding:12vh 24px;text-align:center">Cette page n\'existe pas. <a href="/">Retour à l\'accueil</a></p>', encoding="utf-8")
+                                     '<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">'
+                                     '<style>body{margin:0;background:#F3F6FA;color:#482719;font:18px/1.6 "DM Sans",system-ui,sans-serif}main{max-width:640px;margin:0 auto;padding:14vh 24px}'
+                                     '.b{font:700 22px "Space Grotesk",sans-serif;text-decoration:none;color:#482719}.b i,h1 i{color:#FF681F;font-style:normal}h1{font:700 clamp(34px,6vw,54px)/1.05 "Space Grotesk",sans-serif;letter-spacing:-.03em;margin:48px 0 16px}'
+                                     'ul{list-style:none;padding:0;margin:32px 0;border-top:2px solid #482719}li{border-bottom:1px solid rgba(72,39,25,.14)}li a{display:block;padding:14px 0;color:#482719;text-decoration:none;font-weight:600}li a:hover{color:#C2470F}'
+                                     '.t{display:inline-block;background:#FF681F;color:#fff;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:600}</style>'
+                                     '<main><a class="b" href="/">novyance<i>.</i></a><h1>Cette page n\'existe pas<i>.</i></h1><p>L\'adresse a peut-être changé. Voici où aller.</p>'
+                                     '<ul><li><a href="/">Prospection à la commission</a></li><li><a href="/pages/site-internet">Sites internet dès 400 €</a></li><li><a href="/pages/outils-metier">Outils sur mesure</a></li><li><a href="/blogs/blog">Le blog</a></li></ul>'
+                                     '<a class="t" href="tel:+33786523681">Appeler le 07 86 52 36 81</a></main>', encoding="utf-8")
+    (sortie / "llms.txt").write_text(LLMS, encoding="utf-8")
     if (RACINE / "outils/CNAME-novyance").exists():
         shutil.copy(RACINE / "outils/CNAME-novyance", sortie / "CNAME")
     (sortie / ".nojekyll").write_text("", encoding="utf-8")

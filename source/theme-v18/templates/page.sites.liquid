@@ -1,7 +1,7 @@
 {% layout none %}
 {%- comment -%}
   Page « Sites internet » (02/11/2026) : l'offre site vitrine pour artisans et indépendants, reliée au menu de l'accueil.
-  Prix repris de la grille (490 € puis 29 €/mois, jusqu'à 5 pages, 10 jours ouvrés). Les demandes passent par le formulaire
+  Prix repris de la grille (400 € puis dès 29 €/mois, jusqu'à 5 pages, 10 jours ouvrés). Les demandes passent par le formulaire
   de contact Shopify (arrivent sur contact@novyance.fr), champ « Demande » = « Site internet ».
   L'exemple de site (Menuiserie Fabre) est fictif et annoncé comme tel.
 {%- endcomment -%}
@@ -12,12 +12,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#F3F6FA">
-<title>Site internet pour artisan et indépendant, dès 490 €, en ligne en 10 jours · Novyance</title>
-<meta name="description" content="Un site vitrine jusqu'à 5 pages pour artisans et indépendants : textes écrits avec vous, fiche Google reliée, demandes dans votre boîte. Dès 490 €, en ligne en 10 jours ouvrés.">
+<title>Création de site vitrine dès 400 € · Novyance</title>
+<meta name="description" content="Site vitrine jusqu'à 5 pages pour artisans, commerces et indépendants : textes écrits avec vous, fiche Google reliée. Dès 400 €, en ligne en 10 jours ouvrés.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="{{ canonical_url }}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Votre site internet, dès 490 €, en ligne en 10 jours">
+<meta property="og:title" content="Votre site internet, dès 400 €, en ligne en 10 jours">
 <meta property="og:description" content="Pour les artisans et les indépendants : un site qui fait sonner le téléphone, écrit avec vous, livré en 10 jours ouvrés.">
 <meta property="og:image" content="{{ 'nv-og.png' | asset_url | prepend: 'https:' }}">
 <link rel="icon" type="image/png" sizes="48x48" href="{{ 'nv-favicon-48.png' | asset_url }}">
@@ -34,7 +34,7 @@
   "areaServed": "FR",
   "provider": { "@type": "Organization", "name": "Novyance", "url": "https://novyance.fr", "telephone": "+33786523681", "email": "contact@novyance.fr" },
   "offers": [
-    { "@type": "Offer", "name": "Site vitrine, jusqu'à 5 pages", "price": "490", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Site vitrine, jusqu'à 5 pages", "price": "400", "priceCurrency": "EUR" },
     { "@type": "Offer", "name": "Hébergement, suivi et petites modifications", "price": "29", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "29", "priceCurrency": "EUR", "unitText": "MONTH" } }
   ]
 }
@@ -158,6 +158,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .mois .p small{font:500 15px/1 var(--f-body);color:var(--muted);letter-spacing:0}
 .mois p{color:var(--muted)}
 .mois p b{color:var(--ink)}
+.mois .mois-n{grid-column:1/-1;font-size:14px}
 
 /* questions */
 .faq{padding:0 0 clamp(64px,9vw,120px)}
@@ -212,6 +213,23 @@ footer a:hover{color:var(--accent-d)}
   .top .acts .btn{width:100%}
 }
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .devis{transform:none} }
+.real{padding:0 0 clamp(64px,9vw,120px)}
+.real-l{list-style:none;margin:36px 0 0;padding:0;border-top:2px solid var(--ink2)}
+.real-l a{display:grid;grid-template-columns:1.1fr 1.4fr auto;gap:16px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.real-l b{font:700 clamp(20px,2.2vw,26px)/1.1 var(--f-display);color:var(--ink2);letter-spacing:-.02em}
+.real-l span{color:var(--muted)}
+.real-l em{font-style:normal;font-weight:600;color:var(--accent-d)}
+.real-l a:hover b{color:var(--accent-d)}
+@media (max-width:760px){.real-l a{grid-template-columns:1fr;gap:4px}}
+.mbar{display:none}
+@media (max-width:760px){
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1.6fr;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(243,246,250,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);transition:transform .25s}
+  .mbar.off{transform:translateY(110%)}
+  .mbar a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:600;text-decoration:none}
+  .mbar .t{box-shadow:inset 0 0 0 1.5px var(--ink)}
+  .mbar .g{background:var(--accent);color:#fff}
+  body{padding-bottom:72px}
+}
 </style>
 {{ content_for_header }}
 </head>
@@ -246,11 +264,11 @@ footer a:hover{color:var(--accent-d)}
 
       <div class="devis" aria-label="Le prix, détaillé comme un devis">
         <div class="devis-h"><b>Devis type</b><span>Site vitrine</span></div>
-        <div class="ligne"><span>Site jusqu'à 5 pages, adapté au téléphone</span><span>490 €</span></div>
+        <div class="ligne"><span>Site jusqu'à 5 pages, adapté au téléphone</span><span>400 €</span></div>
         <div class="ligne inc"><span>Textes écrits avec vous, en 30 minutes d'échange</span><span>compris</span></div>
         <div class="ligne inc"><span>Formulaire de demande, bouton d'appel, fiche Google reliée</span><span>compris</span></div>
         <div class="ligne inc"><span>Nom de domaine, mise en ligne, 1 h de prise en main</span><span>compris</span></div>
-        <div class="total"><span>Mise en place</span><div><b>dès 490 €</b><small>puis 29 € par mois</small></div></div>
+        <div class="total"><span>Mise en place</span><div><b>dès 400 €</b><small>puis dès 29 € par mois</small></div></div>
         <p class="devis-p">Prix nets, TVA non applicable, article 293 B du CGI. Moitié au démarrage, solde à la mise en ligne.</p>
       </div>
     </div>
@@ -316,7 +334,7 @@ footer a:hover{color:var(--accent-d)}
       <h2>Ce qui est compris, ce qui ne l'est pas<span class="dot">.</span></h2>
       <div class="perim-g">
         <div>
-          <h3>Dans les 490 €</h3>
+          <h3>Dans les 400 €</h3>
           <ul>
             <li>Jusqu'à 5 pages<small>Accueil, votre métier, réalisations, à propos, contact.</small></li>
             <li>Les textes, écrits par nous<small>À partir de l'échange de 30 minutes. Vous relisez, vous corrigez.</small></li>
@@ -332,14 +350,29 @@ footer a:hover{color:var(--accent-d)}
             <li>Une boutique en ligne<small>Dès 690 €, puis 39 € par mois.</small></li>
             <li>Un shooting photo</li>
             <li>Une refonte complète après la mise en ligne</li>
-            <li>Les articles et la fiche Google tenus chaque mois<small>Dès 99 € par mois.</small></li>
+            <li>Des articles et des publications Google chaque mois<small>Dès 99 € par mois.</small></li>
           </ul>
         </div>
       </div>
       <div class="mois">
         <p class="p">29 €<small> / mois</small></p>
-        <p><b>Hébergement, sauvegardes, sécurité et petites modifications</b> (un horaire qui change, une photo, un tarif). Vous écrivez, c'est fait. Sans engagement, avec un mois de préavis.</p>
+        <p><b>Essentiel : le site reste en ligne, sans souci.</b> Hébergement, nom de domaine, sécurité, sauvegardes. Chaque demande de devis arrive dans votre boîte mail.</p>
+        <p class="p">49 €<small> / mois</small></p>
+        <p><b>Suivi : vous écrivez, c'est fait sous 48 h ouvrées.</b> Tout l'Essentiel, plus les modifications illimitées sur le site existant (un horaire, une photo, un tarif, la carte), votre fiche Google tenue à jour et un mail chaque mois : visites, appels, demandes reçues.</p>
+        <p class="mois-n">Six mois d'engagement, puis résiliable chaque mois avec un mois de préavis. Vous pouvez passer d'une formule à l'autre quand vous voulez.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="real">
+    <div class="wrap">
+      <h2>Des sites déjà en ligne<span class="dot">.</span></h2>
+      <p class="lead">Trois sites qu'on a construits et qu'on fait vivre. Ouvrez-les sur votre téléphone.</p>
+      <ul class="real-l">
+        <li><a href="https://www.silverframeagency.com/" target="_blank" rel="noopener"><b>SilverFrame Agency</b><span>Production vidéo, Lyon</span><em>silverframeagency.com</em></a></li>
+        <li><a href="https://www.studio-gota.com/" target="_blank" rel="noopener"><b>Göta Studio</b><span>Studio de création</span><em>studio-gota.com</em></a></li>
+        <li><a href="https://vangart.fr/" target="_blank" rel="noopener"><b>VANGART</b><span>Studio d'art contemporain, Lyon</span><em>vangart.fr</em></a></li>
+      </ul>
     </div>
   </section>
 
@@ -349,8 +382,8 @@ footer a:hover{color:var(--accent-d)}
       <div class="faq-l">
         <details><summary>J'ai déjà une fiche Google. Un site, ça sert à quoi ?</summary><p>La fiche vous fait apparaître sur la carte. Le site rassure ensuite celui qui hésite : vos réalisations, vos communes, vos délais. Les deux sont reliés, et la fiche renvoie vers le site.</p></details>
         <details><summary>Je n'ai pas le temps d'écrire les textes.</summary><p>Vous n'écrivez rien. On les rédige à partir de 30 minutes au téléphone, et vous relisez.</p></details>
-        <details><summary>Est-ce que je pourrai modifier le site moi-même ?</summary><p>Oui, les textes et les photos. Une heure de prise en main est comprise. Sinon, avec le forfait à 29 €, vous nous écrivez et c'est fait.</p></details>
-        <details><summary>Que se passe-t-il si j'arrête l'abonnement ?</summary><p>Le site et le nom de domaine vous appartiennent. On vous remet vos textes, vos photos et l'accès au domaine pour que vous puissiez partir ailleurs.</p></details>
+        <details><summary>Est-ce que je pourrai modifier le site moi-même ?</summary><p>Oui, les textes et les photos. Une heure de prise en main est comprise. Sinon, avec le forfait Suivi à 49 € par mois, vous nous écrivez et c'est fait.</p></details>
+        <details><summary>Que se passe-t-il si j'arrête l'abonnement ?</summary><p>Après les six premiers mois, vous arrêtez quand vous voulez, avec un mois de préavis. Le site et le nom de domaine vous appartiennent. On vous remet vos textes, vos photos et l'accès au domaine pour que vous puissiez partir ailleurs.</p></details>
         <details><summary>C'est lié à la prospection à la commission ?</summary><p>Non, ce sont deux offres séparées. Vous pouvez prendre un site sans la prospection, et l'inverse. Les outils sur mesure (dès 590 €, puis 89 € par mois) sont une troisième offre, elle aussi à part.</p></details>
         <details><summary>Vous travaillez seulement à Lyon ?</summary><p>Non. Tout se fait par téléphone et par mail, partout en France.</p></details>
       </div>
@@ -390,6 +423,8 @@ footer a:hover{color:var(--accent-d)}
     </div>
   </section>
 </main>
+<div class="mbar" id="mbar"><a href="tel:+33786523681" class="t">Appeler</a><a href="#devis" class="g">Devis sous 24 h</a></div>
+<script>(function(){var b=document.getElementById('mbar'),d=document.getElementById('devis');if(b&&d&&'IntersectionObserver' in window){new IntersectionObserver(function(e){b.classList.toggle('off',e[0].isIntersecting);},{threshold:.1}).observe(d);}})();</script>
 
 <footer>
   <div class="wrap">

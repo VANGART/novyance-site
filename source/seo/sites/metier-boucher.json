@@ -1,0 +1,110 @@
+{
+ "url": "/pages/site-internet-boucherie",
+ "lien": "Boucherie, traiteur",
+ "demande": "Site internet · boucherie",
+ "title": "Site internet pour boucherie à partir de 400 € · Novyance",
+ "description": "Un site de boucherie, charcuterie, traiteur : spécialités, horaires, carte des fêtes, commandes reçues par écrit. À partir de 400 €, puis dès 29 €/mois.",
+ "kick": "Site internet pour boucherie, charcuterie, traiteur",
+ "h1": "La boucherie où l'on commande avant de passer",
+ "lead": "Avant un repas de famille ou les fêtes, vos clients cherchent sur leur téléphone : les horaires, les spécialités, les plats traiteur, comment commander. Le site répond à tout et vous envoie les commandes par écrit. En ligne en dix jours ouvrés, à partir de 400 €.",
+ "pour": "Pour <b>les bouchers</b>, <b>les charcutiers</b> et <b>les traiteurs</b> : boutique, marché, buffets et repas de fête.",
+ "exemple_h2": "Ce qu'il y a sur un site de boucherie, et pourquoi",
+ "exemple_lead": "Le client veut savoir ce que vous préparez, quand vous êtes ouvert et comment commander.",
+ "exemple": {
+  "url": "boucherie-morel.fr",
+  "nom": "Boucherie Morel",
+  "bouton": "Appeler",
+  "h": "Boucherie, charcuterie et plats traiteur.",
+  "p": "Du mardi au dimanche matin. Commandes de fête à passer une semaine avant.",
+  "zone": "Annecy centre, et au marché le dimanche",
+  "cta": "Passer une commande",
+  "bas": [
+   [
+    "L'étal",
+    "Viandes, charcuterie, volailles."
+   ],
+   [
+    "Traiteur",
+    "Buffets, plats, colis."
+   ],
+   [
+    "Commande",
+    "Produit, quantité, jour de retrait."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Ce que vous préparez",
+   "Boucherie, charcuterie, traiteur : le client voit tout de suite que vous faites aussi le buffet ou le plat du dimanche."
+  ],
+  [
+   "Le téléphone à portée de pouce",
+   "Beaucoup de commandes se passent encore de vive voix. Le bouton Appeler reste en haut de l'écran."
+  ],
+  [
+   "La boutique et le marché",
+   "Adresse, jours de marché, horaires : le client sait où vous trouver selon le jour."
+  ],
+  [
+   "La commande par écrit",
+   "Le formulaire demande le produit, la quantité et le jour de retrait. Elle arrive dans vos mails, au lieu d'un papier glissé près de la caisse."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'une boucherie",
+  "intro": [
+   "Vos habitués connaissent la maison. Le site sert aux autres : ceux qui viennent d'emménager, ceux qui cherchent un traiteur pour un baptême, ceux qui veulent une côte de bœuf pour samedi et vérifient que vous êtes ouvert.",
+   "Il sert aussi en décembre, quand le téléphone sonne pendant que la file s'allonge devant l'étal."
+  ],
+  "points": [
+   [
+    "Vos spécialités et votre carte traiteur",
+    "Ce que vous fabriquez, les plats du moment, les buffets avec le nombre de personnes."
+   ],
+   [
+    "Les commandes de fête",
+    "Noël, Pâques, saison des barbecues : la carte en ligne et une date limite de commande bien visible."
+   ],
+   [
+    "Vos horaires et vos fermetures",
+    "Boutique, marchés, congés. Les mêmes informations que sur votre fiche Google."
+   ],
+   [
+    "L'origine de vos viandes",
+    "Si vous travaillez avec des éleveurs que vous connaissez, on le dit avec leurs noms et leur région, tels que vous nous les donnez."
+   ],
+   [
+    "Les demandes de devis traiteur",
+    "Date, nombre de convives, type de repas : vous rappelez en sachant de quoi il s'agit."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "Mes clients sont du quartier et me connaissent. Un site, ça sert à quoi ?",
+   "À être trouvé par ceux qui ne vous connaissent pas encore, et à recevoir les commandes de traiteur et de fête par écrit. Les habitués, eux, y vérifient les horaires et la carte du moment."
+  ],
+  [
+   "Mes clients peuvent commander en ligne ?",
+   "Oui, par une demande : le client indique le produit, la quantité et le jour de retrait, vous confirmez. Le paiement se fait en boutique. Pour un paiement en ligne, il faut une boutique en ligne, à voir au devis."
+  ],
+  [
+   "Mes prix changent avec les cours.",
+   "On peut afficher les prix des plats traiteur et des colis, qui bougent peu, et laisser les prix au kilo en boutique. C'est vous qui décidez."
+  ],
+  [
+   "Qui met en ligne la carte de Noël ?",
+   "Nous, avec la formule Suivi à 49 € par mois : vous envoyez la carte, elle remplace la carte en place sous 48 h ouvrées. Une page en plus se chiffre au devis. La formule Essentiel, à 29 € par mois, couvre l'hébergement, le nom de domaine, la sécurité, les sauvegardes et les demandes reçues par mail."
+  ],
+  [
+   "Je n'ai pas de belles photos.",
+   "On commence avec ce que vous avez, même prises au téléphone : l'étal, la vitrine, un plateau. Les suivantes s'ajoutent ensuite avec la formule Suivi."
+  ],
+  [
+   "Il y a un engagement ?",
+   "Six mois sur la formule mensuelle, à partir de 29 € par mois. La mise en place est à partir de 400 €, pour un site jusqu'à cinq pages."
+  ]
+ ],
+ "type": "metier"
+}

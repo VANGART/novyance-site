@@ -1,0 +1,110 @@
+{
+ "url": "/pages/site-internet-garage",
+ "lien": "Garage",
+ "demande": "Site internet · garage",
+ "title": "Site internet garage automobile à partir de 400 € · Novyance",
+ "description": "Un site de garage fait pour la prise de rendez-vous : prestations, marques prises en charge, devis avec le véhicule. À partir de 400 €, puis dès 29 €/mois.",
+ "kick": "Site internet pour garage automobile",
+ "h1": "Le garage où l'on prend rendez-vous sans rappeler trois fois",
+ "lead": "Un voyant allumé, un contrôle technique dans dix jours : votre client cherche un garage près de chez lui. Il veut un rendez-vous, et vous êtes sous une voiture quand il appelle. Le site prend sa demande à votre place. En ligne en dix jours ouvrés, à partir de 400 €.",
+ "pour": "Pour <b>les garages indépendants</b>, <b>les carrossiers</b> et <b>les ateliers moto</b> : entretien, réparation, pneus, vente d'occasion.",
+ "exemple_h2": "Ce qu'il y a sur un site de garage, et pourquoi",
+ "exemple_lead": "L'automobiliste veut savoir si vous prenez sa voiture, pour quoi, et quand.",
+ "exemple": {
+  "url": "garage-vasseur.fr",
+  "nom": "Garage Vasseur",
+  "bouton": "Appeler",
+  "h": "Entretien et réparation, toutes marques.",
+  "p": "Du lundi au vendredi, et le samedi matin. Devis avant travaux.",
+  "zone": "Tours, Saint-Cyr-sur-Loire, Joué-lès-Tours",
+  "cta": "Prendre rendez-vous",
+  "bas": [
+   [
+    "Entretien",
+    "Révision, freins, pneus."
+   ],
+   [
+    "Réparation",
+    "Panne, embrayage, clim."
+   ],
+   [
+    "Rendez-vous",
+    "Véhicule, besoin, jour souhaité."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Les marques que vous prenez",
+   "Toutes marques, ou vos spécialités : c'est ce qu'un automobiliste vérifie d'abord, le plus souvent."
+  ],
+  [
+   "Le numéro en haut de l'écran",
+   "Pour une panne, on appelle. Le bouton reste visible pendant qu'on fait défiler."
+  ],
+  [
+   "Les communes autour",
+   "On traverse rarement l'agglomération pour une vidange. Le client voit que vous êtes à côté, Google aussi."
+  ],
+  [
+   "Le rendez-vous déjà préparé",
+   "Modèle, année, kilométrage, besoin, jour souhaité : vous confirmez d'un message, avec tout sous les yeux."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un garage",
+  "intro": [
+   "Beaucoup de gens redoutent le garage : la facture, les mots qu'on ne comprend pas, la voiture immobilisée une semaine. Un site clair sur ce que vous faites et sur votre façon de travailler enlève une partie de cette crainte avant le premier appel.",
+   "Il vous évite aussi de décrocher sans arrêt pour les mêmes questions."
+  ],
+  "points": [
+   [
+    "Vos prestations, dans les mots du client",
+    "Révision, freins, embrayage, climatisation, pneus, préparation au contrôle technique. Sans références de pièces."
+   ],
+   [
+    "La demande de devis",
+    "Le client décrit son véhicule et son besoin. Vous répondez quand l'atelier est calme, avec les bonnes informations."
+   ],
+   [
+    "Vos services pratiques",
+    "Véhicule de prêt, dépôt des clés, horaires d'atelier : écrits noir sur blanc s'ils existent chez vous."
+   ],
+   [
+    "Vos véhicules d'occasion",
+    "Si vous en vendez, quelques annonces avec photos, ou un lien vers vos annonces en ligne."
+   ],
+   [
+    "Vos agréments et votre réseau",
+    "Si vous êtes agréé par des assurances ou membre d'un réseau, on l'affiche. On n'affiche que ce que vous avez."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "Mon planning est déjà plein. Pourquoi un site ?",
+   "Pour choisir le travail qui arrive. Le site met en avant les prestations que vous voulez développer et répond aux questions qui encombrent le téléphone : horaires, marques, délais."
+  ],
+  [
+   "On peut prendre rendez-vous directement en ligne ?",
+   "Le site envoie une demande avec le véhicule, le besoin et le jour souhaité. Vous confirmez par téléphone ou par message. Si vous avez déjà un agenda en ligne, le bouton y renvoie."
+  ],
+  [
+   "Je peux afficher mes tarifs ?",
+   "Oui, pour ce qui se chiffre d'avance : forfait vidange, montage de pneus, taux horaire. Pour le reste, le site propose le devis."
+  ],
+  [
+   "Je ne fais que de la carrosserie.",
+   "Le site est construit autour de ça : photos avant et après, prise en charge des sinistres, délais. Les pages suivent votre activité."
+  ],
+  [
+   "Combien ça coûte ?",
+   "À partir de 400 € pour la mise en place, puis à partir de 29 € par mois. La formule Essentiel, à 29 € par mois, couvre l'hébergement, le nom de domaine, la sécurité, les sauvegardes et les demandes de devis reçues par mail. La formule Suivi, à 49 € par mois, ajoute les modifications illimitées sur l'existant sous 48 h ouvrées, la fiche Google tenue à jour et un rapport chaque mois. Engagement de six mois, puis un mois de préavis."
+  ],
+  [
+   "Combien de temps ça me prend ?",
+   "Trente minutes au téléphone au départ, puis deux relectures. Les textes, c'est nous qui les écrivons."
+  ]
+ ],
+ "type": "metier"
+}

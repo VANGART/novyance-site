@@ -1,0 +1,110 @@
+{
+ "url": "/pages/site-internet-institut-de-beaute",
+ "lien": "Institut de beauté",
+ "demande": "Site internet · institut de beauté",
+ "title": "Site internet pour institut de beauté · Novyance",
+ "description": "Un site d'institut de beauté : carte des soins avec durées et prix, photos, bons cadeaux, bouton vers votre réservation. À partir de 400 €, puis dès 29 €/mois.",
+ "kick": "Site internet pour institut de beauté",
+ "h1": "L'institut qu'on réserve le soir, depuis son canapé",
+ "lead": "Vos clientes et vos clients comparent les instituts sur leur téléphone : la carte des soins, les prix, les photos de la cabine, les avis. Puis ils réservent, parfois en dehors de vos heures d'ouverture. Le site leur montre tout et mène à votre réservation. En ligne en dix jours ouvrés, à partir de 400 €.",
+ "pour": "Pour <b>les instituts de beauté</b>, <b>les esthéticiennes à domicile</b>, <b>les prothésistes ongulaires</b> et <b>les spas</b> indépendants.",
+ "exemple_h2": "Ce qu'il y a sur un site d'institut, et pourquoi",
+ "exemple_lead": "On confie son visage ou son corps à quelqu'un. Avant de réserver, on veut voir le lieu, les soins et les prix.",
+ "exemple": {
+  "url": "institut-ondeline.fr",
+  "nom": "Institut Ondeline",
+  "bouton": "Réserver",
+  "h": "Soins du visage, épilation, manucure et massages.",
+  "p": "Du mardi au samedi, sur rendez-vous. Carte des soins avec durées et prix.",
+  "zone": "Montpellier, quartier des Beaux-Arts",
+  "cta": "Voir la carte des soins",
+  "bas": [
+   [
+    "Les soins",
+    "Durée et prix de chacun."
+   ],
+   [
+    "L'institut",
+    "Cabines, équipe, marques."
+   ],
+   [
+    "Bons cadeaux",
+    "À offrir, à retirer sur place."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Vos soins, d'un coup d'œil",
+   "Visage, corps, ongles, épilation : la cliente voit tout de suite si vous proposez ce qu'elle cherche."
+  ],
+  [
+   "Le bouton Réserver",
+   "Il ouvre votre outil de réservation actuel, ou lance l'appel si vous prenez les rendez-vous par téléphone."
+  ],
+  [
+   "Le quartier et l'accès",
+   "Adresse, stationnement, transports. Pour un soin d'une heure, on choisit près de chez soi ou du bureau."
+  ],
+  [
+   "Les bons cadeaux",
+   "Fête des mères, Noël, anniversaire : une page explique comment en offrir un, et la demande arrive par mail."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un institut de beauté",
+  "intro": [
+   "Une carte des soins sans durée ni prix oblige à appeler, et beaucoup n'appellent pas. Une carte claire, qui dit ce que comprend chaque soin, fait ce travail à votre place.",
+   "Le reste tient à la confiance : des photos vraies de la cabine, le prénom de la personne qui reçoit, les marques utilisées."
+  ],
+  "points": [
+   [
+    "Votre carte des soins",
+    "Chaque soin avec sa durée, son prix et deux lignes sur ce qu'il comprend."
+   ],
+   [
+    "Votre réservation en ligne",
+    "On relie le bouton à l'outil que vous utilisez déjà."
+   ],
+   [
+    "Vos forfaits et vos cures",
+    "Abonnements, cures de plusieurs séances, offres de saison : visibles sans chercher."
+   ],
+   [
+    "Vos diplômes et vos marques",
+    "Si vous avez un diplôme, une formation ou des marques partenaires, on les affiche tels quels."
+   ],
+   [
+    "Vos photos et votre Instagram",
+    "La cabine, l'accueil, quelques réalisations d'ongles ou de maquillage, et un lien vers votre compte."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "Je suis déjà sur une plateforme de réservation. Pourquoi un site ?",
+   "Sur la plateforme, votre institut apparaît au milieu des autres. Le site porte votre nom, présente vos soins comme vous le voulez et renvoie vers la même réservation."
+  ],
+  [
+   "Je travaille seule, je ne peux pas répondre au téléphone pendant un soin.",
+   "Le site affiche ce qu'on vous demande d'habitude au téléphone : les soins, les prix, les durées, et le bouton Réserver. Les autres demandes arrivent par mail, vous répondez entre deux rendez-vous."
+  ],
+  [
+   "Je peux vendre des bons cadeaux sur le site ?",
+   "Le site vitrine les présente et reçoit la demande, le paiement se fait à l'institut. Pour un achat payé en ligne, il faut une boutique en ligne : on en parle au devis."
+  ],
+  [
+   "Mes soins et mes tarifs changent à chaque saison.",
+   "Avec la formule Suivi, à 49 € par mois, vous nous envoyez la nouvelle carte et elle est en ligne sous 48 h ouvrées. La formule Essentiel, à 29 € par mois, couvre l'hébergement, le nom de domaine, la sécurité, les sauvegardes et les demandes reçues par mail."
+  ],
+  [
+   "Je me déplace à domicile, je n'ai pas d'adresse à afficher.",
+   "Le site montre alors votre zone de déplacement, commune par commune, à la place de l'adresse."
+  ],
+  [
+   "Il y a un engagement ?",
+   "Six mois sur la formule mensuelle, à partir de 29 € par mois. La mise en place est à partir de 400 €, pour un site jusqu'à cinq pages, en ligne en dix jours ouvrés."
+  ]
+ ],
+ "type": "metier"
+}

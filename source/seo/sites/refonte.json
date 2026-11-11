@@ -1,0 +1,110 @@
+{
+ "url": "/pages/refonte-site-internet",
+ "lien": "Refonte de site",
+ "demande": "Refonte de site internet",
+ "title": "Refonte de site internet à partir de 400 € · Novyance",
+ "description": "Site vieilli, illisible sur téléphone, numéro introuvable ? On le refait à partir de 400 €, en gardant votre nom de domaine et vos mails s'ils sont à votre nom.",
+ "kick": "Refonte de site internet",
+ "h1": "Votre site a vieilli. On le refait, vous gardez tout le reste",
+ "lead": "Il date de quelques années. Sur téléphone, il faut zoomer. Les horaires ne sont plus bons, le numéro est en bas de page. On le refait en dix jours ouvrés une fois l'accès à votre nom de domaine et vos contenus réunis, à partir de 400 €, et vous gardez votre nom de domaine et vos adresses mail, dès lors qu'ils sont à votre nom.",
+ "pour": "Pour <b>les artisans</b>, <b>les commerçants</b> et <b>les indépendants</b> qui ont déjà un site, fait il y a longtemps, par un proche ou par un prestataire qui ne répond plus.",
+ "exemple_h2": "Ce qui change sur un site refait, et pourquoi",
+ "exemple_lead": "Même entreprise, même adresse internet. Le client y trouve enfin ce qu'il cherche.",
+ "exemple": {
+  "url": "couverture-lambert.fr",
+  "nom": "Couverture Lambert",
+  "bouton": "Appeler",
+  "h": "Toiture, zinguerie et réparation de fuites.",
+  "p": "Devis gratuit pour les travaux. Photos de chantiers récents.",
+  "zone": "Clermont-Ferrand, Chamalières, Riom, Cournon",
+  "cta": "Demander un devis",
+  "bas": [
+   [
+    "Réalisations",
+    "Les chantiers récents."
+   ],
+   [
+    "Prestations",
+    "Ce que vous faites aujourd'hui."
+   ],
+   [
+    "Même adresse",
+    "Nom de domaine et mails gardés s'ils sont à votre nom."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "L'activité d'aujourd'hui",
+   "Le titre dit ce que vous faites maintenant. Les prestations arrêtées depuis des années disparaissent."
+  ],
+  [
+   "Le numéro en haut",
+   "Sur l'ancien site, il fallait le chercher. Sur téléphone, le bouton Appeler suit le visiteur."
+  ],
+  [
+   "La zone, écrite",
+   "Les communes où vous allez, noir sur blanc. Le client le lit, Google aussi."
+  ],
+  [
+   "La même adresse internet",
+   "Le nouveau site remplace l'ancien sous le même nom de domaine. Cartes de visite, camion et factures restent bons."
+  ]
+ ],
+ "bloc": {
+  "h2": "Comment savoir si un site est à refaire",
+  "intro": [
+   "Ouvrez votre site sur votre téléphone, comme le ferait un client. Si vous devez zoomer pour lire, si le numéro n'apparaît pas sans faire défiler, si une information est fausse, il vous fait perdre des appels.",
+   "Refaire ne veut pas dire repartir de zéro. On reprend ce qui est bon et qui vous appartient (vos textes, vos photos, votre logo) et on change ce qui gêne."
+  ],
+  "points": [
+   [
+    "Il ne s'adapte pas au téléphone",
+    "Texte minuscule, menu qui déborde, boutons trop petits pour le pouce."
+   ],
+   [
+    "Il n'est plus à jour",
+    "Anciens horaires, ancienne adresse, prestations arrêtées, une date vieille de plusieurs années en bas de page."
+   ],
+   [
+    "On ne peut pas vous joindre",
+    "Numéro absent ou sur lequel on ne peut pas appuyer, formulaire qui n'envoie plus rien."
+   ],
+   [
+    "Vous ne pouvez plus le modifier",
+    "Mot de passe perdu, prestataire injoignable, outil que plus personne ne sait utiliser."
+   ],
+   [
+    "Ce qu'on garde",
+    "Le nom de domaine, les adresses mail, les textes et les photos qui servent encore."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "Est-ce que je garde mon nom de domaine ?",
+   "Oui, si le nom de domaine est à votre nom ou si on peut en reprendre la main. On le vérifie avant de commencer. Le nouveau site est alors mis en ligne à la même adresse."
+  ],
+  [
+   "Mes adresses mail vont-elles s'arrêter ?",
+   "Elles n'ont pas à s'arrêter. Avant de toucher à quoi que ce soit, on regarde où vos boîtes sont hébergées. Si elles dépendent de l'ancien site, on vous dit quoi garder ou déplacer pour qu'elles continuent de marcher."
+  ],
+  [
+   "Je n'ai plus les codes de mon ancien site, ni de nouvelles de celui qui l'a fait.",
+   "C'est fréquent. On regarde avec vous chez qui le nom de domaine est enregistré et comment en reprendre la main. C'est la première étape, avant de construire le nouveau site."
+  ],
+  [
+   "Vous reprenez mes textes et mes photos ?",
+   "Ce qui est encore juste, oui. On réécrit le reste après un appel de trente minutes, et vous relisez deux fois."
+  ],
+  [
+   "Je vais perdre ma place sur Google ?",
+   "On garde le même nom de domaine et on redirige les principales anciennes pages vers les nouvelles, pour que les liens existants continuent de fonctionner. Personne ne peut promettre une position sur Google, nous non plus."
+  ],
+  [
+   "Combien ça coûte ?",
+   "À partir de 400 € pour un site jusqu'à cinq pages, puis à partir de 29 € par mois. Au-delà de cinq pages, on chiffre au devis. La formule Essentiel, à 29 € par mois, couvre l'hébergement, le nom de domaine, la sécurité, les sauvegardes et les demandes de devis reçues par mail. La formule Suivi, à 49 € par mois, ajoute les modifications illimitées sur l'existant sous 48 h ouvrées, la fiche Google tenue à jour et un rapport chaque mois. Engagement de six mois, puis un mois de préavis."
+  ]
+ ],
+ "type": "offre"
+}

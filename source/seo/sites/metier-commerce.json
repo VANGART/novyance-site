@@ -1,0 +1,106 @@
+{
+ "url": "/pages/site-internet-commerce-de-proximite",
+ "lien": "Commerce de proximité",
+ "demande": "Site internet · commerce de proximité",
+ "title": "Site internet pour commerce de proximité · Novyance",
+ "description": "Un site pour épicerie, fleuriste, caviste ou boutique : horaires à jour, rayons, nouveautés, commandes à retirer. À partir de 400 €, puis dès 29 €/mois.",
+ "kick": "Site internet pour commerce de proximité",
+ "h1": "La boutique qu'on trouve avant de sortir de chez soi",
+ "lead": "Avant de se déplacer, vos clients vérifient sur leur téléphone : est-ce ouvert, y trouve-t-on ce qu'on cherche, où se garer. Le site répond en un écran et donne envie de pousser la porte. En ligne en dix jours ouvrés, à partir de 400 €.",
+ "pour": "Pour <b>les épiceries</b>, <b>les fleuristes</b>, <b>les cavistes</b> et <b>les boutiques indépendantes</b> : alimentation, cadeaux, décoration, mode.",
+ "exemple_h2": "Ce qu'il y a sur un site de commerce, et pourquoi",
+ "exemple_lead": "Un commerce se choisit sur ce qu'il vend et sur ses horaires. Les deux sont en haut de la page.",
+ "exemple": {
+  "url": "epicerie-colette.fr",
+  "nom": "Épicerie Colette",
+  "bouton": "Itinéraire",
+  "h": "Épicerie fine, fromages et vins de vignerons.",
+  "p": "Du mardi au samedi, et le dimanche matin. Paniers cadeaux sur commande.",
+  "zone": "Rennes, quartier Sainte-Thérèse",
+  "cta": "Voir les rayons",
+  "bas": [
+   [
+    "Les rayons",
+    "Ce qu'on trouve en boutique."
+   ],
+   [
+    "Nouveautés",
+    "Arrivages, saison, fêtes."
+   ],
+   [
+    "Commande",
+    "Panier, bouquet, retrait."
+   ]
+  ]
+ },
+ "notes": [
+  [
+   "Ce qu'on trouve chez vous",
+   "Une phrase et quelques rayons : le client sait s'il a une chance de trouver ce qu'il cherche."
+  ],
+  [
+   "Le chemin jusqu'à la porte",
+   "Le bouton Itinéraire ouvre le trajet dans le téléphone. Pour un commerce, il sert autant que le numéro."
+  ],
+  [
+   "Le quartier",
+   "On vient chez vous à pied ou en passant. Le quartier dit tout de suite si c'est sur le chemin."
+  ],
+  [
+   "La commande à retirer",
+   "Panier cadeau, bouquet, caisse de vin : la demande arrive par mail avec la date de retrait."
+  ]
+ ],
+ "bloc": {
+  "h2": "Ce que cherchent les clients d'un commerce de proximité",
+  "intro": [
+   "Le client d'un commerce ne compare pas des devis. Il veut savoir si le déplacement vaut la peine : vous êtes ouvert, vous avez ce qu'il lui faut, il peut venir à pied ou se garer.",
+   "Un fleuriste, un caviste et une épicerie ne montrent pas la même chose. On construit la page autour de ce qui fait venir chez vous : les bouquets de la semaine, les vignerons, les producteurs."
+  ],
+  "points": [
+   [
+    "Vos horaires, vraiment à jour",
+    "Pause de midi, dimanche matin, jours fériés, congés. Un client qui trouve porte close ne revient pas toujours."
+   ],
+   [
+    "Vos produits, par rayons",
+    "Quelques familles de produits suffisent, avec des photos et des exemples de prix. Le catalogue complet reste en boutique."
+   ],
+   [
+    "Les moments forts",
+    "Fête des mères, Saint-Valentin, fin d'année : une annonce en haut de page et une date limite de commande."
+   ],
+   [
+    "Vos services",
+    "Livraison, commande par téléphone, emballage cadeau, bons d'achat, dégustations ou ateliers si vous en proposez."
+   ],
+   [
+    "Votre fiche Google reliée",
+    "Avis, photos et itinéraire renvoient vers le site, et le site vers vos avis."
+   ]
+  ]
+ },
+ "faq": [
+  [
+   "On me trouve déjà sur Google Maps. Pourquoi un site ?",
+   "La fiche Google donne l'adresse et les horaires. Le site montre ce que vous vendez, annonce vos nouveautés et reçoit les commandes à retirer. Il est à votre nom, sur votre nom de domaine."
+  ],
+  [
+   "Je veux vendre en ligne, c'est possible ?",
+   "Le site vitrine présente la boutique et reçoit des demandes de commande à retirer. Pour un panier avec paiement en ligne, on construit une boutique en ligne : c'est une autre offre, chiffrée au devis."
+  ],
+  [
+   "Mon stock change tout le temps.",
+   "On ne met pas le stock en ligne. On montre les rayons, quelques produits phares et ce qui arrive en ce moment. Pour le reste, le client appelle ou passe."
+  ],
+  [
+   "Qui change les horaires pendant les vacances ?",
+   "Avec la formule Suivi, à 49 € par mois, vous nous écrivez et c'est fait sur le site sous 48 h ouvrées. On met aussi la fiche Google à jour. La formule Essentiel, à 29 € par mois, couvre l'hébergement, le nom de domaine, la sécurité, les sauvegardes et les demandes reçues par mail."
+  ],
+  [
+   "Combien de pages, et en combien de temps ?",
+   "Jusqu'à cinq pages, par exemple l'accueil, les rayons, les services, l'histoire de la boutique et le contact. En ligne en dix jours ouvrés, à partir de 400 €, puis à partir de 29 € par mois avec un engagement de six mois."
+  ]
+ ],
+ "type": "metier"
+}
