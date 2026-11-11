@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
+<link rel="apple-touch-icon" href="/assets/nv-apple-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F6FA;--bg2:#E9EEF5;--white:#FFF;--ink:#482719;--muted:rgba(72,39,25,.7);--soft:rgba(72,39,25,.6);--hair:rgba(72,39,25,.12);--hair-2:rgba(72,39,25,.07);--orange:#FF681F;--rose:#FF9EBC;--rose-s:#FFE6EE;--jaune-s:#FFF2D0;--bleu-s:#DFE7FF;--t:'Space Grotesk','DM Sans',system-ui,sans-serif;--b:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--e:cubic-bezier(.22,.61,.36,1);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;color-scheme:only light;}
+body{background:var(--bg);color:var(--ink);font-family:var(--b);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;}
+b,strong{font-weight:600;}
+h1,h2,h3{font-family:var(--t);font-weight:700;letter-spacing:-.02em;line-height:1.12;}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+.wide{max-width:1180px;}
+.dot{color:var(--orange);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 22px;border-radius:100px;background:var(--orange);color:var(--ink);border:0;cursor:pointer;text-decoration:none;transition:background .3s,box-shadow .35s;}
+.btn:hover{background:#FF7A3A;box-shadow:0 12px 28px -14px rgba(255,104,31,.7);}
+header{position:sticky;top:0;z-index:50;background:rgba(243,246,250,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair-2);}
+header .wrap{max-width:1180px;display:flex;justify-content:space-between;align-items:center;height:62px;}
+.brand{font-family:var(--t);font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;}
+header .rt{display:flex;gap:18px;align-items:center;font-size:13.5px;font-weight:500;}
+header .rt a{color:var(--muted);text-decoration:none;}
+header .rt a:hover{color:var(--ink);}
+header .rt a.btn{color:var(--ink);padding:9px 16px;font-size:13px;}
+.bc{font-size:12.5px;color:var(--soft);padding:22px 0 0;}
+.bc a{color:var(--soft);text-decoration:none;}
+.bc a:hover{color:var(--orange);}
+.hd{padding:16px 0 26px;}
+.hd h1{font-size:clamp(28px,4.2vw,44px);margin-bottom:14px;}
+.lead{font-size:18px;color:var(--muted);}
+.meta{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--soft);margin-top:14px;}
+.meta span+span::before{content:'·';margin-right:14px;}
+.cover{margin:6px 0 10px;border-radius:20px;overflow:hidden;background:var(--bg2);}
+.cover img{display:block;width:100%;height:auto;}
+.rte{padding:22px 0 10px;font-size:17px;}
+.rte h2{font-size:clamp(22px,2.5vw,27px);margin:38px 0 12px;}
+.rte h3{font-size:18px;margin:26px 0 8px;}
+.rte p{margin-bottom:16px;color:rgba(72,39,25,.82);}
+.rte p strong,.rte li strong{color:var(--ink);}
+.rte ul,.rte ol{margin:0 0 18px;padding-left:0;list-style:none;}
+.rte li{position:relative;padding-left:18px;margin-bottom:9px;color:rgba(72,39,25,.82);}
+.rte li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+.rte a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--orange);}
+.rte img{max-width:100%;height:auto;border-radius:16px;margin:10px 0;}
+.rte table{width:100%;border-collapse:collapse;margin:8px 0 22px;font-size:15px;display:block;overflow-x:auto;}
+.rte th,.rte td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);}
+.rte th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.rte tr:first-child td{font-weight:600;color:var(--ink);}
+.rte blockquote{background:var(--rose-s);border-radius:16px;padding:20px 22px;margin:22px 0;font-size:16px;}
+.rte blockquote p:last-child{margin-bottom:0;}
+.aut{display:flex;gap:14px;align-items:center;background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:18px 20px;margin:30px 0 10px;}
+.aut .mono{width:46px;height:46px;border-radius:14px;background:var(--rose);display:grid;place-items:center;font-family:var(--t);font-weight:700;font-size:22px;flex:none;}
+.aut .mono i{color:var(--orange);font-style:normal;}
+.aut p{font-size:14px;color:var(--muted);}
+.aut b{color:var(--ink);}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.post{background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .35s var(--e),box-shadow .35s var(--e);}
+.post:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(72,39,25,.35);}
+.post small{font-size:12px;color:var(--soft);letter-spacing:.04em;}
+.post b{font-family:var(--t);font-size:18px;line-height:1.25;}
+.post span{font-size:14px;color:var(--muted);flex:1;}
+.post em{font-style:normal;font-size:13px;font-weight:600;color:#C94A0E;}
+.pag{display:flex;justify-content:center;gap:10px;margin:30px 0;font-size:14px;}
+.pag a,.pag span{padding:8px 14px;border-radius:100px;background:var(--white);text-decoration:none;}
+.more{padding:40px 0 10px;}
+.more h2{font-size:clamp(20px,2.4vw,26px);margin-bottom:16px;}
+.ct{background:var(--bg2);margin-top:44px;padding:48px 0 52px;}
+.ct h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:10px;}
+.ct p{color:var(--muted);margin-bottom:20px;}
+footer{background:var(--bg2);padding:30px 0;border-top:1px solid var(--hair);}
+footer .wrap{max-width:1180px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
+footer a{color:var(--muted);text-decoration:none;}
+footer a:hover{color:var(--orange);}
+footer .lk{display:flex;gap:18px;flex-wrap:wrap;}
+@media (max-width:860px){.posts{grid-template-columns:1fr 1fr;}}
+@media (max-width:620px){.wrap{padding:0 20px;}.posts{grid-template-columns:1fr;}header .rt a:not(.btn){display:none;}.rte{font-size:16px;}footer .lk a{padding:6px 0;}}
+</style>
+
+<title>Tableau de bord trésorerie TPE : simple et à jour · Novyance</title>
+<meta name="description" content="Tableau de bord de trésorerie pour TPE : partir de la banque, projeter semaine par semaine, relancer les retards. Ce qu&#x27;il faut suivre, sans usine à gaz.">
+<meta property="og:title" content="Tableau de bord trésorerie TPE : simple et à jour">
+<meta property="og:description" content="Tableau de bord de trésorerie pour TPE : partir de la banque, projeter semaine par semaine, relancer les retards. Ce qu&#x27;il faut suivre, sans usine à gaz.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novyance.fr/blogs/blog/tableau-de-bord-tresorerie-tpe">
+<meta property="og:image" content="https://novyance.fr/assets/nv-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://novyance.fr/blogs/blog/tableau-de-bord-tresorerie-tpe">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Tableau de bord de trésorerie pour TPE : celui qui se tient à jour tout seul","description":"Tableau de bord de trésorerie pour TPE : partir de la banque, projeter semaine par semaine, relancer les retards. Ce qu'il faut suivre, sans usine à gaz.","datePublished":"2026-10-12T09:00:00+02:00","dateModified":"2026-10-12T09:00:00+02:00","image":"https://novyance.fr/assets/nv-og.png","mainEntityOfPage":"https://novyance.fr/blogs/blog/tableau-de-bord-tresorerie-tpe","author":{"@type":"Person","name":"Aurélien Ruotte","url":"https://novyance.fr/"},"publisher":{"@type":"Organization","name":"Novyance","url":"https://novyance.fr/","logo":{"@type":"ImageObject","url":"https://novyance.fr/assets/nv-apple-touch.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://novyance.fr/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://novyance.fr/blogs/blog"},{"@type":"ListItem","position":3,"name":"Tableau de bord de trésorerie pour TPE : celui qui se tient à jour tout seul","item":"https://novyance.fr/blogs/blog/tableau-de-bord-tresorerie-tpe"}]}
+</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quelle différence entre un tableau de bord de trésorerie et un plan de trésorerie ?", "acceptedAnswer": {"@type": "Answer", "text": "Le plan de trésorerie est une prévision, souvent faite une fois par an. Le tableau de bord la confronte chaque semaine à ce qui s'est vraiment passé sur le compte."}}, {"@type": "Question", "name": "Mon expert-comptable ne le fait pas déjà ?", "acceptedAnswer": {"@type": "Answer", "text": "Il suit vos comptes, souvent avec un décalage de plusieurs semaines. La trésorerie se regarde au jour le jour, et c'est vous qui connaissez les entrées à venir."}}, {"@type": "Question", "name": "À quelle fréquence le regarder ?", "acceptedAnswer": {"@type": "Answer", "text": "Le solde, quand vous voulez. La projection, une fois par semaine, toujours le même jour. Le lundi matin marche bien."}}, {"@type": "Question", "name": "Est-ce que je dois tout ressaisir ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Les mouvements viennent de la banque. Vous n'ajoutez que ce que la banque ne peut pas savoir : une facture attendue, une dépense prévue."}}, {"@type": "Question", "name": "Combien coûte un outil de pilotage sur mesure ?", "acceptedAnswer": {"@type": "Answer", "text": "Chez Novyance, la mise en place démarre à partir de 590 €, puis à partir de 89 € par mois pour l'hébergement, la maintenance et les réglages courants. Le prix est par entreprise, pas par utilisateur, et il est confirmé au devis. Vous voulez savoir si vous passez les prochaines semaines sans ouvrir un fichier ? Décrivez votre besoin en trois questions , je vous réponds sous 24 h."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="/pages/outils-metier">Outils</a>
+      <a href="/pages/site-internet">Sites</a>
+      <a href="/pages/automatisation-ia-entreprise">Automatisation et IA</a>
+      <a href="/pages/apporteurs-affaires">Apporteurs d'affaires</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/#appel" class="btn">Parlons-en</a>
+      
+<button class="nvb" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nvm"><i></i><i></i><i></i></button>
+<nav class="nvm" id="nvm" aria-label="Menu">
+  <a href="/">Accueil</a>
+  <a href="/pages/outils-metier">Outils métier<small>Un outil construit autour de votre métier</small></a>
+  <a href="/pages/automatisation-ia-entreprise">Automatisation et IA<small>Ce qui se répète, on l'automatise</small></a>
+  <a href="/pages/outils-metier#briques">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
+  <a href="/pages/outils-metier#prix">Outils sur mesure<small>À partir de 590 €, puis 89 € par mois</small></a>
+  <a href="/pages/site-internet">Sites internet<small>Dès 400 €, en ligne en 10 jours ouvrés</small></a>
+  <a href="/blogs/blog">Blog</a>
+  <div class="nvm-ct">
+    <a href="tel:+33786523681" class="nvm-tel">07 86 52 36 81</a>
+    <a href="/#appel" class="nvm-go">Parlons-en</a>
+  </div>
+</nav>
+<style>
+  .nvb{display:none;width:44px;height:44px;flex:0 0 44px;border-radius:14px;border:1px solid rgba(72,39,25,.14);background:#fff;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;margin-left:8px;}
+  .nvb i{display:block;width:18px;height:2px;border-radius:2px;background:#482719;transition:transform .25s,opacity .25s;}
+  .nvb[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nvb[aria-expanded="true"] i:nth-child(2){opacity:0;}
+  .nvb[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nvm{display:none;}
+  @media (max-width:860px){
+    .nvb{display:inline-flex;}
+    .nvm.open{display:block;position:fixed;top:68px;left:12px;right:12px;z-index:80;background:#fff;border:1px solid rgba(72,39,25,.08);border-radius:20px;box-shadow:0 30px 60px -30px rgba(72,39,25,.45);padding:8px;max-height:calc(100vh - 84px);max-height:calc(100dvh - 84px);overflow:auto;animation:nvm-in .2s ease both;}
+    .nvm a{display:block !important;padding:13px 16px !important;border-radius:12px;text-decoration:none;color:#482719 !important;font-weight:600;font-size:16px !important;line-height:1.3;}
+    .nvm a:active,.nvm a:hover{background:#F3F6FA;}
+    .nvm a small{display:block;font-weight:400;font-size:13px;color:rgba(72,39,25,.6);margin-top:2px;}
+    .nvm-ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-top:1px solid rgba(72,39,25,.08);margin-top:6px;}
+    .nvm-ct a{text-align:center;border-radius:100px;padding:14px 10px !important;font-size:15px !important;}
+    .nvm-ct .nvm-tel{border:1px solid rgba(72,39,25,.14);}
+    .nvm-ct .nvm-go{background:#FF681F;}
+    @keyframes nvm-in{from{opacity:0;transform:translateY(-6px);}}
+  }
+</style>
+<script>
+  (function(){
+    var b = document.currentScript.parentNode.querySelector('.nvb'), m = document.getElementById('nvm');
+    if (!b || !m) return;
+    function poser(o){ m.classList.toggle('open', o); b.setAttribute('aria-expanded', o ? 'true' : 'false'); b.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); }
+    b.addEventListener('click', function(e){ e.stopPropagation(); poser(!m.classList.contains('open')); });
+    m.addEventListener('click', function(e){ if (e.target.closest('a')) poser(false); });
+    document.addEventListener('click', function(e){ if (m.classList.contains('open') && !m.contains(e.target)) poser(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') poser(false); });
+  })();
+</script>
+
+    </div>
+  </div>
+</header>
+
+<article class="wrap">
+  <div class="bc"><a href="/">Accueil</a> · <a href="/blogs/blog">Blog</a> · Tableau de bord de trésorerie pour TPE : celui qui se tient à jour tout seul</div>
+  <div class="hd">
+    <h1>Tableau de bord de trésorerie pour TPE : celui qui se tient à jour tout seul</h1>
+    <p class="lead">Un tableau de bord de trésorerie ne sert que s&#x27;il est à jour. Je pars de la banque, pas de la comptabilité, pour répondre chaque lundi à une seule question : est-ce que je passe les semaines qui viennent ?</p>
+    <div class="meta"><span>Aurélien Ruotte</span><span>12/10/2026</span><span>5 min de lecture</span></div>
+  </div>
+  
+  <div class="rte"><p>Un <strong>tableau de bord de trésorerie pour TPE</strong>, sur le papier, tout le monde sait à quoi ça sert. Les modèles Excel gratuits ne manquent pas, les listes d'indicateurs non plus. Le problème arrive trois semaines plus tard : le fichier n'est plus à jour, parce que le remplir prend une heure et qu'on a des clients à servir.</p><p>Un tableau de bord qu'on ne met pas à jour ne sert à rien. Voici comment en construire un qui tient dans le temps, et qui répond à la seule question qui compte.</p><blockquote><p><strong>En bref.</strong> Un bon tableau de bord de trésorerie part de la banque, pas de la comptabilité. Il se remplit seul, il montre ce qui va entrer et sortir dans les semaines qui viennent, et il répond chaque lundi à une question : est-ce que je peux payer tout ce qui tombe ? Le reste est du confort.</p></blockquote><h2>La seule question à laquelle il doit répondre</h2><p>Les guides parlent de BFR, de délai moyen de paiement, de ratios. Ce sont de bons indicateurs pour un expert-comptable. Pour un dirigeant de TPE, le lundi matin, la question est plus simple :</p><p><strong>« Si je regarde les semaines qui viennent, est-ce que je passe ? »</strong></p><p>Pour y répondre, il faut trois choses, et seulement trois :</p><ul><li><strong>ce qu'il y a sur le compte aujourd'hui</strong>, le vrai solde, celui de la banque ;</li><li><strong>ce qui doit entrer</strong> : factures envoyées et pas encore payées, acomptes attendus ;</li><li><strong>ce qui doit sortir</strong> : fournisseurs, salaires, loyer, URSSAF, TVA, emprunts, abonnements.</li></ul><p>Le solde du jour, plus les entrées prévues, moins les sorties prévues, semaine par semaine. Si une semaine passe dans le rouge, vous le voyez avant, pas après.</p><h2>Pourquoi la banque doit faire foi</h2><p>Beaucoup de tableaux de bord partent de la comptabilité ou du logiciel de facturation. C'est une erreur pour la trésorerie. <strong>La comptabilité dit ce que vous avez gagné. La banque dit ce que vous pouvez payer.</strong> Ce n'est pas la même chose.</p><p>Une facture émise compte dans le chiffre d'affaires dès qu'elle part. Elle ne paie rien tant que le client n'a pas viré. À l'inverse, une échéance d'emprunt ne change pas votre résultat du mois, mais elle vide le compte le jour J.</p><p>Je pars donc toujours du relevé bancaire. Chaque mouvement réel efface la prévision qui lui correspond. Ce qui reste en prévision, c'est ce qui n'est pas encore arrivé.</p><h2>Excel, logiciel de trésorerie ou outil sur mesure</h2><table><thead><tr><th></th><th>Modèle Excel</th><th>Logiciel de trésorerie du marché</th><th>Outil sur mesure</th></tr></thead><tbody><tr><td>Mise en route</td><td>Immédiate</td><td>Connexion bancaire, catégories à régler</td><td>Une à deux semaines</td></tr><tr><td>Mise à jour</td><td>À la main, relevé par relevé</td><td>Automatique depuis la banque</td><td>Automatique depuis la banque</td></tr><tr><td>Factures à encaisser</td><td>Recopiées</td><td>Selon les connexions proposées</td><td>Reliées à vos devis et factures</td></tr><tr><td>Ce que vous voyez</td><td>Ce que vous avez prévu de regarder</td><td>Les écrans prévus par l'éditeur</td><td>Vos chiffres, à votre façon</td></tr><tr><td>Limite</td><td>Abandonné dès qu'on manque de temps</td><td>Pensé pour la trésorerie seule</td><td>Il faut bien cadrer le besoin au départ</td></tr></tbody></table><p><strong>Excel convient si vous avez peu de mouvements et la discipline de le remplir chaque semaine.</strong> Le jour où vous sautez deux semaines, il ne vous dit plus rien. Un logiciel du marché règle la mise à jour. Un outil sur mesure va plus loin quand vous voulez relier la trésorerie au reste : devis signés, commandes en cours, relances clients.</p><h2>Ce que je mets dans un tableau de bord de trésorerie</h2><ol><li><strong>Le solde réel du jour</strong>, en grand, en haut. Rien d'autre sur la première ligne.</li><li><strong>La projection semaine par semaine</strong>, avec les semaines tendues signalées en couleur.</li><li><strong>Les factures en retard</strong>, du plus ancien au plus récent, avec le contact à relancer.</li><li><strong>Les grosses sorties à venir</strong> : TVA, URSSAF, échéances, et leur date.</li><li><strong>Un écart prévu contre réel</strong>, pour voir si vos prévisions tiennent.</li></ol><p>Le point 3 est souvent celui qui rapporte le plus vite. <strong>Une facture en retard que personne ne relance, c'est de l'argent qui dort.</strong> Les règles sur les délais de paiement entre professionnels sont détaillées sur <a href="https://entreprendre.service-public.gouv.fr/vosdroits/F23211" target="_blank" rel="noopener">le site officiel Entreprendre Service Public</a>, pénalités de retard comprises.</p><h2>Les pièges les plus fréquents</h2><ul><li><strong>Mélanger trésorerie et rentabilité.</strong> Une entreprise rentable peut manquer d'argent un mois donné. Les deux se suivent, mais pas dans le même tableau.</li><li><strong>Oublier les sorties qui ne reviennent pas chaque mois.</strong> TVA trimestrielle, régularisation URSSAF, assurance annuelle. Ce sont elles qui surprennent.</li><li><strong>Trop d'indicateurs.</strong> Un écran qui en montre vingt n'est plus regardé. Cinq, c'est déjà beaucoup.</li><li><strong>Un seul compte suivi.</strong> Si vous avez un compte épargne ou une deuxième banque, ils doivent être dans le total.</li></ul><h2>Comment je m'y prends</h2><p>Je construis des <a href="/pages/application-pilotage-sur-mesure">applications de pilotage sur mesure</a> pour les TPE et PME. La trésorerie est souvent la première brique, parce que c'est celle qui empêche de dormir.</p><ul><li><strong>Un échange de 30 minutes</strong>, offert, pour voir vos comptes, vos échéances et ce que vous suivez aujourd'hui.</li><li><strong>Le solde réel et la projection d'abord</strong>, reliés à votre banque.</li><li><strong>Puis les factures à relancer et les devis signés</strong>, pour que la prévision se nourrisse toute seule.</li></ul><p>Vous pouvez essayer un exemple, avec des données fictives : la <a href="/pages/demo-pilotage">démo pilotage</a>. Si votre vrai sujet est de relancer vos clients à temps, le <a href="/pages/crm-sur-mesure">CRM sur mesure</a> s'y branche. Et pour voir toutes les briques possibles, regardez les <a href="/pages/outils-metier">outils métier</a>.</p><p>Pour les questions de financement et de relation avec votre banque, la Banque de France publie un site pédagogique, <a href="https://www.mesquestionsdentrepreneur.fr/" target="_blank" rel="noopener">Mes questions d'entrepreneur</a>.</p><h2>Questions fréquentes</h2><h3>Quelle différence entre un tableau de bord de trésorerie et un plan de trésorerie ?</h3><p>Le plan de trésorerie est une prévision, souvent faite une fois par an. Le tableau de bord la confronte chaque semaine à ce qui s'est vraiment passé sur le compte.</p><h3>Mon expert-comptable ne le fait pas déjà ?</h3><p>Il suit vos comptes, souvent avec un décalage de plusieurs semaines. La trésorerie se regarde au jour le jour, et c'est vous qui connaissez les entrées à venir.</p><h3>À quelle fréquence le regarder ?</h3><p>Le solde, quand vous voulez. La projection, une fois par semaine, toujours le même jour. Le lundi matin marche bien.</p><h3>Est-ce que je dois tout ressaisir ?</h3><p>Non. Les mouvements viennent de la banque. Vous n'ajoutez que ce que la banque ne peut pas savoir : une facture attendue, une dépense prévue.</p><h3>Combien coûte un outil de pilotage sur mesure ?</h3><p>Chez Novyance, la mise en place démarre à partir de 590 €, puis à partir de 89 € par mois pour l'hébergement, la maintenance et les réglages courants. Le prix est par entreprise, pas par utilisateur, et il est confirmé au devis.</p><p><strong>Vous voulez savoir si vous passez les prochaines semaines sans ouvrir un fichier ?</strong> <a href="/#top">Décrivez votre besoin en trois questions</a>, je vous réponds sous 24 h.</p>
+</div>
+  <div class="aut"><div class="mono">n<i>.</i></div><p><b>Aurélien Ruotte</b>, fondateur de Novyance à Lyon. Il construit des sites et des outils sur mesure pour les TPE et PME, et répond lui-même à chaque demande.</p></div>
+</article>
+<section class="wrap wide more"><h2>À lire aussi<span class="dot">.</span></h2><div class="posts"><a class="post" href="/blogs/blog/crm-pour-artisan"><small>09/11/2026</small><b>CRM pour artisan : ne plus perdre une demande ni un devis</b><span>Les comparatifs de CRM pour artisan parlent surtout de devis et de factures. L&#x27;argent se perd ailleurs : la demande jamais rappelée, le devis jamais relancé.</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/logiciel-relance-factures-impayees-tpe"><small>05/11/2026</small><b>Logiciel de relance de factures impayées pour TPE : partir de la banque</b><span>Les logiciels de relance sont souvent pensés pour des PME avec un service comptable. Dans une TPE, c&#x27;est le patron qui relance. Voici un outil qui</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/remplacer-excel-par-une-application"><small>19/10/2026</small><b>Remplacer Excel par une application : les 7 signes que c&#x27;est le moment</b><span>Excel a fait tourner des milliers de petites entreprises. Mais il arrive un moment où le fichier qui rendait service devient celui que tout le monde</span><em>Lire l'article →</em></a></div></section>
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · <a href="mailto:contact@novyance.fr">contact@novyance.fr</a></span>
+    <span class="lk">
+      <a href="/pages/outils-metier">Outils métier sur mesure</a>
+      <a href="/pages/creation-site-internet-lyon">Site à Lyon</a>
+      <a href="/pages/application-pilotage-sur-mesure">Application de pilotage</a>
+      <a href="/pages/crm-sur-mesure">CRM sur mesure</a>
+      <a href="/pages/prospection-automatisee">Prospection automatisée</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/">Accueil</a>
+      
+      <a href="/pages/cgv">CGV</a>
+      <a href="/pages/confidentialite">Confidentialité</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

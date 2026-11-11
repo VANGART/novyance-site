@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="only light">
+<title>Votre exemple de prospection · Novyance</title>
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F6FA;--bg2:#E9EEF5;--card:#fff;--ink:#482719;--muted:#76625A;--line:#D8DFE9;--accent:#FF681F;--rose:#FF9EBC;--good:#2F8F5B;--r:20px;
+  --f-display:"Space Grotesk","Helvetica Neue",Arial,sans-serif;--f-body:"DM Sans","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:clamp(32px,4.6vw,52px)}h2{font-size:clamp(24px,3vw,34px)}h3{font-size:19px}
+p{margin:0}
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{font:700 23px/1 var(--f-display);letter-spacing:-.03em;text-decoration:none;color:inherit}.dot{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;border:0;background:var(--accent);color:#fff;font:600 16px/1 var(--f-body);text-decoration:none;cursor:pointer}
+section{padding-block:clamp(40px,6vw,72px)}
+.lead{color:var(--muted);font-size:clamp(17px,1.5vw,19px);max-width:62ch;margin-top:16px}
+.mot{margin-top:28px;display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start;max-width:680px}
+.mot img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.mot p{font-size:16px}
+.mot b{display:block;font-size:14px;color:var(--muted);font-weight:500;margin-top:6px}
+.prospect{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(20px,4vw,40px);align-items:start}
+.fiche{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:14px}
+.fiche dl{margin:0;display:grid;gap:12px}.fiche dt{font-size:13px;color:var(--muted)}.fiche dd{margin:2px 0 0;font-weight:600}
+.doc{background:#fff;border-radius:var(--r);padding:22px 24px;border:1px solid rgba(72,39,25,.08);box-shadow:0 18px 40px -26px rgba(72,39,25,.4)}
+.doc .meta{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13px;color:var(--muted);padding-bottom:12px;border-bottom:1px solid #EEE7E1;margin-bottom:14px}
+.doc .meta b{color:var(--ink);font-weight:600}
+.doc .body{font-size:15.5px;line-height:1.6;white-space:pre-line}
+.alt{background:var(--bg2)}
+.ech{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
+.ech figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ech img{display:block;width:100%;max-width:100%;height:auto;background:var(--bg2)}
+.ech figcaption{padding:12px 16px;font-size:14px;color:var(--muted)}
+.tscroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-top:24px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+th{text-align:left;font-size:13px;font-weight:600;color:var(--muted);padding:12px 18px;border-bottom:1px solid var(--line)}
+td{padding:13px 18px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}td:first-child{font-weight:600}
+.circuit{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:28px;counter-reset:e}
+.circuit > div{position:relative;padding:22px 22px 22px 0;border-top:3px solid var(--line)}
+.circuit > div.on{border-top-color:var(--accent)}
+.circuit > div::before{content:"";position:absolute;top:-9px;left:0;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.circuit .n{font:700 14px/1 var(--f-display);color:var(--accent);letter-spacing:.02em}
+.circuit h3{margin:8px 0 6px;font-size:19px}
+.circuit p{color:var(--muted);font-size:15.5px;max-width:28ch}
+.vous{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.vous > div{background:var(--card);border-radius:var(--r);padding:22px 24px;box-shadow:inset 0 0 0 1px var(--line)}
+.vous > div.nous{background:var(--ink);color:var(--bg);box-shadow:none}
+.vous h3{margin-bottom:10px}
+.vous ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15.5px}
+.vous .nous ul{color:color-mix(in srgb,var(--bg) 82%,transparent)}
+@media (max-width:820px){.circuit,.vous{grid-template-columns:1fr}.circuit > div{padding-left:0}}
+.go{background:var(--ink);color:var(--bg)}
+.go-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.go p.sub{margin-top:14px;color:color-mix(in srgb,var(--bg) 72%,transparent)}
+.go ul{margin:18px 0 0;padding-left:20px;display:grid;gap:6px;color:color-mix(in srgb,var(--bg) 80%,transparent)}
+.go form{display:grid;gap:10px}
+.go input,.go select,.go textarea{font:400 16px/1.3 var(--f-body);color:var(--bg);background:transparent;border:1.5px solid color-mix(in srgb,var(--bg) 30%,transparent);border-radius:16px;min-height:50px;padding:12px 18px;width:100%;min-width:0}
+.go select option{color:#2B1A12}
+.go textarea{min-height:90px;resize:vertical}
+.go input::placeholder,.go textarea::placeholder{color:color-mix(in srgb,var(--bg) 55%,transparent)}
+.msg{font-size:15px;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--good) 25%,transparent)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.etat{padding-block:120px;text-align:center;color:var(--muted)}
+footer{background:var(--ink);color:color-mix(in srgb,var(--bg) 68%,transparent);font-size:14px;padding-block:22px 28px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;border-top:1px solid color-mix(in srgb,var(--bg) 20%,transparent);padding-top:20px}
+@media (max-width:820px){.prospect,.go-grid{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/">novyance<span class="dot">.</span></a><a class="btn" href="#demarrer">On démarre</a></div></header>
+
+<main id="page">
+  <div class="wrap etat" id="etat">Chargement de votre exemple…</div>
+
+  <div id="contenu" hidden>
+    <section>
+      <div class="wrap">
+        <h1 id="t-titre">Votre exemple de prospection</h1>
+        <p class="lead" id="t-lead"></p>
+        <div class="mot" id="mot" hidden>
+          <img src="/assets/nv-aurelien.jpg" alt="Aurélien Ruotte" width="56" height="56">
+          <div><p id="mot-texte"></p><b>Aurélien Ruotte, Novyance</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap prospect">
+        <div class="fiche">
+          <h2>Le prospect</h2>
+          <dl>
+            <div><dt>Entreprise</dt><dd id="p-soc"></dd></div>
+            <div id="p-ville-l"><dt>Ville</dt><dd id="p-ville"></dd></div>
+            <div><dt>Pourquoi lui, maintenant</dt><dd id="p-signal"></dd></div>
+          </dl>
+        </div>
+        <div>
+          <h2 style="margin-bottom:16px">Le mail qu'il recevrait de votre part</h2>
+          <div class="doc">
+            <div class="meta"><span>De</span><b id="m-de"></b><span>À</span><b id="m-a"></b><span>Objet</span><b id="m-objet"></b></div>
+            <div class="body" id="m-corps"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="s-ech" hidden>
+      <div class="wrap">
+        <h2>L'échantillon joint au mail</h2>
+        <p class="lead">Fait pour ce prospect, avec son logo. Il voit le résultat avant d'avoir demandé un devis.</p>
+        <div class="ech" id="ech"></div>
+      </div>
+    </section>
+
+    <section id="s-cibles" hidden>
+      <div class="wrap">
+        <h2>Les entreprises qu'on contacterait ensuite</h2>
+        <p class="lead">Chacune a une raison récente d'acheter ce que vous vendez.</p>
+        <div class="tscroll"><table><thead><tr><th>Entreprise</th><th>Ce qu'on a repéré</th><th>Ce qu'on lui proposerait</th></tr></thead><tbody id="cibles"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="alt" id="comment">
+      <div class="wrap">
+        <h2>Comment ça se passe chez vous</h2>
+        <p class="lead">Ce que vous venez de voir pour un prospect, on le fait chaque semaine pour toute votre liste, depuis une adresse à votre nom.</p>
+        <div class="circuit">
+          <div class="on"><span class="n">1 · On repère</span><h3>Une raison d'acheter</h3><p>Une levée, une ouverture, un recrutement, un salon. Sans signal récent, on n'écrit pas.</p></div>
+          <div class="on"><span class="n">2 · On écrit</span><h3>En votre nom</h3><p>Un mail court, avec un échantillon de votre travail à son nom. Vous validez le ton avant le premier envoi.</p></div>
+          <div class="on"><span class="n">3 · On relance</span><h3>Jusqu'au rendez-vous</h3><p>Relances, réponses, rendez-vous posés dans votre agenda. Vous voyez tout dans votre tableau de bord.</p></div>
+          <div class="on"><span class="n">4 · Vous signez</span><h3>On prend un %</h3><p>Vous facturez votre client comme d'habitude. Notre commission ne porte que sur ce qui est encaissé.</p></div>
+        </div>
+        <div class="vous">
+          <div class="nous"><h3>On s'occupe de</h3><ul><li>trouver les entreprises et leur signal</li><li>préparer chaque échantillon</li><li>écrire, relancer, répondre</li><li>poser les rendez-vous</li></ul></div>
+          <div><h3>Vous vous occupez de</h3><ul><li>créer une adresse sur votre domaine (10 minutes)</li><li>valider les premiers mails</li><li>aller aux rendez-vous et signer</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="go" id="demarrer">
+      <div class="wrap go-grid">
+        <div>
+          <h2>On démarre ?</h2>
+          <p class="sub">Laissez votre numéro, on vous rappelle pour caler les détails.</p>
+          <ul>
+            <li>0 € de mise en place, pas d'abonnement</li>
+            <li>un pourcentage des ventes qu'on vous apporte, fixé ensemble</li>
+            <li>un mois d'engagement, puis vous arrêtez quand vous voulez</li>
+            <li>un seul client par métier et par zone</li>
+          </ul>
+        </div>
+        <form id="f-go" novalidate>
+          <label for="g-tel" hidden>Téléphone</label><input id="g-tel" type="tel" placeholder="Votre téléphone" autocomplete="tel" required>
+          <label for="g-cre" hidden>Créneau</label>
+          <select id="g-cre"><option value="">Créneau préféré</option><option>Matin, 9 h à 12 h</option><option>Midi, 12 h à 14 h</option><option>Après-midi, 14 h à 18 h</option><option>Après 18 h</option></select>
+          <label for="g-msg" hidden>Message</label><textarea id="g-msg" placeholder="Une question, une précision (facultatif)"></textarea>
+          <div class="hp" aria-hidden="true"><label for="g-hp">Ne pas remplir</label><input id="g-hp" tabindex="-1" autocomplete="off"></div>
+          <button class="btn" type="submit">Être rappelé</button>
+          <div class="msg" id="g-ok" hidden></div>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap"><span><b>novyance<span class="dot">.</span></b> Prospection commerciale externalisée, Lyon</span><span>contact@novyance.fr · 07 86 52 36 81 · <a href="/pages/cgv">CGV</a> · <a href="/pages/confidentialite">Confidentialité</a></span></div></footer>
+
+<script>
+(function(){
+  var API = 'https://sqxlavinbiryvmblmtse.supabase.co/functions/v1/exemple';
+  var q = new URLSearchParams(location.search), c = (q.get('c') || '').replace(/[^a-f0-9]/g, ''), apercu = q.has('apercu');
+  var $ = function(id){ return document.getElementById(id); };
+  function set(id, v){ $(id).textContent = v || ''; }
+  function appel(corps){ return fetch(API, { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(corps) }).then(function(r){ return r.json().then(function(d){ return { ok:r.ok, d:d }; }); }); }
+  if(!c){ set('etat', 'Ce lien est incomplet. Écrivez à contact@novyance.fr, on vous renvoie votre exemple.'); return; }
+  appel({ action:'voir', c:c, apercu:apercu }).then(function(r){
+    if(!r.ok){ set('etat', (r.d && r.d.erreur) || 'Exemple introuvable.'); return; }
+    var e = r.d;
+    $('etat').hidden = true; $('contenu').hidden = false;
+    set('t-titre', 'Votre exemple de prospection' + (e.visiteur_societe ? ', ' + e.visiteur_societe : ''));
+    set('t-lead', 'Un vrai prospect, choisi pour ' + (e.visiteur_societe || e.site) + (e.visiteur_activite ? ' (' + e.visiteur_activite + ')' : '') + ', le mail qu\'on lui enverrait en votre nom et l\'échantillon qu\'on y joindrait.');
+    if(e.mot_aurelien){ $('mot').hidden = false; set('mot-texte', e.mot_aurelien); }
+    set('p-soc', e.prospect_societe); set('p-signal', e.prospect_signal);
+    if(e.prospect_ville) set('p-ville', e.prospect_ville); else $('p-ville-l').hidden = true;
+    set('m-de', (e.visiteur_prenom ? e.visiteur_prenom.toLowerCase() + '@' : 'vous@') + e.site);
+    set('m-a', (e.prospect_contact ? e.prospect_contact + ', ' : '') + (e.prospect_societe || ''));
+    set('m-objet', e.mail_objet); set('m-corps', e.mail_corps);
+    var ech = Array.isArray(e.echantillons) ? e.echantillons : [];
+    if(ech.length){ $('s-ech').hidden = false; ech.forEach(function(x){
+      var f = document.createElement('figure'), i = document.createElement('img'); i.src = x.url; i.alt = x.legende || 'Échantillon pour ' + (e.prospect_societe || 'le prospect'); i.loading = 'lazy'; f.appendChild(i);
+      if(x.legende){ var cap = document.createElement('figcaption'); cap.textContent = x.legende; f.appendChild(cap); } $('ech').appendChild(f); }); }
+    var cib = Array.isArray(e.cibles) ? e.cibles : [];
+    if(cib.length){ $('s-cibles').hidden = false; cib.forEach(function(x){
+      var tr = document.createElement('tr'); [x.societe, x.signal, x.proposition].forEach(function(v){ var td = document.createElement('td'); td.textContent = v || ''; tr.appendChild(td); }); $('cibles').appendChild(tr); }); }
+    if(e.statut === 'demarre'){ $('g-ok').hidden = false; set('g-ok', 'C\'est noté, on vous rappelle très vite.'); }
+  }).catch(function(){ set('etat', 'Impossible de charger l\'exemple pour le moment. Réessayez dans un instant.'); });
+
+  $('f-go').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var ok = $('g-ok'); ok.hidden = false;
+    var tel = $('g-tel').value.trim(); if(!tel){ ok.textContent = 'Indiquez un numéro pour qu\'on vous rappelle.'; return; }
+    ok.textContent = 'Envoi…';
+    appel({ action:'demarrer', c:c, telephone:tel, creneau:$('g-cre').value, message:$('g-msg').value, hp:$('g-hp').value })
+      .then(function(r){ ok.textContent = r.ok ? 'C\'est noté. Aurélien vous rappelle sur le créneau choisi.' : (r.d.erreur || 'Erreur, appelez le 07 86 52 36 81.'); })
+      .catch(function(){ ok.textContent = 'Erreur réseau. Appelez le 07 86 52 36 81.'; });
+  });
+})();
+</script>
+<script src="/assets/nv-contact.js" defer></script>
+</body>
+</html>

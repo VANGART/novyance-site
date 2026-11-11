@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+<title>On vous a recommandé Novyance · prospection payée sur vos ventes</title>
+<meta name="description" content="On prospecte pour les entreprises qui vendent aux pros, et on n'est payés que sur les ventes qu'on apporte.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="On vous a recommandé Novyance">
+<meta property="og:description" content="Des clients en plus, et vous ne payez que sur ce qu'ils achètent.">
+<meta property="og:image" content="https://novyance.fr/assets/nv-og.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
+<link rel="apple-touch-icon" href="/assets/nv-apple-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F3F6FA;--bg2:#E9EEF5;--white:#FFF;--ink:#482719;--ink2:rgba(72,39,25,.8);--muted:rgba(72,39,25,.66);--hair:rgba(72,39,25,.12);--orange:#FF681F;--rose:#FF9EBC;--rose-s:#FFE6EE;--t:'Space Grotesk','DM Sans',system-ui,sans-serif;--b:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;color-scheme:only light;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--b);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  b,strong{font-weight:600;}
+  h1,h2,h3{font-family:var(--t);font-weight:700;letter-spacing:-.02em;line-height:1.1;text-wrap:balance;}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
+  .dot{color:var(--orange);}
+  header{position:sticky;top:0;z-index:50;background:rgba(243,246,250,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--hair);}
+  header .wrap{max-width:1100px;display:flex;justify-content:space-between;align-items:center;height:64px;gap:12px;}
+  .brand{font-family:var(--t);font-weight:700;font-size:21px;letter-spacing:-.03em;text-decoration:none;}
+  header .rt{display:flex;gap:16px;align-items:center;font-size:14px;font-weight:500;}
+  header .rt a{color:var(--muted);text-decoration:none;}
+  header .rt a.btn{color:var(--ink);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1 var(--b);padding:15px 22px;border-radius:100px;background:var(--orange);color:var(--ink);border:0;cursor:pointer;text-decoration:none;min-height:48px;}
+  header .rt .btn{padding:10px 16px;font-size:14px;min-height:0;}
+  .btn.ghost{background:var(--white);border:1px solid var(--hair);}
+  .btn:disabled{opacity:.6;cursor:wait;}
+  .kick{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);}
+  .kick::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--orange);}
+  .hero{padding:48px 0 40px;}
+  .hero h1{font-size:clamp(32px,5.4vw,52px);margin:14px 0 18px;}
+  .lead{font-size:18px;color:var(--ink2);max-width:62ch;}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;}
+  .badge{display:inline-block;background:var(--rose-s);border-radius:100px;padding:8px 16px;font-size:14.5px;margin-bottom:6px;}
+  .sec{padding:44px 0;}
+  .sec.alt{background:var(--bg2);}
+  .sec h2{font-size:clamp(24px,3.6vw,32px);margin-bottom:16px;}
+  .sec h2 + .sub{margin-top:-6px;}
+  .sub{color:var(--muted);font-size:15px;margin:12px 0;}
+  .sub a{font-weight:600;text-decoration-color:var(--orange);text-underline-offset:3px;}
+  .etapes{list-style:none;counter-reset:e;display:grid;gap:10px;}
+  .etapes li{counter-increment:e;position:relative;background:var(--white);border:1px solid var(--hair);border-radius:16px;padding:16px 18px 16px 58px;}
+  .etapes li::before{content:counter(e);position:absolute;left:16px;top:15px;width:28px;height:28px;border-radius:50%;background:var(--orange);font:700 14px/28px var(--t);text-align:center;}
+  .etapes b{display:block;font-family:var(--t);font-size:17px;}
+  .etapes span{color:var(--ink2);font-size:15px;}
+  .cartes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .cartes div{background:var(--white);border:1px solid var(--hair);border-radius:16px;padding:18px;}
+  .cartes b{display:block;font:700 28px/1 var(--t);margin-bottom:8px;}
+  .cartes span{font-size:14.5px;color:var(--ink2);}
+  .briques{list-style:none;display:grid;gap:10px;margin-bottom:26px;}
+  .briques li{position:relative;padding-left:22px;color:var(--ink2);}
+  .briques li::before{content:'';position:absolute;left:2px;top:10px;width:8px;height:8px;border-radius:50%;background:var(--orange);}
+  .briques b{color:var(--ink);}
+  .form{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--white);border:1px solid var(--hair);border-radius:20px;padding:24px;margin-top:8px;}
+  .form .full{grid-column:1/-1;}
+  .form label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:6px;}
+  .form input,.form textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:1.5px solid var(--hair);padding:9px 0;border-radius:0;}
+  .form textarea{resize:vertical;}
+  .form input:focus,.form textarea:focus{outline:none;border-color:var(--orange);}
+  .form .btn{width:100%;}
+  .hp{position:absolute;left:-5000px;}
+  .msg{font-size:14px;color:#B4361A;margin-top:10px;min-height:1em;}
+  .ok{grid-column:1/-1;background:var(--rose-s);border-radius:14px;padding:16px 18px;}
+  details{background:var(--white);border:1px solid var(--hair);border-radius:14px;padding:14px 18px;margin-bottom:8px;}
+  summary{cursor:pointer;font-weight:600;min-height:28px;}
+  details p{margin-top:8px;color:var(--ink2);font-size:15px;}
+  .espace{background:var(--ink);color:#fff;padding:40px 0;}
+  .espace .kick{color:rgba(255,255,255,.7);}
+  .espace h1{font-size:clamp(28px,4.6vw,42px);margin:12px 0 14px;}
+  .espace h2{font-size:22px;margin:26px 0 6px;}
+  .espace .lead,.espace .sub{color:rgba(255,255,255,.82);}
+  .lien{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:12px;}
+  .lien code{flex:1 1 220px;font-size:15px;word-break:break-all;}
+  .espace textarea{width:100%;font:inherit;font-size:15px;border-radius:14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;padding:12px 14px;margin-top:8px;}
+  .espace .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);}
+  footer{background:var(--bg2);padding:28px 0 32px;border-top:1px solid var(--hair);}
+  footer .wrap{max-width:1100px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
+  footer a{color:var(--muted);text-decoration:none;}
+  footer .lk{display:flex;gap:16px;flex-wrap:wrap;}
+  :focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  @media (max-width:700px){
+    .wrap{padding:0 20px;}
+    body{font-size:16px;}
+    .hero{padding:30px 0 28px;}
+    .lead{font-size:17px;}
+    .sec{padding:34px 0;}
+    .cartes{grid-template-columns:1fr;}
+    .form{grid-template-columns:1fr;padding:20px;}
+    .actions .btn{flex:1 1 100%;}
+    header .rt a:not(.btn){display:none;}
+    footer .lk a{padding:6px 0;}
+  }
+</style>
+
+
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="tel:+33786523681">07 86 52 36 81</a>
+      <a href="#demande" class="btn">Parlons-en</a>
+      
+<button class="nvb" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nvm"><i></i><i></i><i></i></button>
+<nav class="nvm" id="nvm" aria-label="Menu">
+  <a href="/">Accueil</a>
+  <a href="/pages/outils-metier">Outils métier<small>Un outil construit autour de votre métier</small></a>
+  <a href="/pages/automatisation-ia-entreprise">Automatisation et IA<small>Ce qui se répète, on l'automatise</small></a>
+  <a href="/pages/outils-metier#briques">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
+  <a href="/pages/outils-metier#prix">Outils sur mesure<small>À partir de 590 €, puis 89 € par mois</small></a>
+  <a href="/pages/site-internet">Sites internet<small>Dès 400 €, en ligne en 10 jours ouvrés</small></a>
+  <a href="/blogs/blog">Blog</a>
+  <div class="nvm-ct">
+    <a href="tel:+33786523681" class="nvm-tel">07 86 52 36 81</a>
+    <a href="/#appel" class="nvm-go">Parlons-en</a>
+  </div>
+</nav>
+<style>
+  .nvb{display:none;width:44px;height:44px;flex:0 0 44px;border-radius:14px;border:1px solid rgba(72,39,25,.14);background:#fff;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;margin-left:8px;}
+  .nvb i{display:block;width:18px;height:2px;border-radius:2px;background:#482719;transition:transform .25s,opacity .25s;}
+  .nvb[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nvb[aria-expanded="true"] i:nth-child(2){opacity:0;}
+  .nvb[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nvm{display:none;}
+  @media (max-width:860px){
+    .nvb{display:inline-flex;}
+    .nvm.open{display:block;position:fixed;top:68px;left:12px;right:12px;z-index:80;background:#fff;border:1px solid rgba(72,39,25,.08);border-radius:20px;box-shadow:0 30px 60px -30px rgba(72,39,25,.45);padding:8px;max-height:calc(100vh - 84px);max-height:calc(100dvh - 84px);overflow:auto;animation:nvm-in .2s ease both;}
+    .nvm a{display:block !important;padding:13px 16px !important;border-radius:12px;text-decoration:none;color:#482719 !important;font-weight:600;font-size:16px !important;line-height:1.3;}
+    .nvm a:active,.nvm a:hover{background:#F3F6FA;}
+    .nvm a small{display:block;font-weight:400;font-size:13px;color:rgba(72,39,25,.6);margin-top:2px;}
+    .nvm-ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-top:1px solid rgba(72,39,25,.08);margin-top:6px;}
+    .nvm-ct a{text-align:center;border-radius:100px;padding:14px 10px !important;font-size:15px !important;}
+    .nvm-ct .nvm-tel{border:1px solid rgba(72,39,25,.14);}
+    .nvm-ct .nvm-go{background:#FF681F;}
+    @keyframes nvm-in{from{opacity:0;transform:translateY(-6px);}}
+  }
+</style>
+<script>
+  (function(){
+    var b = document.currentScript.parentNode.querySelector('.nvb'), m = document.getElementById('nvm');
+    if (!b || !m) return;
+    function poser(o){ m.classList.toggle('open', o); b.setAttribute('aria-expanded', o ? 'true' : 'false'); b.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); }
+    b.addEventListener('click', function(e){ e.stopPropagation(); poser(!m.classList.contains('open')); });
+    m.addEventListener('click', function(e){ if (e.target.closest('a')) poser(false); });
+    document.addEventListener('click', function(e){ if (m.classList.contains('open') && !m.contains(e.target)) poser(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') poser(false); });
+  })();
+</script>
+
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="badge" id="badge" hidden>Vous venez de la part de <b id="b-qui"></b></p>
+      <h1 id="titre">Des clients en plus, et vous ne payez que sur ce qu'ils achètent<span class="dot">.</span></h1>
+      <p class="lead">Je m'appelle Aurélien Ruotte, à Lyon. On prospecte pour les entreprises qui vendent aux pros : on repère celles qui ont une raison d'acheter maintenant, on leur écrit en votre nom avec un échantillon de votre travail, et on relance. Pas de forfait : un pourcentage des ventes qu'on vous apporte.</p>
+      <div class="actions"><a class="btn" href="#demande">Recevoir mon exemple</a><a class="btn ghost" href="tel:+33786523681">07 86 52 36 81</a></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2>Ce qu'on fait pour vous</h2>
+      <ul class="briques">
+        <li><b>On choisit les entreprises une par une</b> : celles qui ouvrent, recrutent, exposent ou fêtent un anniversaire, et qui ont donc une raison d'acheter cette semaine.</li>
+        <li><b>On leur écrit en votre nom</b>, depuis une adresse de votre domaine, avec un échantillon de votre travail à leur nom.</li>
+        <li><b>On relance, on répond, on pose les rendez-vous</b> dans votre agenda. Vous allez aux rendez-vous et vous signez.</li>
+        <li><b>Vous suivez tout</b> dans un tableau de bord : chaque entreprise contactée, chaque réponse, chaque vente.</li>
+      </ul>
+      <p class="sub">Tout est détaillé sur <a href="/">novyance.fr</a>.</p>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="wrap">
+      <h2>Comment ça se passe</h2>
+      <ol class="etapes">
+        <li><b>Un exemple sous 24 heures, offert.</b><span>Un vrai prospect choisi pour vous, le mail qu'on lui enverrait et l'échantillon qu'on lui joindrait.</span></li>
+        <li><b>Un appel de 20 minutes.</b><span>On regarde vos clients actuels, vos marges et la zone à couvrir, et on fixe ensemble le pourcentage.</span></li>
+        <li><b>Deux semaines de préparation, puis les premiers envois.</b><span>Une adresse sur votre domaine, chauffée pendant 15 jours si elle est neuve.</span></li>
+      </ol>
+      <p class="sub">0 € de mise en place, pas d'abonnement, un mois d'engagement. Un seul client par métier et par zone.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="demande">
+    <div class="wrap">
+      <h2>Recevez votre exemple</h2>
+      <p class="sub">Laissez vos coordonnées : on vous rappelle dans la journée ouvrée et on prépare votre exemple.</p>
+      <form class="form" id="f-dem" novalidate>
+        <div><label for="d-contact">Prénom et nom</label><input id="d-contact" autocomplete="name" required></div>
+        <div><label for="d-soc">Entreprise</label><input id="d-soc" autocomplete="organization"></div>
+        <div><label for="d-email">E-mail</label><input id="d-email" type="email" autocomplete="email"></div>
+        <div><label for="d-tel">Téléphone</label><input id="d-tel" type="tel" autocomplete="tel"></div>
+        <div class="full"><label for="d-besoin">Votre site, ce que vous vendez et à qui</label><textarea id="d-besoin" rows="3" placeholder="Ex. atelier-maille.fr, textile brodé pour les restaurants et les clubs de la région"></textarea></div>
+        <input class="hp" id="d-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button class="btn" type="submit">Recevoir mon exemple</button><p class="msg" id="d-msg" role="status"></p></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · contact@novyance.fr · 07 86 52 36 81</span>
+    <span class="lk"><a href="/">Accueil</a><a href="/#tarif">Tarif</a><a href="/pages/apporteurs-affaires">Devenir apporteur</a><a href="/pages/cgv">CGV</a><a href="/pages/confidentialite">Confidentialité</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var API = "https://sqxlavinbiryvmblmtse.supabase.co/functions/v1/parrainage";
+  function appel(corps){ return fetch(API, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(corps) }).then(function(r){ return r.json().then(function(j){ if (!r.ok) throw new Error(j.erreur || "erreur"); return j; }); }); }
+  var code = (new URLSearchParams(location.search).get("r") || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+  try { if (code) localStorage.setItem("nv-ref", code); else code = localStorage.getItem("nv-ref") || ""; } catch (e) {}
+  if (code) {
+    appel({ action: "info", code: code }).then(function(a){
+      var qui = a.prenom ? a.prenom + (a.societe && a.societe !== a.prenom ? " (" + a.societe + ")" : "") : a.societe;
+      document.getElementById("b-qui").textContent = qui;
+      document.getElementById("badge").hidden = false;
+      document.getElementById("titre").innerHTML = (a.prenom || a.societe).replace(/[<>&]/g, "") + " pense qu'on peut vous trouver des clients<span class=\"dot\">.</span>";
+      appel({ action: "vue", code: code, page: "recommande" }).catch(function(){});
+    }).catch(function(){ code = ""; });
+  }
+  var f = document.getElementById("f-dem"), m = document.getElementById("d-msg");
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var v = function(id){ return document.getElementById(id).value.trim(); };
+    if (!v("d-contact") && !v("d-soc")) { m.textContent = "Indiquez votre nom ou votre entreprise."; return; }
+    if (!v("d-email") && !v("d-tel")) { m.textContent = "Indiquez un e-mail ou un téléphone pour qu'on puisse vous rappeler."; return; }
+    var b = f.querySelector("button"); b.disabled = true; m.textContent = "Envoi…";
+    appel({ action: "demande", code: code, contact: v("d-contact"), societe: v("d-soc"), email: v("d-email"), telephone: v("d-tel"), besoin: v("d-besoin"), hp: v("d-hp") })
+      .then(function(){ f.innerHTML = '<p class="ok"><b>Merci, c\'est bien reçu.</b> On vous rappelle dans la journée ouvrée pour préparer votre exemple.</p>'; })
+      .catch(function(err){ m.textContent = err.message; b.disabled = false; });
+  });
+})();
+</script>
+<script src="/assets/nv-contact.js" defer></script>
+</body>
+</html>

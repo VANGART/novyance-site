@@ -7,20 +7,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#F3F6FA">
-<title>Site internet pour plombier dès 490 €, en ligne en 10 jours · Novyance</title>
-<meta name="description" content="Un site de plombier qui fait appeler : numéro toujours visible, zone d&#x27;intervention, dépannage et travaux séparés, demandes rangées. Dès 490 €, puis 29 €/mois.">
+<title>Site internet pour plombier dès 400 € · Novyance</title>
+<meta name="description" content="Un site de plombier qui fait appeler : numéro toujours visible, zone d&#x27;intervention, dépannage et travaux séparés, demandes rangées. Dès 400 €.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://novyance.fr/pages/site-internet-plombier">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Le plombier qu&#x27;on appelle en premier">
-<meta property="og:description" content="Un site de plombier qui fait appeler : numéro toujours visible, zone d&#x27;intervention, dépannage et travaux séparés, demandes rangées. Dès 490 €, puis 29 €/mois.">
-<meta property="og:image" content="/assets/nv-og.png">
+<meta property="og:description" content="Un site de plombier qui fait appeler : numéro toujours visible, zone d&#x27;intervention, dépannage et travaux séparés, demandes rangées. Dès 400 €.">
+<meta property="og:image" content="https://novyance.fr/assets/nv-og.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
 <link rel="apple-touch-icon" href="/assets/nv-apple-touch.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Site internet pour plombier dès 490 €, en ligne en 10 jours", "serviceType": "Création de site internet", "areaServed": "FR", "provider": {"@type": "Organization", "name": "Novyance", "url": "https://novyance.fr"}, "offers": {"@type": "Offer", "price": "490", "priceCurrency": "EUR"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Site internet pour plombier", "url": "https://novyance.fr/pages/site-internet-plombier", "serviceType": "Création de site internet", "areaServed": "FR", "provider": {"@id": "https://novyance.fr/#novyance"}, "offers": {"@type": "Offer", "price": "400", "priceCurrency": "EUR"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "J'ai déjà beaucoup d'appels. Un site, ça sert à quoi ?", "acceptedAnswer": {"@type": "Answer", "text": "À trier. Le site répond aux questions qui reviennent (zone, horaires, types de travaux) et amène les demandes de travaux par écrit, avec les détails."}}, {"@type": "Question", "name": "Je peux afficher mes tarifs de dépannage ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, si vous le souhaitez : un prix de déplacement ou une fourchette. Beaucoup de clients appellent juste pour ça."}}, {"@type": "Question", "name": "Je n'ai pas de photos de chantier.", "acceptedAnswer": {"@type": "Answer", "text": "On commence avec ce que vous avez, même prises au téléphone. Les suivantes s'ajoutent au fil des chantiers avec le forfait mensuel."}}, {"@type": "Question", "name": "Combien de temps ça me prend ?", "acceptedAnswer": {"@type": "Answer", "text": "Trente minutes au téléphone au départ, puis deux relectures. Les textes, c'est nous qui les écrivons."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://novyance.fr/"}, {"@type": "ListItem", "position": 2, "name": "Sites internet", "item": "https://novyance.fr/pages/site-internet"}, {"@type": "ListItem", "position": 3, "name": "Plombier", "item": "https://novyance.fr/pages/site-internet-plombier"}]}</script>
 <style>
@@ -142,6 +142,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .mois .p small{font:500 15px/1 var(--f-body);color:var(--muted);letter-spacing:0}
 .mois p{color:var(--muted)}
 .mois p b{color:var(--ink)}
+.mois .mois-n{grid-column:1/-1;font-size:14px}
 
 /* questions */
 .faq{padding:0 0 clamp(64px,9vw,120px)}
@@ -196,6 +197,23 @@ footer a:hover{color:var(--accent-d)}
   .top .acts .btn{width:100%}
 }
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .devis{transform:none} }
+.real{padding:0 0 clamp(64px,9vw,120px)}
+.real-l{list-style:none;margin:36px 0 0;padding:0;border-top:2px solid var(--ink2)}
+.real-l a{display:grid;grid-template-columns:1.1fr 1.4fr auto;gap:16px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.real-l b{font:700 clamp(20px,2.2vw,26px)/1.1 var(--f-display);color:var(--ink2);letter-spacing:-.02em}
+.real-l span{color:var(--muted)}
+.real-l em{font-style:normal;font-weight:600;color:var(--accent-d)}
+.real-l a:hover b{color:var(--accent-d)}
+@media (max-width:760px){.real-l a{grid-template-columns:1fr;gap:4px}}
+.mbar{display:none}
+@media (max-width:760px){
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1.6fr;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(243,246,250,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);transition:transform .25s}
+  .mbar.off{transform:translateY(110%)}
+  .mbar a{min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:600;text-decoration:none}
+  .mbar .t{box-shadow:inset 0 0 0 1.5px var(--ink)}
+  .mbar .g{background:var(--accent);color:#fff}
+  body{padding-bottom:72px}
+}
 
 .metier{padding:clamp(64px,9vw,120px) 0 0}
 .metier-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);margin-top:36px;align-items:start}
@@ -203,6 +221,7 @@ footer a:hover{color:var(--accent-d)}
 .metier ul{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink2)}
 .metier li{padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted)}
 .metier li b{display:block;color:var(--ink2);font-weight:600;margin-bottom:2px}
+.top h1 .kick{display:block}
 .sources{margin-top:28px;font-size:13px;color:var(--muted)}
 .voisins{padding:0 0 clamp(64px,9vw,112px)}
 .voisins-g{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}
@@ -230,14 +249,14 @@ footer a:hover{color:var(--accent-d)}
 <nav class="nvm" id="nvm" aria-label="Menu">
   <a href="/">Accueil</a>
   <a href="/pages/outils-metier">Outils métier<small>Un outil construit autour de votre métier</small></a>
-  <a href="/pages/automatisation-ia-entreprise">Automatisation et IA<small>Ce qui se répète, je l'automatise</small></a>
-  <a href="/#exemples">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
-  <a href="/#prix">Prix<small>À partir de 590 €, puis 89 € par mois</small></a>
-  <a href="/pages/site-internet">Sites internet<small>Dès 490 €, en ligne en 10 jours</small></a>
+  <a href="/pages/automatisation-ia-entreprise">Automatisation et IA<small>Ce qui se répète, on l'automatise</small></a>
+  <a href="/pages/outils-metier#briques">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
+  <a href="/pages/outils-metier#prix">Outils sur mesure<small>À partir de 590 €, puis 89 € par mois</small></a>
+  <a href="/pages/site-internet">Sites internet<small>Dès 400 €, en ligne en 10 jours ouvrés</small></a>
   <a href="/blogs/blog">Blog</a>
   <div class="nvm-ct">
     <a href="tel:+33786523681" class="nvm-tel">07 86 52 36 81</a>
-    <a href="/#contact" class="nvm-go">Parlons-en</a>
+    <a href="/#appel" class="nvm-go">Parlons-en</a>
   </div>
 </nav>
 <style>
@@ -277,13 +296,13 @@ footer a:hover{color:var(--accent-d)}
 </header>
 
 <main>
-  <section class="top"><div class="wrap"><div><p class="kick">Site internet pour plombier</p><h1>Le plombier qu&#x27;on appelle en premier<span class="dot">.</span></h1><p class="lead">Une fuite, un chauffe-eau en panne : votre client cherche sur son téléphone, souvent dans l&#x27;urgence. Il appelle celui qui affiche clairement son numéro, sa zone et ce qu&#x27;il fait. On construit ce site pour vous en dix jours ouvrés, à partir de 490 €.</p><div class="acts"><a href="#devis" class="btn">Demander un devis sous 24 h</a><a href="tel:+33786523681" class="btn ghost">07 86 52 36 81</a></div><p class="pour">Pour <b>les plombiers</b> et <b>les chauffagistes</b>, à leur compte ou en petite équipe : dépannage, installation, rénovation de salle de bain.</p></div><div class="devis" aria-label="Le prix, détaillé comme un devis">
+  <section class="top"><div class="wrap"><div><h1><span class="kick">Site internet pour plombier</span> Le plombier qu&#x27;on appelle en premier<span class="dot">.</span></h1><p class="lead">Une fuite, un chauffe-eau en panne : votre client cherche sur son téléphone, souvent dans l&#x27;urgence. Il appelle celui qui affiche clairement son numéro, sa zone et ce qu&#x27;il fait. On construit ce site pour vous en dix jours ouvrés, à partir de 400 €.</p><div class="acts"><a href="#devis" class="btn">Demander un devis sous 24 h</a><a href="tel:+33786523681" class="btn ghost">07 86 52 36 81</a></div><p class="pour">Pour <b>les plombiers</b> et <b>les chauffagistes</b>, à leur compte ou en petite équipe : dépannage, installation, rénovation de salle de bain.</p></div><div class="devis" aria-label="Le prix, détaillé comme un devis">
         <div class="devis-h"><b>Devis type</b><span>Site vitrine</span></div>
-        <div class="ligne"><span>Site jusqu'à 5 pages, adapté au téléphone</span><span>490 €</span></div>
+        <div class="ligne"><span>Site jusqu'à 5 pages, adapté au téléphone</span><span>400 €</span></div>
         <div class="ligne inc"><span>Textes écrits avec vous, en 30 minutes d'échange</span><span>compris</span></div>
         <div class="ligne inc"><span>Formulaire de demande, bouton d'appel, fiche Google reliée</span><span>compris</span></div>
         <div class="ligne inc"><span>Nom de domaine, mise en ligne, 1 h de prise en main</span><span>compris</span></div>
-        <div class="total"><span>Mise en place</span><div><b>dès 490 €</b><small>puis 29 € par mois</small></div></div>
+        <div class="total"><span>Mise en place</span><div><b>dès 400 €</b><small>puis dès 29 € par mois</small></div></div>
         <p class="devis-p">Prix nets, TVA non applicable, article 293 B du CGI. Moitié au démarrage, solde à la mise en ligne.</p>
       </div></div></section><section class="ex" id="exemple"><div class="wrap"><h2>Ce qu&#x27;il y a sur un site de plombier, et pourquoi<span class="dot">.</span></h2><p class="lead">Celui qui a de l&#x27;eau par terre ne lit pas. Il cherche trois informations, puis il appelle.</p><div class="ex-grid"><div><div class="nav-b" aria-hidden="true"><div class="barre"><i></i><i></i><i></i><span class="url">plomberie-roux.fr</span></div><div class="site"><div class="site-h"><b>Plomberie Roux</b><span><span class="pin">2</span><span class="site-tel">Appeler</span></span></div><div class="site-hero"><div class="txt"><h4><span class="pin" style="margin-left:0">1</span>Dépannage, chauffe-eau et salles de bain.</h4><p>Dépannage du lundi au samedi. Devis gratuit pour les travaux.</p><p class="zone"><span class="pin" style="margin-left:0">3</span>Toulouse, Blagnac, Colomiers, Balma</p><span class="cta">Décrire ma panne</span></div><div class="bois"></div></div><div class="site-bas"><div><b>Dépannage</b>Fuite, débouchage, panne.</div><div><b>Travaux</b>Chauffe-eau, salle de bain.</div><div><b>Demande <span class="pin">4</span></b>Panne, commune, créneau.</div></div></div></div><p class="fictif">Exemple fictif : Plomberie Roux n'existe pas.</p></div><ol class="notes"><li><b>L&#x27;urgence d&#x27;abord</b>Dépannage et travaux sont séparés : celui qui a une fuite voit tout de suite qu&#x27;il est au bon endroit.</li><li><b>Le numéro qui suit le visiteur</b>Sur téléphone, le bouton Appeler reste en haut de l&#x27;écran pendant qu&#x27;on fait défiler.</li><li><b>Votre zone, commune par commune</b>Le client sait si vous venez chez lui. Google aussi.</li><li><b>La demande déjà qualifiée</b>Le formulaire demande le type de panne, la commune et un créneau : vous rappelez en sachant de quoi il s&#x27;agit.</li></ol></div></div></section><section class="metier"><div class="wrap"><h2>Ce que cherchent les clients d&#x27;un plombier<span class="dot">.</span></h2><div class="metier-g"><div class="metier-i"><p>Deux clients très différents arrivent sur votre site. Celui qui a une urgence veut savoir si vous venez, quand, et comment vous joindre. Celui qui refait sa salle de bain compare : il regarde vos réalisations et votre façon de travailler.</p><p>Le site parle aux deux, sans les mélanger.</p></div><ul><li><b>Vos horaires et vos conditions d&#x27;urgence</b>Soir, week-end, déplacement : écrits clairement, ils évitent les appels qui n&#x27;aboutissent pas.</li><li><b>Vos réalisations en photos</b>Salles de bain, chaufferies, avant et après. C&#x27;est ce qui rassure pour un chantier important.</li><li><b>Vos labels et votre assurance</b>Si vous avez un label (RGE, Qualibat…) ou une assurance décennale, on l&#x27;affiche : le client la cherche avant de signer.</li><li><b>Votre fiche Google reliée</b>Les avis et la carte renvoient vers le site, et le site vers vos avis.</li></ul></div></div></section><section class="jours">
     <div class="wrap">
@@ -305,7 +324,7 @@ footer a:hover{color:var(--accent-d)}
       <h2>Ce qui est compris, ce qui ne l'est pas<span class="dot">.</span></h2>
       <div class="perim-g">
         <div>
-          <h3>Dans les 490 €</h3>
+          <h3>Dans les 400 €</h3>
           <ul>
             <li>Jusqu'à 5 pages<small>Accueil, votre métier, réalisations, à propos, contact.</small></li>
             <li>Les textes, écrits par nous<small>À partir de l'échange de 30 minutes. Vous relisez, vous corrigez.</small></li>
@@ -321,16 +340,29 @@ footer a:hover{color:var(--accent-d)}
             <li>Une boutique en ligne<small>Dès 690 €, puis 39 € par mois.</small></li>
             <li>Un shooting photo</li>
             <li>Une refonte complète après la mise en ligne</li>
-            <li>Les articles et la fiche Google tenus chaque mois<small>Dès 99 € par mois.</small></li>
+            <li>Des articles et des publications Google chaque mois<small>Dès 99 € par mois.</small></li>
           </ul>
         </div>
       </div>
       <div class="mois">
         <p class="p">29 €<small> / mois</small></p>
-        <p><b>Hébergement, sauvegardes, sécurité et petites modifications</b> (un horaire qui change, une photo, un tarif). Vous écrivez, c'est fait. Sans engagement, avec un mois de préavis.</p>
+        <p><b>Essentiel : le site reste en ligne, sans souci.</b> Hébergement, nom de domaine, sécurité, sauvegardes. Chaque demande de devis arrive dans votre boîte mail.</p>
+        <p class="p">49 €<small> / mois</small></p>
+        <p><b>Suivi : vous écrivez, c'est fait sous 48 h ouvrées.</b> Tout l'Essentiel, plus les modifications illimitées sur le site existant (un horaire, une photo, un tarif, la carte), votre fiche Google tenue à jour et un mail chaque mois : visites, appels, demandes reçues.</p>
+        <p class="mois-n">Six mois d'engagement, puis résiliable chaque mois avec un mois de préavis. Vous pouvez passer d'une formule à l'autre quand vous voulez.</p>
       </div>
     </div>
-  </section><section class="faq"><div class="wrap"><h2>Les questions qu'on nous pose<span class="dot">.</span></h2><div class="faq-l"><details><summary>J&#x27;ai déjà beaucoup d&#x27;appels. Un site, ça sert à quoi ?</summary><p>À trier. Le site répond aux questions qui reviennent (zone, horaires, types de travaux) et amène les demandes de travaux par écrit, avec les détails.</p></details><details><summary>Je peux afficher mes tarifs de dépannage ?</summary><p>Oui, si vous le souhaitez : un prix de déplacement ou une fourchette. Beaucoup de clients appellent juste pour ça.</p></details><details><summary>Je n&#x27;ai pas de photos de chantier.</summary><p>On commence avec ce que vous avez, même prises au téléphone. Les suivantes s&#x27;ajoutent au fil des chantiers avec le forfait mensuel.</p></details><details><summary>Combien de temps ça me prend ?</summary><p>Trente minutes au téléphone au départ, puis deux relectures. Les textes, c&#x27;est nous qui les écrivons.</p></details></div></div></section><section class="voisins"><div class="wrap"><h2>Les autres pages<span class="dot">.</span></h2><div class="voisins-g"><div><h3>Par métier</h3><ul><li><a href="/pages/site-internet-coach">Coach</a></li><li><a href="/pages/site-internet-coiffeur">Coiffeur</a></li><li><a href="/pages/site-internet-electricien">Électricien</a></li><li><a href="/pages/site-internet-menuisier">Menuisier</a></li><li><a href="/pages/site-internet-photographe">Photographe</a></li></ul></div><div><h3>Par ville</h3><ul><li><a href="/pages/creation-site-internet-bordeaux">Bordeaux</a></li><li><a href="/pages/creation-site-internet-lyon">Lyon</a></li><li><a href="/pages/creation-site-internet-marseille">Marseille</a></li><li><a href="/pages/creation-site-internet-paris">Paris</a></li></ul></div><div><h3>L'offre complète</h3><ul><li><a href="/pages/site-internet">Sites internet dès 490 €</a></li><li><a href="/">Prospection à la commission</a></li></ul></div></div></div></section>
+  </section><section class="real">
+    <div class="wrap">
+      <h2>Des sites déjà en ligne<span class="dot">.</span></h2>
+      <p class="lead">Trois sites qu'on a construits et qu'on fait vivre. Ouvrez-les sur votre téléphone.</p>
+      <ul class="real-l">
+        <li><a href="https://www.silverframeagency.com/" target="_blank" rel="noopener"><b>SilverFrame Agency</b><span>Production vidéo, Lyon</span><em>silverframeagency.com</em></a></li>
+        <li><a href="https://www.studio-gota.com/" target="_blank" rel="noopener"><b>Göta Studio</b><span>Studio de création</span><em>studio-gota.com</em></a></li>
+        <li><a href="https://vangart.fr/" target="_blank" rel="noopener"><b>VANGART</b><span>Studio d'art contemporain, Lyon</span><em>vangart.fr</em></a></li>
+      </ul>
+    </div>
+  </section><section class="faq"><div class="wrap"><h2>Les questions qu'on nous pose<span class="dot">.</span></h2><div class="faq-l"><details><summary>J&#x27;ai déjà beaucoup d&#x27;appels. Un site, ça sert à quoi ?</summary><p>À trier. Le site répond aux questions qui reviennent (zone, horaires, types de travaux) et amène les demandes de travaux par écrit, avec les détails.</p></details><details><summary>Je peux afficher mes tarifs de dépannage ?</summary><p>Oui, si vous le souhaitez : un prix de déplacement ou une fourchette. Beaucoup de clients appellent juste pour ça.</p></details><details><summary>Je n&#x27;ai pas de photos de chantier.</summary><p>On commence avec ce que vous avez, même prises au téléphone. Les suivantes s&#x27;ajoutent au fil des chantiers avec le forfait mensuel.</p></details><details><summary>Combien de temps ça me prend ?</summary><p>Trente minutes au téléphone au départ, puis deux relectures. Les textes, c&#x27;est nous qui les écrivons.</p></details></div></div></section><section class="voisins"><div class="wrap"><h2>Les autres pages<span class="dot">.</span></h2><div class="voisins-g"><div><h3>Par métier</h3><ul><li><a href="/pages/site-internet-institut-de-beaute">Institut de beauté</a></li><li><a href="/pages/site-internet-boucherie">Boucherie, traiteur</a></li><li><a href="/pages/site-internet-coach">Coach</a></li><li><a href="/pages/site-internet-coiffeur">Coiffeur</a></li><li><a href="/pages/site-internet-commerce-de-proximite">Commerce de proximité</a></li><li><a href="/pages/site-internet-electricien">Électricien</a></li><li><a href="/pages/site-internet-garage">Garage</a></li><li><a href="/pages/site-internet-menuisier">Menuisier</a></li><li><a href="/pages/site-internet-photographe">Photographe</a></li><li><a href="/pages/site-internet-restaurant">Restaurant</a></li></ul></div><div><h3>Par ville</h3><ul><li><a href="/pages/creation-site-internet-bordeaux">Bordeaux</a></li><li><a href="/pages/creation-site-internet-lyon">Lyon</a></li><li><a href="/pages/creation-site-internet-marseille">Marseille</a></li><li><a href="/pages/creation-site-internet-paris">Paris</a></li></ul></div><div><h3>L'offre complète</h3><ul><li><a href="/pages/site-internet">Sites internet dès 400 €</a></li><li><a href="/pages/refonte-site-internet">Refonte d'un site existant</a></li><li><a href="/">Prospection à la commission</a></li></ul></div></div></div></section>
   <section class="end" id="devis">
     <div class="wrap end-grid end-g">
       <div>
@@ -362,6 +394,8 @@ footer a:hover{color:var(--accent-d)}
     </div>
   </section>
 </main>
+<div class="mbar" id="mbar"><a href="tel:+33786523681" class="t">Appeler</a><a href="#devis" class="g">Devis sous 24 h</a></div>
+<script>(function(){var b=document.getElementById('mbar'),d=document.getElementById('devis');if(b&&d&&'IntersectionObserver' in window){new IntersectionObserver(function(e){b.classList.toggle('off',e[0].isIntersecting);},{threshold:.1}).observe(d);}})();</script>
 
 <footer>
   <div class="wrap">

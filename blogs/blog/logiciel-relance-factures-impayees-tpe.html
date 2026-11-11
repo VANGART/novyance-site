@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
+<link rel="apple-touch-icon" href="/assets/nv-apple-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F6FA;--bg2:#E9EEF5;--white:#FFF;--ink:#482719;--muted:rgba(72,39,25,.7);--soft:rgba(72,39,25,.6);--hair:rgba(72,39,25,.12);--hair-2:rgba(72,39,25,.07);--orange:#FF681F;--rose:#FF9EBC;--rose-s:#FFE6EE;--jaune-s:#FFF2D0;--bleu-s:#DFE7FF;--t:'Space Grotesk','DM Sans',system-ui,sans-serif;--b:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--e:cubic-bezier(.22,.61,.36,1);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;color-scheme:only light;}
+body{background:var(--bg);color:var(--ink);font-family:var(--b);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;}
+b,strong{font-weight:600;}
+h1,h2,h3{font-family:var(--t);font-weight:700;letter-spacing:-.02em;line-height:1.12;}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+.wide{max-width:1180px;}
+.dot{color:var(--orange);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 22px;border-radius:100px;background:var(--orange);color:var(--ink);border:0;cursor:pointer;text-decoration:none;transition:background .3s,box-shadow .35s;}
+.btn:hover{background:#FF7A3A;box-shadow:0 12px 28px -14px rgba(255,104,31,.7);}
+header{position:sticky;top:0;z-index:50;background:rgba(243,246,250,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair-2);}
+header .wrap{max-width:1180px;display:flex;justify-content:space-between;align-items:center;height:62px;}
+.brand{font-family:var(--t);font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;}
+header .rt{display:flex;gap:18px;align-items:center;font-size:13.5px;font-weight:500;}
+header .rt a{color:var(--muted);text-decoration:none;}
+header .rt a:hover{color:var(--ink);}
+header .rt a.btn{color:var(--ink);padding:9px 16px;font-size:13px;}
+.bc{font-size:12.5px;color:var(--soft);padding:22px 0 0;}
+.bc a{color:var(--soft);text-decoration:none;}
+.bc a:hover{color:var(--orange);}
+.hd{padding:16px 0 26px;}
+.hd h1{font-size:clamp(28px,4.2vw,44px);margin-bottom:14px;}
+.lead{font-size:18px;color:var(--muted);}
+.meta{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--soft);margin-top:14px;}
+.meta span+span::before{content:'·';margin-right:14px;}
+.cover{margin:6px 0 10px;border-radius:20px;overflow:hidden;background:var(--bg2);}
+.cover img{display:block;width:100%;height:auto;}
+.rte{padding:22px 0 10px;font-size:17px;}
+.rte h2{font-size:clamp(22px,2.5vw,27px);margin:38px 0 12px;}
+.rte h3{font-size:18px;margin:26px 0 8px;}
+.rte p{margin-bottom:16px;color:rgba(72,39,25,.82);}
+.rte p strong,.rte li strong{color:var(--ink);}
+.rte ul,.rte ol{margin:0 0 18px;padding-left:0;list-style:none;}
+.rte li{position:relative;padding-left:18px;margin-bottom:9px;color:rgba(72,39,25,.82);}
+.rte li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+.rte a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--orange);}
+.rte img{max-width:100%;height:auto;border-radius:16px;margin:10px 0;}
+.rte table{width:100%;border-collapse:collapse;margin:8px 0 22px;font-size:15px;display:block;overflow-x:auto;}
+.rte th,.rte td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);}
+.rte th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.rte tr:first-child td{font-weight:600;color:var(--ink);}
+.rte blockquote{background:var(--rose-s);border-radius:16px;padding:20px 22px;margin:22px 0;font-size:16px;}
+.rte blockquote p:last-child{margin-bottom:0;}
+.aut{display:flex;gap:14px;align-items:center;background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:18px 20px;margin:30px 0 10px;}
+.aut .mono{width:46px;height:46px;border-radius:14px;background:var(--rose);display:grid;place-items:center;font-family:var(--t);font-weight:700;font-size:22px;flex:none;}
+.aut .mono i{color:var(--orange);font-style:normal;}
+.aut p{font-size:14px;color:var(--muted);}
+.aut b{color:var(--ink);}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.post{background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .35s var(--e),box-shadow .35s var(--e);}
+.post:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(72,39,25,.35);}
+.post small{font-size:12px;color:var(--soft);letter-spacing:.04em;}
+.post b{font-family:var(--t);font-size:18px;line-height:1.25;}
+.post span{font-size:14px;color:var(--muted);flex:1;}
+.post em{font-style:normal;font-size:13px;font-weight:600;color:#C94A0E;}
+.pag{display:flex;justify-content:center;gap:10px;margin:30px 0;font-size:14px;}
+.pag a,.pag span{padding:8px 14px;border-radius:100px;background:var(--white);text-decoration:none;}
+.more{padding:40px 0 10px;}
+.more h2{font-size:clamp(20px,2.4vw,26px);margin-bottom:16px;}
+.ct{background:var(--bg2);margin-top:44px;padding:48px 0 52px;}
+.ct h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:10px;}
+.ct p{color:var(--muted);margin-bottom:20px;}
+footer{background:var(--bg2);padding:30px 0;border-top:1px solid var(--hair);}
+footer .wrap{max-width:1180px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
+footer a{color:var(--muted);text-decoration:none;}
+footer a:hover{color:var(--orange);}
+footer .lk{display:flex;gap:18px;flex-wrap:wrap;}
+@media (max-width:860px){.posts{grid-template-columns:1fr 1fr;}}
+@media (max-width:620px){.wrap{padding:0 20px;}.posts{grid-template-columns:1fr;}header .rt a:not(.btn){display:none;}.rte{font-size:16px;}footer .lk a{padding:6px 0;}}
+</style>
+
+<title>Logiciel relance factures impayées TPE : partir de la banque · Novyance</title>
+<meta name="description" content="Logiciel de relance de factures impayées pour TPE : savoir qui doit vraiment grâce à la banque, relances prêtes en brouillon, validées d&#x27;un clic.">
+<meta property="og:title" content="Logiciel relance factures impayées TPE : partir de la banque">
+<meta property="og:description" content="Logiciel de relance de factures impayées pour TPE : savoir qui doit vraiment grâce à la banque, relances prêtes en brouillon, validées d&#x27;un clic.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novyance.fr/blogs/blog/logiciel-relance-factures-impayees-tpe">
+<meta property="og:image" content="https://novyance.fr/assets/nv-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://novyance.fr/blogs/blog/logiciel-relance-factures-impayees-tpe">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Logiciel de relance de factures impayées pour TPE : partir de la banque","description":"Logiciel de relance de factures impayées pour TPE : savoir qui doit vraiment grâce à la banque, relances prêtes en brouillon, validées d'un clic.","datePublished":"2026-11-05T09:00:00+01:00","dateModified":"2026-11-05T09:00:00+01:00","image":"https://novyance.fr/assets/nv-og.png","mainEntityOfPage":"https://novyance.fr/blogs/blog/logiciel-relance-factures-impayees-tpe","author":{"@type":"Person","name":"Aurélien Ruotte","url":"https://novyance.fr/"},"publisher":{"@type":"Organization","name":"Novyance","url":"https://novyance.fr/","logo":{"@type":"ImageObject","url":"https://novyance.fr/assets/nv-apple-touch.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://novyance.fr/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://novyance.fr/blogs/blog"},{"@type":"ListItem","position":3,"name":"Logiciel de relance de factures impayées pour TPE : partir de la banque","item":"https://novyance.fr/blogs/blog/logiciel-relance-factures-impayees-tpe"}]}
+</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Mon logiciel de facturation fait déjà des relances, j'ai besoin d'autre chose ?", "acceptedAnswer": {"@type": "Answer", "text": "Regardez s'il sait ce qui est vraiment arrivé sur votre compte. S'il faut tout pointer à la main pour que les relances soient justes, c'est là que vous perdez du temps et que les erreurs arrivent."}}, {"@type": "Question", "name": "Les relances partent-elles toutes seules ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas au départ. Elles sont préparées en brouillon et vous les validez. Vous activez l'envoi automatique quand vous le décidez, et vous pouvez l'arrêter pour un client précis à tout moment."}}, {"@type": "Question", "name": "Est-ce que je peux garder mon logiciel de facturation ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L'outil lit vos factures et vos encaissements, il ne remplace pas votre facturation."}}, {"@type": "Question", "name": "Combien de temps pour la mise en place ?", "acceptedAnswer": {"@type": "Answer", "text": "Comptez environ une semaine : connexion de la banque, reprise des factures en cours, écriture des modèles de relance, puis une session de formation."}}, {"@type": "Question", "name": "Combien ça coûte ?", "acceptedAnswer": {"@type": "Answer", "text": "Pour un outil sur mesure, la mise en place démarre à partir de 590 €, puis à partir de 89 € par mois, maintenance comprise. Le prix est par entreprise, pas par utilisateur, et il est confirmé au devis."}}, {"@type": "Question", "name": "Est-ce que je peux récupérer mes données si j'arrête ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Vos clients, vos factures et l'historique des relances sont exportables à tout moment. Vous voulez savoir combien de factures dorment en ce moment sans relance ? Décrivez votre façon de facturer en trois questions , je vous réponds sous 24 h."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="/pages/outils-metier">Outils</a>
+      <a href="/pages/site-internet">Sites</a>
+      <a href="/pages/automatisation-ia-entreprise">Automatisation et IA</a>
+      <a href="/pages/apporteurs-affaires">Apporteurs d'affaires</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/#appel" class="btn">Parlons-en</a>
+      
+<button class="nvb" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nvm"><i></i><i></i><i></i></button>
+<nav class="nvm" id="nvm" aria-label="Menu">
+  <a href="/">Accueil</a>
+  <a href="/pages/outils-metier">Outils métier<small>Un outil construit autour de votre métier</small></a>
+  <a href="/pages/automatisation-ia-entreprise">Automatisation et IA<small>Ce qui se répète, on l'automatise</small></a>
+  <a href="/pages/outils-metier#briques">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
+  <a href="/pages/outils-metier#prix">Outils sur mesure<small>À partir de 590 €, puis 89 € par mois</small></a>
+  <a href="/pages/site-internet">Sites internet<small>Dès 400 €, en ligne en 10 jours ouvrés</small></a>
+  <a href="/blogs/blog">Blog</a>
+  <div class="nvm-ct">
+    <a href="tel:+33786523681" class="nvm-tel">07 86 52 36 81</a>
+    <a href="/#appel" class="nvm-go">Parlons-en</a>
+  </div>
+</nav>
+<style>
+  .nvb{display:none;width:44px;height:44px;flex:0 0 44px;border-radius:14px;border:1px solid rgba(72,39,25,.14);background:#fff;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;margin-left:8px;}
+  .nvb i{display:block;width:18px;height:2px;border-radius:2px;background:#482719;transition:transform .25s,opacity .25s;}
+  .nvb[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nvb[aria-expanded="true"] i:nth-child(2){opacity:0;}
+  .nvb[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nvm{display:none;}
+  @media (max-width:860px){
+    .nvb{display:inline-flex;}
+    .nvm.open{display:block;position:fixed;top:68px;left:12px;right:12px;z-index:80;background:#fff;border:1px solid rgba(72,39,25,.08);border-radius:20px;box-shadow:0 30px 60px -30px rgba(72,39,25,.45);padding:8px;max-height:calc(100vh - 84px);max-height:calc(100dvh - 84px);overflow:auto;animation:nvm-in .2s ease both;}
+    .nvm a{display:block !important;padding:13px 16px !important;border-radius:12px;text-decoration:none;color:#482719 !important;font-weight:600;font-size:16px !important;line-height:1.3;}
+    .nvm a:active,.nvm a:hover{background:#F3F6FA;}
+    .nvm a small{display:block;font-weight:400;font-size:13px;color:rgba(72,39,25,.6);margin-top:2px;}
+    .nvm-ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-top:1px solid rgba(72,39,25,.08);margin-top:6px;}
+    .nvm-ct a{text-align:center;border-radius:100px;padding:14px 10px !important;font-size:15px !important;}
+    .nvm-ct .nvm-tel{border:1px solid rgba(72,39,25,.14);}
+    .nvm-ct .nvm-go{background:#FF681F;}
+    @keyframes nvm-in{from{opacity:0;transform:translateY(-6px);}}
+  }
+</style>
+<script>
+  (function(){
+    var b = document.currentScript.parentNode.querySelector('.nvb'), m = document.getElementById('nvm');
+    if (!b || !m) return;
+    function poser(o){ m.classList.toggle('open', o); b.setAttribute('aria-expanded', o ? 'true' : 'false'); b.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); }
+    b.addEventListener('click', function(e){ e.stopPropagation(); poser(!m.classList.contains('open')); });
+    m.addEventListener('click', function(e){ if (e.target.closest('a')) poser(false); });
+    document.addEventListener('click', function(e){ if (m.classList.contains('open') && !m.contains(e.target)) poser(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') poser(false); });
+  })();
+</script>
+
+    </div>
+  </div>
+</header>
+
+<article class="wrap">
+  <div class="bc"><a href="/">Accueil</a> · <a href="/blogs/blog">Blog</a> · Logiciel de relance de factures impayées pour TPE : partir de la banque</div>
+  <div class="hd">
+    <h1>Logiciel de relance de factures impayées pour TPE : partir de la banque</h1>
+    <p class="lead">Les logiciels de relance sont souvent pensés pour des PME avec un service comptable. Dans une TPE, c&#x27;est le patron qui relance. Voici un outil qui part de la banque pour savoir qui doit vraiment, prépare chaque relance en brouillon et vous laisse valider d&#x27;un clic.</p>
+    <div class="meta"><span>Aurélien Ruotte</span><span>05/11/2026</span><span>5 min de lecture</span></div>
+  </div>
+  
+  <div class="rte"><p>Cherchez un <strong>logiciel de relance de factures impayées pour TPE</strong> et vous trouverez surtout des outils de recouvrement pensés pour des PME avec un service comptable. Dans une entreprise de cinq personnes, il n'y a pas de service comptable. Il y a le patron, le soir, qui se demande qui lui doit encore de l'argent.</p><p>Je vous explique ce qu'un outil de relance doit faire quand c'est vous qui relancez, et pourquoi le point de départ n'est pas votre logiciel de facturation, mais votre compte en banque.</p><blockquote><p><strong>En bref.</strong> Dans une TPE, la relance bloque rarement sur le modèle de mail. Elle bloque sur trois questions : qui n'a pas payé, à qui c'est le tour de relancer, et sur quel ton. Un bon outil part de la banque pour savoir ce qui est vraiment encaissé, prépare chaque relance à l'avance et vous laisse la valider en un clic. Il suit aussi la relance jusqu'à la mise en demeure, sans que vous ayez à vous en souvenir.</p></blockquote><h2>Pourquoi les impayés traînent dans une petite entreprise</h2><p>Le problème n'est presque jamais la mauvaise foi du client. C'est l'oubli, des deux côtés.</p><ul><li><strong>Vous ne savez pas exactement qui a payé.</strong> Les virements arrivent avec des libellés incompréhensibles, un client règle deux factures d'un coup, un autre paie un acompte. Pointer tout ça à la main prend du temps, donc on le fait tard.</li><li><strong>Relancer est désagréable.</strong> On repousse. Le client est sympathique, on ne veut pas l'embêter, et la facture vieillit.</li><li><strong>Personne n'est chargé de le faire.</strong> Dans une petite équipe, chacun pense que l'autre s'en occupe.</li></ul><p>Un logiciel de recouvrement classique règle surtout le deuxième point, en envoyant des mails tout seul. Il ne règle ni le premier ni le troisième. <strong>Et une relance envoyée à un client qui a déjà payé fait plus de dégâts qu'une facture en retard.</strong></p><h2>Partir de la banque, pas du logiciel de facturation</h2><p>Votre logiciel de facturation sait ce que vous avez facturé. Il ne sait pas toujours ce qui est arrivé sur le compte. Le seul document qui fait foi, c'est le relevé bancaire.</p><p>C'est pour ça que je construis les relances à partir des encaissements. Chaque virement reçu est rapproché de la facture qu'il règle. Ce qui reste ouvert après ce pointage, c'est la vraie liste des impayés. <strong>Vous ne relancez que des factures réellement dues, jamais un client à jour.</strong></p><p>Le même pointage alimente votre trésorerie : ce qui doit rentrer cette semaine, ce qui a du retard, ce qui risque de manquer à la fin du mois. Vous pouvez voir ce type d'écran dans la <a href="/pages/demo-pilotage">démo Pilotage</a>, avec des données fictives.</p><h2>Les étapes d'une relance qui se fait sans y penser</h2><p>Une bonne relance n'a rien de compliqué. Ce qui compte, c'est qu'elle parte au bon moment, à chaque fois. Voici l'enchaînement que je mets en place, avec des délais que vous choisissez selon vos clients :</p><ol><li><strong>Rappel avant l'échéance</strong> : un message court et aimable, la facture en pièce jointe. C'est le message le plus simple, et parfois il suffit.</li><li><strong>Première relance après l'échéance</strong> : le même ton, le montant, la date, le lien de paiement ou le RIB.</li><li><strong>Relance ferme</strong> : rappel des pénalités prévues sur la facture, demande d'une date de paiement.</li><li><strong>Appel</strong> : l'outil vous met le client dans la liste du jour, avec son numéro et l'historique.</li><li><strong>Mise en demeure</strong> : un courrier préparé avec toutes les factures concernées, à envoyer en recommandé.</li></ol><p>Les règles sur les délais de paiement entre professionnels et les pénalités de retard sont résumées sur la fiche officielle <a href="https://entreprendre.service-public.fr/vosdroits/F23211" target="_blank" rel="noopener">Délais de paiement entre professionnels et pénalités de retard</a>. Si une relance doit aller loin, une facture complète vous facilite la vie : la liste est sur la fiche <a href="https://entreprendre.service-public.fr/vosdroits/F31808" target="_blank" rel="noopener">Mentions obligatoires sur une facture</a>.</p><h2>Brouillon validé ou envoi automatique</h2><p>La plupart des outils vendent l'envoi automatique. Je suis plus prudent. <strong>Par défaut, chaque relance est préparée en brouillon, et vous la validez d'un clic.</strong> Vous gardez la main sur le client qui vous a prévenu d'un retard au téléphone, sur celui qui est en litige, sur le gros client qu'on ne relance pas comme un inconnu.</p><p>Quand vos modèles sont rodés et que vous avez confiance, vous activez l'envoi automatique, client par client ou pour tout le monde.</p><table><thead><tr><th></th><th>Logiciel de facturation</th><th>Logiciel de recouvrement</th><th>Outil sur mesure</th></tr></thead><tbody><tr><td>Savoir qui a vraiment payé</td><td>Selon le pointage que vous faites</td><td>Souvent par synchronisation à régler</td><td>Rapprochement avec la banque</td></tr><tr><td>Relances</td><td>Basiques, parfois absentes</td><td>Scénarios complets</td><td>Vos étapes, vos délais, vos mots</td></tr><tr><td>Contrôle avant envoi</td><td>Manuel</td><td>Envoi automatique en général</td><td>Brouillon validé, automatique si vous voulez</td></tr><tr><td>Lien avec le reste</td><td>Devis et factures</td><td>Poste client seulement</td><td>Trésorerie, clients, planning si besoin</td></tr><tr><td>Pensé pour</td><td>Toutes les tailles</td><td>PME avec un service comptable</td><td>Votre entreprise</td></tr></tbody></table><h2>Le ton change selon le client</h2><p>Un client fidèle qui a oublié et un client qui paie toujours en retard ne reçoivent pas le même message. Dans l'outil, chaque fiche client porte une indication simple : relance douce, normale ou ferme. Les modèles s'adaptent tout seuls.</p><p>Vous voyez aussi, sur la fiche, comment ce client a payé par le passé. <strong>Avant d'accepter un nouveau devis, vous savez si vous demandez un acompte.</strong> C'est souvent là que se règle le prochain impayé. Ce suivi peut s'ajouter à un <a href="/pages/crm-sur-mesure">CRM sur mesure</a> si vous en avez déjà un pour vos devis.</p><h2>Qui relance, et quand</h2><p>Dans une équipe de quelques personnes, la relance doit avoir un nom. L'outil l'attribue : la gérante, l'assistante, le commercial qui a signé le client. Chaque matin, la personne voit sa liste du jour, rien d'autre. <strong>La relance devient une tâche courte du matin, plus une charge mentale.</strong></p><p>Si vous le voulez, un récapitulatif de la semaine arrive par mail : ce qui a été encaissé, ce qui a été relancé, ce qui bloque.</p><h2>Ce que ça demande de votre côté</h2><p>Pas grand-chose. On relie votre banque, on importe vos factures ouvertes, on écrit ensemble vos modèles de relance dans vos mots. Ensuite, votre seul travail est de valider ou de corriger les brouillons. La brique relance fait partie des <a href="/pages/outils-metier">outils métier</a> que je compose selon chaque entreprise, et elle se combine avec une <a href="/pages/application-pilotage-sur-mesure">application de pilotage sur mesure</a> si vous voulez suivre toute votre trésorerie.</p><h2>Questions fréquentes</h2><h3>Mon logiciel de facturation fait déjà des relances, j'ai besoin d'autre chose ?</h3><p>Regardez s'il sait ce qui est vraiment arrivé sur votre compte. S'il faut tout pointer à la main pour que les relances soient justes, c'est là que vous perdez du temps et que les erreurs arrivent.</p><h3>Les relances partent-elles toutes seules ?</h3><p>Pas au départ. Elles sont préparées en brouillon et vous les validez. Vous activez l'envoi automatique quand vous le décidez, et vous pouvez l'arrêter pour un client précis à tout moment.</p><h3>Est-ce que je peux garder mon logiciel de facturation ?</h3><p>Oui. L'outil lit vos factures et vos encaissements, il ne remplace pas votre facturation.</p><h3>Combien de temps pour la mise en place ?</h3><p>Comptez environ une semaine : connexion de la banque, reprise des factures en cours, écriture des modèles de relance, puis une session de formation.</p><h3>Combien ça coûte ?</h3><p>Pour un outil sur mesure, la mise en place démarre à partir de 590 €, puis à partir de 89 € par mois, maintenance comprise. Le prix est par entreprise, pas par utilisateur, et il est confirmé au devis.</p><h3>Est-ce que je peux récupérer mes données si j'arrête ?</h3><p>Oui. Vos clients, vos factures et l'historique des relances sont exportables à tout moment.</p><p><strong>Vous voulez savoir combien de factures dorment en ce moment sans relance ?</strong> <a href="/#top">Décrivez votre façon de facturer en trois questions</a>, je vous réponds sous 24 h.</p>
+</div>
+  <div class="aut"><div class="mono">n<i>.</i></div><p><b>Aurélien Ruotte</b>, fondateur de Novyance à Lyon. Il construit des sites et des outils sur mesure pour les TPE et PME, et répond lui-même à chaque demande.</p></div>
+</article>
+<section class="wrap wide more"><h2>À lire aussi<span class="dot">.</span></h2><div class="posts"><a class="post" href="/blogs/blog/crm-pour-artisan"><small>09/11/2026</small><b>CRM pour artisan : ne plus perdre une demande ni un devis</b><span>Les comparatifs de CRM pour artisan parlent surtout de devis et de factures. L&#x27;argent se perd ailleurs : la demande jamais rappelée, le devis jamais relancé.</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/remplacer-excel-par-une-application"><small>19/10/2026</small><b>Remplacer Excel par une application : les 7 signes que c&#x27;est le moment</b><span>Excel a fait tourner des milliers de petites entreprises. Mais il arrive un moment où le fichier qui rendait service devient celui que tout le monde</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/prix-logiciel-sur-mesure-tpe"><small>15/10/2026</small><b>Combien coûte un logiciel sur mesure pour une TPE en 2026 ?</b><span>Développement en agence, logiciel du marché ou outil sur mesure en abonnement : trois façons de payer un outil pour une TPE, avec des montants très</span><em>Lire l'article →</em></a></div></section>
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · <a href="mailto:contact@novyance.fr">contact@novyance.fr</a></span>
+    <span class="lk">
+      <a href="/pages/outils-metier">Outils métier sur mesure</a>
+      <a href="/pages/creation-site-internet-lyon">Site à Lyon</a>
+      <a href="/pages/application-pilotage-sur-mesure">Application de pilotage</a>
+      <a href="/pages/crm-sur-mesure">CRM sur mesure</a>
+      <a href="/pages/prospection-automatisee">Prospection automatisée</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/">Accueil</a>
+      
+      <a href="/pages/cgv">CGV</a>
+      <a href="/pages/confidentialite">Confidentialité</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

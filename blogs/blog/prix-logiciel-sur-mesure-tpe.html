@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
+<link rel="apple-touch-icon" href="/assets/nv-apple-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F6FA;--bg2:#E9EEF5;--white:#FFF;--ink:#482719;--muted:rgba(72,39,25,.7);--soft:rgba(72,39,25,.6);--hair:rgba(72,39,25,.12);--hair-2:rgba(72,39,25,.07);--orange:#FF681F;--rose:#FF9EBC;--rose-s:#FFE6EE;--jaune-s:#FFF2D0;--bleu-s:#DFE7FF;--t:'Space Grotesk','DM Sans',system-ui,sans-serif;--b:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--e:cubic-bezier(.22,.61,.36,1);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;color-scheme:only light;}
+body{background:var(--bg);color:var(--ink);font-family:var(--b);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;}
+b,strong{font-weight:600;}
+h1,h2,h3{font-family:var(--t);font-weight:700;letter-spacing:-.02em;line-height:1.12;}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+.wide{max-width:1180px;}
+.dot{color:var(--orange);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 22px;border-radius:100px;background:var(--orange);color:var(--ink);border:0;cursor:pointer;text-decoration:none;transition:background .3s,box-shadow .35s;}
+.btn:hover{background:#FF7A3A;box-shadow:0 12px 28px -14px rgba(255,104,31,.7);}
+header{position:sticky;top:0;z-index:50;background:rgba(243,246,250,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair-2);}
+header .wrap{max-width:1180px;display:flex;justify-content:space-between;align-items:center;height:62px;}
+.brand{font-family:var(--t);font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;}
+header .rt{display:flex;gap:18px;align-items:center;font-size:13.5px;font-weight:500;}
+header .rt a{color:var(--muted);text-decoration:none;}
+header .rt a:hover{color:var(--ink);}
+header .rt a.btn{color:var(--ink);padding:9px 16px;font-size:13px;}
+.bc{font-size:12.5px;color:var(--soft);padding:22px 0 0;}
+.bc a{color:var(--soft);text-decoration:none;}
+.bc a:hover{color:var(--orange);}
+.hd{padding:16px 0 26px;}
+.hd h1{font-size:clamp(28px,4.2vw,44px);margin-bottom:14px;}
+.lead{font-size:18px;color:var(--muted);}
+.meta{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--soft);margin-top:14px;}
+.meta span+span::before{content:'·';margin-right:14px;}
+.cover{margin:6px 0 10px;border-radius:20px;overflow:hidden;background:var(--bg2);}
+.cover img{display:block;width:100%;height:auto;}
+.rte{padding:22px 0 10px;font-size:17px;}
+.rte h2{font-size:clamp(22px,2.5vw,27px);margin:38px 0 12px;}
+.rte h3{font-size:18px;margin:26px 0 8px;}
+.rte p{margin-bottom:16px;color:rgba(72,39,25,.82);}
+.rte p strong,.rte li strong{color:var(--ink);}
+.rte ul,.rte ol{margin:0 0 18px;padding-left:0;list-style:none;}
+.rte li{position:relative;padding-left:18px;margin-bottom:9px;color:rgba(72,39,25,.82);}
+.rte li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+.rte a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--orange);}
+.rte img{max-width:100%;height:auto;border-radius:16px;margin:10px 0;}
+.rte table{width:100%;border-collapse:collapse;margin:8px 0 22px;font-size:15px;display:block;overflow-x:auto;}
+.rte th,.rte td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);}
+.rte th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.rte tr:first-child td{font-weight:600;color:var(--ink);}
+.rte blockquote{background:var(--rose-s);border-radius:16px;padding:20px 22px;margin:22px 0;font-size:16px;}
+.rte blockquote p:last-child{margin-bottom:0;}
+.aut{display:flex;gap:14px;align-items:center;background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:18px 20px;margin:30px 0 10px;}
+.aut .mono{width:46px;height:46px;border-radius:14px;background:var(--rose);display:grid;place-items:center;font-family:var(--t);font-weight:700;font-size:22px;flex:none;}
+.aut .mono i{color:var(--orange);font-style:normal;}
+.aut p{font-size:14px;color:var(--muted);}
+.aut b{color:var(--ink);}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.post{background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .35s var(--e),box-shadow .35s var(--e);}
+.post:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(72,39,25,.35);}
+.post small{font-size:12px;color:var(--soft);letter-spacing:.04em;}
+.post b{font-family:var(--t);font-size:18px;line-height:1.25;}
+.post span{font-size:14px;color:var(--muted);flex:1;}
+.post em{font-style:normal;font-size:13px;font-weight:600;color:#C94A0E;}
+.pag{display:flex;justify-content:center;gap:10px;margin:30px 0;font-size:14px;}
+.pag a,.pag span{padding:8px 14px;border-radius:100px;background:var(--white);text-decoration:none;}
+.more{padding:40px 0 10px;}
+.more h2{font-size:clamp(20px,2.4vw,26px);margin-bottom:16px;}
+.ct{background:var(--bg2);margin-top:44px;padding:48px 0 52px;}
+.ct h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:10px;}
+.ct p{color:var(--muted);margin-bottom:20px;}
+footer{background:var(--bg2);padding:30px 0;border-top:1px solid var(--hair);}
+footer .wrap{max-width:1180px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
+footer a{color:var(--muted);text-decoration:none;}
+footer a:hover{color:var(--orange);}
+footer .lk{display:flex;gap:18px;flex-wrap:wrap;}
+@media (max-width:860px){.posts{grid-template-columns:1fr 1fr;}}
+@media (max-width:620px){.wrap{padding:0 20px;}.posts{grid-template-columns:1fr;}header .rt a:not(.btn){display:none;}.rte{font-size:16px;}footer .lk a{padding:6px 0;}}
+</style>
+
+<title>Prix d&#x27;un logiciel sur mesure pour TPE en 2026 · Novyance</title>
+<meta name="description" content="Agence, logiciel du marché ou sur mesure en abonnement : ce que coûte vraiment un outil pour une TPE sur trois ans, et ce qui fait varier le prix.">
+<meta property="og:title" content="Prix d&#x27;un logiciel sur mesure pour TPE en 2026">
+<meta property="og:description" content="Agence, logiciel du marché ou sur mesure en abonnement : ce que coûte vraiment un outil pour une TPE sur trois ans, et ce qui fait varier le prix.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novyance.fr/blogs/blog/prix-logiciel-sur-mesure-tpe">
+<meta property="og:image" content="https://novyance.fr/assets/nv-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://novyance.fr/blogs/blog/prix-logiciel-sur-mesure-tpe">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Combien coûte un logiciel sur mesure pour une TPE en 2026 ?","description":"Agence, logiciel du marché ou sur mesure en abonnement : ce que coûte vraiment un outil pour une TPE sur trois ans, et ce qui fait varier le prix.","datePublished":"2026-10-15T09:00:00+02:00","dateModified":"2026-10-15T09:00:00+02:00","image":"https://novyance.fr/assets/nv-og.png","mainEntityOfPage":"https://novyance.fr/blogs/blog/prix-logiciel-sur-mesure-tpe","author":{"@type":"Person","name":"Aurélien Ruotte","url":"https://novyance.fr/"},"publisher":{"@type":"Organization","name":"Novyance","url":"https://novyance.fr/","logo":{"@type":"ImageObject","url":"https://novyance.fr/assets/nv-apple-touch.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://novyance.fr/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://novyance.fr/blogs/blog"},{"@type":"ListItem","position":3,"name":"Combien coûte un logiciel sur mesure pour une TPE en 2026 ?","item":"https://novyance.fr/blogs/blog/prix-logiciel-sur-mesure-tpe"}]}
+</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Un logiciel sur mesure est-il forcément plus cher qu'un logiciel du marché ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Sur trois ans, et dès que plusieurs personnes l'utilisent, un outil sur mesure en abonnement d'entreprise peut coûter moins cher qu'un logiciel facturé par utilisateur. Il est surtout plus juste : il ne contient que ce qui vous sert."}}, {"@type": "Question", "name": "Combien de temps faut-il pour le mettre en place ?", "acceptedAnswer": {"@type": "Answer", "text": "Pour une première brique, une semaine chez Novyance, formation comprise. Un projet d'agence complet compte plutôt en semaines ou en mois."}}, {"@type": "Question", "name": "Qui est propriétaire de mes données ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous. Elles doivent être exportables à tout moment, et vous devez pouvoir repartir avec si vous arrêtez. Posez la question avant de signer, quelle que soit la formule."}}, {"@type": "Question", "name": "Puis-je arrêter l'abonnement ?", "acceptedAnswer": {"@type": "Answer", "text": "Chez Novyance, après trois mois, d'un mois sur l'autre avec un mois de préavis. Vous gardez vos données."}}, {"@type": "Question", "name": "Faut-il un cahier des charges ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas pour commencer. Trente minutes au téléphone suffisent pour comprendre ce qui vous coûte le plus et proposer une première brique. Le reste se précise en l'utilisant. Pour aller plus loin : les outils métier sur mesure , choisir un logiciel de planning pour un atelier , ou décrivez votre besoin en deux lignes : je vous réponds sous 24 heures avec un prix ferme."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="/pages/outils-metier">Outils</a>
+      <a href="/pages/site-internet">Sites</a>
+      <a href="/pages/automatisation-ia-entreprise">Automatisation et IA</a>
+      <a href="/pages/apporteurs-affaires">Apporteurs d'affaires</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/#appel" class="btn">Parlons-en</a>
+      
+<button class="nvb" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nvm"><i></i><i></i><i></i></button>
+<nav class="nvm" id="nvm" aria-label="Menu">
+  <a href="/">Accueil</a>
+  <a href="/pages/outils-metier">Outils métier<small>Un outil construit autour de votre métier</small></a>
+  <a href="/pages/automatisation-ia-entreprise">Automatisation et IA<small>Ce qui se répète, on l'automatise</small></a>
+  <a href="/pages/outils-metier#briques">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
+  <a href="/pages/outils-metier#prix">Outils sur mesure<small>À partir de 590 €, puis 89 € par mois</small></a>
+  <a href="/pages/site-internet">Sites internet<small>Dès 400 €, en ligne en 10 jours ouvrés</small></a>
+  <a href="/blogs/blog">Blog</a>
+  <div class="nvm-ct">
+    <a href="tel:+33786523681" class="nvm-tel">07 86 52 36 81</a>
+    <a href="/#appel" class="nvm-go">Parlons-en</a>
+  </div>
+</nav>
+<style>
+  .nvb{display:none;width:44px;height:44px;flex:0 0 44px;border-radius:14px;border:1px solid rgba(72,39,25,.14);background:#fff;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;margin-left:8px;}
+  .nvb i{display:block;width:18px;height:2px;border-radius:2px;background:#482719;transition:transform .25s,opacity .25s;}
+  .nvb[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nvb[aria-expanded="true"] i:nth-child(2){opacity:0;}
+  .nvb[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nvm{display:none;}
+  @media (max-width:860px){
+    .nvb{display:inline-flex;}
+    .nvm.open{display:block;position:fixed;top:68px;left:12px;right:12px;z-index:80;background:#fff;border:1px solid rgba(72,39,25,.08);border-radius:20px;box-shadow:0 30px 60px -30px rgba(72,39,25,.45);padding:8px;max-height:calc(100vh - 84px);max-height:calc(100dvh - 84px);overflow:auto;animation:nvm-in .2s ease both;}
+    .nvm a{display:block !important;padding:13px 16px !important;border-radius:12px;text-decoration:none;color:#482719 !important;font-weight:600;font-size:16px !important;line-height:1.3;}
+    .nvm a:active,.nvm a:hover{background:#F3F6FA;}
+    .nvm a small{display:block;font-weight:400;font-size:13px;color:rgba(72,39,25,.6);margin-top:2px;}
+    .nvm-ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-top:1px solid rgba(72,39,25,.08);margin-top:6px;}
+    .nvm-ct a{text-align:center;border-radius:100px;padding:14px 10px !important;font-size:15px !important;}
+    .nvm-ct .nvm-tel{border:1px solid rgba(72,39,25,.14);}
+    .nvm-ct .nvm-go{background:#FF681F;}
+    @keyframes nvm-in{from{opacity:0;transform:translateY(-6px);}}
+  }
+</style>
+<script>
+  (function(){
+    var b = document.currentScript.parentNode.querySelector('.nvb'), m = document.getElementById('nvm');
+    if (!b || !m) return;
+    function poser(o){ m.classList.toggle('open', o); b.setAttribute('aria-expanded', o ? 'true' : 'false'); b.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); }
+    b.addEventListener('click', function(e){ e.stopPropagation(); poser(!m.classList.contains('open')); });
+    m.addEventListener('click', function(e){ if (e.target.closest('a')) poser(false); });
+    document.addEventListener('click', function(e){ if (m.classList.contains('open') && !m.contains(e.target)) poser(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') poser(false); });
+  })();
+</script>
+
+    </div>
+  </div>
+</header>
+
+<article class="wrap">
+  <div class="bc"><a href="/">Accueil</a> · <a href="/blogs/blog">Blog</a> · Combien coûte un logiciel sur mesure pour une TPE en 2026 ?</div>
+  <div class="hd">
+    <h1>Combien coûte un logiciel sur mesure pour une TPE en 2026 ?</h1>
+    <p class="lead">Développement en agence, logiciel du marché ou outil sur mesure en abonnement : trois façons de payer un outil pour une TPE, avec des montants très différents. Le comparatif sur trois ans et ce qui fait vraiment varier le prix.</p>
+    <div class="meta"><span>Aurélien Ruotte</span><span>15/10/2026</span><span>5 min de lecture</span></div>
+  </div>
+  
+  <div class="rte"><p>Demander le <strong>prix d'un logiciel sur mesure</strong>, c'est souvent recevoir une fourchette qui va de 5 000 à 50 000 €, sans savoir ce qui fait la différence. Pour une TPE de deux à trente personnes, ces chiffres font peur, et ils poussent vers un tableur de plus ou un logiciel du marché qui ne colle qu'à moitié.</p><p>Il existe pourtant trois façons de payer un outil fait pour votre entreprise, avec des montants très différents. Voici comment les comparer honnêtement, et ce qui fait vraiment varier le prix.</p><blockquote><p><strong>En bref.</strong> Un développement en agence se paie d'un bloc, souvent plusieurs milliers d'euros, puis la maintenance à part. Un logiciel du marché se paie au mois et par utilisateur. Un outil sur mesure en abonnement combine les deux : une mise en place modeste, puis un forfait mensuel pour toute l'entreprise, maintenance comprise. Le bon choix dépend surtout du nombre de personnes qui s'en servent et de ce qui vous est propre.</p></blockquote><h2>Les trois façons de payer un outil</h2><h3>1. Le développement en agence : un projet, un devis</h3><p>L'agence étudie votre besoin, rédige un cahier des charges, développe, puis livre. Vous payez le projet, en général en plusieurs fois. Les agences que j'ai relevées en septembre 2026 annoncent des fourchettes qui commencent autour de <strong>3 000 à 5 000 €</strong> pour un petit outil et montent vite au-delà de <strong>15 000 à 20 000 €</strong> dès qu'il y a plusieurs écrans et des connexions à d'autres logiciels.</p><p>À ce montant s'ajoutent l'hébergement et la maintenance, facturés à part, souvent au mois. C'est la bonne formule pour un projet lourd et stable. C'est rarement la bonne pour une TPE qui veut d'abord régler un problème précis.</p><h3>2. Le logiciel du marché : un abonnement par utilisateur</h3><p>Planning, CRM, devis, trésorerie : il existe un logiciel pour presque tout. Les éditeurs pour TPE affichaient en septembre 2026 des abonnements de <strong>20 à 200 € par mois</strong>, parfois <strong>par utilisateur</strong>. Les logiciels de gestion complets comme Odoo demandent en plus un paramétrage, qui peut coûter plusieurs milliers d'euros chez un intégrateur.</p><p>L'avantage : c'est immédiat. La limite : vous vous adaptez au logiciel, pas l'inverse. Et la facture grossit avec l'équipe.</p><h3>3. L'outil sur mesure en abonnement</h3><p>C'est la formule que je propose chez Novyance, et d'autres petites structures la pratiquent aussi. On construit l'outil autour de votre façon de travailler, on le met en place, puis il vit avec un abonnement mensuel qui couvre l'hébergement, la maintenance et les évolutions courantes.</p><p>Chez Novyance, c'est <strong>à partir de 590 € de mise en place, puis 89 € par mois pour toute l'entreprise</strong>, pas par utilisateur, avec une formation de l'équipe incluse. Le prix exact dépend de ce que vous voulez dedans.</p><h2>Le comparatif sur trois ans</h2><p>Le prix d'entrée ne dit pas grand-chose. Ce qui compte, c'est ce que vous aurez payé au bout de trois ans, et ce que vous aurez obtenu.</p><table><tbody><tr><td>Formule</td><td>Au départ</td><td>Ensuite</td><td>Ce qui fait monter la facture</td></tr><tr><td>Développement en agence</td><td>Plusieurs milliers d'euros</td><td>Maintenance et évolutions facturées à part</td><td>Chaque changement est un nouveau devis</td></tr><tr><td>Logiciel du marché</td><td>Faible, parfois un paramétrage</td><td>Abonnement mensuel, souvent par personne</td><td>Le nombre d'utilisateurs, les modules en plus</td></tr><tr><td>Sur mesure en abonnement</td><td>Une mise en place modeste</td><td>Forfait mensuel pour toute l'entreprise</td><td>Les briques que vous ajoutez au fil du temps</td></tr></tbody></table><p><strong>Faites le calcul avec votre propre équipe.</strong> Un logiciel à 30 € par mois et par personne coûte 1 080 € par an pour trois personnes, et 3 600 € par an pour dix. Un forfait d'entreprise ne bouge pas quand vous embauchez.</p><h2>Ce qui fait vraiment varier le prix</h2><p>Quelle que soit la formule, cinq choses font monter ou baisser la note.</p><ul><li><strong>Le nombre d'écrans et d'étapes.</strong> Un planning d'atelier avec trois statuts n'a rien à voir avec une gestion de production complète.</li><li><strong>Les connexions.</strong> Se brancher sur votre banque, votre boîte mail, votre logiciel de facturation ou votre site demande du travail, mais c'est ce qui supprime la ressaisie.</li><li><strong>La reprise de vos données.</strong> Repartir de vos fichiers Excel existants est presque toujours possible. Plus ils sont propres, plus c'est rapide.</li><li><strong>Le téléphone.</strong> Un outil que l'équipe utilise sur le chantier ou à l'atelier doit être pensé pour le téléphone dès le départ.</li><li><strong>Ce qui vous est propre.</strong> Un calcul, un document, une règle que personne d'autre n'a : c'est justement ce qu'aucun logiciel du marché ne fera.</li></ul><h2>Comment ne pas payer trop cher</h2><p>La règle que j'applique : <strong>commencer petit, par ce qui vous coûte le plus</strong>. Une seule brique, utile dès la première semaine, puis la suivante quand la première tourne vraiment. Une TPE qui achète un outil complet d'un coup paie souvent des écrans que personne n'ouvre.</p><ol><li><strong>Listez ce qui vous fait perdre du temps chaque semaine</strong>, avec une estimation honnête des heures.</li><li><strong>Chiffrez ce que ça coûte</strong> : heures par semaine, multipliées par la valeur d'une heure, multipliées par 47 semaines travaillées.</li><li><strong>Comparez avec le prix de l'outil sur un an.</strong> Si l'outil coûte moins que le temps perdu, la question n'est plus de savoir s'il faut le faire.</li><li><strong>Vérifiez la sortie</strong> : vos données doivent vous appartenir et rester exportables, quelle que soit la formule.</li></ol><p>Avant de vous engager, essayez quelque chose de concret. Les <a href="/pages/demo-atelier">démos Novyance</a> tournent avec des données fictives : planning d'atelier, <a href="/pages/application-pilotage-sur-mesure">pilotage et trésorerie</a>, suivi commercial. Vous verrez tout de suite si ce type d'outil vous parle.</p><h2>Et les aides ?</h2><p>Certaines régions et chambres consulaires financent une partie des projets numériques des TPE. Les dispositifs changent souvent : le plus sûr est de vérifier sur <a href="https://www.francenum.gouv.fr" target="_blank" rel="noopener">France Num</a>, le portail de l'État pour la transformation numérique des TPE, et auprès de votre CCI ou de votre chambre de métiers.</p><h2>Questions fréquentes</h2><h3>Un logiciel sur mesure est-il forcément plus cher qu'un logiciel du marché ?</h3><p>Non. Sur trois ans, et dès que plusieurs personnes l'utilisent, un outil sur mesure en abonnement d'entreprise peut coûter moins cher qu'un logiciel facturé par utilisateur. Il est surtout plus juste : il ne contient que ce qui vous sert.</p><h3>Combien de temps faut-il pour le mettre en place ?</h3><p>Pour une première brique, une semaine chez Novyance, formation comprise. Un projet d'agence complet compte plutôt en semaines ou en mois.</p><h3>Qui est propriétaire de mes données ?</h3><p>Vous. Elles doivent être exportables à tout moment, et vous devez pouvoir repartir avec si vous arrêtez. Posez la question avant de signer, quelle que soit la formule.</p><h3>Puis-je arrêter l'abonnement ?</h3><p>Chez Novyance, après trois mois, d'un mois sur l'autre avec un mois de préavis. Vous gardez vos données.</p><h3>Faut-il un cahier des charges ?</h3><p>Pas pour commencer. Trente minutes au téléphone suffisent pour comprendre ce qui vous coûte le plus et proposer une première brique. Le reste se précise en l'utilisant.</p><p>Pour aller plus loin : <a href="/pages/outils-metier">les outils métier sur mesure</a>, <a href="/blogs/blog/logiciel-planning-atelier-menuiserie">choisir un logiciel de planning pour un atelier</a>, ou <a href="/#contact">décrivez votre besoin en deux lignes</a> : je vous réponds sous 24 heures avec un prix ferme.</p>
+</div>
+  <div class="aut"><div class="mono">n<i>.</i></div><p><b>Aurélien Ruotte</b>, fondateur de Novyance à Lyon. Il construit des sites et des outils sur mesure pour les TPE et PME, et répond lui-même à chaque demande.</p></div>
+</article>
+<section class="wrap wide more"><h2>À lire aussi<span class="dot">.</span></h2><div class="posts"><a class="post" href="/blogs/blog/crm-pour-artisan"><small>09/11/2026</small><b>CRM pour artisan : ne plus perdre une demande ni un devis</b><span>Les comparatifs de CRM pour artisan parlent surtout de devis et de factures. L&#x27;argent se perd ailleurs : la demande jamais rappelée, le devis jamais relancé.</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/logiciel-relance-factures-impayees-tpe"><small>05/11/2026</small><b>Logiciel de relance de factures impayées pour TPE : partir de la banque</b><span>Les logiciels de relance sont souvent pensés pour des PME avec un service comptable. Dans une TPE, c&#x27;est le patron qui relance. Voici un outil qui</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/remplacer-excel-par-une-application"><small>19/10/2026</small><b>Remplacer Excel par une application : les 7 signes que c&#x27;est le moment</b><span>Excel a fait tourner des milliers de petites entreprises. Mais il arrive un moment où le fichier qui rendait service devient celui que tout le monde</span><em>Lire l'article →</em></a></div></section>
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · <a href="mailto:contact@novyance.fr">contact@novyance.fr</a></span>
+    <span class="lk">
+      <a href="/pages/outils-metier">Outils métier sur mesure</a>
+      <a href="/pages/creation-site-internet-lyon">Site à Lyon</a>
+      <a href="/pages/application-pilotage-sur-mesure">Application de pilotage</a>
+      <a href="/pages/crm-sur-mesure">CRM sur mesure</a>
+      <a href="/pages/prospection-automatisee">Prospection automatisée</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/">Accueil</a>
+      
+      <a href="/pages/cgv">CGV</a>
+      <a href="/pages/confidentialite">Confidentialité</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
