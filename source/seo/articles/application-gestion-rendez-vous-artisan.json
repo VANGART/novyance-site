@@ -1,0 +1,24 @@
+{
+  "statut": "rédigé 16/11, daté 2026-12-07, en cours de vérification",
+  "title": "Application de gestion de rendez-vous pour artisan : trier avant de donner un créneau",
+  "handle": "application-gestion-rendez-vous-artisan",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": "2026-12-07T09:00:00+01:00",
+  "summary": "<p>Les applications de rendez-vous sont pensées pour des commerces où le client se déplace. Un artisan, lui, roule, et ne connaît pas la durée de l'intervention à l'avance. Voici ce qu'il faut regarder : le trajet, le tri des demandes avant de donner un créneau, et la suite du rendez-vous, du devis à la facture.</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Application gestion rendez-vous artisan : trier d'abord"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Application de gestion de rendez-vous pour artisan : trajets, durée variable, urgences, suite du rendez-vous. Ce qu'il faut regarder avant de choisir."
+    }
+  ]
+}
