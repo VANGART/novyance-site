@@ -232,7 +232,7 @@ def pages_sites(sortie):
                 return ""
             return '<div><h3>%s</h3><ul>%s</ul></div>' % (titre, "".join('<li><a href="%s">%s</a></li>' % (x["url"], e(x["lien"])) for x in autres))
         return ('<section class="voisins"><div class="wrap"><h2>Les autres pages<span class="dot">.</span></h2><div class="voisins-g">%s%s'
-                '<div><h3>L\'offre complète</h3><ul>%s<li><a href="/pages/refonte-site-internet">Refonte d\'un site existant</a></li><li><a href="/">Prospection à la commission</a></li></ul></div>'
+                '<div><h3>L\'offre complète</h3><ul>%s<li><a href="/pages/refonte-site-internet">Refonte d\'un site existant</a></li><li><a href="/">Prospection commerciale</a></li></ul></div>'
                 '</div></div></section>') % (groupe("Par métier", "metier"), groupe("Par ville", "ville"),
                                              '' if d["url"] == "/pages/site-internet" else '<li><a href="/pages/site-internet">Sites internet dès 400 €</a></li>')
     urls = []
@@ -292,7 +292,7 @@ def pages_sites(sortie):
 
 LEGALES = {
     "/pages/cgv": ("seo/legal/cgv.html", "Conditions générales de vente · Novyance",
-                   "Conditions générales de vente de Novyance : prospection à la commission, sites internet, outils sur mesure. Prix, paiement, engagement, données."),
+                   "Conditions générales de vente de Novyance : prospection commerciale, sites internet, outils sur mesure. Prix, paiement, engagement, données."),
     "/pages/confidentialite": ("seo/legal/confidentialite.html", "Politique de confidentialité · Novyance",
                                "Quelles données Novyance collecte, pourquoi, combien de temps, qui y a accès, et comment exercer vos droits."),
 }
@@ -351,14 +351,14 @@ CSS_SITES = """
 
 LLMS = """# Novyance
 
-> Novyance (Aurélien Ruotte, Lyon) aide les petites entreprises françaises de 2 à 30 personnes à trouver des clients et à mieux s'organiser : sites internet, outils métier sur mesure, prospection commerciale payée à la commission. Micro-entreprise, SIRET 940 553 043 00032. Contact : contact@novyance.fr, 07 86 52 36 81.
+> Novyance (Aurélien Ruotte, Lyon) aide les petites entreprises françaises de 2 à 30 personnes à trouver des clients et à mieux s'organiser : sites internet, outils métier sur mesure, prospection commerciale payée à la commission, au forfait ou au rendez-vous. Micro-entreprise, SIRET 940 553 043 00032. Contact : contact@novyance.fr, 07 86 52 36 81.
 
 ## Offres et prix (toujours « à partir de », TVA non applicable, art. 293 B du CGI)
 
 - [Site internet vitrine](https://novyance.fr/pages/site-internet) : à partir de 400 €, jusqu'à 5 pages, en ligne en 10 jours ouvrés. Puis 29 € par mois (hébergement, nom de domaine, sécurité, demandes de devis par mail) ou 49 € par mois (en plus : modifications illimitées sous 48 h ouvrées, fiche Google tenue à jour, rapport mensuel). Engagement de 6 mois.
 - [Refonte d'un site existant](https://novyance.fr/pages/refonte-site-internet) : même prix, le nom de domaine et les adresses mail sont conservés.
 - [Outils métier sur mesure](https://novyance.fr/pages/outils-metier) : à partir de 590 € de mise en place, puis 89 € par mois. Prix par entreprise, pas par utilisateur. Engagement de 3 mois.
-- [Prospection commerciale externalisée](https://novyance.fr/) : 0 € de mise en place, aucun abonnement, un pourcentage des ventes apportées. Exemple gratuit sous 24 h.
+- [Prospection commerciale externalisée](https://novyance.fr/) : à la commission (0 € de mise en place, un pourcentage des ventes apportées), au forfait mensuel ou au rendez-vous, sur devis. Exemple gratuit sous 24 h.
 - [Boutique en ligne](https://novyance.fr/pages/boutique-en-ligne-commercant) : à partir de 690 €, puis 39 € par mois.
 
 ## Pages utiles
@@ -431,7 +431,7 @@ def main():
                                      'ul{list-style:none;padding:0;margin:32px 0;border-top:2px solid #482719}li{border-bottom:1px solid rgba(72,39,25,.14)}li a{display:block;padding:14px 0;color:#482719;text-decoration:none;font-weight:600}li a:hover{color:#C2470F}'
                                      '.t{display:inline-block;background:#FF681F;color:#fff;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:600}</style>'
                                      '<main><a class="b" href="/">novyance<i>.</i></a><h1>Cette page n\'existe pas<i>.</i></h1><p>L\'adresse a peut-être changé. Voici où aller.</p>'
-                                     '<ul><li><a href="/">Prospection à la commission</a></li><li><a href="/pages/site-internet">Sites internet dès 400 €</a></li><li><a href="/pages/outils-metier">Outils sur mesure</a></li><li><a href="/blogs/blog">Le blog</a></li></ul>'
+                                     '<ul><li><a href="/">Prospection commerciale</a></li><li><a href="/pages/site-internet">Sites internet dès 400 €</a></li><li><a href="/pages/outils-metier">Outils sur mesure</a></li><li><a href="/blogs/blog">Le blog</a></li></ul>'
                                      '<a class="t" href="tel:+33786523681">Appeler le 07 86 52 36 81</a></main>', encoding="utf-8")
     (sortie / "llms.txt").write_text(LLMS, encoding="utf-8")
     if (RACINE / "outils/CNAME-novyance").exists():
