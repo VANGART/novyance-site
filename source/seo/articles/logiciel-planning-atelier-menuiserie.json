@@ -12,13 +12,13 @@
       "namespace": "global",
       "key": "title_tag",
       "type": "single_line_text_field",
-      "value": "Logiciel de planning pour menuiserie : bien choisir"
+      "value": "Logiciel planning menuiserie : choisir pour son atelier"
     },
     {
       "namespace": "global",
       "key": "description_tag",
       "type": "single_line_text_field",
-      "value": "Logiciel de planning pour atelier de menuiserie : ce qu'il doit gérer, Excel ou outil sur mesure, les pièges à éviter et 5 questions à poser."
+      "value": "Planning d'atelier de menuiserie : Excel, logiciel du marché ou outil sur mesure ? Ce qu'il doit gérer, les pièges et 5 questions à poser avant de choisir."
     }
   ]
 }

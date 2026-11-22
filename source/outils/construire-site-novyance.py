@@ -14,6 +14,8 @@ from pathlib import Path
 RACINE = Path(__file__).resolve().parent.parent
 SITE = "https://novyance.fr"
 CONTACT_URL = "https://sqxlavinbiryvmblmtse.supabase.co/functions/v1/contact"
+# Mesure d'audience GoatCounter (sans cookies, sans bandeau) : code du site créé sur goatcounter.com. Vide = rien n'est ajouté.
+GOATCOUNTER = "novyance"
 PARIS = datetime.timezone(datetime.timedelta(hours=1))
 
 # gabarit -> adresse (mêmes adresses que sur Shopify, pour ne rien casser)
@@ -437,6 +439,12 @@ def main():
     if (RACINE / "outils/CNAME-novyance").exists():
         shutil.copy(RACINE / "outils/CNAME-novyance", sortie / "CNAME")
     (sortie / ".nojekyll").write_text("", encoding="utf-8")
+    if GOATCOUNTER:  # mesure d'audience sur toutes les pages (accueil, blog, 404, copies .html)
+        balise = '<script data-goatcounter="https://%s.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>' % GOATCOUNTER
+        for p in sortie.rglob("*.html"):
+            t = p.read_text(encoding="utf-8")
+            if "gc.zgo.at" not in t:
+                p.write_text(t.replace("</body>", balise + "\n</body>", 1) if "</body>" in t else t + balise, encoding="utf-8")
     reste = [str(m) for p in sortie.rglob("*.html") for m in re.findall(r"\{\{.*?\}\}|\{%.*?%\}", p.read_text(encoding="utf-8")) if "<" not in m][:10]
     print("Pages : %d · articles publiés : %d · Liquid restant : %s" % (len(PAGES) + len(LIVE) + 1, len(liste), reste or "aucun"))
 
