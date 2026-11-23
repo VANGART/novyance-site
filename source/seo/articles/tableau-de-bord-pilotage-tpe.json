@@ -1,0 +1,25 @@
+{
+  "statut": "rédigé 23/11, daté 2026-12-14",
+  "blogId": "gid://shopify/Blog/129686995286",
+  "title": "Tableau de bord de pilotage pour TPE : cinq questions, un écran",
+  "handle": "tableau-de-bord-pilotage-tpe",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": "2026-12-14T09:00:00+01:00",
+  "summary": "<p>Un tableau de bord de pilotage pour TPE doit tenir sur un écran et répondre à cinq questions : cash, factures dues, devis signés, retards, charge. Voici comment le construire à partir de ce que vous utilisez déjà, sans saisie en double.</p>",
+  "metafields": [
+    {
+      "namespace": "global",
+      "key": "title_tag",
+      "type": "single_line_text_field",
+      "value": "Tableau de bord pilotage TPE : cinq questions, un écran"
+    },
+    {
+      "namespace": "global",
+      "key": "description_tag",
+      "type": "single_line_text_field",
+      "value": "Tableau de bord de pilotage pour TPE : cinq questions pour décider chaque semaine, alimenté par vos outils, sans saisie en double."
+    }
+  ]
+}
