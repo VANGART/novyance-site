@@ -1,0 +1,14 @@
+{
+  "statut": "rédigé 26/11, daté 2026-12-17",
+  "title": "Logiciel de suivi clients pour petite entreprise : une fiche, une liste du jour",
+  "handle": "logiciel-suivi-clients-petite-entreprise",
+  "author": "Aurélien Ruotte",
+  "templateSuffix": "nv",
+  "isPublished": false,
+  "publishDate": "2026-12-17T09:00:00+01:00",
+  "summary": "<p>Les comparatifs de CRM parlent de pipelines de vente. Dans une petite entreprise, le suivi clients sert à ne pas oublier un devis, retrouver un historique et savoir qui doit de l'argent. Voici ce qu'une fiche client doit contenir, et pourquoi l'outil doit lire ce qui existe déjà.</p>",
+  "metafields": [
+    {"namespace": "global", "key": "title_tag", "type": "single_line_text_field", "value": "Logiciel suivi clients petite entreprise : l'essentiel"},
+    {"namespace": "global", "key": "description_tag", "type": "single_line_text_field", "value": "Logiciel de suivi clients pour petite entreprise : une fiche par client, devis et paiements réunis, une liste du jour. Sans ressaisie, données exportables."}
+  ]
+}
