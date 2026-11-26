@@ -352,14 +352,14 @@ CSS_SITES = """
 
 LLMS = """# Novyance
 
-> Novyance (Aurélien Ruotte, Lyon) aide les petites entreprises françaises de 2 à 30 personnes à trouver des clients et à mieux s'organiser : sites internet, outils métier sur mesure, prospection commerciale payée à la commission, au forfait ou au rendez-vous. Micro-entreprise, SIRET 940 553 043 00032. Contact : contact@novyance.fr, 07 86 52 36 81.
+> Novyance (Aurélien Ruotte, Lyon) aide les petites entreprises françaises de 2 à 30 personnes à trouver des clients et à mieux s'organiser : sites internet, outils métier sur mesure, prospection commerciale au forfait ou à la commission. Micro-entreprise, SIRET 940 553 043 00032. Contact : contact@novyance.fr, 07 86 52 36 81.
 
 ## Offres et prix (toujours « à partir de », TVA non applicable, art. 293 B du CGI)
 
 - [Site internet vitrine](https://novyance.fr/pages/site-internet) : à partir de 400 €, jusqu'à 5 pages, en ligne en 10 jours ouvrés. Puis 29 € par mois (hébergement, nom de domaine, sécurité, demandes de devis par mail) ou 49 € par mois (en plus : modifications illimitées sous 48 h ouvrées, fiche Google tenue à jour, rapport mensuel). Engagement de 6 mois.
 - [Refonte d'un site existant](https://novyance.fr/pages/refonte-site-internet) : même prix, le nom de domaine et les adresses mail sont conservés.
 - [Outils métier sur mesure](https://novyance.fr/pages/outils-metier) : à partir de 590 € de mise en place, puis 89 € par mois. Prix par entreprise, pas par utilisateur. Engagement de 3 mois.
-- [Prospection commerciale externalisée](https://novyance.fr/) : à la commission (0 € de mise en place, un pourcentage des ventes apportées), au forfait mensuel ou au rendez-vous, sur devis. Exemple gratuit sous 24 h.
+- [Prospection commerciale externalisée](https://novyance.fr/) : deux formules. Au forfait : mise en route à partir de 290 €, une fois, puis à partir de 390 € par mois à compter du premier envoi, plus 8 % des ventes signées avec les entreprises contactées pendant 12 mois. Engagement de 3 mois d'envois, puis résiliable avec un mois de préavis. Inclus : une boîte d'envoi, un volume mensuel convenu, un bilan chaque mois ; pages personnalisées par prospect et appels en option. À la commission : mise en route à partir de 490 €, une fois, puis 15 % des ventes signées pendant 12 mois, sans forfait mensuel. Exemple sur un vrai prospect sous 24 h.
 - [Boutique en ligne](https://novyance.fr/pages/boutique-en-ligne-commercant) : à partir de 690 €, puis 39 € par mois.
 
 ## Pages utiles
