@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F3F6FA">
+
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
+<link rel="apple-touch-icon" href="/assets/nv-apple-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F6FA;--bg2:#E9EEF5;--white:#FFF;--ink:#482719;--muted:rgba(72,39,25,.7);--soft:rgba(72,39,25,.6);--hair:rgba(72,39,25,.12);--hair-2:rgba(72,39,25,.07);--orange:#FF681F;--rose:#FF9EBC;--rose-s:#FFE6EE;--jaune-s:#FFF2D0;--bleu-s:#DFE7FF;--t:'Space Grotesk','DM Sans',system-ui,sans-serif;--b:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--e:cubic-bezier(.22,.61,.36,1);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;color-scheme:only light;}
+body{background:var(--bg);color:var(--ink);font-family:var(--b);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;}
+b,strong{font-weight:600;}
+h1,h2,h3{font-family:var(--t);font-weight:700;letter-spacing:-.02em;line-height:1.12;}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+.wide{max-width:1180px;}
+.dot{color:var(--orange);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 22px;border-radius:100px;background:var(--orange);color:var(--ink);border:0;cursor:pointer;text-decoration:none;transition:background .3s,box-shadow .35s;}
+.btn:hover{background:#FF7A3A;box-shadow:0 12px 28px -14px rgba(255,104,31,.7);}
+header{position:sticky;top:0;z-index:50;background:rgba(243,246,250,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair-2);}
+header .wrap{max-width:1180px;display:flex;justify-content:space-between;align-items:center;height:62px;}
+.brand{font-family:var(--t);font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;}
+header .rt{display:flex;gap:18px;align-items:center;font-size:13.5px;font-weight:500;}
+header .rt a{color:var(--muted);text-decoration:none;}
+header .rt a:hover{color:var(--ink);}
+header .rt a.btn{color:var(--ink);padding:9px 16px;font-size:13px;}
+.bc{font-size:12.5px;color:var(--soft);padding:22px 0 0;}
+.bc a{color:var(--soft);text-decoration:none;}
+.bc a:hover{color:var(--orange);}
+.hd{padding:16px 0 26px;}
+.hd h1{font-size:clamp(28px,4.2vw,44px);margin-bottom:14px;}
+.lead{font-size:18px;color:var(--muted);}
+.meta{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--soft);margin-top:14px;}
+.meta span+span::before{content:'·';margin-right:14px;}
+.cover{margin:6px 0 10px;border-radius:20px;overflow:hidden;background:var(--bg2);}
+.cover img{display:block;width:100%;height:auto;}
+.rte{padding:22px 0 10px;font-size:17px;}
+.rte h2{font-size:clamp(22px,2.5vw,27px);margin:38px 0 12px;}
+.rte h3{font-size:18px;margin:26px 0 8px;}
+.rte p{margin-bottom:16px;color:rgba(72,39,25,.82);}
+.rte p strong,.rte li strong{color:var(--ink);}
+.rte ul,.rte ol{margin:0 0 18px;padding-left:0;list-style:none;}
+.rte li{position:relative;padding-left:18px;margin-bottom:9px;color:rgba(72,39,25,.82);}
+.rte li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+.rte a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--orange);}
+.rte img{max-width:100%;height:auto;border-radius:16px;margin:10px 0;}
+.rte table{width:100%;border-collapse:collapse;margin:8px 0 22px;font-size:15px;display:block;overflow-x:auto;}
+.rte th,.rte td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);}
+.rte th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.rte tr:first-child td{font-weight:600;color:var(--ink);}
+.rte blockquote{background:var(--rose-s);border-radius:16px;padding:20px 22px;margin:22px 0;font-size:16px;}
+.rte blockquote p:last-child{margin-bottom:0;}
+.aut{display:flex;gap:14px;align-items:center;background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:18px 20px;margin:30px 0 10px;}
+.aut .mono{width:46px;height:46px;border-radius:14px;background:var(--rose);display:grid;place-items:center;font-family:var(--t);font-weight:700;font-size:22px;flex:none;}
+.aut .mono i{color:var(--orange);font-style:normal;}
+.aut p{font-size:14px;color:var(--muted);}
+.aut b{color:var(--ink);}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.post{background:var(--white);border:1px solid var(--hair-2);border-radius:18px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .35s var(--e),box-shadow .35s var(--e);}
+.post:hover{transform:translateY(-3px);box-shadow:0 22px 40px -28px rgba(72,39,25,.35);}
+.post small{font-size:12px;color:var(--soft);letter-spacing:.04em;}
+.post b{font-family:var(--t);font-size:18px;line-height:1.25;}
+.post span{font-size:14px;color:var(--muted);flex:1;}
+.post em{font-style:normal;font-size:13px;font-weight:600;color:#C94A0E;}
+.pag{display:flex;justify-content:center;gap:10px;margin:30px 0;font-size:14px;}
+.pag a,.pag span{padding:8px 14px;border-radius:100px;background:var(--white);text-decoration:none;}
+.more{padding:40px 0 10px;}
+.more h2{font-size:clamp(20px,2.4vw,26px);margin-bottom:16px;}
+.ct{background:var(--bg2);margin-top:44px;padding:48px 0 52px;}
+.ct h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:10px;}
+.ct p{color:var(--muted);margin-bottom:20px;}
+footer{background:var(--bg2);padding:30px 0;border-top:1px solid var(--hair);}
+footer .wrap{max-width:1180px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
+footer a{color:var(--muted);text-decoration:none;}
+footer a:hover{color:var(--orange);}
+footer .lk{display:flex;gap:18px;flex-wrap:wrap;}
+@media (max-width:860px){.posts{grid-template-columns:1fr 1fr;}}
+@media (max-width:620px){.wrap{padding:0 20px;}.posts{grid-template-columns:1fr;}header .rt a:not(.btn){display:none;}.rte{font-size:16px;}footer .lk a{padding:6px 0;}}
+</style>
+
+<title>Outil de prospection automatisée TPE : un seul outil, pas 5 · Novyance</title>
+<meta name="description" content="Outil de prospection automatisée pour TPE : ciblage, messages en brouillon validés, domaine d&#x27;envoi séparé et réponses rangées au même endroit.">
+<meta property="og:title" content="Outil de prospection automatisée TPE : un seul outil, pas 5">
+<meta property="og:description" content="Outil de prospection automatisée pour TPE : ciblage, messages en brouillon validés, domaine d&#x27;envoi séparé et réponses rangées au même endroit.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novyance.fr/blogs/blog/outil-prospection-automatisee-tpe">
+<meta property="og:image" content="https://novyance.fr/assets/nv-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://novyance.fr/blogs/blog/outil-prospection-automatisee-tpe">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Outil de prospection automatisée pour TPE : un seul outil, pas cinq","description":"Outil de prospection automatisée pour TPE : ciblage, messages en brouillon validés, domaine d'envoi séparé et réponses rangées au même endroit.","datePublished":"2026-11-26T09:00:00+01:00","dateModified":"2026-11-26T09:00:00+01:00","image":"https://novyance.fr/assets/nv-og.png","mainEntityOfPage":"https://novyance.fr/blogs/blog/outil-prospection-automatisee-tpe","author":{"@type":"Person","name":"Aurélien Ruotte","url":"https://novyance.fr/"},"publisher":{"@type":"Organization","name":"Novyance","url":"https://novyance.fr/","logo":{"@type":"ImageObject","url":"https://novyance.fr/assets/nv-apple-touch.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://novyance.fr/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://novyance.fr/blogs/blog"},{"@type":"ListItem","position":3,"name":"Outil de prospection automatisée pour TPE : un seul outil, pas cinq","item":"https://novyance.fr/blogs/blog/outil-prospection-automatisee-tpe"}]}
+</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "J'ai déjà un CRM, j'ai besoin d'un outil de prospection en plus ?", "acceptedAnswer": {"@type": "Answer", "text": "Un CRM range les contacts que vous avez déjà. Il ne trouve pas de nouvelles entreprises et n'écrit pas les messages. Si votre CRM vous convient, l'outil de prospection peut lui transmettre les prospects intéressés."}}, {"@type": "Question", "name": "Les messages partent-ils tout seuls ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas au départ. Ils sont préparés en brouillon et vous les validez. Vous activez l'envoi automatique quand vous le décidez, et vous pouvez l'arrêter pour une audience précise à tout moment."}}, {"@type": "Question", "name": "Est-ce que la prospection par mail est légale vers des entreprises ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, en B2B, si le message concerne l'activité du destinataire, identifie l'expéditeur, indique d'où vient son adresse et permet de se désinscrire facilement. Ce sont les règles appliquées à chaque campagne."}}, {"@type": "Question", "name": "Est-ce que je risque de finir dans les spams ?", "acceptedAnswer": {"@type": "Answer", "text": "Le risque baisse beaucoup avec un domaine séparé, chauffé progressivement, des volumes raisonnables et des messages écrits pour chaque entreprise. Votre adresse principale, elle, n'est jamais utilisée pour prospecter."}}, {"@type": "Question", "name": "Combien ça coûte ?", "acceptedAnswer": {"@type": "Answer", "text": "La mise en place démarre à partir de 590 €, puis à partir de 89 € par mois, maintenance comprise. Le prix est par entreprise, pas par utilisateur, et il est confirmé au devis selon les volumes."}}, {"@type": "Question", "name": "Est-ce que je peux récupérer mes données si j'arrête ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Vos listes de prospects, vos messages et l'historique des réponses sont exportables à tout moment. Vous voulez savoir quelles entreprises de votre secteur auraient besoin de vous ? Décrivez votre activité en trois questions , je vous réponds sous 24 h ouvrées."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="/" class="brand">novyance<span class="dot">.</span></a>
+    <div class="rt">
+      <a href="/pages/outils-metier">Outils</a>
+      <a href="/pages/site-internet">Sites</a>
+      <a href="/pages/automatisation-ia-entreprise">Automatisation et IA</a>
+      <a href="/pages/apporteurs-affaires">Apporteurs d'affaires</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/#appel" class="btn">Parlons-en</a>
+      
+<button class="nvb" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nvm"><i></i><i></i><i></i></button>
+<nav class="nvm" id="nvm" aria-label="Menu">
+  <a href="/">Accueil</a>
+  <a href="/pages/outils-metier">Outils métier<small>Un outil construit autour de votre métier</small></a>
+  <a href="/pages/automatisation-ia-entreprise">Automatisation et IA<small>Ce qui se répète, on l'automatise</small></a>
+  <a href="/pages/outils-metier#briques">Exemples à essayer<small>Trois outils avec des données fictives</small></a>
+  <a href="/pages/outils-metier#prix">Outils sur mesure<small>À partir de 590 €, puis 89 € par mois</small></a>
+  <a href="/pages/site-internet">Sites internet<small>Dès 400 €, en ligne en 10 jours ouvrés</small></a>
+  <a href="/blogs/blog">Blog</a>
+  <div class="nvm-ct">
+    <a href="tel:+33786523681" class="nvm-tel">07 86 52 36 81</a>
+    <a href="/#appel" class="nvm-go">Parlons-en</a>
+  </div>
+</nav>
+<style>
+  .nvb{display:none;width:44px;height:44px;flex:0 0 44px;border-radius:14px;border:1px solid rgba(72,39,25,.14);background:#fff;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0;margin-left:8px;}
+  .nvb i{display:block;width:18px;height:2px;border-radius:2px;background:#482719;transition:transform .25s,opacity .25s;}
+  .nvb[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nvb[aria-expanded="true"] i:nth-child(2){opacity:0;}
+  .nvb[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nvm{display:none;}
+  @media (max-width:860px){
+    .nvb{display:inline-flex;}
+    .nvm.open{display:block;position:fixed;top:68px;left:12px;right:12px;z-index:80;background:#fff;border:1px solid rgba(72,39,25,.08);border-radius:20px;box-shadow:0 30px 60px -30px rgba(72,39,25,.45);padding:8px;max-height:calc(100vh - 84px);max-height:calc(100dvh - 84px);overflow:auto;animation:nvm-in .2s ease both;}
+    .nvm a{display:block !important;padding:13px 16px !important;border-radius:12px;text-decoration:none;color:#482719 !important;font-weight:600;font-size:16px !important;line-height:1.3;}
+    .nvm a:active,.nvm a:hover{background:#F3F6FA;}
+    .nvm a small{display:block;font-weight:400;font-size:13px;color:rgba(72,39,25,.6);margin-top:2px;}
+    .nvm-ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-top:1px solid rgba(72,39,25,.08);margin-top:6px;}
+    .nvm-ct a{text-align:center;border-radius:100px;padding:14px 10px !important;font-size:15px !important;}
+    .nvm-ct .nvm-tel{border:1px solid rgba(72,39,25,.14);}
+    .nvm-ct .nvm-go{background:#FF681F;}
+    @keyframes nvm-in{from{opacity:0;transform:translateY(-6px);}}
+  }
+</style>
+<script>
+  (function(){
+    var b = document.currentScript.parentNode.querySelector('.nvb'), m = document.getElementById('nvm');
+    if (!b || !m) return;
+    function poser(o){ m.classList.toggle('open', o); b.setAttribute('aria-expanded', o ? 'true' : 'false'); b.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); }
+    b.addEventListener('click', function(e){ e.stopPropagation(); poser(!m.classList.contains('open')); });
+    m.addEventListener('click', function(e){ if (e.target.closest('a')) poser(false); });
+    document.addEventListener('click', function(e){ if (m.classList.contains('open') && !m.contains(e.target)) poser(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') poser(false); });
+  })();
+</script>
+
+    </div>
+  </div>
+</header>
+
+<article class="wrap">
+  <div class="bc"><a href="/">Accueil</a> · <a href="/blogs/blog">Blog</a> · Outil de prospection automatisée pour TPE : un seul outil, pas cinq</div>
+  <div class="hd">
+    <h1>Outil de prospection automatisée pour TPE : un seul outil, pas cinq</h1>
+    <p class="lead">Les comparatifs d&#x27;outils de prospection proposent une pile de quatre ou cinq logiciels, pensée pour des équipes commerciales. Dans une TPE, c&#x27;est le patron qui prospecte. Voici un outil unique qui cible, prépare chaque message en brouillon et range les réponses au même endroit.</p>
+    <div class="meta"><span>Aurélien Ruotte</span><span>26/11/2026</span><span>6 min de lecture</span></div>
+  </div>
+  
+  <div class="rte"><p>Tapez <strong>outil de prospection automatisée pour TPE</strong> et vous tomberez sur des listes de dix logiciels. Un pour trouver des contacts, un pour LinkedIn, un pour envoyer des mails, un CRM pour ranger le tout. Ces listes sont écrites pour des équipes commerciales. Dans une entreprise de cinq personnes, l'équipe commerciale, c'est souvent le patron, entre deux chantiers ou deux rendez-vous clients.</p><p>Je vous explique ce qu'un outil de prospection doit faire quand vous n'avez ni commercial ni temps, et pourquoi empiler les abonnements ne règle pas le problème.</p><blockquote><p><strong>En bref.</strong> Une TPE n'a pas besoin d'une pile de quatre ou cinq outils à relier entre eux. Elle a besoin d'une seule liste de prospects bien ciblée, de messages préparés pour chaque entreprise, d'un envoi depuis un domaine séparé à petit volume, et d'un endroit unique où atterrissent les réponses. Au départ, vous validez chaque message. Ensuite, vous choisissez ce qui part tout seul.</p></blockquote><h2>Le vrai frein, ce n'est pas le logiciel</h2><p>Quand une petite entreprise ne prospecte pas, ce n'est presque jamais faute d'outil. C'est faute de temps et de méthode.</p><ul><li><strong>Personne n'est chargé de prospecter.</strong> Le travail du jour passe avant, toujours. La prospection se fait quand l'activité baisse, donc trop tard.</li><li><strong>On ne sait pas qui viser.</strong> Sans liste claire, on écrit à tout le monde, donc à personne.</li><li><strong>Écrire un bon message prend du temps.</strong> Alors on copie le même texte partout, et il finit ignoré.</li><li><strong>Les réponses se perdent.</strong> Une dans la boîte mail, une sur LinkedIn, une au téléphone. Trois semaines plus tard, plus personne ne sait où on en est.</li></ul><p>Un logiciel d'envoi en masse règle le troisième point en apparence, et aggrave les trois autres. <strong>Envoyer plus de mails ne sert à rien si personne ne lit les réponses.</strong></p><h2>Pourquoi la pile de cinq outils ne marche pas dans une TPE</h2><p>Les comparatifs proposent tous la même recette : une base de contacts, un outil LinkedIn, un outil de séquences mail, un CRM, parfois un outil d'enrichissement en plus. Dans une petite entreprise, ça coince vite.</p><table><thead><tr><th></th><th>Pile de logiciels du marché</th><th>Outil sur mesure</th></tr></thead><tbody><tr><td>Nombre d'abonnements</td><td>Plusieurs, souvent facturés par utilisateur</td><td>Un seul, par entreprise</td></tr><tr><td>Paramétrage</td><td>À faire vous-même, outil par outil</td><td>Fait avec vous, une fois</td></tr><tr><td>Où arrivent les réponses</td><td>Dans chaque outil séparément</td><td>Au même endroit, triées</td></tr><tr><td>Lien avec vos devis et vos clients</td><td>À relier par des connecteurs</td><td>Dans le même outil si vous le voulez</td></tr><tr><td>Contrôle avant envoi</td><td>Envoi automatique en général</td><td>Brouillon validé au départ</td></tr><tr><td>Pensé pour</td><td>Une équipe commerciale</td><td>Un patron qui prospecte entre deux rendez-vous</td></tr></tbody></table><p>Chaque outil de la pile est bon dans son coin. <strong>Le problème, c'est le temps passé à les faire tenir ensemble.</strong> Et ce temps, une TPE ne l'a pas.</p><h2>Ce que doit faire un outil de prospection pour une petite entreprise</h2><p>Quand je construis la brique de <a href="/pages/prospection-automatisee">prospection automatisée</a>, je pars de quatre étapes, toujours les mêmes.</p><ol><li><strong>Cibler</strong> : un métier, une zone, une taille d'entreprise, et des signaux utiles. Un site absent ou vieillissant, une ouverture récente, un recrutement. Vos clients actuels et les doublons sont exclus d'office.</li><li><strong>Qualifier</strong> : le bon décideur et une adresse vérifiée. Mieux vaut moins de contacts justes que beaucoup de contacts au hasard.</li><li><strong>Écrire</strong> : un message qui parle de l'entreprise contactée, de son métier, de ce qu'on a vu chez elle. Puis deux relances espacées, courtes.</li><li><strong>Ranger les réponses</strong> : intéressé, pas maintenant, pas concerné, désinscription. Les intéressés passent dans votre suivi commercial, avec un rendez-vous à poser.</li></ol><p>Vous pouvez voir à quoi ressemble ce suivi dans la <a href="/pages/demo-commercial">démo Commercial</a>, avec des données fictives.</p><h2>Brouillon validé d'abord, envoi automatique ensuite</h2><p>La plupart des outils vendent l'envoi automatique dès le premier jour. Je préfère l'inverse. <strong>Les premiers messages sont préparés en brouillon, et vous les relisez avant qu'ils partent.</strong> Vous corrigez, vous écartez une entreprise que vous connaissez déjà.</p><p>Quand les messages vous ressemblent, vous activez l'envoi automatique, pour un métier ou pour tout. Vous pouvez le couper à tout moment.</p><h2>Ne jamais prospecter depuis votre adresse principale</h2><p>C'est le point que les comparatifs oublient le plus souvent. Si vous prospectez depuis l'adresse où vos clients vous écrivent, vous mettez en jeu la réception de vos devis et de vos factures. <strong>Un domaine d'envoi séparé met votre adresse de tous les jours à l'abri d'un problème de réputation.</strong></p><p>Ce domaine est préparé avant le premier envoi et chauffé progressivement. Les volumes restent raisonnables : quelques dizaines de messages par jour, pas des milliers. Google détaille ce qu'il attend des expéditeurs dans ses <a href="https://support.google.com/a/answer/81126?hl=fr" target="_blank" rel="noopener">consignes pour les expéditeurs de messages</a> : authentification du domaine, désinscription simple, peu de signalements. Les respecter limite fortement le risque de finir dans les indésirables.</p><h2>Le cadre légal en B2B, en quatre règles</h2><p>En France, écrire à un professionnel sans son accord préalable est possible, à condition de respecter quatre règles :</p><ul><li>le message concerne son activité professionnelle ;</li><li>il indique clairement qui l'envoie ;</li><li>il propose un moyen simple et gratuit de ne plus rien recevoir ;</li><li>la personne a été informée de l'utilisation de son adresse, y compris quand elle vient d'un fichier ou d'un annuaire.</li></ul><p>La CNIL le résume dans sa fiche <a href="https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" target="_blank" rel="noopener">La prospection commerciale par courrier électronique, SMS-MMS et automate d'appel</a>. Dans l'outil, chaque campagne est construite sur ces règles, et une désinscription est prise en compte automatiquement pour toutes les campagnes suivantes.</p><h2>Relier la prospection au reste de votre activité</h2><p>Un rendez-vous obtenu ne vaut rien s'il se perd ensuite. Les prospects intéressés arrivent dans un <a href="/pages/crm-sur-mesure">CRM sur mesure</a> : la fiche de l'entreprise, le message qui a déclenché la réponse, le rendez-vous, puis le devis. <strong>Vous voyez d'un coup d'œil quelle audience vous apporte vraiment des clients.</strong></p><p>Un tableau de suivi montre, métier par métier, les messages envoyés, les réponses, les rendez-vous et les devis signés. La prospection fait partie des <a href="/pages/outils-metier">outils métier</a> que je compose selon chaque entreprise : elle peut vivre seule, ou à côté de vos relances et de votre planning.</p><h2>Ce que ça demande de votre côté</h2><p>Un premier échange pour me dire qui sont vos meilleurs clients et pourquoi ils vous ont choisi. C'est la base du ciblage et des messages. Ensuite, je prépare le domaine, la première liste et les premiers brouillons. Votre travail : relire, valider, répondre aux personnes intéressées. Une session de formation est comprise pour que vous sachiez faire tout ça seul.</p><h2>Questions fréquentes</h2><h3>J'ai déjà un CRM, j'ai besoin d'un outil de prospection en plus ?</h3><p>Un CRM range les contacts que vous avez déjà. Il ne trouve pas de nouvelles entreprises et n'écrit pas les messages. Si votre CRM vous convient, l'outil de prospection peut lui transmettre les prospects intéressés.</p><h3>Les messages partent-ils tout seuls ?</h3><p>Pas au départ. Ils sont préparés en brouillon et vous les validez. Vous activez l'envoi automatique quand vous le décidez, et vous pouvez l'arrêter pour une audience précise à tout moment.</p><h3>Est-ce que la prospection par mail est légale vers des entreprises ?</h3><p>Oui, en B2B, si le message concerne l'activité du destinataire, identifie l'expéditeur, indique d'où vient son adresse et permet de se désinscrire facilement. Ce sont les règles appliquées à chaque campagne.</p><h3>Est-ce que je risque de finir dans les spams ?</h3><p>Le risque baisse beaucoup avec un domaine séparé, chauffé progressivement, des volumes raisonnables et des messages écrits pour chaque entreprise. Votre adresse principale, elle, n'est jamais utilisée pour prospecter.</p><h3>Combien ça coûte ?</h3><p>La mise en place démarre à partir de 590 €, puis à partir de 89 € par mois, maintenance comprise. Le prix est par entreprise, pas par utilisateur, et il est confirmé au devis selon les volumes.</p><h3>Est-ce que je peux récupérer mes données si j'arrête ?</h3><p>Oui. Vos listes de prospects, vos messages et l'historique des réponses sont exportables à tout moment.</p><p><strong>Vous voulez savoir quelles entreprises de votre secteur auraient besoin de vous ?</strong> <a href="/#top">Décrivez votre activité en trois questions</a>, je vous réponds sous 24 h ouvrées.</p>
+<script data-goatcounter="https://novyance.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></div>
+  <div class="aut"><div class="mono">n<i>.</i></div><p><b>Aurélien Ruotte</b>, fondateur de Novyance à Lyon. Il construit des sites et des outils sur mesure pour les TPE et PME, et répond lui-même à chaque demande.</p></div>
+</article>
+<section class="wrap wide more"><h2>À lire aussi<span class="dot">.</span></h2><div class="posts"><a class="post" href="/blogs/blog/logiciel-gestion-stock-petit-commerce"><small>23/11/2026</small><b>Logiciel gestion stock petit commerce : ce qu&#x27;il faut vraiment suivre</b><span>Dans un petit commerce, le problème n&#x27;est pas le logiciel mais un stock affiché qui ne correspond plus au rayon. Voici les quatre choses à suivre</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/logiciel-planning-equipe-restaurant"><small>19/11/2026</small><b>Logiciel planning équipe restaurant : le test du changement de dernière minute</b><span>Pour un restaurant de 5 à 20 personnes, un bon planning se juge le jour où il change : cuisinier absent, service complet. Voici ce qu&#x27;il</span><em>Lire l'article →</em></a><a class="post" href="/blogs/blog/excel-ou-logiciel-planning-atelier"><small>16/11/2026</small><b>Excel ou logiciel pour le planning d&#x27;atelier : le test pour trancher</b><span>Tous les comparatifs disent d&#x27;abandonner Excel. Pour beaucoup d&#x27;ateliers, un bon fichier suffit encore. Voici un test en six questions pour savoir si c&#x27;est votre cas,</span><em>Lire l'article →</em></a></div></section>
+<footer>
+  <div class="wrap">
+    <span>Novyance · Aurélien Ruotte · Lyon · <a href="mailto:contact@novyance.fr">contact@novyance.fr</a></span>
+    <span class="lk">
+      <a href="/pages/outils-metier">Outils métier sur mesure</a>
+      <a href="/pages/creation-site-internet-lyon">Site à Lyon</a>
+      <a href="/pages/application-pilotage-sur-mesure">Application de pilotage</a>
+      <a href="/pages/crm-sur-mesure">CRM sur mesure</a>
+      <a href="/pages/prospection-automatisee">Prospection automatisée</a>
+      <a href="/blogs/blog">Blog</a>
+      <a href="/">Accueil</a>
+      
+      <a href="/pages/cgv">CGV</a>
+      <a href="/pages/confidentialite">Confidentialité</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
