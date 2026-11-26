@@ -38,7 +38,6 @@ LIVE = {
     "seo/live/pages_application-pilotage-sur-mesure.html": "/pages/application-pilotage-sur-mesure",
     "seo/live/pages_crm-sur-mesure.html": "/pages/crm-sur-mesure",
     "seo/live/pages_prospection-automatisee.html": "/pages/prospection-automatisee",
-    "seo/live/pages_etude-de-cas-vangart.html": "/pages/etude-de-cas-vangart",
     "seo/live/pages_mentions-legales.html": "/pages/mentions-legales",
 }
 # adresses courtes -> vraie page (GitHub Pages ne fait pas de redirection : page qui renvoie aussitôt, hors plan du site)
