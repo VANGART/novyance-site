@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#F3F6FA">
+<title>Vidéo</title>
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/nv-favicon-48.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #F3F6FA; --bg2: #E9EEF5; --ink: #482719; --orange: #FF681F; --rose: #FF9EBC; --card: #fff; --line: rgba(72, 39, 25, .12); }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--ink); font: 400 17px/1.55 "DM Sans", system-ui, sans-serif; overflow-x: hidden; }
+  .confetti { position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(circle at 8% 14%, var(--orange) 0 5px, transparent 6px),
+      radial-gradient(circle at 92% 10%, var(--rose) 0 8px, transparent 9px),
+      radial-gradient(circle at 85% 38%, var(--orange) 0 4px, transparent 5px),
+      radial-gradient(circle at 4% 62%, var(--rose) 0 6px, transparent 7px),
+      radial-gradient(circle at 96% 78%, var(--orange) 0 6px, transparent 7px),
+      radial-gradient(circle at 14% 92%, var(--orange) 0 4px, transparent 5px),
+      radial-gradient(circle at 70% 96%, var(--rose) 0 5px, transparent 6px); }
+  main { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 48px 16px 40px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 18px; padding: 6px 14px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font: 600 14px/1 "DM Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+  .eyebrow b { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+  h1 { margin: 0; font: 700 clamp(40px, 8vw, 84px)/1 "Space Grotesk", sans-serif; letter-spacing: -.035em; }
+  h1 i { font-style: normal; color: var(--orange); }
+  .lead { margin: 18px 0 32px; max-width: 640px; font-size: clamp(17px, 2.2vw, 20px); }
+  .lead strong { font-weight: 600; background: linear-gradient(transparent 62%, color-mix(in srgb, var(--rose) 55%, transparent) 62%); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 10px; box-shadow: 0 1px 0 var(--line), 0 24px 60px -24px rgba(72, 39, 25, .25); }
+  video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; background: #1C2F6E; }
+  .tip { display: flex; align-items: center; gap: 10px; margin: 16px 4px 0; font-size: 15px; color: color-mix(in srgb, var(--ink) 75%, transparent); }
+  .tip svg { flex: none; }
+  .from { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; margin-top: 40px; padding-top: 24px; border-top: 2px solid var(--ink); }
+  .from p { margin: 0; font: 500 clamp(20px, 3vw, 26px)/1.25 "Space Grotesk", sans-serif; letter-spacing: -.01em; }
+  .from p span { color: var(--orange); }
+  .brand { font: 700 18px "Space Grotesk", sans-serif; color: var(--ink); text-decoration: none; opacity: .7; }
+  .brand i { font-style: normal; color: var(--orange); }
+  @media (max-width: 600px) { main { padding-top: 28px; } .card { padding: 6px; border-radius: 18px; } video { border-radius: 12px; } }
+</style>
+</head>
+<body>
+<div class="confetti" aria-hidden="true"></div>
+<main>
+  <p class="eyebrow"><b></b>Le match de sa vie</p>
+  <h1>Joyeux anniversaire, Patrick<i>.</i></h1>
+  <p class="lead">57 ans, un match contre les années, et toute la famille sur le terrain. <strong>Qui va gagner ?</strong></p>
+  <div class="card">
+    <video controls playsinline preload="metadata" poster="17ff20c09f50632e308d.jpg">
+      <source src="17ff20c09f50632e308d.mp4" type="video/mp4">
+      Votre navigateur ne lit pas cette vidéo.
+    </video>
+  </div>
+  <p class="tip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF681F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>Montez le son, il y a une fanfare.</p>
+  <div class="from">
+    <p>De la part d’Aurélien, <span>votre beau-fils préféré</span></p>
+    <a class="brand" href="/">novyance<i>.</i></a>
+  </div>
+</main>
+</body>
+</html>

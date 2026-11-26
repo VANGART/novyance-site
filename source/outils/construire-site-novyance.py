@@ -444,6 +444,9 @@ def main():
             t = p.read_text(encoding="utf-8")
             if "gc.zgo.at" not in t:
                 p.write_text(t.replace("</body>", balise + "\n</body>", 1) if "</body>" in t else t + balise, encoding="utf-8")
+    # Pages privées recopiées telles quelles (source/brut/), hors plan du site et sans mesure d'audience.
+    if (RACINE / "brut").exists():
+        shutil.copytree(RACINE / "brut", sortie, dirs_exist_ok=True)
     reste = [str(m) for p in sortie.rglob("*.html") for m in re.findall(r"\{\{.*?\}\}|\{%.*?%\}", p.read_text(encoding="utf-8")) if "<" not in m][:10]
     print("Pages : %d · articles publiés : %d · Liquid restant : %s" % (len(PAGES) + len(LIVE) + 1, len(liste), reste or "aucun"))
 
